@@ -1,53 +1,125 @@
-import
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-/*.CardCarro {
-    width: 95%;
-    margin: 0 auto;
-    text-align: center;
+body{
+    min-height: 100vh;
 }
 
-.CardCarro form{
-
-    border-radius: 20px;
-    background: rgb(2,0,36);
-    background: linear-gradient(0deg, #C7E2F2 0%, #BCD7E7 52%, #BBCFDA 100%);
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px 20px 20px;
+    background: white;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    z-index: 100;
 }
 
-.CardCarro button{
-    color: white;
-    cursor: pointer;
-    display: inline-block;
-    margin: 0 -2px;
-    padding: 5px 10px;
-    border-radius: 23px;
-    background-color: #FF6600;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.025)  ;
+.Logo{
+    width: 231px;
+    height: 51px;
 }
 
-.FormCar {
-    border: 10px black;
-    border-radius: 20px;
-    background: rgb(2,0,36);
-    background: linear-gradient(0deg, #ffffff40 0%, #ffffff10 100%);
-}*/
-.container {
+.navbar{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+#iconVoo{
+    width: 27px;
+    height: 27px;
+}
+
+#iconHospedagem{
+    width: 21px;
+    height: 28px;
+}
+
+#iconCarro{
+    width: 25px;
+    height: 25px;
+}
+
+#iconTuristico{
+    width: 23px;
+    height: 25px;
+}
+
+.title_nav{
+    font-family: "Poppins";
+    font-size: 20px;
+    font-weight: 300;
+    color: black;
+    
+    text-decoration: none;
+}
+
+#navbar_buttons{
+    top: 0;
+    left: 0;
+    padding: 0;
+    gap: 50px;
+
+    display: flex;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#plano{
+    width: 36px;
+    height: 35px;
+}
+
+#perfil{
+    width: 36px;
+    height: 36px;
+}
+
+.buttons>.title_nav{
+    font-size: 10px;
+}
+
+.cardcarro {
     background-color: #e3f2fd;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
+    width: 95%;
     max-width: 1200px;
     overflow: hidden;
     display: flex;
     align-items: center;
     padding: 20px;
+
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
 
 .title {
@@ -62,7 +134,7 @@ import
 }
 
 .car-image {
-    flex: 2;
+    flex: 5;
     text-align: center;
 }
 
@@ -71,28 +143,29 @@ import
     height: auto;
 }
 
-.form-container {
+.form-cardcarro {
     flex: 3;
     background: rgb(2,0,36);
     background: linear-gradient(0deg, #ffffff40 0%, #ffffff10 100%);
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-form {
+.form-cardcarro form {
     display: flex;
     flex-direction: column;
 }
 
-label {
+.form-cardcarro label {
     font-size: 16px;
     margin-bottom: 8px;
     color: #333;
+
 }
 
-input[type="date"],
-select {
+.form-cardcarro input[type="date"],
+input[type="text"] {
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
@@ -102,7 +175,7 @@ select {
     box-sizing: border-box;
 }
 
-button {
+.form-cardcarro button {
     padding: 15px;
     background-color: #ff5722;
     border: none;
@@ -113,6 +186,6 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
+.form-cardcarro button:hover {
     background-color: #e64a19;
 }

@@ -8,55 +8,51 @@
 </head>
 <body>
     <header>
-        <a href="index.html" class="Logo"><img src="./Images/Logo_Flightly.png" alt="Logo" class="Logo"></a>
+        <a href="index.html" class="Logo_link"><img src="./Images/Logo_Flightly.png" alt="Logo" class="Logo"></a>
 
         <nav class="navbar">
-            <img src="./Images/Aviao_icon.png" alt="Voos" class="signos">
-            <a href="" class="title_nav">Voos</a>
-            <img src="./Images/MalaHospedagem_icon.png" alt="Hospedagens" class="signos">
-            <a href="" class="title_nav">Hospedagens</a>
-            <img src="./Images/Carro_icon.png" alt="Carros" class="signos">
-            <a href="" class="title_nav">Carros</a>
-            <img src="./Images/PontoTuristico_icon.png" alt="Pontos Turísticos" class="signos">
-            <a href="" class="title_nav">Pontos Turísticos</a>
+            <div class="nav">
+                <a href=""><img src="./Images/Aviao_icon.png" alt="Voos" id="iconVoo"></a>
+                <a href="#" class="title_nav">Voos</a>
+            </div>
+            <div class="nav">
+                <a href=""><img src="./Images/MalaHospedagem_icon.png" alt="Hospedagens" id="iconHospedagem"></a>
+                <a href="#" class="title_nav">Hospedagens</a>
+            </div>
+            <div class="nav">
+                <a href=""><img src="./Images/Carro_icon.png" alt="Carros" id="iconCarro"></a>
+                <a href="#" class="title_nav">Carros</a>
+            </div>
+            <div class="nav">
+                <a href=""><img src="./Images/PontoTuristico_icon.png" alt="Pontos Turísticos" id="iconTuristico"></a>
+                <a href="#" class="title_nav">Pontos Turísticos</a>
+            </div>
         </nav>
 
+        <div id="navbar_buttons">
+            <div class="buttons">
+                <a href=""><img src="./Images/Planos_icon.png" alt="Planos de viagem" id="plano"></a>
+                <a href="#" class="title_nav">Planos</a>
+            </div>
+            <div class="buttons">
+                <a href=""><img src="./Images/Perfil_icon.png" alt="Perfil" id="perfil"></a>
+                <a href="#" class="title_nav">Perfil</a>
+            </div>
+        </div>
     </header>
 
     <body>
-        <!--<div class="CardCarro">
-                <form action="" method="post">
-                    <label for="AluguelCarros">Aluguel de Carros</label>
-
-                    <img src="./Images/Carro_Card.png" alt="Card Carro" class="card_image" width="20%">
-
-                    <div class="FormCar">
-                        <label for="retirada">Local de retirada</label>
-                        <input type="text" name="localretirada" id="localretirada" placeholder="São Paulo">
-
-                        <label for="retirada">Data de Retirada</label>
-                        <input type="date" name="dateretirada" id="dateretirada"><br>
-
-                        <label for="devolocao">Data de Devolução</label>
-                        <input type="date" name="datedevolucao" id="datedevolucao"><br>
-
-                        <button>Pesquisar</button>
-                    </div>
-                </form>
-            </div>-->
-            <div class="container">
+            <div class="cardcarro">
                 <div class="title">
                     <h1>Aluguel De Carros</h1>
                 </div>
                 <div class="car-image">
                     <img src="./Images/Carro_Card.png" alt="Carro">
                 </div>
-                <div class="form-container">
+                <div class="form-cardcarro">
                     <form>
                         <label for="location">Local de retirada</label>
-                        <select id="location" name="location">
-                            <option value="sao-paulo">São Paulo</option>
-                        </select>
+                        <input type="text" name="pick-location" id="pick-location" placeholder="São Paulo">
         
                         <label for="pickup-date">Data de Retirada</label>
                         <input type="date" id="pickup-date" name="pickup-date" value="2024-06-21">
