@@ -104,7 +104,7 @@ header{
     font-size: 10px;
 }
 
-.cardcarro {
+.card-carro {
     background-color: #e3f2fd;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -116,7 +116,7 @@ header{
     padding: 20px;
 
     position: absolute;
-    top: 45%;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -188,4 +188,103 @@ input[type="text"] {
 
 .form-cardcarro button:hover {
     background-color: #e64a19;
+}
+
+.card-voo {
+    background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
+    border-radius: 20px;
+
+    margin: 0 auto;
+    width: 90%;
+    height: 400px;
+    margin-top: 15vh;
+
+    display: grid;
+    grid-template: 25% 75% / 40% 60%;
+    grid-template-areas:
+    "title form form"
+    "imagem form form";
+    padding-top: 50px;
+    padding-right: 90px;
+    padding-left: 90px;
+    padding-bottom: 65px;
+}
+
+.title-voo {
+    grid-area: title;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 65px;
+}
+
+.voo-imagem {
+    grid-area: imagem;
+    /*content: url('Images/Aviao_Card.png');*/
+    position: relative;
+}
+
+.form-cardvoo {
+    grid-area: form;
+
+    display: grid;
+    grid-template-rows: 80% 20%;
+    padding-top: 20px;
+    padding-right: 35px;
+    padding-left: 35px;
+    padding-bottom: 25px;
+
+    background: linear-gradient(to bottom, #ffffff40, #ffffff10);
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, #ffffff 100%, #a6a6a6 100%) 1;
+    border-radius: 20px;
+}
+
+.grid-inputs{    
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-template-rows: 50% 50%;
+    justify-items: center;
+}
+
+.input-form{
+    display: grid;
+    width: 220px;
+    grid-template-rows: 30% 70%;
+}
+
+.etiqueta{
+    margin-left: 15px;
+}
+
+.input[type=text]{
+    background-size: 24px;
+    background-position: 10px; 
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 40px;
+    padding-top: 11px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 4px 14px 0px #B2C9DB;
+}
+
+.btn-pesquisar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pesquisar{
+    width: 200px;
+    height: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    background-color: #FF6600;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #ffffff25;
 }
