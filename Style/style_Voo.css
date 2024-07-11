@@ -8,10 +8,10 @@
     margin-top: 15vh;
 
     display: grid;
-    grid-template: 25% 75% / 40% 60%;
+    grid-template: 25% 75% / 32% 68%;
     grid-template-areas:
-    "title form form"
-    "imagem form form";
+    "title form"
+    "imagem form";
     padding-top: 50px;
     padding-right: 90px;
     padding-left: 90px;
@@ -23,13 +23,16 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    font-size: 65px;
+    font-size: 50px;
 }
 
 .voo-imagem {
     grid-area: imagem;
-    /*content: url('Images/Aviao_Card.png');*/
-    position: relative;
+    position: absolute;
+    width: 45%;
+    height: 90%;
+    top: 0;
+    left: 5%;
 }
 
 .form-cardvoo {
@@ -43,9 +46,7 @@
     padding-bottom: 25px;
 
     background: linear-gradient(to bottom, #ffffff40, #ffffff10);
-    border-width: 1px;
-    border-style: solid;
-    border-image: linear-gradient(to bottom, #ffffff 100%, #a6a6a6 100%) 1;
+    border: 1.5px solid #ffffff80;
     border-radius: 20px;
 }
 
@@ -58,8 +59,10 @@
 
 .input-form{
     display: grid;
-    width: 220px;
+    width: 90%;
     grid-template-rows: 30% 70%;
+    justify-content: center;
+    
 }
 
 .etiqueta{
@@ -71,12 +74,11 @@
     background-position: 10px; 
     background-repeat: no-repeat;
     display: flex;
-    align-items: center;
-    justify-content: center;
     padding-left: 40px;
-    padding-top: 11px;
+    padding-top: 1px;
     border-radius: 10px;
     border: none;
+    height: 40px;
     box-shadow: 0px 4px 14px 0px #B2C9DB;
 }
 
@@ -87,7 +89,7 @@
 }
 
 .pesquisar{
-    width: 200px;
+    width: 203px;
     height: 100%;
     color: #ffffff;
     font-size: 18px;
