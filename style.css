@@ -135,7 +135,7 @@ header{
 
 .car-image {
     grid-area: imagem;
-    content: url('Images/Carro_Card.png');
+    /*content: url('Images/Carro_Card.png');*/
     position: relative;
 }
 
