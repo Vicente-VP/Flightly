@@ -8,43 +8,91 @@
     <link rel="stylesheet" href="Style/style.css">
     <link rel="stylesheet" href="Style/style_Hospedagem.css">
 </head>
-
 <body>
+    <!------------------ Navbar  --------------------->
     <header>
-        <a href="index.html" class="Logo_link"><img src="./Images/Logo_Flightly.png" alt="Logo" class="Logo"></a>
+        <a href="Voo_page.html" class="Logo_link"><img src="./Images/Logo_Flightly.png" alt="Logo"
+                class="navbar-Logo"></a>
 
         <nav class="navbar">
             <div class="nav">
-                <a href=""><img src="./Images/Aviao_icon.png" alt="Voos" id="iconVoo"></a>
-                <a href="#" class="title_nav">Voos</a>
+                <a href="Voo_page.html"><img src="./Images/NavBar-icons/Aviao_icon.png" alt="Voos" id="iconVoo"></a>
+                <a href="Voo_page.html" class="title_nav">Voos</a>
             </div>
             <div class="nav">
-                <a href=""><img src="./Images/MalaHospedagem_icon.png" alt="Hospedagens" id="iconHospedagem"></a>
-                <a href="#" class="title_nav">Hospedagens</a>
+                <a href="Hospedagem_page.html"><img src="./Images/NavBar-icons/MalaHospedagem_icon.png" alt="Hospedagens"
+                        id="iconHospedagem"></a>
+                <a href="Hospedagem_page.html" class="title_nav">Hospedagens</a>
             </div>
             <div class="nav">
-                <a href=""><img src="./Images/Carro_icon.png" alt="Carros" id="iconCarro"></a>
-                <a href="#" class="title_nav">Carros</a>
+                <a href="Carro_page.html"><img src="./Images/NavBar-icons/Carro_icon.png" alt="Carros" id="iconCarro"></a>
+                <a href="Carro_page.html" class="title_nav">Carros</a>
             </div>
             <div class="nav">
-                <a href=""><img src="./Images/PontoTuristico_icon.png" alt="Pontos Turísticos" id="iconTuristico"></a>
+                <a href=""><img src="./Images/NavBar-icons/PontoTuristico_icon.png" alt="Pontos Turísticos"
+                        id="iconTuristico"></a>
                 <a href="#" class="title_nav">Pontos Turísticos</a>
             </div>
         </nav>
 
         <div id="navbar_buttons">
             <div class="buttons">
-                <a href=""><img src="./Images/Planos_icon.png" alt="Planos de viagem" id="plano"></a>
-                <a href="#" class="title_nav">Planos</a>
+                <img src="./Images/NavBar-icons/Planos_icon.png" alt="Planos de viagem" id="plano">
+                <span class="title_nav">Planos</span>
             </div>
-            <div class="buttons">
-                <a href=""><img src="./Images/Perfil_icon.png" alt="Perfil" id="perfil"></a>
-                <a href="#" class="title_nav">Perfil</a>
+            <div class="perfil-dropdown">
+                <div class="buttons" id="perfil-dropdown-btn" onclick="toggle()">
+                    <img src="./Images/NavBar-icons/Perfil_icon.png" alt="Perfil" id="perfil">
+                    <span class="title_nav">Perfil</span>
+                </div>
+
+                <ul class="perfil-dropdown-list">
+                    <span class="title-popUp">Nome do usuário</span>
+                    <li class="perfil-dropdown-list-item">
+                        <a href="#">
+                            <img src="./Images/Icones_PopUp/Notificacoes.png" alt="Notificações">
+                            Notificações
+                        </a>
+                    </li>
+                    <li class="perfil-dropdown-list-item">
+                        <a href="#">
+                            <img src="./Images/Icones_PopUp/Perfil_popUp.png" alt="Seu perfil">
+                            Seu perfil
+                        </a>
+                    </li>
+                    <li class="perfil-dropdown-list-item">
+                        <a href="#">
+                            <img src="./Images/Icones_PopUp/Plano_popUp.png" alt="Planos de viagem">
+                            Planos de viagem
+                        </a>
+                    </li>
+                    <li class="perfil-dropdown-list-item">
+                        <a href="#">
+                            <img src="./Images/Icones_PopUp/Quiz.png" alt="Quiz">
+                            Quiz
+                        </a>
+                    </li>
+                    <li class="perfil-dropdown-list-item">
+                        <a href="#">
+                            <img src="./Images/Icones_PopUp/Sair.png" alt="Sair">
+                            Sair
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </header>
+<!------------------ FIM DA Navbar  --------------------->
+    <main>
 
+    </main>
 
+    <!------------------ FOOTER  --------------------->
+    <footer>
+
+    </footer>
+    <!------------------ FIM DO FOOTER  --------------------->
+
+    <script src="./Js/script_navbar.js"></script>
 </body>
-
 </html>
