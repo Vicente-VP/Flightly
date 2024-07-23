@@ -1,0 +1,133 @@
+.card-carro {
+    background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
+    border-radius: 20px;
+
+    margin: 0 auto;
+    width: 90%;
+    height: 400px;
+    margin-top: 15vh;
+
+    display: grid;
+    grid-template: 25% 75% / 55% 45%;
+    grid-template-areas:
+    "title form" 
+    "imagem form";
+    padding-top: 50px;
+    padding-right: 90px;
+    padding-left: 90px;
+    padding-bottom: 65px;
+}
+
+.car-title {
+    grid-area: title;
+    display: flex;
+    align-items: center;
+    justify-items: stretch;
+    justify-content: left;
+    font-size: 65px;
+}
+
+
+.car-space {
+    grid-area: imagem;
+    /*content: url('Images/Carro_Card.png');*/
+    position: relative;
+    place-items: start / end;
+    
+}
+
+.car-image{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 1px;
+    top: -420px;
+    left: -210px
+}
+
+img{
+    width: 50%;
+    height: 500px;
+}
+
+
+.form-cardcarro {
+     grid-area: form;
+
+    display: grid;
+    grid-template-rows: 80% 20%;
+    justify-items: right;
+    padding-top: 20px;
+    padding-right: 35px;
+    padding-left: 35px;
+    padding-bottom: 25px;
+
+    background: linear-gradient(to bottom, #ffffff40, #ffffff10);
+    border: 1.5px solid #ffffff80;
+    border-radius: 20px;
+}
+
+.car-grid-inputs{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    justify-items: center;
+}
+
+.car-input-form{
+    display: grid;
+    width: 220px;
+    grid-template-rows: 30% 70%;
+}
+
+.car-etiqueta{
+    margin-left: 15px;
+}
+
+.car-input[type=text]{
+    background-size: 24px;
+    background-position: 10px; 
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 40px;
+    padding-top: 11px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 4px 14px 0px #B2C9DB;
+    width: 215px;
+}
+
+.car-input[type=date]{
+    background-size: 24px;
+    background-position: 10px; 
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    place-items: right / right;
+    padding-left: 40px;
+    padding-top: 11px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 4px 14px 0px #B2C9DB;
+    width: 215px;
+}
+
+.car-btn-pesquisar{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+}
+
+.car-pesquisar{
+    width: 200px;
+    height: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    background-color: #FF6600;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #ffffff25;
+}

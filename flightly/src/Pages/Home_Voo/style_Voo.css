@@ -1,0 +1,198 @@
+/* Estilo do Card de Voo */
+
+.card-voo {
+    background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
+    border-radius: 20px;
+    margin: 0 auto;
+    width: 90%;
+    height: 400px;
+    margin-top: 15vh;
+    display: grid;
+    grid-template: 25% 75% / 32% 68%; /*Linhas e Colunas*/
+    grid-template-areas:
+    "title form"
+    "imagem form";
+    padding-top: 50px;
+    padding-right: 90px;
+    padding-left: 90px;
+    padding-bottom: 65px;
+    z-index: -1;
+}
+
+.title-voo {
+    grid-area: title;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.voo-imagem {
+    grid-area: imagem;
+    position: absolute;
+    width: 45%;
+    height: 90%;
+    top: 0;
+    left: 5%;
+    z-index: 0;
+}
+
+.form-card-voo {
+    grid-area: form;
+    display: grid;
+    grid-template-rows: 80% 20%;
+    padding-top: 20px;
+    padding-right: 35px;
+    padding-left: 35px;
+    padding-bottom: 25px;
+    background: linear-gradient(to bottom, #ffffff80, #ffffff40);
+    border: 1.5px solid #a6a6a680;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.grid-inputs-voo {    
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-template-rows: 50% 50%;
+    justify-items: center;
+}
+
+.input-form-voo {
+    display: grid;
+    width: 90%;
+    grid-template-rows: 30% 70%;
+    justify-content: center;
+}
+
+.etiqueta-voo {
+    margin-left: 15px;
+}
+
+.input-voo[type=text] {
+    background-size: 24px;
+    background-position: 10px; 
+    background-repeat: no-repeat;
+    display: flex;
+    padding-left: 40px;
+    padding-top: 1px;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    box-shadow: 0px 4px 14px 0px #B2C9DB;
+}
+
+.btn-pesquisar-voo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-submit-voo {
+    width: 203px;
+    height: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #FF6600;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
+}
+
+/* Estilo de Voos Mais Populares */
+
+.geral-voo-popular {
+    margin: 0 auto;
+    width: 65%;
+    height: 580px;
+    margin-top: 20vh;
+    margin-bottom: 15vh;
+    display: grid;
+    grid-template-rows: 20% 75% auto;
+}
+
+.title-voo-popular {
+    display: flex;
+    align-content: top;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.cards-voo-popular {
+    display: grid;
+    grid-template-columns: 21% 21% 21% 21%;
+    justify-content: space-between;
+}
+
+/* Elementos de Card (Podem ser reutilizados) */
+
+.card-popular-voo {
+    display: grid;
+    grid-template-rows: 66% 6.4% 4.4% 5.4% 5.4% 12.4%;
+    border: 1.5px solid #ACC6E9;
+    border-radius: 20px;
+    box-shadow: 0px 4px 14px 0px #B2C9DB25;
+    cursor: pointer;
+}
+
+.img-card-voo {
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    height: 285px;
+}
+
+.viagem-card-voo {
+    font-weight: 500;
+    padding-left: 10px;
+    padding-top: 8px;
+    font-size: 18px;
+    align-content: end;
+}
+
+.companhia-card-voo {
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: 250;
+}
+
+.data-card-voo {
+    padding-left: 10px;
+    padding-top: 4px;
+    font-size: 14px;
+    font-weight: 250;
+}
+
+.ida-volta-card-voo {
+    background-color: #ACC6E954;
+    font-size: 14px;
+    font-weight: 200;
+    align-content: top;
+    margin-left: 10px;
+    margin-top: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: fit-content;
+    border-radius: 3px;
+}
+
+.preco-card-voo {
+    font-weight: 500;
+    padding-left: 10px;
+    font-size: 18px;
+    padding-top: 5px;
+    align-content: top;
+}
+
+/* Fim dos Elementos do Card */
+
+.btn-voo-popular {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6vh;
+    height: 48px;
+}
