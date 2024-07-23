@@ -1,4 +1,7 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
+import Footer from "../../Componentes/Footer/Footer"
+
+
 import CristoRedentor_Card from '../../Images/CristoRedentor_Card.png';
 import destinoIcon from '../../Images/Icones-Cards/destino.png';
 import ArcoTriunfo from '../../Images/Cards_Destinos-Recomendados/Arco-do-Triunfo.png';
@@ -12,10 +15,9 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
     return (
-
+    <>
+        <div style={{height: 76+'px'}}><NavBar/></div>
         <main>
-
-            <NavBar />
 
             {/* ------------------ CARD DE PESQUISA  --------------------- */}
 
@@ -86,5 +88,7 @@ export default function Home() {
             {/* ------------------ FIM DE DESTINOS MAIS POPULARES  --------------------- */}
 
         </main>
+        <div style={{height: 250+'px'}}><Footer/></div>
+    </>
     )
 }

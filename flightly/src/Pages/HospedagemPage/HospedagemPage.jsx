@@ -1,4 +1,6 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
+import Footer from "../../Componentes/Footer/Footer"
+
 import Mala_Card from '../../Images/Mala_Card.png';
 import idaVoltaIcon from '../../Images/Icones-Cards/ida-volta.png';
 import destinoIcon from '../../Images/Icones-Cards/destino.png';
@@ -11,9 +13,9 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
     return (
+        <>
+        <div style={{height: 76+'px'}}><NavBar/></div>
         <main>
-            <NavBar />
-
             {/* ------------------ CARD DE PESQUISA  --------------------- */}
 
             <img src={Mala_Card} className="hospedagem-imagem"/>
@@ -87,5 +89,8 @@ export default function Home() {
             {/* ------------------ RECOMENDAÇÕES PARA VOCÊ  ------------------------ */}
             {/* ------------------ FIM DE RECOMENDAÇÕES PARA VOCÊ  --------------------- */}
         </main>
+        <div style={{height: 250+'px'}}><Footer/></div>
+    </>
+        
     )
 }
