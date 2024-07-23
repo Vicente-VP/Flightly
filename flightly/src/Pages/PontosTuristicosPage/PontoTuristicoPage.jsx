@@ -17,7 +17,7 @@ export default function Home() {
     return (
     <>
         <div><NavBar/></div>
-        
+
         <main>
 
             {/* ------------------ CARD DE PESQUISA  --------------------- */}
@@ -42,9 +42,7 @@ export default function Home() {
                     </div>
 
                     <div className="btn-pesquisar-pturistico">
-                        <button className="btn-submit-pturistico">
-                            Pesquisar
-                        </button>
+                        <button className="btn-submit-pturistico">Pesquisar</button>
                     </div>
                 </div>
             </div>
@@ -79,9 +77,7 @@ export default function Home() {
                 </div>
 
                 <div className="btn-popular-pturistico">
-                    <button className="btn-submit-pturistico">
-                        Ver Mais
-                    </button>
+                    <button className="btn-submit-pturistico">Ver Mais</button>
                 </div>
 
             </div>
