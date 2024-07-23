@@ -10,7 +10,7 @@ import IdaVolta_Form from '../../Images/Icones-Cards/ida-volta.png';
 export default function Carro_page (){
     return (
         <>
-            <div style={{height: 76+'px'}}><NavBar/></div>
+            <div><NavBar/></div>
 
             <main>
                 <div class="card-carro">

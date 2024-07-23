@@ -14,83 +14,85 @@ import { Link } from 'react-router-dom';
 export default function Home() {
     return (
         <>
-        <div style={{height: 76+'px'}}><NavBar/></div>
-        <main>
-            {/* ------------------ CARD DE PESQUISA  --------------------- */}
+            <div><NavBar/></div>
 
-            <img src={Mala_Card} className="hospedagem-imagem"/>
+            <main>
+                {/* ------------------ CARD DE PESQUISA  --------------------- */}
 
-            <div className="card-hospedagem">
-                <div className="title-hospedagem">
-                    <label>Hospedagem</label>
-                </div>
+                <img src={Mala_Card} className="hospedagem-imagem"/>
 
-                <div className="form-card-hospedagem">
-                    <div className="grid-inputs-hospedagem">
-                        <div className="input-form-hospedagem">
-                            <div className="etiqueta-hospedagem">
-                                <label className="etiqueta-hospedagem">Check-in</label>
+                <div className="card-hospedagem">
+                    <div className="title-hospedagem">
+                        <label>Hospedagem</label>
+                    </div>
+
+                    <div className="form-card-hospedagem">
+                        <div className="grid-inputs-hospedagem">
+                            <div className="input-form-hospedagem">
+                                <div className="etiqueta-hospedagem">
+                                    <label className="etiqueta-hospedagem">Check-in</label>
+                                </div>
+                                <div className="input-hospedagem">
+                                    <input type="text" className="input-hospedagem" placeholder="21/06/24"
+                                        style={{ backgroundImage: `url(${idaVoltaIcon})` }}/>
+                                </div>
                             </div>
-                            <div className="input-hospedagem">
-                                <input type="text" className="input-hospedagem" placeholder="21/06/24"
-                                    style={{ backgroundImage: `url(${idaVoltaIcon})` }}/>
+                            <div className="input-form-hospedagem">
+                                <div className="etiqueta-hospedagem">
+                                    <label className="etiqueta-hospedagem">Check-out</label>
+                                </div>
+                                <div className="input-hospedagem">
+                                    <input type="text" className="input-hospedagem" placeholder="21/06/24"
+                                        style={{ backgroundImage: `url(${idaVoltaIcon})` }}/>
+                                </div>
                             </div>
-                        </div>
-                        <div className="input-form-hospedagem">
-                            <div className="etiqueta-hospedagem">
-                                <label className="etiqueta-hospedagem">Check-out</label>
+                            <div className="input-form-hospedagem">
+                                <div className="etiqueta-hospedagem">
+                                    <label className="etiqueta-hospedagem">Local</label>
+                                </div>
+                                <div className="input-hospedagem">
+                                    <input type="text" className="input-hospedagem" placeholder="Rio de Janeiro"
+                                        style={{ backgroundImage: `url(${destinoIcon})` }}/>
+                                </div>
                             </div>
-                            <div className="input-hospedagem">
-                                <input type="text" className="input-hospedagem" placeholder="21/06/24"
-                                    style={{ backgroundImage: `url(${idaVoltaIcon})` }}/>
+                            <div className="input-form-hospedagem">
+                                <div className="etiqueta-hospedagem">
+                                    <label className="etiqueta-hospedagem">Quartos</label>
+                                </div>
+                                <div className="input-hospedagem">
+                                    <input type="text" className="input-hospedagem" placeholder="1"
+                                        style={{ backgroundImage: `url(${quartosIcon})` }}/>
+                                </div>
                             </div>
-                        </div>
-                        <div className="input-form-hospedagem">
-                            <div className="etiqueta-hospedagem">
-                                <label className="etiqueta-hospedagem">Local</label>
+                            <div className="input-form-hospedagem">
+                                <div className="etiqueta-hospedagem">
+                                    <label className="etiqueta-hospedagem">Hóspedes</label>
+                                </div>
+                                <div className="input-hospedagem">
+                                    <input type="text" className="input-hospedagem" placeholder="1"
+                                        style={{ backgroundImage: `url(${passageirosIcon})` }}/>
+                                </div>
                             </div>
-                            <div className="input-hospedagem">
-                                <input type="text" className="input-hospedagem" placeholder="Rio de Janeiro"
-                                    style={{ backgroundImage: `url(${destinoIcon})` }}/>
+                            <div className="btn-pesquisar-hospedagem">
+                                <button className="btn-submit-hospedagem">
+                                    Pesquisar
+                                </button>
                             </div>
-                        </div>
-                        <div className="input-form-hospedagem">
-                            <div className="etiqueta-hospedagem">
-                                <label className="etiqueta-hospedagem">Quartos</label>
-                            </div>
-                            <div className="input-hospedagem">
-                                <input type="text" className="input-hospedagem" placeholder="1"
-                                    style={{ backgroundImage: `url(${quartosIcon})` }}/>
-                            </div>
-                        </div>
-                        <div className="input-form-hospedagem">
-                            <div className="etiqueta-hospedagem">
-                                <label className="etiqueta-hospedagem">Hóspedes</label>
-                            </div>
-                            <div className="input-hospedagem">
-                                <input type="text" className="input-hospedagem" placeholder="1"
-                                    style={{ backgroundImage: `url(${passageirosIcon})` }}/>
-                            </div>
-                        </div>
-                        <div className="btn-pesquisar-hospedagem">
-                            <button className="btn-submit-hospedagem">
-                                Pesquisar
-                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {/* ------------------ FIM DO CARD DE PESQUISA  ----------------- */}
+                {/* ------------------ FIM DO CARD DE PESQUISA  ----------------- */}
 
-            {/* ------------------ VOOS MAIS POPULARES  --------------------- */}
-            {/* ------------------ FIM DE VOOS MAIS POPULARES  --------------------- */}
+                {/* ------------------ VOOS MAIS POPULARES  --------------------- */}
+                {/* ------------------ FIM DE VOOS MAIS POPULARES  --------------------- */}
 
-            {/* ------------------ RECOMENDAÇÕES PARA VOCÊ  ------------------------ */}
-            {/* ------------------ FIM DE RECOMENDAÇÕES PARA VOCÊ  --------------------- */}
-        </main>
-        <div style={{height: 250+'px'}}><Footer/></div>
-    </>
+                {/* ------------------ RECOMENDAÇÕES PARA VOCÊ  ------------------------ */}
+                {/* ------------------ FIM DE RECOMENDAÇÕES PARA VOCÊ  --------------------- */}
+            </main>
+
+            <div style={{height: 250+'px'}}><Footer/></div>
+        </>
         
     )
 }

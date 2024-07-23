@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 export default function Home() {
     return (
         <>
-            <div style={{height: 76+'px'}}><NavBar/></div>
+            <div><NavBar/></div>
             
             <main>
             {/* ------------------ CARD DE PESQUISA  --------------------- */}
@@ -202,7 +202,6 @@ export default function Home() {
                 </div>
 
             {/* ------------------ FIM DE RECOMENDAÇÕES PARA VOCÊ  --------------------- */}
-
             </main>
 
             <div style={{height: 250+'px'}}><Footer/></div>
