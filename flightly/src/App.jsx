@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './Pages/Home_Voo/Home_Voo';
-import HospedagemPage from './Pages/HospedagemPage';
+import HospedagemPage from './Pages/HospedagemPage/HospedagemPage';
 import CarroPage from './Pages/CarroPage';
 import PontoTuristicoPage from './Pages/PontosTuristicosPage/PontoTuristicoPage';
 
