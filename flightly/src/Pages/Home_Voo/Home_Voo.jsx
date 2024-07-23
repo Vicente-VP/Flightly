@@ -20,75 +20,75 @@ export default function Home() {
 
         {/* ------------------ CARD DE PESQUISA  --------------------- */}
 
-                <img src={Aviao_Card} alt="Logo" className="voo-imagem" />
+            <img src={Aviao_Card} alt="Logo" className="voo-imagem" />
 
             <div className="card-voo">
                 <div className="title-voo">
                     <label>Voos</label>
                 </div>
 
-                <div className="grid-imagem"></div>
+                <div className="grid-imagem-voo"></div>
 
-                <div className="form-cardvoo">
-                    <div className="grid-inputs">
-                        <div className="input-form">
-                            <div className="etiqueta-class">
-                                <label className="etiqueta">Origem</label>
+                <div className="form-card-voo">
+                    <div className="grid-inputs-voo">
+                        <div className="input-form-voo">
+                            <div className="etiqueta-class-voo">
+                                <label className="etiqueta-voo">Origem</label>
                             </div>
-                            <div className="input-class">
-                                <input type="text" className="input" placeholder="São Paulo"
+                            <div className="input-class-voo">
+                                <input type="text" className="input-voo" placeholder="São Paulo"
                                     style={{ backgroundImage: `url(${origemIcon})` }}/>
                             </div>
                         </div>
-                        <div className="input-form">
-                            <div className="etiqueta-class">
-                                <label className="etiqueta">Destino</label>
+                        <div className="input-form-voo">
+                            <div className="etiqueta-class-voo">
+                                <label className="etiqueta-voo">Destino</label>
                             </div>
-                            <div className="input-class">
-                                <input type="text" className="input" placeholder="Rio de Janeiro"
+                            <div className="input-class-voo">
+                                <input type="text" className="input-voo" placeholder="Rio de Janeiro"
                                     style={{ backgroundImage: `url(${destinoIcon})` }}/>
                             </div>
                         </div>
-                        <div className="input-form">
-                            <div className="etiqueta-class">
-                                <label className="etiqueta">Passageiros</label>
+                        <div className="input-form-voo">
+                            <div className="etiqueta-class-voo">
+                                <label className="etiqueta-voo">Passageiros</label>
                             </div>
-                            <div className="input-class">
-                                <input type="text" className="input" placeholder="1"
+                            <div className="input-class-voo">
+                                <input type="text" className="input-voo" placeholder="1"
                                     style={{ backgroundImage: `url(${passageirosIcon})` }}/>
                             </div>
                         </div>
-                        <div className="input-form">
-                            <div className="etiqueta-class">
-                                <label className="etiqueta">Ida</label>
+                        <div className="input-form-voo">
+                            <div className="etiqueta-class-voo">
+                                <label className="etiqueta-voo">Ida</label>
                             </div>
-                            <div className="input-class">
-                                <input type="text" className="input" placeholder="21/06/24"
+                            <div className="input-class-voo">
+                                <input type="text" className="input-voo" placeholder="21/06/24"
                                     style={{ backgroundImage: `url(${idaVoltaIcon})` }}/>
                             </div>
                         </div>
-                        <div className="input-form">
-                            <div className="etiqueta-class">
-                                <label className="etiqueta">Volta</label>
+                        <div className="input-form-voo">
+                            <div className="etiqueta-class-voo">
+                                <label className="etiqueta-voo">Volta</label>
                             </div>
-                            <div className="input-class">
-                                <input type="text" className="input" placeholder="30/06/24"
+                            <div className="input-class-voo">
+                                <input type="text" className="input-voo" placeholder="30/06/24"
                                     style={{ backgroundImage: `url(${idaVoltaIcon})` }}/>
                             </div>
                         </div>
-                        <div className="input-form">
-                            <div className="etiqueta-class">
-                                <label className="etiqueta">Classe</label>
+                        <div className="input-form-voo">
+                            <div className="etiqueta-class-voo">
+                                <label className="etiqueta-voo">Classe</label>
                             </div>
-                            <div className="input-class">
-                                <input type="text" className="input" placeholder="Executiva"
+                            <div className="input-class-voo">
+                                <input type="text" className="input-voo" placeholder="Executiva"
                                     style={{ backgroundImage: `url(${classeIcon})` }}/>
                             </div>
                         </div>
                     </div>
 
-                    <div className="btn-pesquisar">
-                        <button className="btn-submit">
+                    <div className="btn-pesquisar-voo">
+                        <button className="btn-submit-voo">
                             Pesquisar
                         </button>
                     </div>
@@ -105,42 +105,42 @@ export default function Home() {
                 </div>
 
                 <div className="cards-voo-popular">
-                    <div className="card-popular">
-                        <img src={Destino_Cards} className="img-card"/>
-                            <span className="viagem-card">São Paulo - Rio de Janeiro</span>
-                            <span className="companhia-card">Latam</span>
-                            <span className="data-card">11/07 - 21/07</span>
-                            <span className="ida-volta-card">Ida e Volta</span>
-                            <span className="preco-card">R$ 450,00</span>
+                    <div className="card-popular-voo">
+                        <img src={Destino_Cards} className="img-card-voo"/>
+                            <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
+                            <span className="companhia-card-voo">Latam</span>
+                            <span className="data-card-voo">11/07 - 21/07</span>
+                            <span className="ida-volta-card-voo">Ida e Volta</span>
+                            <span className="preco-card-voo">R$ 450,00</span>
                     </div>
-                    <div className="card-popular">
-                        <img src={Destino_Cards} className="img-card"/>
-                            <span className="viagem-card">São Paulo - Rio de Janeiro</span>
-                            <span className="companhia-card">Latam</span>
-                            <span className="data-card">11/07 - 21/07</span>
-                            <span className="ida-volta-card">Ida e Volta</span>
-                            <span className="preco-card">R$ 450,00</span>
+                    <div className="card-popular-voo">
+                        <img src={Destino_Cards} className="img-card-voo"/>
+                            <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
+                            <span className="companhia-card-voo">Latam</span>
+                            <span className="data-card-voo">11/07 - 21/07</span>
+                            <span className="ida-volta-card-voo">Ida e Volta</span>
+                            <span className="preco-card-voo">R$ 450,00</span>
                     </div>
-                    <div className="card-popular">
-                        <img src={Destino_Cards} className="img-card"/>
-                            <span className="viagem-card">São Paulo - Rio de Janeiro</span>
-                            <span className="companhia-card">Latam</span>
-                            <span className="data-card">11/07 - 21/07</span>
-                            <span className="ida-volta-card">Ida e Volta</span>
-                            <span className="preco-card">R$ 450,00</span>
+                    <div className="card-popular-voo">
+                        <img src={Destino_Cards} className="img-card-voo"/>
+                            <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
+                            <span className="companhia-card-voo">Latam</span>
+                            <span className="data-card-voo">11/07 - 21/07</span>
+                            <span className="ida-volta-card-voo">Ida e Volta</span>
+                            <span className="preco-card-voo">R$ 450,00</span>
                     </div>
-                    <div className="card-popular">
-                        <img src={Destino_Cards} className="img-card"/>
-                            <span className="viagem-card">São Paulo - Rio de Janeiro</span>
-                            <span className="companhia-card">Latam</span>
-                            <span className="data-card">11/07 - 21/07</span>
-                            <span className="ida-volta-card">Ida e Volta</span>
-                            <span className="preco-card">R$ 450,00</span>
+                    <div className="card-popular-voo">
+                        <img src={Destino_Cards} className="img-card-voo"/>
+                            <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
+                            <span className="companhia-card-voo">Latam</span>
+                            <span className="data-card-voo">11/07 - 21/07</span>
+                            <span className="ida-volta-card-voo">Ida e Volta</span>
+                            <span className="preco-card-voo">R$ 450,00</span>
                     </div>
                 </div>
 
                 <div className="btn-voo-popular">
-                    <button className="btn-submit">
+                    <button className="btn-submit-voo">
                         Ver Mais
                     </button>
                 </div>
@@ -157,42 +157,42 @@ export default function Home() {
                 </div>
 
                 <div className="cards-voo-popular">
-                    <div className="card-popular">
-                        <img src={Destino_Cards} className="img-card"/>
-                            <span className="viagem-card">São Paulo - Rio de Janeiro</span>
-                            <span className="companhia-card">Latam</span>
-                            <span className="data-card">11/07 - 21/07</span>
-                            <span className="ida-volta-card">Ida e Volta</span>
-                            <span className="preco-card">R$ 450,00</span>
+                    <div className="card-popular-voo">
+                        <img src={Destino_Cards} className="img-card-voo"/>
+                            <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
+                            <span className="companhia-card-voo">Latam</span>
+                            <span className="data-card-voo">11/07 - 21/07</span>
+                            <span className="ida-volta-card-voo">Ida e Volta</span>
+                            <span className="preco-card-voo">R$ 450,00</span>
                     </div>
-                    <div className="card-popular">
-                        <img src={Destino_Cards} className="img-card"/>
-                            <span className="viagem-card">São Paulo - Rio de Janeiro</span>
-                            <span className="companhia-card">Latam</span>
-                            <span className="data-card">11/07 - 21/07</span>
-                            <span className="ida-volta-card">Ida e Volta</span>
-                            <span className="preco-card">R$ 450,00</span>
+                    <div className="card-popular-voo">
+                        <img src={Destino_Cards} className="img-card-voo"/>
+                            <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
+                            <span className="companhia-card-voo">Latam</span>
+                            <span className="data-card-voo">11/07 - 21/07</span>
+                            <span className="ida-volta-card-voo">Ida e Volta</span>
+                            <span className="preco-card-voo">R$ 450,00</span>
                     </div>
-                    <div className="card-popular">
-                        <img src={Destino_Cards} className="img-card"/>
-                            <span className="viagem-card">São Paulo - Rio de Janeiro</span>
-                            <span className="companhia-card">Latam</span>
-                            <span className="data-card">11/07 - 21/07</span>
-                            <span className="ida-volta-card">Ida e Volta</span>
-                            <span className="preco-card">R$ 450,00</span>
+                    <div className="card-popular-voo">
+                        <img src={Destino_Cards} className="img-card-voo"/>
+                            <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
+                            <span className="companhia-card-voo">Latam</span>
+                            <span className="data-card-voo">11/07 - 21/07</span>
+                            <span className="ida-volta-card-voo">Ida e Volta</span>
+                            <span className="preco-card-voo">R$ 450,00</span>
                     </div>
-                    <div className="card-popular">
-                        <img src={Destino_Cards} className="img-card"/>
-                            <span className="viagem-card">São Paulo - Rio de Janeiro</span>
-                            <span className="companhia-card">Latam</span>
-                            <span className="data-card">11/07 - 21/07</span>
-                            <span className="ida-volta-card">Ida e Volta</span>
-                            <span className="preco-card">R$ 450,00</span>
+                    <div className="card-popular-voo">
+                        <img src={Destino_Cards} className="img-card-voo"/>
+                            <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
+                            <span className="companhia-card-voo">Latam</span>
+                            <span className="data-card-voo">11/07 - 21/07</span>
+                            <span className="ida-volta-card-voo">Ida e Volta</span>
+                            <span className="preco-card-voo">R$ 450,00</span>
                     </div>
                 </div>
 
                 <div className="btn-voo-popular">
-                    <button className="btn-submit">
+                    <button className="btn-submit-voo">
                         Ver Mais
                     </button>
                 </div>

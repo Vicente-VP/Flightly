@@ -29,17 +29,17 @@ export default function Home() {
                     <label>Turísticos</label>
                 </div>
 
-                <div className="form-cardpturistico">
-                    <div className="etiqueta-class">
+                <div className="form-card-pturistico">
+                    <div className="etiqueta-class-pturistico">
                         <label className="etiqueta">Local</label>
                     </div>
-                    <div className="input-class">
-                        <input type="text" className="input" placeholder="Rio de Janeiro"
+                    <div className="input-class-pturistico">
+                        <input type="text" className="input-pturistico" placeholder="Rio de Janeiro"
                             style={{ backgroundImage: `url(${destinoIcon})` }}/>
                     </div>
 
-                    <div className="btn-pesquisar">
-                        <button className="btn-submit">
+                    <div className="btn-pesquisar-pturistico">
+                        <button className="btn-submit-pturistico">
                             Pesquisar
                         </button>
                     </div>
@@ -50,33 +50,33 @@ export default function Home() {
 
             {/* ------------------ DESTINOS MAIS POPULARES  --------------------- */}
 
-            <div className="geral-voo-popular">
+            <div className="geral-popular-pturistico">
 
-                <div className="title-voo-popular">
+                <div className="title-popular-pturistico">
                     <label>Destinos Mais Populares</label>
                 </div>
 
-                <div className="cards-voo-popular">
-                    <div className="card-popular">
-                        <img src={ArcoTriunfo} className="img-card"/>
-                            <span className="viagem-card">Arco do Triunfo</span>
+                <div className="cards-popular-pturistico">
+                    <div className="card-popular-pturistico">
+                        <img src={ArcoTriunfo} className="img-card-pturistico"/>
+                            <span className="viagem-card-pturistico">Arco do Triunfo</span>
                     </div>
-                    <div className="card-popular">
-                        <img src={Westminster} className="img-card"/>
-                            <span className="viagem-card">P. de Westminster</span>
+                    <div className="card-popular-pturistico">
+                        <img src={Westminster} className="img-card-pturistico"/>
+                            <span className="viagem-card-pturistico">P. de Westminster</span>
                     </div>
-                    <div className="card-popular">
-                        <img src={Basilio} className="img-card"/>
-                            <span className="viagem-card">Catedral S. Basílio</span>
+                    <div className="card-popular-pturistico">
+                        <img src={Basilio} className="img-card-pturistico"/>
+                            <span className="viagem-card-pturistico">Catedral S. Basílio</span>
                     </div>
-                    <div className="card-popular">
-                        <img src={FontanaDiTrevi} className="img-card"/>
-                            <span className="viagem-card">Fontana di Trevi</span>
+                    <div className="card-popular-pturistico">
+                        <img src={FontanaDiTrevi} className="img-card-pturistico"/>
+                            <span className="viagem-card-pturistico">Fontana di Trevi</span>
                     </div>
                 </div>
 
-                <div className="btn-voo-popular">
-                    <button className="btn-submit">
+                <div className="btn-popular-pturistico">
+                    <button className="btn-submit-pturistico">
                         Ver Mais
                     </button>
                 </div>
