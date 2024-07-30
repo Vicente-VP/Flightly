@@ -7,12 +7,15 @@ import Carro_Form from '../../Images/Carro_Card.png';
 import Origem_Form from '../../Images/Icones-Cards/origem.png';
 import IdaVolta_Form from '../../Images/Icones-Cards/ida-volta.png';
 
+import Loc_Allauto from '../../Images/Cards_Locadoras_Populares/Allauto.png'
+
 export default function Carro_page (){
     return (
         <>
             <div><NavBar/></div>
 
             <main>
+                    {/* ------------------ CARRO FORM INICIO  --------------------- */}
                 <div class="card-carro">
                     <div class="car-title">
                         <label>Aluguel de Carros</label>
@@ -62,6 +65,25 @@ export default function Carro_page (){
                 </div>
 
                 <div class="car-image"><img src={Carro_Form} alt="Carro"/></div>
+                    {/* ------------------ CARRO FORM FIM  --------------------- */}
+
+
+                {/* ------------------ LOCADORAS MAIS POPULARES INICIO --------------------- */}
+
+                <div class="locadoras-popular">
+
+                    <div class="title-locadora">
+                        <label>Locadoras Populares</label>
+                    </div>
+
+                    <div class="space-locadora-popular">
+                        <div class="card-locadora-popular">
+                            <img src={Loc_Allauto} className="img-card-pturistico"/>
+                            <span className="viagem-card-pturistico">Allauto</span>
+                        </div>
+                    </div>
+
+                </div>
 
             </main>
 
