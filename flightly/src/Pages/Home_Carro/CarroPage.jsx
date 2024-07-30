@@ -8,6 +8,9 @@ import Origem_Form from '../../Images/Icones-Cards/origem.png';
 import IdaVolta_Form from '../../Images/Icones-Cards/ida-volta.png';
 
 import Loc_Allauto from '../../Images/Cards_Locadoras_Populares/Allauto.png'
+import Loc_Rental from '../../Images/Cards_Locadoras_Populares/Rental.png'
+import Loc_Citta from '../../Images/Cards_Locadoras_Populares/Citta.png'
+import Loc_Blue from '../../Images/Cards_Locadoras_Populares/Blue.png'
 
 export default function Carro_page (){
     return (
@@ -78,11 +81,26 @@ export default function Carro_page (){
 
                     <div class="space-locadora-popular">
                         <div class="card-locadora-popular">
-                            <img src={Loc_Allauto} className="img-card-pturistico"/>
-                            <span className="viagem-card-pturistico">Allauto</span>
+                            <img src={Loc_Allauto} className="img-card-locadora"/>
+                            <span className="carro-card-locadora">Allauto</span>
+                        </div>
+                        <div class="card-locadora-popular">
+                            <img src={Loc_Rental} class="img-card-locadora" />
+                            <span class="carro-card-locadora">Rental</span>
+                        </div>
+                        <div class="card-locadora-popular">
+                            <img src={Loc_Citta} class="img-card-locadora" />
+                            <span class="carro-card-locadora">Citta América</span>
+                        </div>
+                        <div class="card-locadora-popular">
+                            <img src={Loc_Blue} class="img-card-locadora" />
+                            <span class="carro-card-locadora">Blue</span>
                         </div>
                     </div>
 
+                    <div class="locadora-btn-popular">
+                        <button class="car-pesquisar">Ver Mais</button>
+                    </div>
                 </div>
 
             </main>

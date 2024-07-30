@@ -136,3 +136,60 @@ img{
     border: none;
     box-shadow: 0px 4px 16px 0px #ffffff25;
 }
+
+.locadoras-popular {
+    margin: 0 auto;
+    width: 70%;
+    height: 580px;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+
+.title-locadora {
+    display: flex;
+    align-content: top;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+.space-locadora-popular{
+    display: grid;
+    grid-template-columns: 21% 21% 21% 21%;
+    justify-content: space-between;
+}
+
+.card-locadora-popular {
+    display: grid;
+    grid-template-rows: auto auto;
+    border: 1.5px solid #ACC6E9;
+    border-radius: 20px;
+    box-shadow: 0px 4px 14px 0px #B2C9DB25;
+    cursor: pointer;
+}
+
+.img-card-locadora {
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    height: 188px;
+}
+
+.carro-card-locadora {
+    font-weight: 300;
+    font-size: 29.53px;
+    display: flex;
+    justify-content: center;
+   font-family: 'Arial';
+}
+
+.locadora-btn-popular{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6vh;
+    height: 48px;
+}
