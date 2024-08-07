@@ -76,7 +76,7 @@ export default function NavBar() {
               </a>
             </li>
             <li className="perfil-dropdown-list-item">
-              <a href="#">
+              <a href="./Cadastro">
                 <img src={Perfil_popUp} alt="Seu perfil" />
                 Seu perfil
               </a>
