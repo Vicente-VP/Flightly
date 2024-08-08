@@ -5,8 +5,8 @@ import Home from './Pages/Home_Voo/Home_Voo';
 import HospedagemPage from './Pages/HospedagemPage/HospedagemPage';
 import CarroPage from './Pages/Home_Carro/CarroPage';
 import PontoTuristicoPage from './Pages/PontosTuristicosPage/PontoTuristicoPage';
-import Cadastro from './Pages/Cadastro';
-import Login from './Pages/Login';
+import Cadastro from './Pages/Cadastro/Cadastro';
+import Login from './Pages/Login/Login';
 
 export default function App() {
   return (
