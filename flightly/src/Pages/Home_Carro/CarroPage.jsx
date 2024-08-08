@@ -7,12 +7,18 @@ import Carro_Form from '../../Images/Carro_Card.png';
 import Origem_Form from '../../Images/Icones-Cards/origem.png';
 import IdaVolta_Form from '../../Images/Icones-Cards/ida-volta.png';
 
+import Loc_Allauto from '../../Images/Cards_Locadoras_Populares/Allauto.png'
+import Loc_Rental from '../../Images/Cards_Locadoras_Populares/Rental.png'
+import Loc_Citta from '../../Images/Cards_Locadoras_Populares/Citta.png'
+import Loc_Blue from '../../Images/Cards_Locadoras_Populares/Blue.png'
+
 export default function Carro_page (){
     return (
         <>
             <div><NavBar/></div>
 
             <main>
+                    {/* ------------------ CARRO FORM INICIO  --------------------- */}
                 <div class="card-carro">
                     <div class="car-title">
                         <label>Aluguel de Carros</label>
@@ -62,6 +68,40 @@ export default function Carro_page (){
                 </div>
 
                 <div class="car-image"><img src={Carro_Form} alt="Carro"/></div>
+                    {/* ------------------ CARRO FORM FIM  --------------------- */}
+
+
+                {/* ------------------ LOCADORAS MAIS POPULARES INICIO --------------------- */}
+
+                <div class="locadoras-popular">
+
+                    <div class="title-locadora">
+                        <label>Locadoras Populares</label>
+                    </div>
+
+                    <div class="space-locadora-popular">
+                        <div class="card-locadora-popular">
+                            <img src={Loc_Allauto} className="img-card-locadora"/>
+                            <span className="carro-card-locadora">Allauto</span>
+                        </div>
+                        <div class="card-locadora-popular">
+                            <img src={Loc_Rental} class="img-card-locadora" />
+                            <span class="carro-card-locadora">Rental</span>
+                        </div>
+                        <div class="card-locadora-popular">
+                            <img src={Loc_Citta} class="img-card-locadora" />
+                            <span class="carro-card-locadora">Citta América</span>
+                        </div>
+                        <div class="card-locadora-popular">
+                            <img src={Loc_Blue} class="img-card-locadora" />
+                            <span class="carro-card-locadora">Blue</span>
+                        </div>
+                    </div>
+
+                    <div class="locadora-btn-popular">
+                        <button class="car-pesquisar">Ver Mais</button>
+                    </div>
+                </div>
 
             </main>
 
