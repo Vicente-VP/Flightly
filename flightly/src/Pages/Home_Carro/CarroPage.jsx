@@ -12,6 +12,10 @@ import Loc_Rental from '../../Images/Cards_Locadoras_Populares/Rental.png'
 import Loc_Citta from '../../Images/Cards_Locadoras_Populares/Citta.png'
 import Loc_Blue from '../../Images/Cards_Locadoras_Populares/Blue.png'
 
+import Rec_Eco from '../../Images/Card_Recomendacao_Carro/Rec_Eco.png'
+import Rec_Inter from '../../Images/Card_Recomendacao_Carro/Rec_Inter.png'
+import Rec_Lux from '../../Images/Card_Recomendacao_Carro/Rec_Lux.png'
+
 export default function Carro_page (){
     return (
         <>
@@ -100,6 +104,45 @@ export default function Carro_page (){
 
                     <div class="locadora-btn-popular">
                         <button class="car-pesquisar">Ver Mais</button>
+                    </div>
+                </div>
+
+                {/* ------------------ LOCADORAS MAIS POPULARES FIM --------------------- */}
+
+
+                {/* ------------------ RECOMENDAÇÃO DE CARRO INICIO --------------------- */}
+
+                <div class="recomendacao-carro">
+
+                    <div class="title-recomendacao">
+                        <label>Carros para seu orçamento</label>
+                    </div>
+
+                    <div class="space-recomendacao-carro">
+
+                        <div class="card-recomendacao-carro">
+                            <img src={Rec_Eco} class="img-card-recomendacao"/>
+                            <span class="carro-card-recomendacao">Econômico</span>
+                            <div class="recomendacao-btn">
+                                <button class="car-pesquisar">Ver Mais</button>
+                            </div>
+                        </div>
+
+                        <div class="card-recomendacao-carro">
+                            <span class="carro-card-recomendacao">Intermediário</span>
+                            <div class="recomendacao-btn">
+                                <button class="car-pesquisar">Ver Mais</button>
+                            </div>
+                            <img src={Rec_Inter} class="img-card-recomendacao"/>
+                        </div>
+
+                        <div class="card-recomendacao-carro">
+                            <img src={Rec_Lux} class="img-card-recomendacao"/>
+                            <span class="carro-card-recomendacao">Luxo</span>
+                            <div class="recomendacao-btn">
+                                <button class="car-pesquisar">Ver Mais</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
