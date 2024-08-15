@@ -4,7 +4,7 @@
     background-color: white;
     border-radius: 8px;
     height: 275px;
-    width: 365px;
+    width: 100%;
 }
 
 /* Cabeçalho */
@@ -12,8 +12,8 @@
 .header-calendario-perfil{
     display: grid;
     grid-template-columns: 80% auto;
-    padding-right: 8px;
-    padding-left: 8px;
+    padding-right: 12px;
+    padding-left: 12px;
 
     align-items: center;
 }
@@ -60,8 +60,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 8px;
-    padding-left: 8px;
+    padding-right: 12px;
+    padding-left: 12px;
     background-color: #FF6E5A;
 }
 
@@ -77,6 +77,9 @@
     display: grid;
     grid-template-columns: repeat(7, auto);
     grid-template-rows: repeat(5, 40px);
+    justify-content: space-between;
+    padding-right: 12px;
+    padding-left: 12px;
     align-content: center;
 }
 

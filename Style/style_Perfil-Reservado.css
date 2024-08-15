@@ -17,21 +17,84 @@
     font-size: 40px;
 }
 
-.cards-plano-reservados-perfil{
+.cards-planos-reservados-perfil{
     display: grid;
     grid-template-rows: 15% auto auto;
-    grid-template-areas: 
-    "heads-reservados-perfil"
-    "plano-reservados-perfil"
-    "plano-reservados-perfil";
 }
 
 .heads-reservados-perfil{
-    grid-area: heads-reservados-perfil;
-
-    grid-template-columns: none ;
+    display: grid;
+    grid-template-columns: 15% 30% 20% 20% 15%;
+    margin-top: 15px;
 }
 
-.paginas-plano-reservados-perfil{
+.headNome-tabela-reservado, 
+.headPreco-tabela-reservado, 
+.headLocalizacao-tabela-reservado{
+    font-size: 20px;
+    font-weight: 350;
+}
 
+.plano-reservados-perfil{
+    display: grid;
+    grid-template-columns: 15% 30% 20% 20% 15%;
+    align-items: center;
+    border-bottom: 1px solid #00000060;
+}
+
+.imagemViagem-reservado-perfil{
+    width: 95px;
+    height: 95px;
+    border-radius: 8px;
+}
+
+.nomeViagem-reservado-perfil,
+.precoViagem-reservado-perfil,
+.localizacaoViagem-reservado-perfil{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.botoes-reservado-perfil{
+    display: flex;
+    justify-content: space-evenly;
+    height: 70%;
+    border-left: 1px solid #00000060;
+}
+
+.btnEditar-reservado-perfil{
+    display: flex;
+    align-self: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-image: url(../Images/icones-perfil/editar.png);
+    background-color: #004369;
+    background-size: 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.btnExcluir-reservado-perfil{
+    display: flex;
+    align-self: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-image: url(../Images/icones-perfil/excluir.png);
+    background-color: #BC0B0B;
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.btnEditar-reservado-perfil:hover,
+.btnExcluir-reservado-perfil:hover{
+    transition: 0.1s;
+    width: 42px;
+    height: 42px;
 }
