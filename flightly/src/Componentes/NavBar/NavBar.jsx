@@ -70,31 +70,31 @@ export default function NavBar() {
           <ul className={`perfil-dropdown-list ${isDropdownActive ? 'active' : ''}`}>
             <span className="title-popUp">Nome do usuário</span>
             <li className="perfil-dropdown-list-item">
-              <a href="#">
+              <a>
                 <img src={Notificacoes_popUp} alt="Notificações" />
                 Notificações
               </a>
             </li>
             <li className="perfil-dropdown-list-item">
-              <a href="./Cadastro">
+              <a>
                 <img src={Perfil_popUp} alt="Seu perfil" />
                 Seu perfil
               </a>
             </li>
             <li className="perfil-dropdown-list-item">
-              <a href="#">
+              <a>
                 <img src={Plano_popUp} alt="Planos de viagem" />
                 Planos de viagem
               </a>
             </li>
             <li className="perfil-dropdown-list-item">
-              <a href="#">
+              <a>
                 <img src={Quiz_popUp} alt="Quiz" />
                 Quiz
               </a>
             </li>
             <li className="perfil-dropdown-list-item">
-              <a href="#">
+              <a>
                 <img src={Sair_popUp} alt="Sair" />
                 Sair
               </a>
