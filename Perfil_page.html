@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flightly</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="Style/style.css">
-    <link rel="stylesheet" href="Style/style_Perfil.css">
+    <link rel="stylesheet" href="Style/style_Perfil-Dados.css">
+    <link rel="stylesheet" href="Style/style_Perfil-Andamento.css">
+    <link rel="stylesheet" href="Style/style_Perfil-Reservado.css">
+    <link rel="stylesheet" href="Style/style_Perfil-Calendario.css">
 </head>
 
 <body>
@@ -86,20 +90,131 @@
         </div>
     </header>
     <!------------------FIM DA  Navbar  --------------------->
+
     <div class="main-grid-perfil">
         <div class="dados-perfil">
-            <label class="titulo-dados-perfil">Perfil</label>
-            <img src="Images/icones-perfil/editar.png" class="editar-perfil">
-                <a href=""></a>
-            </img>
-
+            <div class="titulo-dados-perfil">
+                <label class="titulo-perfil">Perfil</label>
+                <a href="#">
+                    <img src="Images/icones-perfil/editar.png" class="editar-perfil" alt="Botão de Editar Perfil"></img>
+                </a>
+            </div>
+            <div class="info-dados-perfil">
+                <img src="Images/icones-perfil/foto-perfil.png" class="userfoto-perfil" alt="Foto de Perfil do Usuário">
+                <label class="usernome-perfil">Thiago Elias</label>
+                <label class="useremail-perfil">thiago.elias@gmail.com</label>
+                <label class="usersenha-perfil">✱✱✱✱✱✱✱</label>
+                <label class="usernasc-perfil">05/01/2000</label>
+            </div>
+            <div class="userperfil-perfil">
+                <hr class="hr-perfil-cima">
+                <label class="titulo-userperfil">Perfil do Viajante</label>
+                <label class="userperfil">Aventureiro</label>    
+                <hr class="hr-perfil-baixo">
+            </div>
+            <div class="calendario-perfil">
+                <div class="calendario-box">
+                    <div class="header-calendario-perfil">
+                        <div class="mesAno-calendario-perfil">
+                            <div id="mes-calendario" class="mes-calendario-perfil"></div>
+                            <div id="ano-calendario" class="ano-calendario-perfil"></div>
+                        </div>
+                        <div class="btnAntSeg-calendario-perfil">
+                            <button id="btnAnt" class="btnAnt-calendario">
+                                <img src="Images/icones-perfil/anterior.png" class="ant-calendario-perfil" alt="Botão de Voltar mês do Calendário">
+                            </button>
+                            <button id="btnSeg" class="btnSeg-calendario">
+                                <img src="Images/icones-perfil/seguinte.png" class="seg-calendario-perfil" alt="Botão de Voltar mês do Calendário">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="semana-calendario-perfil">
+                        <label for="" class="diaSemana-calendario">Dom</label>
+                        <label for="" class="diaSemana-calendario">Seg</label>
+                        <label for="" class="diaSemana-calendario">Ter</label>
+                        <label for="" class="diaSemana-calendario">Qua</label>
+                        <label for="" class="diaSemana-calendario">Qui</label>
+                        <label for="" class="diaSemana-calendario">Sex</label>
+                        <label for="" class="diaSemana-calendario">Sab</label>
+                    </div>
+                    <div class="datas" id="datas"></div>
+                </div>
+                <hr class="hr-calendario-baixo">
+            </div>
+            <div class="div-logout-perfil">
+                <button class="btn-logout-perfil">
+                    <img src="Images/icones-perfil/logout.png" alt="Botão de Logout">
+                </button>
+            </div>
         </div>
         <div class="planos-andamento-perfil">
+            <div class="titulo-planos-andamento-perfil">
+                <label class="titulo-andamento-perfil">Planejamentos em Andamento</label>
+                <a href="" class="ver-todos-andamento-perfil">Ver Todos</a>
+            </div>
+            <div class="cards-plano-andamento-perfil">
+                <div class="card-andamento-perfil">
+                    <img src="Images/icones-perfil/recife.png" class="foto-local-perfil" alt="Foto Panorâmica de Recife">
+                    <label class="nome-local-perfil">Recife</label>
+                    <div class="preco-editar-local-perfil">
+                        <label class="preco-local-perfil">R$ 3.500,00</label>
+                        <a href="#"  class="btn-editar-local-perfil">
+                            <img src="Images/icones-perfil/editar.png" class="btn-editar-local-perfil" alt="Botão de Editar Viagem em Andamento"></img>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-andamento-perfil">
+                    <img src="Images/icones-perfil/recife.png" class="foto-local-perfil" alt="Foto Panorâmica de Recife">
+                    <label class="nome-local-perfil">Recife</label>
+                    <div class="preco-editar-local-perfil">
+                        <label class="preco-local-perfil">R$ 3.500,00</label>
+                        <a href="#"  class="btn-editar-local-perfil">
+                            <img src="Images/icones-perfil/editar.png" class="btn-editar-local-perfil" alt="Botão de Editar Viagem em Andamento"></img>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-andamento-perfil">
+                    <img src="Images/icones-perfil/recife.png" class="foto-local-perfil" alt="Foto Panorâmica de Recife">
+                    <label class="nome-local-perfil">Recife</label>
+                    <div class="preco-editar-local-perfil">
+                        <label class="preco-local-perfil">R$ 3.500,00</label>
+                        <a href="#"  class="btn-editar-local-perfil">
+                            <img src="Images/icones-perfil/editar.png" class="btn-editar-local-perfil" alt="Botão de Editar Viagem em Andamento"></img>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-andamento-perfil">
+                    <img src="Images/icones-perfil/recife.png" class="foto-local-perfil" alt="Foto Panorâmica de Recife">
+                    <label class="nome-local-perfil">Recife</label>
+                    <div class="preco-editar-local-perfil">
+                        <label class="preco-local-perfil">R$ 3.500,00</label>
+                        <a href="#"  class="btn-editar-local-perfil">
+                            <img src="Images/icones-perfil/editar.png" class="btn-editar-local-perfil" alt="Botão de Editar Viagem em Andamento"></img>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="planos-reservados-perfil">
+            <div class="titulo-planos-reservados-perfil">
+                <label class="titulo-reservados-perfil">Histórico de Planos Reservados</label>
+            </div>
+            <div class="cards-planos-reservados-perfil">
+                <div class="heads-reservados-perfil">
+
+                </div>
+                <div class="plano-reservados-perfil">
+
+                </div>
+                <div class="plano-reservados-perfil">
+
+                </div>
+            </div>
+            <div class="paginas-plano-andamento-perfil">
+
+            </div>
         </div>
     </div>
-
 
     <!------------------ FOOTER  --------------------->
     <footer>
@@ -107,6 +222,7 @@
     <!------------------ FIM DO FOOTER  --------------------->
 
     <script src="./Js/script_navbar.js"></script>
+    <script src="./Js/script_calendario.js"></script>
 </body>
 
 </html>

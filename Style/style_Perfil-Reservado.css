@@ -1,0 +1,37 @@
+/* Direita em Baixo: Planos já Reservados pelo Usuário */
+
+.planos-reservados-perfil{
+    grid-area: planos-reservados;
+
+    display: grid;
+    grid-template-rows: 15% 65% 20%;
+
+    padding: 12px;
+    margin-left: 10px;
+}
+
+.titulo-reservados-perfil{
+    align-self: center;
+
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.cards-plano-reservados-perfil{
+    display: grid;
+    grid-template-rows: 15% auto auto;
+    grid-template-areas: 
+    "heads-reservados-perfil"
+    "plano-reservados-perfil"
+    "plano-reservados-perfil";
+}
+
+.heads-reservados-perfil{
+    grid-area: heads-reservados-perfil;
+
+    grid-template-columns: none ;
+}
+
+.paginas-plano-reservados-perfil{
+
+}

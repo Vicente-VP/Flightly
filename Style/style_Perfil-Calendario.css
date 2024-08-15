@@ -1,0 +1,134 @@
+.calendario-box{
+    display: grid;
+    grid-template-rows: 15% 10% auto;
+    background-color: white;
+    border-radius: 8px;
+    height: 275px;
+    width: 365px;
+}
+
+/* Cabeçalho */
+
+.header-calendario-perfil{
+    display: grid;
+    grid-template-columns: 80% auto;
+    padding-right: 8px;
+    padding-left: 8px;
+
+    align-items: center;
+}
+
+.mesAno-calendario-perfil{
+    display: flex;
+}
+
+.mes-calendario-perfil{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.ano-calendario-perfil{
+    display: flex;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    align-self: center;
+}
+
+.btnAntSeg-calendario-perfil{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap: 28px;
+}
+
+.btnAnt-calendario, 
+.btnSeg-calendario{
+    display: flex;
+    align-self: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dias da Semana */
+
+.semana-calendario-perfil{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 8px;
+    padding-left: 8px;
+    background-color: #FF6E5A;
+}
+
+.diaSemana-calendario{
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+/* Dias */
+
+.datas{
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    grid-template-rows: repeat(5, 40px);
+    align-content: center;
+}
+
+/* Estilo geral para todos os dias */
+.data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0; /* Remove o padding interno */
+    margin: auto;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.data:hover{
+    color: #FF6E5A;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Estilo para os dias ativos */
+.data.active {
+    background-color: #FF6E5A;
+    color: #fff;
+    width: 35px; /* Ajuste o tamanho do círculo */
+    height: 35px; /* Ajuste o tamanho do círculo */
+    border-radius: 50%; /* Faz o círculo perfeito */
+    transition: 0.2s;
+    display: flex;
+    align-self: center;
+    justify-content: center; /* Garante que o número esteja centralizado */
+    margin: auto; /* Centraliza o círculo dentro do grid */
+}
+
+/* Estilo para dias inativos */
+.data-inativa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: auto;
+    border-radius: 50%;
+    transition: 0.2s;
+    color: #00000080;
+    font-size: 16px;
+    font-weight: 500;
+}
+.data-inativa:hover {
+    color: #00000040;
+    text-decoration: underline;
+    cursor: pointer;
+}

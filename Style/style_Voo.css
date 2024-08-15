@@ -51,7 +51,7 @@
     padding-bottom: 25px;
 
     background: linear-gradient(to bottom, #ffffff80, #ffffff40);
-    border: 1.5px solid #a6a6a680;
+    /*border: 1.5px solid #a6a6a680;*/
     border-radius: 20px;
     z-index: 1;
 }
