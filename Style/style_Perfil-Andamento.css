@@ -26,6 +26,7 @@
 
 .ver-todos-andamento-perfil{
     align-self: end;
+    justify-self: center;
     margin-bottom: 9.5px;
     font-weight: 400;
     font-size: 18px;

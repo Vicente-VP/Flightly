@@ -27,7 +27,7 @@
 
     grid-area: dados;
     display: grid;
-    grid-template-rows: 8% 32% 16% 35% 9%;
+    grid-template-rows: 8% 30% 14% 39% 9%;
     padding: 18px;
 }
 
@@ -92,7 +92,7 @@
 .usernasc-perfil{
     justify-self: center;
     align-self: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 
     font-size: 18px;
     font-weight: 400px;
@@ -109,7 +109,7 @@
 
 .hr-perfil-cima{
     background-color: #00000080;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .titulo-userperfil{
@@ -128,25 +128,25 @@
 
 .hr-perfil-baixo{
     background-color: #00000080;
-    margin-top: 35px;
+    margin-top: 25px;
 }
 
 /* Calendário */
 
 .calendario-perfil{
     display: grid;
-    align-content: end;
+    align-content: center;
 }
 
 .hr-calendario-baixo{
     background-color: #00000080;
-    margin-top: 15px;
 }
 
 /* Botão de Logout */
 
 .div-logout-perfil{
-    display: flex;
+    display: grid;
+    grid-template-rows: 1px auto;
     align-content: top;
 }
 

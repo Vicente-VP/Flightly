@@ -69,7 +69,7 @@
     width: 40px;
     height: 40px;
     border: none;
-    background-image: url(../Images/icones-perfil/editar.png);
+    background-image: url(../Images/icones-perfil/editar-branco.png);
     background-color: #004369;
     background-size: 28px;
     background-position: center;
@@ -97,4 +97,79 @@
     transition: 0.1s;
     width: 42px;
     height: 42px;
+}
+
+/* Opções de páginas de planos reservados */
+
+.paginas-plano-reservado-perfil{
+    display: grid;
+    grid-template-columns: 85% 15%;
+    align-items: center;
+}
+
+.numeros-paginas-reservado{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    margin-left: 28px;
+}
+
+.pagAtiva-plano-reservado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    border: none;
+    background-color: #FF6E5A;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.pagInativa-plano-reservado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #000;
+    font-size: 24px;
+    font-weight: 350;
+    text-decoration: underline;
+}
+
+.pagExtras-plano-reservado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #000;
+    font-size: 24px;
+    font-weight: 350;
+}
+
+.navegar-plano-reservado-perfil{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btnVoltar-reservado, 
+.btnSeguir-reservado{
+    display: flex;
+    align-self: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.img-voltar-reservado,
+.img-seguir-reservado{
+    width: 18px;
+    height: 25px;
 }
