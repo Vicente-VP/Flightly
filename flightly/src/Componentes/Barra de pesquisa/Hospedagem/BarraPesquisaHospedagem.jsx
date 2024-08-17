@@ -1,10 +1,10 @@
-import filter_search_bar from '../../Images/Barra_Pesquisa/filter-search-bar.png';
-import destino_icon from '../../Images/Barra_Pesquisa/destino_icon.png';
-import ida_volta_icon from '../../Images/Barra_Pesquisa/ida_volta_icon.png';
-import passageiro_icon from '../../Images/Barra_Pesquisa/passageiro_icon.png';
-import quartos_icon from '../../Images/Barra_Pesquisa/quartos_icon.png';
+import filter_search_bar from '../../../Images/Barra_Pesquisa/filter-search-bar.png';
+import destino_icon from '../../../Images/Barra_Pesquisa/destino_icon.png';
+import ida_volta_icon from '../../../Images/Barra_Pesquisa/ida_volta_icon.png';
+import passageiro_icon from '../../../Images/Barra_Pesquisa/passageiro_icon.png';
+import quartos_icon from '../../../Images/Barra_Pesquisa/quartos_icon.png';
 
-import './styleBarraPesquisaHospedagem';
+import './styleBarraPesquisaHospedagem.css';
 
 export default function PesquisaHospedagem(){
     return(

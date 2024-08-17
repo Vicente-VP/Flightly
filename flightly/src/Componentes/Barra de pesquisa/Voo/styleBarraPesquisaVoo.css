@@ -73,6 +73,10 @@
   padding-left: 35px;
 }
 
+.origem:focus{
+  outline: none;
+}
+
 .destino{
   font-family: "Poppins", sans-serif;
 
@@ -86,6 +90,10 @@
   background-position: 10px; 
   background-repeat: no-repeat;
   padding-left: 35px;
+}
+
+.destino:focus{
+  outline: none;
 }
 
 .search-data{
@@ -107,6 +115,7 @@
 
 .ida{
   font-family: "Poppins", sans-serif;
+  color: black;
 
   border-right: 0.8px solid #BFC1C3;
   border-bottom: none;
@@ -124,6 +133,10 @@
 
 }
 
+.ida:focus{
+  outline: none;
+}
+
 .volta{
   font-family: "Poppins", sans-serif;
 
@@ -137,6 +150,10 @@
   background-position: 10px; 
   background-repeat: no-repeat;
   padding-left: 35px;
+}
+
+.volta:focus{
+  outline: none;
 }
 
 input[type="date"]::-webkit-inner-spin-button,
@@ -181,6 +198,10 @@ input[type=date]::-webkit-datetime-edit {
   padding-left: 35px;
 }
 
+.passageiro:focus{
+  outline: none;
+}
+
 .search-classe{
   display: flex;
   flex-direction: column;
@@ -206,4 +227,8 @@ input[type=date]::-webkit-datetime-edit {
   background-position: 10px; 
   background-repeat: no-repeat;
   padding-left: 35px;
+}
+
+.classe:focus{
+  outline: none;
 }

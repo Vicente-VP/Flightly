@@ -1,9 +1,9 @@
-import filter_search_bar from '../../Images/Barra_Pesquisa/filter-search-bar.png';
-import Origem_icon from '../../Images/Barra_Pesquisa/Origem_icon.png';
-import destino_icon from '../../Images/Barra_Pesquisa/destino_icon.png';
-import ida_volta_icon from '../../Images/Barra_Pesquisa/ida_volta_icon.png';
-import passageiro_icon from '../../Images/Barra_Pesquisa/passageiro_icon.png';
-import classe_icon from '../../Images/Barra_Pesquisa/classe_icon.png';
+import filter_search_bar from '../../../Images/Barra_Pesquisa/filter-search-bar.png';
+import Origem_icon from '../../../Images/Barra_Pesquisa/Origem_icon.png';
+import destino_icon from '../../../Images/Barra_Pesquisa/destino_icon.png';
+import ida_volta_icon from '../../../Images/Barra_Pesquisa/ida_volta_icon.png';
+import passageiro_icon from '../../../Images/Barra_Pesquisa/passageiro_icon.png';
+import classe_icon from '../../../Images/Barra_Pesquisa/classe_icon.png';
 
 
 import './styleBarraPesquisaVoo.css';
