@@ -167,6 +167,7 @@ input[type=date]::-webkit-datetime-edit {
 
 .passageiro{
   font-family: "Poppins", sans-serif;
+  color: #BFC1C3;
 
   border-radius: 10px;
   border: none;
@@ -177,6 +178,18 @@ input[type=date]::-webkit-datetime-edit {
   background-position: 10px; 
   background-repeat: no-repeat;
   padding-left: 35px;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.passageiro option{
+  background-color: #d0e4f0;
+
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
 }
 
 .passageiro:focus{
@@ -198,6 +211,7 @@ input[type=date]::-webkit-datetime-edit {
 
 .tipo{
   font-family: "Poppins", sans-serif;
+  color: #BFC1C3;
 
   border-radius: 10px;
   border: none;
@@ -208,6 +222,18 @@ input[type=date]::-webkit-datetime-edit {
   background-position: 10px; 
   background-repeat: no-repeat;
   padding-left: 35px;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.tipo option{
+  background-color: #d0e4f0;
+
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
 }
 
 .tipo:focus{

@@ -29,11 +29,21 @@ export default function PesquisaHospedagem(){
                 </div>
                 <div className="search-hospedes">
                     <span>Hóspedes</span>
-                    <input type="text" placeholder="1" className="hospedes" style={{ backgroundImage: `url(${passageiro_icon})` }}/>
+                    <select name="hospedes" className="hospedes" style={{ backgroundImage: `url(${passageiro_icon})` }}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4+">4+</option>
+                    </select>
                 </div>
                 <div className="search-quartos">
-                    <span>Quartos</span>
-                    <input type="text" placeholder="1" className="quartos" style={{ backgroundImage: `url(${quartos_icon})` }}/>
+                    <span>Camas</span>
+                    <select name="camas" className="quartos" style={{ backgroundImage: `url(${quartos_icon})` }}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4+">4+</option>
+                    </select>
                 </div>
                 <div className="btn-pesquisar-hospedagem">
                     <button className="btn-submit-hospedagem">Pesquisar</button>

@@ -35,11 +35,17 @@ export default function PesquisaVoo() {
                 </div>
                 <div className="search-passageiros">
                     <span>Passageiros</span>
-                    <input type="text" placeholder="1" className="passageiro" style={{ backgroundImage: `url(${passageiro_icon})` }}/>
+                    <select name="classe" className="passageiro" style={{ backgroundImage: `url(${passageiro_icon})` }}>
+                        <option value="2a4">2 a 4</option>
+                        <option value="5a8">5 a 8</option>
+                    </select>
                 </div>
                 <div className="search-classe">
                     <span>Classe</span>
-                    <input type="text" placeholder="Executiva" className="classe" style={{ backgroundImage: `url(${classe_icon})` }}/>
+                    <select name="classe" className="classe" style={{ backgroundImage: `url(${classe_icon})` }}>
+                        <option value="economica">Econômica</option>
+                        <option value="primeira">Primeira classe</option>
+                    </select>
                 </div>
                 <div className="btn-pesquisar-voo">
                     <button className="btn-submit-voo">Pesquisar</button>

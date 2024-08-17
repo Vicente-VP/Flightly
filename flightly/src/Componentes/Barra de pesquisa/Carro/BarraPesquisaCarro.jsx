@@ -29,11 +29,19 @@ export default function PesquisaCarro(){
                 </div>
                 <div className="search-passageiros">
                     <span>Passageiros</span>
-                    <input type="text" placeholder="(opcional)" className="passageiro" style={{ backgroundImage: `url(${passageiro_icon})` }}/>
+                    <select name="TipoCarro" className="passageiro" style={{ backgroundImage: `url(${passageiro_iconicon})` }}>
+                        <option value="2">2</option>
+                        <option value="5">5</option>
+                        <option value="6+">6+</option>
+                    </select>
                 </div>
                 <div className="search-tipo">
                     <span>Tipo</span>
-                    <input type="text" placeholder="(opcional)" className="tipo" style={{ backgroundImage: `url(${tipoCarro_icon})` }}/>
+                    <select name="TipoCarro" className="tipo" style={{ backgroundImage: `url(${tipoCarro_icon})` }}>
+                        <option value="economico">Econômico</option>
+                        <option value="intermediario">Intermediário</option>
+                        <option value="luxo">Luxo</option>
+                    </select>
                 </div>
                 <div className="btn-pesquisar-voo">
                     <button className="btn-submit-voo">Pesquisar</button>
