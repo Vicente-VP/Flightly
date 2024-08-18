@@ -47,7 +47,7 @@ export default function Carro_page (){
                                     <label class="car-etiqueta">Data de Retirada</label>
                                 </div>
                                 <div class="car-input-class">
-                                    <input type="date" class="car-input" id="pickup-date" name="pickup-date" value="2024-06-21"
+                                    <input type="date" class="car-input" id="pickup-date" name="pickup-date" placeholder="21/06/2024"
                                         style={{ backgroundImage: `url(${IdaVolta_Form})` }}/>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@ export default function Carro_page (){
                                     <label class="car-etiqueta">Data de devolução</label>
                                 </div>
                                 <div class="car-input-class">
-                                    <input type="date" class="car-input" id="return-date" name="return-date" value="2024-06-30"
+                                    <input type="date" class="car-input" id="return-date" name="return-date" placeholder="30/06/2024"
                                         style={{ backgroundImage: `url(${IdaVolta_Form})` }}/>
                                 </div>
                             </div>
@@ -123,14 +123,14 @@ export default function Carro_page (){
                         <div class="card-recomendacao-carro">
                             <img src={Rec_Eco} class="img-card-recomendacao"/>
                             <span class="carro-card-recomendacao">Econômico</span>
-                            <div class="recomendacao-btn">
+                            <div class="recomendacao-btn-eco">
                                 <button class="car-pesquisar">Ver Mais</button>
                             </div>
                         </div>
 
                         <div class="card-recomendacao-carro">
                             <span class="carro-card-recomendacao">Intermediário</span>
-                            <div class="recomendacao-btn">
+                            <div class="recomendacao-btn-inter">
                                 <button class="car-pesquisar">Ver Mais</button>
                             </div>
                             <img src={Rec_Inter} class="img-card-recomendacao"/>
@@ -138,8 +138,8 @@ export default function Carro_page (){
 
                         <div class="card-recomendacao-carro">
                             <img src={Rec_Lux} class="img-card-recomendacao"/>
-                            <span class="carro-card-recomendacao">Luxo</span>
-                            <div class="recomendacao-btn">
+                            <span class="carro-card-recomendacao">Luxuoso</span>
+                            <div class="recomendacao-btn-lux">
                                 <button class="car-pesquisar">Ver Mais</button>
                             </div>
                         </div>
