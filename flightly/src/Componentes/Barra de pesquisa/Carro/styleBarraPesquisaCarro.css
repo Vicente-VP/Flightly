@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.container-search {
+    margin: auto;
+    border-radius: 20px;
+    border: 1px solid #d3d3d3; 
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 98px;
+    width: 1325px;
+    
+    background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
+}
+
+.container-search > img{
+  width: 37px;
+  height: 34px;
+
+  margin-left: 10px;
+}
+
+.btn-pesquisar-voo {
+    display: flex;
+    justify-content: center;
+
+    margin-right: 10px;
+}
+
+.btn-submit-voo {
+    width: 177px;
+    height: 40px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #FF6600;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
+}
+
+.search-local{
+  display: flex;
+  margin: 0 30px 17px 30px;
+}
+
+.search-local > div{
+  display: flex;
+  flex-direction: column;
+}
+
+.search-local > div > span{
+  font-family: "Poppins", sans-serif;
+  color: #004369;
+  font-weight: 450;
+  font-size: 15px;
+}
+
+.destino{
+  font-family: "Poppins", sans-serif;
+
+  border: none;
+  border-radius: 10px 10px 10px 10px;
+
+  width: 164px;
+  height: 35px;
+
+  background-size: 20px;
+  background-position: 10px; 
+  background-repeat: no-repeat;
+  padding-left: 35px;
+}
+
+.destino:focus{
+  outline: none;
+}
+
+.search-data{
+  display: flex;
+  margin: 0 30px 17px 0;
+}
+
+.search-data > div{
+  display: flex;
+  flex-direction: column;
+}
+
+.search-data > div > span{
+  font-family: "Poppins", sans-serif;
+  color: #004369;
+  font-weight: 450;
+  font-size: 15px;
+}
+
+.ida{
+  font-family: "Poppins", sans-serif;
+
+  border-right: 0.8px solid #BFC1C3;
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+  border-radius: 10px 0 0 10px;
+
+  height: 35px;
+  width: 200px;
+
+  background-size: 20px;
+  background-position: 10px; 
+  background-repeat: no-repeat;
+  padding-left: 35px;
+
+}
+
+.ida:focus{
+  outline: none;
+}
+
+.volta{
+  font-family: "Poppins", sans-serif;
+
+  border: none;
+  border-radius: 0 10px 10px 0;
+
+  height: 35px;
+  width: 164px;
+
+  background-size: 20px;
+  background-position: 10px; 
+  background-repeat: no-repeat;
+  padding-left: 35px;
+}
+
+.volta:focus{
+  outline: none;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+input[type=date]::-webkit-datetime-edit {
+  color: #BFC1C3;
+}
+
+::placeholder{
+  color: #BFC1C3;
+}
+
+
+.search-passageiros{
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px 17px 0;
+}
+
+.search-passageiros> span{
+  font-family: "Poppins", sans-serif;
+  color: #004369;
+  font-weight: 450;
+  font-size: 15px;
+}
+
+.passageiro{
+  font-family: "Poppins", sans-serif;
+  color: #BFC1C3;
+
+  border-radius: 10px;
+  border: none;
+  height: 35px;
+  width: 126px;
+
+  background-size: 20px;
+  background-position: 10px; 
+  background-repeat: no-repeat;
+  padding-left: 35px;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.passageiro option{
+  background-color: #d0e4f0;
+
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.passageiro:focus{
+  outline: none;
+}
+
+.search-tipo{
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px 17px 0;
+}
+
+.search-tipo> span{
+  font-family: "Poppins", sans-serif;
+  color: #004369;
+  font-weight: 450;
+  font-size: 15px;
+}
+
+.tipo{
+  font-family: "Poppins", sans-serif;
+  color: #BFC1C3;
+
+  border-radius: 10px;
+  border: none;
+  height: 35px;
+  width: 126px;
+
+  background-size: 20px;
+  background-position: 10px; 
+  background-repeat: no-repeat;
+  padding-left: 35px;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.tipo option{
+  background-color: #d0e4f0;
+
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.tipo:focus{
+  outline: none;
+}
+
+span{
+  list-style-type:none;
+}
