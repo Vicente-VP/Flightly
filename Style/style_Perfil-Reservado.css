@@ -4,7 +4,7 @@
     grid-area: planos-reservados;
 
     display: grid;
-    grid-template-rows: 15% 65% 20%;
+    grid-template-rows: 15% auto;
 
     padding: 12px;
     margin-left: 10px;
@@ -19,7 +19,7 @@
 
 .cards-planos-reservados-perfil{
     display: grid;
-    grid-template-rows: 15% auto auto;
+    grid-template-rows: 15% auto;
 }
 
 .heads-reservados-perfil{
@@ -35,10 +35,11 @@
     font-weight: 350;
 }
 
-.plano-reservados-perfil{
+.planoEspecifico-reservados-perfil{
     display: grid;
     grid-template-columns: 15% 30% 20% 20% 15%;
     align-items: center;
+    padding-bottom: 15px;
     border-bottom: 1px solid #00000060;
 }
 
@@ -58,7 +59,7 @@
 .botoes-reservado-perfil{
     display: flex;
     justify-content: space-evenly;
-    height: 70%;
+    height: 95%;
     border-left: 1px solid #00000060;
 }
 
@@ -114,7 +115,20 @@
     margin-left: 28px;
 }
 
-.pagAtiva-plano-reservado{
+.pagNum-plano-reservado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #000;
+    font-size: 24px;
+    font-weight: 350;
+    text-decoration: underline;
+}
+
+.pagNum-plano-reservado.pagAtiva{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,19 +141,7 @@
     color: #fff;
     font-size: 20px;
     font-weight: 400;
-}
-
-.pagInativa-plano-reservado{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: #000;
-    font-size: 24px;
-    font-weight: 350;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .pagExtras-plano-reservado{
@@ -172,4 +174,40 @@
 .img-seguir-reservado{
     width: 18px;
     height: 25px;
+}
+
+/* Carrossel */
+
+.container-carrossel-reserados{
+    display: grid;
+    grid-template-rows: 72% auto;
+    position: relative;
+    width: auto;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container-carrossel-reserados .slide-plano-reservado-perfil{
+    width: 100%;
+    display: none;
+}
+
+.slide-plano-reservado-perfil{
+    display: grid;
+
+    align-content: space-between;
+}
+
+.slide-plano-reservado-perfil.mostrarSlide{
+    display: grid;
+    align-content: space-between;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+
+
+@keyframes fade {
+    from {opacity: .5}
+    to {opacity: 1}
 }
