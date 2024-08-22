@@ -1,16 +1,16 @@
 import React from 'react';
-import '../Styles/Style_Login.css';
-import NavBar from "../Componentes/NavBar/NavBar";
+import '../Login/Style_Login.css';
+import NavBar from "../../Componentes/NavBar/NavBar";
 
-import icon_apple from '../Images/Icones_Login_e_Cad/icon_apple.png';
-import icon_google from '../Images/Icones_Login_e_Cad/icon_google.png';
-import icon_face from '../Images/Icones_Login_e_Cad/icon_face.png';
+import icon_apple from '../../Images/Icones_Login_e_Cad/icon_apple.png';
+import icon_google from '../../Images/Icones_Login_e_Cad/icon_google.png';
+import icon_face from '../../Images/Icones_Login_e_Cad/icon_face.png';
   
 export default function Login (){
     return (
         <>
             <div style={{height: 76+'px'}}><NavBar/></div>
-
+        <div className="body_login">
             <div className="container">
             <div className="card-login-esq">
                 <div className="forms">
@@ -45,6 +45,7 @@ export default function Login (){
                     <a href="Cadastro_page.html" className="link_cad">É novo aqui?</a>
                 </div>
             </div>
+        </div>
         </div>
         </>
     )
