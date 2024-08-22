@@ -91,6 +91,37 @@
     </header>
     <!------------------FIM DA  Navbar  --------------------->
 
+    <div class="container-popup-editar-perfil">
+        <div class="topo-popup-perfil">
+            <button class="popup-userfoto-perfil">
+                <img src="Images/icones-perfil/foto-perfil.png" class="img-popup-userfoto-perfil" alt="Foto de Perfil do Usuário">
+            </button>
+            <button class="btn-fechar-popup-perfil" onclick="popupFecharPerfil()">
+                <img src="Images/icones-perfil/fechar.png" class="img-fechar-popup-perfil"
+                    alt="Botão de Editar Perfil"></img>
+            </button>
+        </div>
+         <div class="div-popup-perfil">
+            <label class="label-popup-perfil">Nome</label>
+            <input type="text" class="input-popup-perfil" placeholder="Insira o nome do usuário">
+         </div>
+         <div class="div-popup-perfil">
+            <label class="label-popup-perfil">E-mail</label>
+            <input type="text" class="input-popup-perfil" placeholder="Insira o email do usuário">
+         </div>
+         <div class="div-popup-perfil">
+            <label class="label-popup-perfil-data">Data de Nascimento</label>
+            <div class="div-data-popup-perfil">
+                <input type="number" class="input-popup-perfil-data" placeholder="Dia">
+                <input type="number" class="input-popup-perfil-data" placeholder="Mês">
+                <input type="number" class="input-popup-perfil-data" placeholder="Ano">
+            </div>
+         </div>
+         <div class="base-popup-perfil">
+            <button class="btn-alterar-dados-perfil" onclick="popupFecharPerfil()">Alterar</button>
+         </div>
+    </div>
+
     <div class="main-grid-perfil">
         <div class="dados-perfil">
             <div class="titulo-dados-perfil">
