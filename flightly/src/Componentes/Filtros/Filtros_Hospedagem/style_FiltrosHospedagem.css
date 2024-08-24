@@ -68,7 +68,7 @@
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 16px;
-  background-image: url('../../Images/Icones_Filtros_Hospedagem/icon_seta.png'); /* Altere o caminho para a sua seta personalizada */
+  background-image: url('../../../Images/Icones_Filtros_Hospedagem/icon_seta.png'); /* Altere o caminho para a sua seta personalizada */
 
   box-sizing: border-box;
 
@@ -97,7 +97,7 @@
     right: 43.51%;
     top: 13.79%;
     bottom: 78.54%;
-    background-image: url('../../Images/Icones_Filtros_Hospedagem/icon_tipoprop.png'), url('../../Images/Icones_Filtros_Hospedagem/icon_seta.png');
+    background-image: url('../../../Images/Icones_Filtros_Hospedagem/icon_tipoprop.png'), url('../../../Images/Icones_Filtros_Hospedagem/icon_seta.png');
     background-position: left 10px center, right 10px center;
     background-size: 24px, 16px;
 }
@@ -109,7 +109,7 @@
     top: 33.14%;
     bottom: 59.2%;
     
-    background-image: url('../../Images/Icones_Filtros_Hospedagem/icon_avaliacao.png'), url('../../Images/Icones_Filtros_Hospedagem/icon_seta.png');
+    background-image: url('../../../Images/Icones_Filtros_Hospedagem/icon_avaliacao.png'), url('../../../Images/Icones_Filtros_Hospedagem/icon_seta.png');
     background-position: left 10px center, right 10px center;
     background-size: 24px, 16px;
 }
@@ -121,7 +121,7 @@
     top: 50.77%;
     bottom: 41.57%;
 
-    background-image: url('../../Images/Icones_Filtros_Hospedagem/icon_comodidade.png'), url('../../Images/Icones_Filtros_Hospedagem/icon_seta.png');
+    background-image: url('../../../Images/Icones_Filtros_Hospedagem/icon_comodidade.png'), url('../../../Images/Icones_Filtros_Hospedagem/icon_seta.png');
     background-position: left 10px center, right 10px center;
     background-size: 24px, 16px;
 }

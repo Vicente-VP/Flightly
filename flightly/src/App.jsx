@@ -7,7 +7,6 @@ import CarroPage from './Pages/Home_Carro/CarroPage';
 import PontoTuristicoPage from './Pages/PontosTuristicosPage/PontoTuristicoPage';
 import Cadastro from './Pages/Cadastro/Cadastro';
 import Login from './Pages/Login/Login';
-import FiltrosHospedagem from './Componentes/Filtros_Hospedagem/FiltrosHospedagem';
 
 export default function App() {
   return (
@@ -20,7 +19,6 @@ export default function App() {
           <Route path="/PontosTuristicos" element={<PontoTuristicoPage/>}/>
           <Route path="/Cadastro" element={<Cadastro/>}/>
           <Route path="/Login" element={<Login/>}/>
-          <Route path="/FiltrosHospedagem" element={<FiltrosHospedagem/>}/>
         </Routes>
       </Router>
     </>
