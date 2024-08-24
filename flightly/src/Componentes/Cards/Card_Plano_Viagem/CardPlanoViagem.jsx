@@ -5,7 +5,7 @@ export default function CardPlanoViagem(){
     return(
         <>
             <div className="plane-card">
-                <img src={FUndoPlano} alt="Imagem do Plano de Viagem"/>
+                <img src={FundoPlano} alt="Imagem do Plano de Viagem"/>
                 <div className="plane-information">
                     <span className="plane-title">São Paulo</span>
                     <span className="plane-date">11/07 - 21/07</span>
