@@ -160,6 +160,8 @@ body {
   
     width: 100px;
     height: 40px;
+
+    transition: all 0.1s ease-in-out;
   }
   
   .button-companies-localiza{
@@ -182,6 +184,8 @@ body {
     margin-left: 8px;
     width: 106px;
     height: 40px;
+
+    transition: all 0.1s ease-in-out;
   }
   
   .button-companies-foco{
@@ -204,9 +208,34 @@ body {
     margin-left: 8px;
     width: 85px;
     height: 40px;
+
+    transition: all 0.1s ease-in-out;
   }
 
+.button-companies-foco:hover{
+  background-color: #b2c9db25;
+  cursor: pointer;
+  color: #004369;
+  border: 2px solid #004369; 
+  font-weight: 500;
+}
+
+.button-companies-localiza:hover{
+  background-color: #b2c9db25;
+  cursor: pointer;
+  color: #004369;
+  border: 2px solid #004369; 
+  font-weight: 500;
+}
   
+.button-companies-movida:hover{
+  background-color: #b2c9db25;
+  cursor: pointer;
+  color: #004369;
+  border: 2px solid #004369; 
+  font-weight: 500;
+}
+
 .btn-pesq-filtrohosp{
     width: 177px;
     height: 46px;
