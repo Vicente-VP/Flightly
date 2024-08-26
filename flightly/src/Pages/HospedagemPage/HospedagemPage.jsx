@@ -1,5 +1,5 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
-import Footer from "../../Componentes/Footer/Footer"
+import Footer from "../../Componentes/Footer/Footer";
 
 import Mala_Card from '../../Images/Mala_Card.png';
 import idaVoltaIcon from '../../Images/Icones-Cards/ida-volta.png';
