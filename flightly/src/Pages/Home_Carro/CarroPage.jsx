@@ -2,7 +2,7 @@ import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer"
 
 
-import './style_carro.css';
+import './Style_carro.css';
 import Carro_Form from '../../Images/Carro_Card.png';
 import Origem_Form from '../../Images/Icones-Cards/origem.png';
 import IdaVolta_Form from '../../Images/Icones-Cards/ida-volta.png';
