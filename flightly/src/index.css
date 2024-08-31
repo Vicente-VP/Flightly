@@ -11,3 +11,7 @@
 body {
   min-height: 100vh;
 }
+
+button:hover, input[type=submit]:hover{
+  cursor: pointer;
+}
