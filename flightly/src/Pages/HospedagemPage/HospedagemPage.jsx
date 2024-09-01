@@ -1,5 +1,6 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
+import InfoVoo from "../../Componentes/Card_Informacoes/Voos/CardInfoVoo";
 
 import Mala_Card from '../../Images/Mala_Card.png';
 import idaVoltaIcon from '../../Images/Icones-Cards/ida-volta.png';
@@ -83,6 +84,8 @@ export default function Home() {
                 </div>
 
                 {/* ------------------ FIM DO CARD DE PESQUISA  ----------------- */}
+
+                <InfoVoo/>
 
                 {/* ------------------ VOOS MAIS POPULARES  --------------------- */}
                 {/* ------------------ FIM DE VOOS MAIS POPULARES  --------------------- */}

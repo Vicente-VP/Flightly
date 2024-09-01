@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.container-Card{
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+
+  width: 750px;
+  height: 220px;
+
+  border: 1.36px solid rgb(85, 85, 85, 0.29);
+  border-radius: 27.17px;
+}
+
+.left{
+  display: flex;
+  align-items: center;
+
+  gap: 62px;
+
+  margin: 0 0 0 50px;
+}
+
+.left > img{
+  width: 90px;
+  height: 144px;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  align-items: baseline;
+}
+
+.info > label{
+  font-family: "Poppins", sans-serif;
+  font-size: 35.46px;
+  font-weight: 500;
+}
+
+.info > span{
+  font-family: "Poppins", sans-serif;
+  font-size: 20.56px;
+  font-weight: 400;
+  color: #555555;
+}
+
+.ida-Volta{
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.ida{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  width: 150px;
+}
+
+.ida-local > span{
+  font-family: "Poppins", sans-serif;
+  font-size: 18.15px;
+  font-weight: 500;
+  color: black;
+}
+
+.ida-local{
+  font-family: "Poppins", sans-serif;
+  font-size: 16.63px;
+  font-weight: 300;
+  color: #555555;
+}
+
+.ida-date{
+  font-family: "Poppins", sans-serif;
+  font-size: 16.63px;
+  font-weight: 300;
+}
+
+.ida-scale{
+  font-family: "Poppins", sans-serif;
+  font-size: 10.94px;
+  font-weight: 300;
+
+  width: 127px;
+
+  text-align: center;
+  background-color: rgb(172, 198, 233, 0.54);
+  border-radius: 5.47px;
+}
+
+.volta{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  width: 150px;
+}
+
+.volta-local > span{
+  font-family: "Poppins", sans-serif;
+  font-size: 18.15px;
+  font-weight: 500;
+  color: black;
+}
+
+.volta-local{
+  font-family: "Poppins", sans-serif;
+  font-size: 16.63px;
+  font-weight: 300;
+  color: #555555;
+}
+
+.volta-date{
+  font-family: "Poppins", sans-serif;
+  font-size: 16.63px;
+  font-weight: 300;
+}
+
+.volta-scale{
+  font-family: "Poppins", sans-serif;
+  font-size: 10.94px;
+  font-weight: 300;
+
+  width: 127px;
+
+  text-align: center;
+  background-color: rgb(172, 198, 233, 0.54);
+  border-radius: 5.47px;
+}
+
+.right{
+  display: flex;
+  flex-direction: row;
+  align-items: center ;
+}
+
+.right hr{
+  box-shadow: none;
+  height: 180px;
+  width: 0.5px;
+
+  margin: 0 0 0 30px
+}
+
+
+.info-preco{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+  width: 220px;
+}
+
+.info-preco .preco{
+  text-align: left;
+}
+
+.preco{
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.preco-voo{
+  font-size: 41.74px;
+  color: black;
+}
+.preco label{
+  font-size: 12.88px;
+  color: #555555;
+}
+
+.imgs{
+  display: flex;
+  gap: 19.91px;
+}
