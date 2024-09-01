@@ -7,14 +7,14 @@ import Carro_Form from '../../Images/Carro_Card.png';
 import Origem_Form from '../../Images/Icones-Cards/origem.png';
 import IdaVolta_Form from '../../Images/Icones-Cards/ida-volta.png';
 
-import Loc_Allauto from '../../Images/Cards_Locadoras_Populares/Allauto.png'
-import Loc_Rental from '../../Images/Cards_Locadoras_Populares/Rental.png'
-import Loc_Citta from '../../Images/Cards_Locadoras_Populares/Citta.png'
-import Loc_Blue from '../../Images/Cards_Locadoras_Populares/Blue.png'
+import Loc_Allauto from '../../Images/Cards_Locadoras_Populares/Allauto.png';
+import Loc_Rental from '../../Images/Cards_Locadoras_Populares/Rental.png';
+import Loc_Citta from '../../Images/Cards_Locadoras_Populares/Citta.png';
+import Loc_Blue from '../../Images/Cards_Locadoras_Populares/Blue.png';
 
-import Rec_Eco from '../../Images/Card_Recomendacao_Carro/Rec_Eco.png'
-import Rec_Inter from '../../Images/Card_Recomendacao_Carro/Rec_Inter.png'
-import Rec_Lux from '../../Images/Card_Recomendacao_Carro/Rec_Lux.png'
+import Rec_Eco from '../../Images/Card_Recomendacao_Carro/Rec_Eco.png';
+import Rec_Inter from '../../Images/Card_Recomendacao_Carro/Rec_Inter.png';
+import Rec_Lux from '../../Images/Card_Recomendacao_Carro/Rec_Lux.png';
 
 export default function Carro_page (){
     return (
