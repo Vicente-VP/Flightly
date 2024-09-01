@@ -113,13 +113,13 @@ export default function FiltrosCarros(){
                 Locadoras
                 </label>
                 <div btn-companias>
-                    <button className="button-companies-movida" style={{ backgroundImage: `url(${movida})` }} /*style="background-image: url('images/movida-logo.png');"*/>Movida</button>
-                    <button className="button-companies-localiza" style={{ backgroundImage: `url(${localiza})` }} /*style="background-image: url('images/localiza-logo.png');"*/>Localiza</button>
-                    <button className="button-companies-foco" style={{ backgroundImage: `url(${foco})` }}/*style="background-image: url('images/foco-logo.png');"*/>Foco</button>
+                    <button className="button-companies-movida" style={{ backgroundImage: `url(${movida})` }}>Movida</button>
+                    <button className="button-companies-localiza" style={{ backgroundImage: `url(${localiza})` }}>Localiza</button>
+                    <button className="button-companies-foco" style={{ backgroundImage: `url(${foco})` }}>Foco</button>
                 </div>
             </div>
             <div>
-              <button type="submit" className="btn-pesq-filtrohosp">
+              <button type="submit" className="btn-pesq-filtrocar">
                 Pesquisar
               </button>
             </div>

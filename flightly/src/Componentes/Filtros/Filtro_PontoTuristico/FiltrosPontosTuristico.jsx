@@ -1,8 +1,11 @@
 import './styleFiltrosPontosTuristico.css';
 import React, { useState } from 'react';
+
 import Acessibilidade from '../../../Images/FiltroPontoTuristico/accessibility.png';
 import Entretenimento from '../../../Images/FiltroPontoTuristico/entretenimento.png';
 import seta from'../../../Images/FiltroCarro/icon-seta.png';
+import idade from '../../../Images/FiltroPontoTuristico/idade.png';
+
 
 
 export default function FiltrosPontosTuristicos(){
@@ -43,27 +46,23 @@ export default function FiltrosPontosTuristicos(){
                     <label htmlFor="Ambiente" className='lbl-filtroturistico2'>
                         Ambiente
                     </label><br />
-                    <input type="checkbox" name="Rural" id="Rural" className='checkRural'/> 
-                    <label htmlFor="Rural" className='lbl-checkRural'>Rural</label> <br />
-                    <input type="checkbox" name="Urbano" id="Urbano" className='checkUrbano'/>
-                    <label htmlFor="Urbano" className='lbl-checkUrbano'>Urbano</label>
+                    <button className='btn-Ambiente'>Rural</button>
+                    <button className='btn-Ambiente'>Urbano</button>
+                    <button className='btn-Ambiente'>Praia</button>
                 </div>
                 <div className='faixaetaria'>
                     <label htmlFor="FaixaEtaria" className='lbl-filtroturistico3'>
                         Faixa Etária
                     </label><br />
-                    <input type="checkbox" name="Livre" id="livre" />
-                    <label htmlFor="Livre" className='lbl-checkLivre'>Livre</label> <br />
-                    <input type="checkbox" name="10" id="10" />
-                    <label htmlFor="Dez" className='lbl-check10'>10</label> <br />
-                    <input type="checkbox" name="12" id="12" />
-                    <label htmlFor="doze" className='lbl-check12'>12</label> <br /> 
-                    <input type="checkbox" name="14" id="14" />
-                    <label htmlFor="14" className='lbl-check14'>14</label> <br />
-                    <input type="checkbox" name="16" id="16" />
-                    <label htmlFor="16" className='lbl-check16'>16</label> <br />
-                    <input type="checkbox" name="18" id="18" />
-                    <label htmlFor="18" className='lbl-check18'>18</label>
+                    <select name="faixaetaria-selec" id="faixaetaria-selec" className='faixaetaria-selec'
+                    placeholder="Livre" style={{backgroundImage: `url(${idade}), url(${seta})`}}>
+                        <option value="livre">Livre</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="14">14</option>
+                        <option value="16">16</option>
+                        <option value="18">18</option>
+                    </select>
                 </div>
                 <div className='preco'>
                     <label htmlFor="Preco" className='lbl-filtroturistico4'>
@@ -112,7 +111,6 @@ export default function FiltrosPontosTuristicos(){
                         <option value="estacionamento">Estacionamento Acessível</option>
                         <option value="braille">Guias em Braille</option>
                         <option value="libras">Legendas em Libras</option>
-                        <option value=""></option>
                     </select>
                 </div>
                 <div>

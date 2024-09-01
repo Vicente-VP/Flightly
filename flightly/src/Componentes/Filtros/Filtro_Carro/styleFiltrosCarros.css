@@ -236,7 +236,7 @@ body {
   font-weight: 500;
 }
 
-.btn-pesq-filtrohosp{
+.btn-pesq-filtrocar{
     width: 177px;
     height: 46px;
     color: #ffffff;
@@ -281,8 +281,7 @@ body {
     background-repeat: no-repeat;
     background-position: left 10px center, right 10px center;
     background-size: 20px, 12px;
-    /*background-image: url('../../../Images/Icones_Filtros_Hospedagem/icon_seta.png'); /* Altere o caminho para a sua seta personalizada */
-  
+    
     box-sizing: border-box;
   
     width: 162px;
