@@ -1,5 +1,3 @@
-import Loc_Allauto from '../../../Images/Cards_Locadoras_Populares/Allauto.png';
-
 import './styleCardRecCarro.css';
 
 export default function cardRecCarro(props){
