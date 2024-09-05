@@ -9,7 +9,8 @@ import icon_face from '../../Images/Icones_Login_e_Cad/icon_face.png';
 export default function Login (){
     return (
         <>
-            <div style={{height: 76+'px'}}><NavBar/></div>
+        <div style={{height: 76+'px'}}><NavBar/></div>
+
         <div className="body_login">
             <div className="container">
             <div className="card-login-esq">

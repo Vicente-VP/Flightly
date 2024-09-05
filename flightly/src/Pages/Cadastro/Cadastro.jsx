@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Cadastro/style_Cadastro.css';
+import './style_Cadastro.css';
 import NavBar from "../../Componentes/NavBar/NavBar";
 
 import icon_apple from '../../Images/Icones_Login_e_Cad/icon_apple.png';
