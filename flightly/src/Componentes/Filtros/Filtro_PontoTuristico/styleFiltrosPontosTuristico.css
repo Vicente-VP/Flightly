@@ -134,6 +134,10 @@
     display: none;
 }
 
+.acessibilidade-selec > option, .entretenimento-selec > option, .faixaetaria-selec > option{
+  color: black;
+} 
+
 /*---------------Select--------------*/
 
 /*--------Buttons--------*/

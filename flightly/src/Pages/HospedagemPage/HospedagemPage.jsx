@@ -1,7 +1,6 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 import Rec_Hospedagem from "../../Componentes/Cards/Card Rec Hospedagem/cardsRecHospedagem";
-import FIltroPT from "../../Componentes/Filtros/Filtro_PontoTuristico/FiltrosPontosTuristico";
 
 import Mala_Card from '../../Images/Mala_Card.png';
 import idaVoltaIcon from '../../Images/Icones-Cards/ida-volta.png';
@@ -89,8 +88,6 @@ export default function Home() {
                 {/* ------------------ FIM DO CARD DE PESQUISA  ----------------- */}
 
                 {/* ------------------ VOOS MAIS POPULARES  --------------------- */}
-
-                <FIltroPT/>
                 {/* ------------------ FIM DE VOOS MAIS POPULARES  --------------------- */}
 
                 {/* ------------------ RECOMENDAÇÕES PARA VOCÊ  ------------------------ */}
