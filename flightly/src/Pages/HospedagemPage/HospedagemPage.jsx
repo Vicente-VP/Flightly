@@ -86,7 +86,6 @@ export default function Home() {
                 </div>
 
                 {/* ------------------ FIM DO CARD DE PESQUISA  ----------------- */}
-
                 {/* ------------------ VOOS MAIS POPULARES  --------------------- */}
                 {/* ------------------ FIM DE VOOS MAIS POPULARES  --------------------- */}
 

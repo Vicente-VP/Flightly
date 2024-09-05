@@ -1,10 +1,5 @@
-import "../Filtros_Hospedagem/style_FiltrosHospedagem.css";
-
-import icon_tipoprop from "../../Images/Icones_Filtros_Hospedagem/icon_tipoprop.png";
-import icon_avaliacao from "../../Images/Icones_Filtros_Hospedagem/icon_avaliacao.png";
-import icon_comodidade from "../../Images/Icones_Filtros_Hospedagem/icon_comodidade.png";
-import icon_seta from "../../Images/Icones_Filtros_Hospedagem/icon_seta.png";
 import React, { useState } from "react";
+import "./style_FiltrosHospedagem.css";
 
 export default function FiltrosHospedagem() {
   const [price, setPrice] = useState(100);
