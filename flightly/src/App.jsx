@@ -5,8 +5,6 @@ import Home from './Pages/Home_Voo/Home_Voo';
 import HospedagemPage from './Pages/HospedagemPage/HospedagemPage';
 import CarroPage from './Pages/Home_Carro/CarroPage';
 import PontoTuristicoPage from './Pages/PontosTuristicosPage/PontoTuristicoPage';
-import Cadastro from './Pages/Cadastro/Cadastro';
-import Login from './Pages/Login/Login';
 
 export default function App() {
   return (
@@ -17,8 +15,6 @@ export default function App() {
           <Route path="/Hospedagem" element={<HospedagemPage/>}/>
           <Route path="/Carros" element={<CarroPage/>}/>
           <Route path="/PontosTuristicos" element={<PontoTuristicoPage/>}/>
-          <Route path="/Cadastro" element={<Cadastro/>}/>
-          <Route path="/Login" element={<Login/>}/>
         </Routes>
       </Router>
     </>
