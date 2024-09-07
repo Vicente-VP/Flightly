@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Login/Style_Login.css';
+import '../Login/style_Login.css';
 import NavBar from "../../Componentes/NavBar/NavBar";
 
 import icon_apple from '../../Images/Icones_Login_e_Cad/icon_apple.png';
