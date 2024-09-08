@@ -8,37 +8,37 @@ import cambio from '../../../Images/Info-Car-Icon/transmission.png';
 import porta from '../../../Images/Info-Car-Icon/car-door.png';
 import large_bag from '../../../Images/Info-Car-Icon/travelling-bag.png';
 
-export default function InfoCarros(){
+export default function InfoCarros(props){
     return(
         <>
             <div class="card-horizontal">
                 <div class="card-image">
-                    <img src={ferrari} className='card-image-car'/>
-                    <img src={movida} className='card-image-locadora'/>
+                    <img src={props.carImage} className='card-image-car'/>
+                    <img src={props.locImage} className='card-image-locadora'/>
                 </div>
                 <div class="card-content">
                     <div className='title-car'>
-                        <label htmlFor="carro" className='lbl-carro'>Fiat Mobi</label>
+                        <label htmlFor="carro" className='lbl-carro'>{props.nameCar}</label>
                     </div>
                     <div className='sub-car'>
-                        <label htmlFor="local" className='lbl-local'>São Paulo - Juscelino Kubitscheck</label>
+                        <label htmlFor="local" className='lbl-local'>{props.retirada}</label>
                     </div>
                     <div className='info-left'>
                         <img src={people} className='icon-assento' /> 
-                        <label htmlFor="number-assento" className='lbl-assento'> 5</label><label htmlFor="assento" className='lbl-assento'> Assentos</label>
+                        <label htmlFor="number-assento" className='lbl-assento'> {props.assento}</label><label htmlFor="assento" className='lbl-assento'> Assentos</label>
                         <br />
                         <img src={cambio} className='icon-cambio' /> 
-                        <label htmlFor="cambio" className='lbl-cambio'> Cambio Manual</label>
+                        <label htmlFor="cambio" className='lbl-cambio'> {props.cambio}</label>
                         <br />
                         <img src={porta} className='icon-porta' /> 
-                        <label htmlFor="number-porta" className='lbl-porta'> 4</label><label htmlFor="porta" className='lbl-porta'> Portas</label>
+                        <label htmlFor="number-porta" className='lbl-porta'> {props.porta}</label><label htmlFor="porta" className='lbl-porta'> Portas</label>
                     </div>
                     <div className='info-right'>
                         <img src={small_bag} className='icon-bag'/>
-                        <label htmlFor="number-mala" className='lbl-mala'> 1</label><label htmlFor="mala" className='lbl-mala'> Bagagem Pequena</label>
+                        <label htmlFor="number-mala" className='lbl-mala'> {props.malaPeq}</label><label htmlFor="mala" className='lbl-mala'> Bagagem Pequena</label>
                         <br />
                         <img src={large_bag} className='icon-bag'/>
-                        <label htmlFor="number-mala" className='lbl-mala'> 1</label><label htmlFor="mala" className='lbl-mala'> Bagagem Grande</label>
+                        <label htmlFor="number-mala" className='lbl-mala'> {props.malaGr}</label><label htmlFor="mala" className='lbl-mala'> Bagagem Grande</label>
                     </div>
                 </div>
                 <hr color='D4D4D4'/>
@@ -46,7 +46,7 @@ export default function InfoCarros(){
                     <div className="info-preco">
                         <div className="preco">
                             <label>A partir de:</label>
-                            <span className="preco-carro">R$ 146</span>
+                            <span className="preco-carro">{props.preco}</span>
                         </div>
                     </div>
                 </div>

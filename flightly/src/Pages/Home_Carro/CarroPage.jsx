@@ -76,8 +76,6 @@ export default function Carro_page (){
 
                 <div class="car-image"><img src={Carro_Form} alt="Carro"/></div>
                     {/* ------------------ CARRO FORM FIM  --------------------- */}
-
-                    <InfoCarros></InfoCarros>
                 {/* ------------------ LOCADORAS MAIS POPULARES INICIO --------------------- */}
                 
                 <div class="locadoras-popular">
