@@ -16,6 +16,9 @@ import Rec_Eco from '../../Images/Card_Recomendacao_Carro/Rec_Eco.png';
 import Rec_Inter from '../../Images/Card_Recomendacao_Carro/Rec_Inter.png';
 import Rec_Lux from '../../Images/Card_Recomendacao_Carro/Rec_Lux.png';
 
+
+import InfoCarros from "../../Componentes/Card_Informacoes/Carros/CardInfoCarros";
+
 export default function Carro_page (){
     return (
         <>
@@ -73,8 +76,6 @@ export default function Carro_page (){
 
                 <div class="car-image"><img src={Carro_Form} alt="Carro"/></div>
                     {/* ------------------ CARRO FORM FIM  --------------------- */}
-
-
                 {/* ------------------ LOCADORAS MAIS POPULARES INICIO --------------------- */}
                 
                 <div class="locadoras-popular">
