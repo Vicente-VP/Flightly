@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.container-filtroturistico{
+    box-sizing: border-box;
+
+    width: 370px;
+    height: 550px;
+
+    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+    
+    background-image: linear-gradient(to right,#ffff, #004369) 1;
+    background-clip:border-box ;
+    box-shadow: 0px 4px 14.3px rgba(165, 178, 185, 0.25);
+    border: 1px solid;
+    border-radius: 20px;
+
+    position: relative;
+}/*--------Corpo---------*/
+
+/*--------Divisões--------*/
+.entretenimento{
+    position: relative;
+    left: 8%;
+    right: 32.16%;
+    top: 6.7%;
+    bottom: 87.55%;
+    width: 250px;
+}
+
+.ambiente{
+    position: relative;
+    left: 8%;
+    right: 25.16%;
+    top:9%;
+    bottom: 87.55%;
+    width: 600px;
+}
+
+.faixaetaria{
+    position: relative;
+    left: 8%;
+    right: 32.16%;
+    top: 12%;
+    bottom: 87.55%;
+    width: 250px;
+}
+
+.preco{
+    position: relative;
+    left: 8%;
+    right: 32.16%;
+    top: 15%;
+    bottom: 87.55%;
+    width: 350px;
+}
+
+.acessibilidade{
+    position: relative;
+    left: 8%;
+    right: 32.16%;
+    top: 21%;
+    bottom: 87.55%;
+    width: 250px;
+}
+/*--------Divisões--------*/
+
+/*-------Labels--------*/
+
+.lbl-filtroturistico1, .lbl-filtroturistico2, .lbl-filtroturistico3, .lbl-filtroturistico4, .lbl-filtroturistico5{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+  
+    color: #004369;
+  }
+
+  .lbl-checkRural, .lbl-checkUrbano, .lbl-checkLivre, .lbl-check10, .lbl-check12, .lbl-check14, .lbl-check16, .lbl-check18{
+    color: rgb(0, 67, 105, 75%);
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+
+    padding-left: 5px;
+    position: absolute;
+  }
+
+
+/*-------Labels--------*/
+
+/*---------------Select--------------*/
+
+.acessibilidade-selec, .entretenimento-selec, .faixaetaria-selec{
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none; 
+  
+    cursor: pointer;
+
+    background-repeat: no-repeat;
+    background-position: left 10px center, right 10px center;
+    background-size: 20px, 12px;
+  
+    box-sizing: border-box;
+  
+    width: auto;
+    height: 40px;
+  
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+  
+    padding-left: 42px;
+    padding-right: 30px;
+    line-height: 40px; 
+    position: relative;
+  
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15.8424px;
+    line-height: 24px;
+    color: #BFC1C3;
+
+    transition: background-position 0.3s ease-in-out;
+  }
+
+.acessibilidade-selec:focus, .entretenimento-selec:focus{
+    outline: none;
+    
+}
+
+.acessibilidade-selec::-ms-expand, .entretenimento-selec::-ms-expand{
+    display: none;
+}
+
+.acessibilidade-selec > option, .entretenimento-selec > option, .faixaetaria-selec > option{
+  color: black;
+} 
+
+/*---------------Select--------------*/
+
+/*--------Buttons--------*/
+
+.btn-pesq-filtroturis{
+    width: 177px;
+    height: 46px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #FF6600;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
+  
+    position: absolute;
+    left: 25.00%;
+    right: 25.00%;
+    top: 84.29%;
+    bottom: 6.9%;
+  }
+
+  .btn-Ambiente{
+    border: none;
+    border-radius: 10px;
+  
+    background-color: white;
+  
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    color: #BFC1C3;
+  
+  
+    align-items: center;
+  
+    margin-left: 8px;
+    width: 85px;
+    height: 40px;
+
+    transition: all 0.1s ease-in-out;
+  }
+
+  .btn-Ambiente:hover{
+    background-color: #b2c9db25;
+    cursor: pointer;
+    color: #004369;
+    border: 2px solid #004369; 
+    font-weight: 500;
+  }
+
+/*--------Buttons--------*/
+
+/*---------------Slider--------------*/
+.search-price{
+    position: absolute;
+    left: 8%;
+    right: 25.68%;
+    top: 130%;
+    bottom: 25.82%;
+  }
+  
+  .search-price > div{
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .search-price > span{
+  font-family: "Poppins", sans-serif;
+  color: #004369;
+  font-weight: 450;
+  font-size: 15px;
+  }
+  
+  .slidecontainer {
+    width: 100%;
+  }
+  
+  .range .field{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  }
+  
+  .range .sliderValue{
+  position: absolute;
+  width: 100%;
+  margin-left: 5px;
+  }
+  
+  .range .sliderValue span{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  
+  font-size: 9px;
+  color: 004369;
+  font-weight: 400;
+  
+  top: -20px;
+  transform: translateX(-50%) scale(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease-in-out;
+  
+  line-height: 15px;
+  z-index: 2;
+  }
+  
+  .range .sliderValue span.show{
+  transform: translateX(-50%) scale(1);
+  }
+  
+  .range .sliderValue span:after{
+  display: flex;
+  justify-content: center;
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 47px;
+  background: white;
+  
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  }
+  
+  .range .field .value{
+  position: absolute;
+  font-size: 13px;
+  font-weight: 500;
+  color: #004369;
+  }
+  
+  .range .field .value.left{
+  left: -28px;
+  }
+  .range .field .value.right{
+  right: -59px;
+  }
+  
+  .range .field input{
+  -webkit-appearance: none;
+  
+  height: 3px;
+  width: 100%;
+  
+  background: white;
+  
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  }
+  .range .field input::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  height: 11px;
+  width: 11px;
+  background: #004369;
+  border-radius: 50%;
+  cursor: pointer;
+  }
+  
+  .range .field input::-moz-range-progress{
+  background: #004369;
+  }
+  /*---------------Slider--------------*/

@@ -98,3 +98,28 @@
     box-shadow: 0px 4px 16px 0px #00000025;
     cursor: pointer;
 }
+
+#Recommendations_HOSPEDAGENS{
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+    display: flex;	
+    flex-direction  : row;
+    justify-content: space-evenly;
+    height: 380px;
+    max-width: 1200px;	
+}
+
+#cards_recomendation_hp_ec{
+    background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.5)), url('../../Images/RecomendacaoHospedagem/hp_economico.jpg');
+    background-position: center;
+}
+
+#cards_recomendation_hp_inter{
+    background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.5)), url('../../Images/RecomendacaoHospedagem/hp_economico.jpg');
+    background-position: center;
+}
+
+#cards_recomendation_hp_lux{
+    background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.5)), url('../../Images/RecomendacaoHospedagem/hp_economico.jpg');
+    background-position: center;
+}

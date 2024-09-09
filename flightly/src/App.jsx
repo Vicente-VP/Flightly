@@ -8,6 +8,8 @@ import PontoTuristicoPage from './Pages/PontosTuristicosPage/PontoTuristicoPage'
 import Cadastro from './Pages/Cadastro/Cadastro';
 import Login from './Pages/Login/Login';
 import Testes from './Pages/Testes/Testes';
+import Perfil from './Pages/Perfil/Perfil';
+
 
 export default function App() {
   return (
@@ -21,6 +23,7 @@ export default function App() {
           <Route path="/Cadastro" element={<Cadastro/>}/>
           <Route path="/Login" element={<Login/>}/>
           <Route path="/Testes" element={<Testes/>}/>
+          <Route path="/Perfil" element={<Perfil/>}/>
         </Routes>
       </Router>
     </>

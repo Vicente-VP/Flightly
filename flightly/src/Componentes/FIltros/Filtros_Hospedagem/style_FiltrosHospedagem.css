@@ -1,0 +1,272 @@
+.container-filtrohosp{
+  box-sizing: border-box;
+
+  width: 370px;
+  height: 522px;
+
+  background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+  
+  background-image: linear-gradient(to right,#ffff, #004369) 1;
+  background-clip:border-box ;
+  box-shadow: 0px 4px 14.3px rgba(165, 178, 185, 0.25);
+  border: 1px solid;
+  border-radius: 20px;
+
+  position: relative;
+
+
+}
+
+.lbl-filtrohosp1, .lbl-filtrohosp2, .lbl-filtrohosp3, .lbl-filtrohosp4{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+
+  color: #004369;
+}
+
+.lbl-filtrohosp1{
+  position: absolute;
+  left: 12.7%;
+  right: 32.16%;
+  top: 6.7%;
+  bottom: 87.55%;
+  width: 300px;
+}
+
+.lbl-filtrohosp2{
+  position: absolute;
+  left: 12.7%;
+  right: 59.73%;
+  top: 26.05%;
+  bottom: 68.2%;
+}
+
+.lbl-filtrohosp3{
+  position: absolute;
+  left: 12.7%;
+  right: 48.11%;
+  top: 43.68%;
+  bottom: 50.57%;
+}
+
+.lbl-filtrohosp4{
+  position: absolute;
+  left: 12.7%;
+  right: 71.89%;
+  top: 61.68%;
+  bottom: 32.17%;
+}
+
+.select-filtroshosp-tipohosp, .select-filtroshosp-avaliacao, .select-filtroshosp-comodidades{
+  appearance: none; 
+  -webkit-appearance: none;
+  -moz-appearance: none; 
+
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  background-image: url('../../../Images/Icones_Filtros_Hospedagem/icon_seta.png'); /* Altere o caminho para a sua seta personalizada */
+
+  box-sizing: border-box;
+
+  width: 162px;
+  height: 40px;
+
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+
+  padding-left: 42px;
+  padding-right: 30px;
+  line-height: 40px; 
+  position: relative;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15.8424px;
+  line-height: 24px;
+  color: #BFC1C3;
+}
+
+.select-filtroshosp-tipohosp > option, .select-filtroshosp-avaliacao > option, .select-filtroshosp-comodidades > option{
+  color: black;
+}
+
+.select-filtroshosp-tipohosp{
+    position: absolute;
+    left: 12.7%;
+    right: 43.51%;
+    top: 13.79%;
+    bottom: 78.54%;
+    background-image: url('../../../Images/Icones_Filtros_Hospedagem/icon_tipoprop.png'), url('../../../Images/Icones_Filtros_Hospedagem/icon_seta.png');
+    background-position: left 10px center, right 10px center;
+    background-size: 24px, 16px;
+}
+
+.select-filtroshosp-tipohosp:focus, .select-filtroshosp-avaliacao:focus, .select-filtroshosp-comodidades:focus{
+  outline: none;
+}
+
+.select-filtroshosp-avaliacao{
+    position: absolute;
+    left: 12.7%;
+    right: 43.51%;
+    top: 33.14%;
+    bottom: 59.2%;
+    
+    background-image: url('../../../Images/Icones_Filtros_Hospedagem/icon_avaliacao.png'), url('../../../Images/Icones_Filtros_Hospedagem/icon_seta.png');
+    background-position: left 10px center, right 10px center;
+    background-size: 24px, 16px;
+}
+
+.select-filtroshosp-comodidades{
+    position: absolute;
+    left: 12.7%;
+    right: 43.51%;
+    top: 50.77%;
+    bottom: 41.57%;
+
+    background-image: url('../../../Images/Icones_Filtros_Hospedagem/icon_comodidade.png'), url('../../../Images/Icones_Filtros_Hospedagem/icon_seta.png');
+    background-position: left 10px center, right 10px center;
+    background-size: 24px, 16px;
+}
+
+.search-price{
+  position: absolute;
+  left: 20.54%;
+  right: 25.68%;
+  top: 71.52%;
+  bottom: 25.82%;
+}
+
+.search-price > div{
+display: flex;
+flex-direction: column;
+}
+
+.search-price > span{
+font-family: "Poppins", sans-serif;
+color: #004369;
+font-weight: 450;
+font-size: 15px;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.range .field{
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100%;
+}
+
+.range .sliderValue{
+position: relative;
+width: 100%;
+margin-left: 5px;
+}
+
+.range .sliderValue span{
+display: flex;
+justify-content: center;
+position: absolute;
+height: 22px;
+width: 22px;
+
+font-size: 9px;
+color: 004369;
+font-weight: 400;
+
+top: -20px;
+transform: translateX(-50%) scale(0);
+transform-origin: bottom;
+transition: transform 0.3s ease-in-out;
+
+line-height: 15px;
+z-index: 2;
+}
+
+.range .sliderValue span.show{
+transform: translateX(-50%) scale(1);
+}
+
+.range .sliderValue span:after{
+display: flex;
+justify-content: center;
+content: "";
+position: absolute;
+height: 14px;
+width: 47px;
+background: white;
+
+left: 50%;
+transform: translateX(-50%);
+z-index: -1;
+
+border-radius: 2px;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+.range .field .value{
+position: absolute;
+font-size: 13px;
+font-weight: 500;
+color: #004369;
+}
+
+.range .field .value.left{
+left: -28px;
+}
+.range .field .value.right{
+right: -59px;
+}
+
+.range .field input{
+-webkit-appearance: none;
+
+height: 3px;
+width: 100%;
+
+background: white;
+
+border-radius: 5px;
+border: none;
+outline: none;
+}
+.range .field input::-webkit-slider-thumb{
+-webkit-appearance: none;
+height: 11px;
+width: 11px;
+background: #004369;
+border-radius: 50%;
+cursor: pointer;
+}
+
+.range .field input::-moz-range-progress{
+background: #004369;
+}
+
+.btn-pesq-filtrohosp{
+  width: 177px;
+  height: 46px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #FF6600;
+  border-radius: 23px;
+  border: none;
+  box-shadow: 0px 4px 16px 0px #00000025;
+  cursor: pointer;
+
+  position: absolute;
+  left: 25.00%;
+  right: 25.00%;
+  top: 84.29%;
+  bottom: 6.9%;
+}

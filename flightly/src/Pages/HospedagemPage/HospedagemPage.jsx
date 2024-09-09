@@ -1,5 +1,6 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
+import Rec_Hospedagem from "../../Componentes/Cards/Card Rec Hospedagem/cardsRecHospedagem";
 
 import Mala_Card from '../../Images/Mala_Card.png';
 import idaVoltaIcon from '../../Images/Icones-Cards/ida-volta.png';
@@ -7,9 +8,11 @@ import destinoIcon from '../../Images/Icones-Cards/destino.png';
 import quartosIcon from '../../Images/Icones-Cards/quartos.png';
 import passageirosIcon from '../../Images/Icones-Cards/passageiros.png';
 
+//import img_economico from '../../Images/RecomendacaoHospedagem/hp_economico.jpg';
+
 import './style_Hospedagem.css';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 
 export default function Home() {
     return (
@@ -87,6 +90,11 @@ export default function Home() {
                 {/* ------------------ FIM DE VOOS MAIS POPULARES  --------------------- */}
 
                 {/* ------------------ RECOMENDAÇÕES PARA VOCÊ  ------------------------ */}
+                <section id="Recommendations_HOSPEDAGENS">
+                    <Rec_Hospedagem title="Economico" id="cards_recomendation_hp_ec"/>
+                    <Rec_Hospedagem title="Intermediario" id="cards_recomendation_hp_inter"/>
+                    <Rec_Hospedagem title="Luxo" id="cards_recomendation_hp_lux"/>
+                </section>
                 {/* ------------------ FIM DE RECOMENDAÇÕES PARA VOCÊ  --------------------- */}
             </main>
 

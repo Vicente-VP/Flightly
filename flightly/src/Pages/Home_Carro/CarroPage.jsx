@@ -1,5 +1,5 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
-import Footer from "../../Componentes/Footer/Footer"
+import Footer from "../../Componentes/Footer/Footer";
 import CardRec from "../../Componentes/Cards/CardRecCarro/cardRecCarro";
 
 import './Style_carro.css';
@@ -76,7 +76,7 @@ export default function Carro_page (){
 
 
                 {/* ------------------ LOCADORAS MAIS POPULARES INICIO --------------------- */}
-
+                
                 <div class="locadoras-popular">
 
                     <div class="title-locadora">
@@ -94,7 +94,6 @@ export default function Carro_page (){
                         <button class="car-pesquisar">Ver Mais</button>
                     </div>
                 </div>
-
                 {/* ------------------ LOCADORAS MAIS POPULARES FIM --------------------- */}
 
 
@@ -135,7 +134,6 @@ export default function Carro_page (){
                 </div>
 
                 {/* ------------------ RECOMENDAÇÃO DE CARRO FIM --------------------- */}
-
             </main>
 
             <div style={{height: 250+'px'}}><Footer/></div>

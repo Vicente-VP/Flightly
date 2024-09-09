@@ -76,10 +76,10 @@ export default function NavBar() {
               </a>
             </li>
             <li className="perfil-dropdown-list-item">
-              <a>
+              <Link to="/Perfil">
                 <img src={Perfil_popUp} alt="Seu perfil" />
                 Seu perfil
-              </a>
+              </Link>
             </li>
             <li className="perfil-dropdown-list-item">
               <a>
