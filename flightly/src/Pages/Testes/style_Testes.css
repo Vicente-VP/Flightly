@@ -1,0 +1,17 @@
+.navbar-testes{
+    height: 75px;
+}
+
+.footer-testes{
+    height: 250px;
+}
+
+.conteudo-testes{
+    display: grid;
+    width: 1920px;
+    height: 1080px;
+    padding-top: 50px;
+
+    justify-items: center;
+    align-content: top;
+}
