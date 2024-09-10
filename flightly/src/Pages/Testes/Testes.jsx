@@ -2,10 +2,10 @@
 
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
-import CardInfoVoo from "../../Componentes/Card_Informacoes/Voos/CardInfoVoo";
+import CardInfoPTutisticos from "../../Componentes/Card_Informacoes/PontosTuristicos/CardInfoPTuristicos";
 
 import './style_Testes.css';
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Home() {
     return (
@@ -13,7 +13,7 @@ export default function Home() {
             <div className="navbar-testes"><NavBar/></div>
             
             <div className="conteudo-testes">
-                <CardInfoVoo/>
+                <CardInfoPTutisticos/>
             </div>
 
             <div className="footer-testes"><Footer/></div>
