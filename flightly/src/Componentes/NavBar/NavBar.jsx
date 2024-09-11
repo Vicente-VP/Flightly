@@ -84,10 +84,10 @@ export default function NavBar() {
               </Link>
             </li>
             <li className="perfil-dropdown-list-item">
-              <a>
+              <Link to="/PlanosViagem">
                 <img src={Plano_popUp} alt="Planos de viagem" />
                 Planos de viagem
-              </a>
+              </Link>
             </li>
             <li className="perfil-dropdown-list-item">
               <a>
