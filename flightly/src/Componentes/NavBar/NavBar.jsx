@@ -58,8 +58,10 @@ export default function NavBar() {
 
       <div id="navbar_buttons">
         <div className="buttons">
-          <img src={Planos_icon} alt="Planos de viagem" id="plano" />
-          <span className="title_nav">Planos</span>
+          <Link to="/PlanosViagem">
+            <img src={Planos_icon} alt="Planos de viagem" id="plano" />
+          </Link>
+          <Link to="/PlanosViagem" className="title_nav">Planos</Link>
         </div>
         <div className="perfil-dropdown">
           <div className="buttons" id="perfil-dropdown-btn" onClick={toggleDropdown}>
@@ -82,10 +84,10 @@ export default function NavBar() {
               </Link>
             </li>
             <li className="perfil-dropdown-list-item">
-              <a>
+              <Link to="/PlanosViagem">
                 <img src={Plano_popUp} alt="Planos de viagem" />
                 Planos de viagem
-              </a>
+              </Link>
             </li>
             <li className="perfil-dropdown-list-item">
               <a>

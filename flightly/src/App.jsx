@@ -9,6 +9,9 @@ import Cadastro from './Pages/Cadastro/Cadastro';
 import Login from './Pages/Login/Login';
 import Testes from './Pages/Testes/Testes';
 import Perfil from './Pages/Perfil/Perfil';
+import PlanosViagem from './Pages/PlanosViagem/PlanosViagem';
+import Cadastro from './Pages/Cadastro/Cadastro';
+import Login from './Pages/Login/Login';
 
 
 export default function App() {
@@ -24,6 +27,9 @@ export default function App() {
           <Route path="/Login" element={<Login/>}/>
           <Route path="/Testes" element={<Testes/>}/>
           <Route path="/Perfil" element={<Perfil/>}/>
+          <Route path="/PlanosViagem" element={<PlanosViagem/>}/>
+          <Route path="/Cadastro" element={<Cadastro/>}/>
+          <Route path="/Login" element={<Login/>}/>
         </Routes>
       </Router>
     </>
