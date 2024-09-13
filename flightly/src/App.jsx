@@ -10,8 +10,6 @@ import Login from './Pages/Login/Login';
 import Testes from './Pages/Testes/Testes';
 import Perfil from './Pages/Perfil/Perfil';
 import PlanosViagem from './Pages/PlanosViagem/PlanosViagem';
-import Cadastro from './Pages/Cadastro/Cadastro';
-import Login from './Pages/Login/Login';
 
 
 export default function App() {

@@ -18,7 +18,7 @@
     height: 188px;
 }
 
-.carro-card-locadora{
+.card-locadora-popular>span{
     font-style: normal;
     font-weight: 400;
     font-size: 29.53px;
@@ -26,4 +26,5 @@
     justify-content: center;
     font-family: "Poppins", sans-serif;
 }
+
 

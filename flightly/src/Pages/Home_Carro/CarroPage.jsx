@@ -2,7 +2,6 @@ import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 import CardRec from "../../Componentes/Cards/CardRecCarro/cardRecCarro";
 
-import './Style_carro.css';
 import Carro_Form from '../../Images/Carro_Card.png';
 import Origem_Form from '../../Images/Icones-Cards/origem.png';
 import IdaVolta_Form from '../../Images/Icones-Cards/ida-volta.png';
@@ -16,6 +15,7 @@ import Rec_Eco from '../../Images/Card_Recomendacao_Carro/Rec_Eco.png';
 import Rec_Inter from '../../Images/Card_Recomendacao_Carro/Rec_Inter.png';
 import Rec_Lux from '../../Images/Card_Recomendacao_Carro/Rec_Lux.png';
 
+import './Style_carro.css';
 
 import InfoCarros from "../../Componentes/Card_Informacoes/Carros/CardInfoCarros";
 
@@ -26,73 +26,73 @@ export default function Carro_page (){
 
             <main>
                     {/* ------------------ CARRO FORM INICIO  --------------------- */}
-                <div class="card-carro">
-                    <div class="car-title">
+                <div className="card-carro">
+                    <div className="car-title">
                         <label>Aluguel de Carros</label>
                     </div>
 
-                    <div class="car-space">
+                    <div className="car-space">
                     </div>
 
-                    <div class="form-cardcarro">
-                        <div class="car-grid-inputs">
-                            <div class="car-input-form">
-                                <div class="car-etiqueta-class">
-                                    <label class="car-etiqueta">Local de retirada</label>
+                    <div className="form-cardcarro">
+                        <div className="car-grid-inputs">
+                            <div className="car-input-form">
+                                <div className="car-etiqueta-className">
+                                    <label className="car-etiqueta">Local de retirada</label>
                                 </div>
-                                <div class="car-input-class">
-                                    <input type="text" class="car-input" name="pick-location" id="pick-location"
+                                <div className="car-input-className">
+                                    <input type="text" className="car-input" name="pick-location" id="pick-location"
                                         placeholder="São Paulo" style={{ backgroundImage: `url(${Origem_Form})` }}/>
                                 </div>
                             </div>
-                            <div class="car-input-form">
-                                <div class="car-etiqueta-class">
-                                    <label class="car-etiqueta">Data de Retirada</label>
+                            <div className="car-input-form">
+                                <div className="car-etiqueta-className">
+                                    <label className="car-etiqueta">Data de Retirada</label>
                                 </div>
-                                <div class="car-input-class">
-                                    <input type="date" class="car-input" id="pickup-date" name="pickup-date" placeholder="21/06/2024"
+                                <div className="car-input-className">
+                                    <input type="date" className="car-input" id="pickup-date" name="pickup-date" placeholder="21/06/2024"
                                         style={{ backgroundImage: `url(${IdaVolta_Form})` }}/>
                                 </div>
                             </div>
-                            <div class="car-input-form">
-                                <div class="car-etiqueta-class"></div>
-                                <div class="car-input-class"></div>
+                            <div className="car-input-form">
+                                <div className="car-etiqueta-className"></div>
+                                <div className="car-input-className"></div>
                             </div>
-                            <div class="car-input-form">
-                                <div class="car-etiqueta-class">
-                                    <label class="car-etiqueta">Data de devolução</label>
+                            <div className="car-input-form">
+                                <div className="car-etiqueta-className">
+                                    <label className="car-etiqueta">Data de devolução</label>
                                 </div>
-                                <div class="car-input-class">
-                                    <input type="date" class="car-input" id="return-date" name="return-date" placeholder="30/06/2024"
+                                <div className="car-input-className">
+                                    <input type="date" className="car-input" id="return-date" name="return-date" placeholder="30/06/2024"
                                         style={{ backgroundImage: `url(${IdaVolta_Form})` }}/>
                                 </div>
                             </div>
                         </div>
-                        <div class="car-btn-pesquisar">
-                            <button class="car-pesquisar">Pesquisar</button>
+                        <div className="car-btn-pesquisar">
+                            <button className="car-pesquisar">Pesquisar</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="car-image"><img src={Carro_Form} alt="Carro"/></div>
+                <div className="car-image"><img src={Carro_Form} alt=""/></div>
                     {/* ------------------ CARRO FORM FIM  --------------------- */}
                 {/* ------------------ LOCADORAS MAIS POPULARES INICIO --------------------- */}
                 
-                <div class="locadoras-popular">
+                <div className="locadoras-popular">
 
-                    <div class="title-locadora">
+                    <div className="title-locadora">
                         <label>Locadoras Populares</label>
                     </div>
                         
-                    <div class="space-locadora-popular">
+                    <div className="space-locadora-popular">
                         <CardRec legenda="Allauto" image={Loc_Allauto}/>
                         <CardRec legenda="Rental" image={Loc_Rental}/>
                         <CardRec legenda="Citta" image={Loc_Citta}/>
                         <CardRec legenda="Blue" image={Loc_Blue}/>
                     </div>
                         
-                    <div class="locadora-btn-popular">
-                        <button class="car-pesquisar">Ver Mais</button>
+                    <div className="locadora-btn-popular">
+                        <button className="car-pesquisar">Ver Mais</button>
                     </div>
                 </div>
                 {/* ------------------ LOCADORAS MAIS POPULARES FIM --------------------- */}
@@ -100,35 +100,35 @@ export default function Carro_page (){
 
                 {/* ------------------ RECOMENDAÇÃO DE CARRO INICIO --------------------- */}
 
-                <div class="recomendacao-carro">
+                <div className="recomendacao-carro">
 
-                    <div class="title-recomendacao">
+                    <div className="title-recomendacao">
                         <label>Carros para seu orçamento</label>
                     </div>
 
-                    <div class="space-recomendacao-carro">
+                    <div className="space-recomendacao-carro">
 
-                        <div class="card-recomendacao-carro">
-                            <img src={Rec_Eco} class="img-card-recomendacao-eco"/>
-                            <span class="carro-card-recomendacao-eco">Econômico</span>
-                            <div class="recomendacao-btn-eco">
-                                <button class="car-pesquisar">Ver Mais</button>
+                        <div className="card-recomendacao-carro">
+                            <img src={Rec_Eco} className="img-card-recomendacao-eco"/>
+                            <span className="carro-card-recomendacao-eco">Econômico</span>
+                            <div className="recomendacao-btn-eco">
+                                <button className="car-pesquisar">Ver Mais</button>
                             </div>
                         </div>
 
-                        <div class="card-recomendacao-carro">
-                            <span class="carro-card-recomendacao-inter">Intermediário</span>
-                            <div class="recomendacao-btn-inter">
-                                <button class="car-pesquisar">Ver Mais</button>
+                        <div className="card-recomendacao-carro">
+                            <span className="carro-card-recomendacao-inter">Intermediário</span>
+                            <div className="recomendacao-btn-inter">
+                                <button className="car-pesquisar">Ver Mais</button>
                             </div>
-                            <img src={Rec_Inter} class="img-card-recomendacao-inter"/>
+                            <img src={Rec_Inter} className="img-card-recomendacao-inter"/>
                         </div>
 
-                        <div class="card-recomendacao-carro">
-                            <img src={Rec_Lux} class="img-card-recomendacao-lux"/>
-                            <span class="carro-card-recomendacao-lux">Luxuoso</span>
-                            <div class="recomendacao-btn-lux">
-                                <button class="car-pesquisar">Ver Mais</button>
+                        <div className="card-recomendacao-carro">
+                            <img src={Rec_Lux} className="img-card-recomendacao-lux"/>
+                            <span className="carro-card-recomendacao-lux">Luxuoso</span>
+                            <div className="recomendacao-btn-lux">
+                                <button className="car-pesquisar">Ver Mais</button>
                             </div>
                         </div>
                     </div>

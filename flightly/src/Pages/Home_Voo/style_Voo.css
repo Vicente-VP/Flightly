@@ -1,5 +1,10 @@
 /* Estilo do Card de Voo */
 
+main{
+    display: flex;
+    flex-direction: column;
+}
+
 .card-voo {
     background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
     border-radius: 20px;

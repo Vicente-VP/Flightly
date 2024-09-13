@@ -34,7 +34,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-
 .car-space {
     grid-area: imagem;
     /*content: url('Images/Carro_Card.png');*/
@@ -53,8 +52,9 @@
 }
 
 .car-image > img{
-    width: 50%;
+    width: 100%;
     height: 500px;
+    z-index: 1;
 }
 
 
@@ -283,6 +283,7 @@ input[type=date]::-webkit-datetime-edit {
     margin-bottom: 70px;*/
     top: -30px;
     left: 150px;
+    font-style: normal;
 }
 
 .img-card-recomendacao-eco {
@@ -315,6 +316,7 @@ input[type=date]::-webkit-datetime-edit {
     margin-bottom: 70px;*/
     top: -30px;
     left: 150px;
+    font-style: normal;
 }
 
 .img-card-recomendacao-inter {
@@ -348,6 +350,7 @@ input[type=date]::-webkit-datetime-edit {
     margin-bottom: 70px;*/
     top: -30px;
     left: 175px;
+    font-style: normal;
 }
 
 .img-card-recomendacao-lux {
@@ -359,3 +362,4 @@ input[type=date]::-webkit-datetime-edit {
     position: relative;
     left: 40px;
 }
+

@@ -14,7 +14,6 @@
     padding-right: 90px;
     padding-left: 90px;
     padding-bottom: 65px;
-    z-index: -1;
 }
 
 .title-hospedagem {
@@ -28,10 +27,9 @@
 .hospedagem-imagem {
     position: absolute;
     width: 38%;
-    height: 58%;
+    height: 62%;
     top: 10%;
     left: 5%;
-    z-index: 0;
 }
 
 .form-card-hospedagem {
