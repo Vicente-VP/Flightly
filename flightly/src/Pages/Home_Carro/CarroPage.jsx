@@ -17,8 +17,6 @@ import Rec_Lux from '../../Images/Card_Recomendacao_Carro/Rec_Lux.png';
 
 import './Style_carro.css';
 
-import InfoCarros from "../../Componentes/Card_Informacoes/Carros/CardInfoCarros";
-
 export default function Carro_page (){
     return (
         <>
@@ -76,6 +74,7 @@ export default function Carro_page (){
 
                 <div className="car-image"><img src={Carro_Form} alt=""/></div>
                     {/* ------------------ CARRO FORM FIM  --------------------- */}
+
                 {/* ------------------ LOCADORAS MAIS POPULARES INICIO --------------------- */}
                 
                 <div className="locadoras-popular">
