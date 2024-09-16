@@ -1,4 +1,4 @@
-import './Infos_Hosp.css';
+import './styleCardInfoHosp.css';
 
 export default function InfoHosp(props){
     return(
