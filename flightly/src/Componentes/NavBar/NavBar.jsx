@@ -10,6 +10,7 @@ import Perfil_popUp from '../../Images/Icones_PopUp/Perfil_popUp.png';
 import Plano_popUp from '../../Images/Icones_PopUp/Plano_popUp.png';
 import Quiz_popUp from '../../Images/Icones_PopUp/Quiz_popUp.png';
 import Sair_popUp from '../../Images/Icones_PopUp/Sair_popUp.png';
+import Fechar_popUpNot from '../../Images/Icones_PopUp/botao-fechar.png';
 
 import './styleNavBar.css';
 import React, { useState } from 'react';
@@ -110,7 +111,7 @@ export default function NavBar() {
 
           {/* dropdow Notificações */}
           <ul className={`not-dropdown-list ${isDropdownActiveNot ? 'active' : ''}`}>
-            <span className="title-popUp-not">Notificações</span>
+            <span className="title-popUp-not"><img src="" />Notificações <img src={Fechar_popUpNot} id='img-fechar' alt="fechar"/></span>
             <hr />
             <li className="perfil-dropdown-list-item-not">
               <div className="Not-layout"> 
@@ -123,7 +124,7 @@ export default function NavBar() {
             <li className="perfil-dropdown-list-item-not">
               <div className="Not-layout">
                 {/* Colocar conte className=""údo da notificação */}
-                <span><p>Titulo </p>Urgente</span>
+                <span><p>Titulo</p> <aside>Urgente</aside></span>
                 <p>Sua viagem para Salvador mudou de data</p>
               </div>
               <hr />
@@ -147,7 +148,7 @@ export default function NavBar() {
             <li className="perfil-dropdown-list-item-not">
               <div className="Not-layout">
                 {/* Colocar conteúdo da notificação */}
-                <span><p>Titulo</p> Urgente</span>
+                <span><p>Titulo</p><aside>Urgente</aside></span>
                 <p>Sua viagem para Salvador mudou de data</p>
               </div>
               <hr />
@@ -155,7 +156,7 @@ export default function NavBar() {
             <li className="perfil-dropdown-list-item-not">
               <div className="Not-layout">
                 {/* Colocar conteúdo da notificação */}
-                <span><p>Titulo</p> Urgente</span>
+                <span><p>Titulo</p><aside>Urgente</aside></span>
                 <p>Sua viagem para Salvador mudou de data</p>
               </div>
               <hr />
