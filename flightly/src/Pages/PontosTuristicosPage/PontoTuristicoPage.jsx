@@ -9,6 +9,8 @@ import Basilio from '../../Images/Cards_Destinos-Recomendados/Basilio.png';
 import FontanaDiTrevi from '../../Images/Cards_Destinos-Recomendados/Fontana-di-Trevi.png';
 import Westminster from '../../Images/Cards_Destinos-Recomendados/Westminster.png';
 
+import InfoPTutisticos from "../../Componentes/Card_Informacoes/PontosTuristicos/CardInfoPTuristicos";
+
 import './style_PTuristico.css';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
