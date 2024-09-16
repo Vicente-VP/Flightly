@@ -1,14 +1,11 @@
-import Imagem_Companhia from '../../../Images/Card_Informacoes_Voo/Imagem_Companhia.png';
-import MalaCor from '../../../Images/Card_Informacoes_Voo/MalaCor.png';
-import Mala from '../../../Images/Card_Informacoes_Voo/Mala.png';
 import './styleCardInfoVoo.css';
 
-export default function InfoVoo(){
+export default function InfoVoo(props){
     return(
         <>
             <div className="container-Card">
                 <div className="left">
-                    <img src={Imagem_Companhia} alt="Logo Companhia"/>
+                    <img src={props.Imagem_Companhia} alt="Logo Companhia"/>
                     <div className="info">
                         <label>Rio de Janeiro</label>
                         <span>Saindo de São Paulo</span>
@@ -34,9 +31,9 @@ export default function InfoVoo(){
                             <span className="preco-voo">R$ 1.678</span>
                         </div>
                         <div className="imgs">
-                            <img src={MalaCor} alt="Mala"/>
-                            <img src={MalaCor} alt="Mala"/>
-                            <img src={Mala} alt="Mala"/>
+                            <img src={props.MalaCor} alt="Mala"/>
+                            <img src={props.MalaCor} alt="Mala"/>
+                            <img src={props.Mala} alt="Mala"/>
                         </div>
                     </div>
                 </div>
