@@ -2,7 +2,7 @@
 
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
-import CardInfoVoo from "../../Componentes/Card_Informacoes/Voos/CardInfoVoo";
+import CardInfoVoo from "../../Componentes/Filtros/Filtro_Planos/FiltroPlano";
 
 import './style_Testes.css';
 import React, { useState } from 'react';
