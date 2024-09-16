@@ -13,6 +13,13 @@ export default function FiltroPlanoViagem(){
     const handleChange = () => {
       setChecked(!checked);
     };
+
+    const [activeButton, setActiveButton] = useState(null);
+
+    // Função que altera o estado para o botão clicado
+    const handleButtonClick = (index) => {
+      setActiveButton(index);
+    };
     
     return(
 
@@ -20,16 +27,16 @@ export default function FiltroPlanoViagem(){
             <div className='filter-container'>
                 <div className='filter-space'>
                     <div className='fly-filter'>
-                        <button className='btn-fly' style={{ backgroundImage: `url(${Aviao_Icon})` }}>Voos</button>
+                        <button className={`btn-fly ${activeButton === 1 ? 'active' : ''}`} onClick={() => handleButtonClick(1)}>Voos</button>
                     </div>
                     <div className='hotel-filter'>
-                        <button className='btn-hotel' style={{ backgroundImage: `url(${MalaHospedagem_icon})` }}>Hospedagens</button>
+                        <button className={`btn-hotel ${activeButton === 2 ? 'active' : ''}`} onClick={() => handleButtonClick(2)}>Hospedagens</button>
                     </div>
                     <div className='car-filter'>
-                        <button className='btn-car' style={{ backgroundImage: `url(${Carro_icon})` }}>Carros</button>
+                        <button className={`btn-car ${activeButton === 3 ? 'active' : ''}`} onClick={() => handleButtonClick(3)}>Carros</button>
                     </div>
                     <div className='turistic-filter'>
-                        <button className='btn-turistic' style={{ backgroundImage: `url(${PontoTuristico_icon})` }}>Pontos Turísticos</button>
+                        <button className={`btn-turistic ${activeButton === 4 ? 'active' : ''}`} onClick={() => handleButtonClick(4)}>Pontos Turísticos</button>
                     </div>
                     <div className="checkbox-container">
                         <input type="checkbox" id="customCheckbox"
@@ -42,7 +49,7 @@ export default function FiltroPlanoViagem(){
                 </div>
 
                 <div className='edit-space'>
-                    <button className='btn-edit'>a</button>
+                    <button className='btn-edit'></button>
                     <span>Editar</span>
                 </div>
 

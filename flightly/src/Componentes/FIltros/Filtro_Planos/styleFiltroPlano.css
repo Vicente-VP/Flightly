@@ -28,31 +28,164 @@
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
     padding-left: 30px;
     cursor: pointer;
-
-    background-repeat: no-repeat;
-    filter: grayscale(100%);
-    background-position: 15px;
 }
 
 .btn-fly{
     width: 138px;
     height: 40px;
-}
-
-.btn-car{
-    width: 154px;
-    height: 40px;
+    
+    background-image: url('../../../Images/FiltroPlano/Aviao-Icon-Cinza.png');
+    background-repeat: no-repeat;
+    background-position: 15px;
+    background-size: 30px;
+    
 }
 
 .btn-hotel{
     width: 260px;
     height: 40px;
+
+    background-image: url('../../../Images/FiltroPlano/Hotel-Icon-Cinza.png');
+    background-repeat: no-repeat;
+    background-position: 15px;
+    background-size: 25px;
+}
+
+.btn-car{
+    width: 154px;
+    height: 40px;
+
+
+    background-image: url('../../../Images/FiltroPlano/Carro-Icon-Cinza.png');
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-size: 28px;
 }
 
 .btn-turistic{
     width: 287px;
     height: 40px;
+    
+    background-image: url('../../../Images/FiltroPlano/Turistico-Icon-Cinza.png');
+    background-repeat: no-repeat;
+    background-position: 10px;
+    background-size: 28px;
 }
+
+
+.btn-fly:hover{
+  background-image: url('../../../Images/FiltroPlano/Aviao-icon-azul.png');
+  background-repeat: no-repeat;
+  background-position: 15px;
+  background-size: 30px;
+
+  
+  color: #ACC6E9;
+}
+
+.btn-hotel:hover{
+  background-image: url('../../../Images/FiltroPlano/Hotel-Icon-Azul.png');
+  background-repeat: no-repeat;
+  background-position: 15px;
+  background-size: 25px;
+
+  color: #ACC6E9;
+}
+
+.btn-car:hover{
+  background-image: url('../../../Images/FiltroPlano/Carro-Icon-Azul.png');
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 28px;
+
+  color: #ACC6E9;
+}
+
+.btn-turistic:hover{
+  background-image: url('../../../Images/FiltroPlano/Turistico-Icon-Azul.png');
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 28px;
+
+  color: #ACC6E9;
+}
+
+.btn-fly.active{
+  filter: none;
+  background-image: url('../../../Images/FiltroPlano/Aviao-icon.png');
+  background-repeat: no-repeat;
+  background-position: 15px;
+  background-size: 27px;
+  background-color: #2378BC; /* Altera a cor de fundo ao clicar */
+  color: #fff; /* Altera a cor do texto ao clicar */
+  border-color: #2378BC; /* Altera a cor da borda */
+  transform: scale(1.1); /* Aumenta o tamanho do botão ao clicar */
+}
+
+.btn-hotel.active{
+  filter: none;
+  background-image: url('../../../Images/FiltroPlano/Hotel-Icon.png');
+  background-repeat: no-repeat;
+  background-position: 15px;
+  background-size: 27px;
+  background-color: #2378BC; /* Altera a cor de fundo ao clicar */
+  color: #fff; /* Altera a cor do texto ao clicar */
+  border-color: #2378BC; /* Altera a cor da borda */
+  transform: scale(1.1); /* Aumenta o tamanho do botão ao clicar */
+}
+
+.btn-car.active{
+  filter: none;
+  background-image: url('../../../Images/FiltroPlano/Carro-Icon.png');
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 28px;
+  background-color: #2378BC; /* Altera a cor de fundo ao clicar */
+  color: #fff; /* Altera a cor do texto ao clicar */
+  border-color: #2378BC; /* Altera a cor da borda */
+  transform: scale(1.1); /* Aumenta o tamanho do botão ao clicar */
+}
+
+.btn-turistic.active{
+  filter: none;
+  background-image: url('../../../Images/FiltroPlano/Turistico-Icon.png');
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 28px;
+  background-color: #2378BC; /* Altera a cor de fundo ao clicar */
+  color: #fff; /* Altera a cor do texto ao clicar */
+  border-color: #2378BC; /* Altera a cor da borda */
+  transform: scale(1.1); /* Aumenta o tamanho do botão ao clicar */
+}
+
+.edit-space{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.btn-edit{
+  width: 64px;
+  height: 64px;
+  background-color: #FF6600;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-image: url('../../../Images/Icones_PlanoViagens/icon_editar_planoViagens.png');
+    background-size: 31px, 31px;
+}
+
+span{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11px;
+}
+
 
 .checkbox-container {
     display: flex;
