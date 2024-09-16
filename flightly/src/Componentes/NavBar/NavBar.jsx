@@ -19,9 +19,14 @@ import { Link } from 'react-router-dom';
 
 export default function NavBar() {
   const [isDropdownActive, setDropdownActive] = useState(false);
+  const [isDropdownActiveNot, setDropdownActiveNot] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownActive(!isDropdownActive);
+  };
+
+  const toggleDropdownNot = () => {
+    setDropdownActiveNot(!isDropdownActiveNot);
   };
   return (
     <header>
@@ -72,7 +77,7 @@ export default function NavBar() {
           <ul className={`perfil-dropdown-list ${isDropdownActive ? 'active' : ''}`}>
             <span className="title-popUp">Nome do usuário</span>
             <li className="perfil-dropdown-list-item">
-              <a>
+              <a onClick={toggleDropdownNot}>
                 <img src={Notificacoes_popUp} alt="Notificações" />
                 Notificações
               </a>
@@ -100,6 +105,60 @@ export default function NavBar() {
                 <img src={Sair_popUp} alt="Sair" />
                 Sair
               </a>
+            </li>
+          </ul>
+
+          {/* dropdow Notificações */}
+          <ul className={`not-dropdown-list ${isDropdownActiveNot ? 'active' : ''}`}>
+            <span className="title-popUp-not">Notificações</span>
+            <hr />
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout"> 
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p></span>
+                <p>Aqui mostramos os melhores pontos turísticos</p>
+              </div>
+              <hr />
+            </li>
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout">
+                {/* Colocar conte className=""údo da notificação */}
+                <span><p>Titulo </p>Urgente</span>
+                <p>Sua viagem para Salvador mudou de data</p>
+              </div>
+              <hr />
+            </li>
+            <li className="perfil-dropdown-list-item-not">
+              <div  className="Not-layout">
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p></span>
+                <p>Novas promoções de viagens</p>
+              </div>
+              <hr />
+            </li> 
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout">
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p></span>
+                <p>Vamos viajar! 10% de desconto nas hospedagens</p>
+              </div>
+              <hr />
+            </li>
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout">
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p> Urgente</span>
+                <p>Sua viagem para Salvador mudou de data</p>
+              </div>
+              <hr />
+            </li>
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout">
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p> Urgente</span>
+                <p>Sua viagem para Salvador mudou de data</p>
+              </div>
+              <hr />
             </li>
           </ul>
         </div>

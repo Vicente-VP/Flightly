@@ -151,6 +151,7 @@ header{
 .perfil-dropdown-list-item a{
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     text-decoration: none;
     color: black;
@@ -162,4 +163,81 @@ header{
     margin-right: 8px;
     width: 50px;
     height: 50px;
+}
+
+/* dorpdown notificações */
+
+.not-dropdown-list{
+    position: absolute;
+    top: 450px;
+    right: 0;
+    width: 300px;
+
+    background-color: white;
+
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.5s;
+}
+
+.not-dropdown-list.active{
+    max-height: 500px;
+    overflow-y: scroll;
+    display: block;
+}
+
+.title-popUp-not{
+    color: black;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+
+    margin: none;
+    padding: 1rem 0 0 1rem;
+    justify-content: center;
+    display: flex;
+    width: 95%;
+}
+
+ul hr{
+    width: 100%;
+    height: 0.1px;
+    background-color: #8b8585;
+    border: none;
+    margin: 15px 0 5px 0 ;
+}
+
+.perfil-dropdown-list-item-not div{
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+}
+
+.perfil-dropdown-list-item-not hr{
+    width: 100%;
+    height: 1px;
+    background-color: #8b8585;
+    border: none;
+    margin: 5px 0 0 0;
+}
+
+.Not-layout{
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 8px;
+}
+
+.Not-layout span{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
