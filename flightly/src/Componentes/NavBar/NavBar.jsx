@@ -111,7 +111,7 @@ export default function NavBar() {
 
           {/* dropdow Notificações */}
           <ul className={`not-dropdown-list ${isDropdownActiveNot ? 'active' : ''}`}>
-            <span className="title-popUp-not"><img src="" />Notificações <img src={Fechar_popUpNot} id='img-fechar' alt="fechar"/></span>
+            <span className="title-popUp-not"><img src="" />Notificações <img src={Fechar_popUpNot} id='img-fechar' alt="fechar" onClick={toggleDropdownNot}/></span>
             <hr />
             <li className="perfil-dropdown-list-item-not">
               <div className="Not-layout"> 
