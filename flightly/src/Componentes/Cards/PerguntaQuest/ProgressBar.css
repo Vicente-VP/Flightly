@@ -1,0 +1,40 @@
+.progress-space {
+    display: flex;
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    justify-content: center; /* Centraliza a barra */
+    width: 1060px;
+    height: 90px;
+    border-radius: 50px;
+    background-color: #D3D3D3;
+    position: relative; /* Necessário para a barra de progresso */
+    overflow: hidden; /* Esconde a parte da barra que ultrapassa os círculos */
+  }
+  
+  .progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 50px;
+    background-color: #66B0DA; /* Cor da barra de progresso */
+    transition: width 0.3s ease;
+  }
+  
+  .circles {
+    display: flex;
+    justify-content: space-between; /* Espaço entre os círculos */
+    position: absolute;
+    width: 100%; /* Faz com que os círculos ocupem toda a largura */
+    height: 100%;
+    pointer-events: none; /* Para que os círculos não interfiram no clique */
+  }
+  
+  .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ffffff; /* Círculo transparente */
+    margin: 0 10px; /* Espaçamento entre os círculos */
+    align-self: center; /* Centraliza verticalmente os círculos */
+  }
+  
