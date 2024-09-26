@@ -2,10 +2,11 @@
 
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
-import CardInfoVoo from "../../Componentes/Card_Informacoes/Carros/CardInfoCarros";
+
+import CardInfoVoo from "../../Componentes/Card_Informacoes/Carros/CardInfoVoo";
 
 import './style_Testes.css';
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Home() {
     return (
