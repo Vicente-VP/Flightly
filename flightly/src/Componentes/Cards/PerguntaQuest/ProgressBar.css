@@ -8,6 +8,8 @@
     background-color: #D3D3D3;
     position: relative; /* Necessário para a barra de progresso */
     overflow: hidden; /* Esconde a parte da barra que ultrapassa os círculos */
+
+    margin-top: 68px;
   }
   
   .progress-bar {
@@ -18,6 +20,7 @@
     border-radius: 50px;
     background-color: #66B0DA; /* Cor da barra de progresso */
     transition: width 0.3s ease;
+    
   }
   
   .circles {

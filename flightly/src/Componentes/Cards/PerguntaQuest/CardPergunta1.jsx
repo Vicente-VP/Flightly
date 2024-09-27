@@ -20,11 +20,11 @@ export default function CardPergunta1(){
                 </div>
 
                 <div className='question'>
-
+                    <label htmlFor="quest" className='quest'>Qual seu período de férias?</label>
                 </div>
 
                 <div className='answer'>
-
+                    
                 </div>
 
                 <div className='next-btn'>

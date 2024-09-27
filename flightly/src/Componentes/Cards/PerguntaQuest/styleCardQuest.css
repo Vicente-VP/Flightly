@@ -12,30 +12,25 @@
 
     width: 1218px;
     height: 723px;
+
+    gap: 10px;
 }
 
-/*.progress-space{
-    display: flex;
+.quest{
+    font-family: "Poppins", sans-serif;
+    font-size: 45px;
 
-    align-items: center;
-    width: 1060px;
-    height: 90px;
-    border-radius: 50px;
-    background-color: #D3D3D3;
-}*/
-
-/*.progress-bar{
- 
-
-    height: 100%;
-    border-radius: 50px;
-    background-color: #66B0DA;
-    width: 1060px;
+    font-weight: 500;
 }
 
-.progress-circle{
-    height: 36px;
-    width: 36px;
+button{
+    width: 300px;
+    height: 76px;
+
+    border: none;
     border-radius: 50px;
-    background-color: yellow;
-}*/
+    background-color: #C7E2F2;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 37px;
+}
