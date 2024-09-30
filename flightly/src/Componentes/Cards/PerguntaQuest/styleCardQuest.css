@@ -92,7 +92,7 @@
     font-size: 37px;
 }
 
-.btn-answer1:active, .btn-answer2:active, .btn-answer3:active{
+.btn-answer1.active, .btn-answer2.active, .btn-answer3.active{
     background-color: #05659C;
 }
 /*-----Button-----*/
