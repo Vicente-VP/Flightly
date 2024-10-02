@@ -2,18 +2,20 @@
 
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
-import CardInfoVoo from "../../Componentes/Card_Informacoes/Carros/CardInfoCarros";
+import CardDestinoPular from "../../Componentes/Cards/CardDestinoPopular/CardDestinoPular";
+
+import RioJaneiro from '../../Images/img_Destino_Cards.png';
 
 import './style_Testes.css';
-import React, { useState } from 'react';
+import React from 'react';
 
-export default function Home() {
+export default function Testes() {
     return (
         <>
             <div className="navbar-testes"><NavBar/></div>
             
             <div className="conteudo-testes">
-                <CardInfoVoo/>
+                <CardDestinoPular imgDestinoPopular={RioJaneiro} nomeDesninoPopular="Rio de Janeiro" />
             </div>
 
             <div className="footer-testes"><Footer/></div>
