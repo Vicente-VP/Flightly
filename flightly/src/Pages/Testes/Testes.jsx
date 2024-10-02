@@ -2,8 +2,8 @@
 
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
-import CardDestinoPular from "../../Componentes/Cards/CardDestinoPopular/CardDestinoPular";
 
+import CardDestinoPular from "../../Componentes/Cards/CardDestinoPopular/CardDestinoPular";
 import RioJaneiro from '../../Images/img_Destino_Cards.png';
 
 import './style_Testes.css';
