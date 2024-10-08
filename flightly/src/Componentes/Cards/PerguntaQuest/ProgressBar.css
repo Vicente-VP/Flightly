@@ -9,7 +9,6 @@
     position: relative; /* Necessário para a barra de progresso */
     overflow: hidden; /* Esconde a parte da barra que ultrapassa os círculos */
 
-    margin-top: 68px;
   }
   
   .progress-bar {

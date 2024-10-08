@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 export default function CardPergunta1(props){
 
-    const [progress, setProgress] = useState(10);
+    const [progress, setProgress] = useState(0);
 
     const [changeAnswer, setchangeAnswer] = useState(false);
     const [changeAnswer3, setchangeAnswer3] = useState(false);
@@ -13,7 +13,7 @@ export default function CardPergunta1(props){
     const [answer2, setAnswer2] = useState('');
     const [answer3, setAnswer3] = useState('');
 
-    const [changeQuestion, setchangeQuestion] = useState();
+    const [changeQuestion, setchangeQuestion] = useState('Bem-Vindo ao nosso Quiz!');
 
     const [contagem, setContagem] = useState(0);
 
@@ -40,9 +40,10 @@ export default function CardPergunta1(props){
 
   
     const changeAnswers = useCallback(() =>{
-        setchangeAnswer(true);
+        
 
-        if(contagem === 0){
+        if(contagem === 1){
+            setchangeAnswer(true);
             setchangeAnswer3(false);
             setAnswer1("Começo / Final do ano"); 
             setAnswer2("Meio do ano")
@@ -50,7 +51,8 @@ export default function CardPergunta1(props){
             console.log(buttonText);
 
         }
-        else if(contagem === 1){
+        else if(contagem === 2){
+            
             setchangeAnswer3(true);
             setAnswer1("Litoral/Praia");
             setAnswer3("Rural")
@@ -58,50 +60,53 @@ export default function CardPergunta1(props){
             setButtonText('Avançar');
             console.log(buttonText);
         }
-        else if(contagem === 2){
+        else if(contagem === 3){
             setchangeAnswer3(false);
+            
             setAnswer1("Atividades Internas");
             setAnswer2("Atividades Externas")
             setButtonText('Avançar');
             console.log(buttonText);
         }
-        else if(contagem === 3){
+        else if(contagem === 4){
+            
             setAnswer1("Reservados");
             setAnswer2("Animados")
             setButtonText('Avançar');
             console.log(buttonText);
         }
-        else if(contagem === 4){
+        else if(contagem === 5){
+            
             setAnswer1("Agitados");
             setAnswer2("Tranquilos")
             setButtonText('Avançar');
             console.log(buttonText);
         }
-        else if(contagem === 5){
+        else if(contagem === 6){
             setAnswer1("Sim");
             setAnswer2("Não")
             setButtonText('Avançar');
             console.log(buttonText);
         }
-        else if(contagem === 6){
+        else if(contagem === 7){
             setAnswer1("Sozinho");
             setAnswer2("Em Grupo")
             setButtonText('Avançar');
             console.log(buttonText);
         }
-        else if(contagem === 7){
+        else if(contagem === 8){
             setAnswer1("Curtas");
             setAnswer2("Longas")
             setButtonText('Avançar');
             console.log(buttonText);
         }
-        else if(contagem === 8){
+        else if(contagem === 9){
             setAnswer1("Tours Guiados");
             setAnswer2("Sozinho")
             setButtonText('Avançar');
             console.log(buttonText);
         }
-        else if(contagem === 9){
+        else if(contagem === 10){
             console.log(buttonText);
             setAnswer1("Quentes");
             setAnswer2("Frios")
@@ -110,43 +115,43 @@ export default function CardPergunta1(props){
       }, [contagem]);
 
     const changeQuestions = useCallback(() =>{
-        if(contagem === 0){
+        if(contagem === 1){
             setchangeQuestion('Qual seu período de férias ?')
-        }
-        else if(contagem === 1){
-            setchangeQuestion('Selecione sua preferência')
         }
         else if(contagem === 2){
             setchangeQuestion('Selecione sua preferência')
         }
         else if(contagem === 3){
-            setchangeQuestion('Gosta de ir a lugares mais reservados ou mais animados ?')
+            setchangeQuestion('Selecione sua preferência')
         }
         else if(contagem === 4){
-            setchangeQuestion('Prefere passeios mais agitados ou tranquilos ?')
+            setchangeQuestion('Gosta de ir a lugares mais reservados ou mais animados ?')
         }
         else if(contagem === 5){
-            setchangeQuestion('Você gosta de experimentar a culinária local ?')
+            setchangeQuestion('Prefere passeios mais agitados ou tranquilos ?')
         }
         else if(contagem === 6){
-            setchangeQuestion('Você costuma sair sozinho ou em grupo ?')
+            setchangeQuestion('Você gosta de experimentar a culinária local ?')
         }
         else if(contagem === 7){
-            setchangeQuestion('Suas viagens são curtas ou longas ?')
+            setchangeQuestion('Você costuma sair sozinho ou em grupo ?')
         }
         else if(contagem === 8){
-            setchangeQuestion('Você gosta de participar de tours guiados ou prefere ir sozinho ?')
+            setchangeQuestion('Suas viagens são curtas ou longas ?')
         }
         else if(contagem === 9){
+            setchangeQuestion('Você gosta de participar de tours guiados ou prefere ir sozinho ?')
+        }
+        else if(contagem === 10){
             setchangeQuestion('Você prefere destinos mais quentes ou frios ?')
         }
     }, [contagem]);
 
     const Next = () => {
-        if (contagem < 9) {
+        if (contagem <= 10) {
             setContagem((prev) => prev + 1);
             handleProgress(10);
-            changeAnswers();
+            changeAnswers(true);
             changeQuestions();
             setActiveButton(null);
         }
@@ -156,12 +161,15 @@ export default function CardPergunta1(props){
     };
 
     const Back = () => {
-        if (contagem > 0) {
+        if (contagem > 1) {
             setContagem((prev) => prev - 1);
             handleProgress(-10);
             changeAnswers();
             changeQuestions();
             setActiveButton(null);
+        }
+        if(contagem <=1){
+            changeQuestions(false);
         }
     };
 
@@ -188,11 +196,11 @@ export default function CardPergunta1(props){
         const togglePopupClose = () => {
             if (containerPOPUP) {
                 containerPOPUP.style.display = 'none';
-                quest.style.display = 'flex';
+                quest.style.display = 'grid';
             }
             setButtonText('Avançar'); // Voltar o texto do botão
             handleProgress(-90);
-            setContagem(0) ;
+            setContagem(1) ;
         };
 
         // Adicionar evento de click para exibir o popup
@@ -260,8 +268,8 @@ export default function CardPergunta1(props){
 
             <div className='card-quest-space' id='card'>
 
-                <div>
-                    <ProgressBar progress={progress} />
+                <div className='container-barraProgresso'>
+                    {changeQuestion && <ProgressBar progress={progress} />}
                 </div>
 
                 <div className='question'>
@@ -276,7 +284,7 @@ export default function CardPergunta1(props){
 
                 <div className='next-btn'>
 
-                    {contagem > 0 && <button className='btn-next' onClick={Back}>Voltar</button>}
+                    {contagem > 1 && <button className='btn-next' onClick={Back}>Voltar</button>}
 
                     <button className='btn-next' id='btn-finish' onClick={Next}>{buttonText}</button>
                 
