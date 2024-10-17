@@ -37,7 +37,12 @@ export default function InfoVoo(props){
                         </div>
                     </div>
                 </div>
+                <button className="btnPopup-AddPlano-Compra">
+                    <img src={sinalMais} alt="Botão de abrir Pop-up de Add Plano Viagem ou Compra" />
+                </button>
             </div>
+
         </>
     );
 }
+

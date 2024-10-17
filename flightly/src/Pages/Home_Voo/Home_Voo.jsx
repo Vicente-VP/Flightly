@@ -11,8 +11,8 @@ import idaVoltaIcon from '../../Images/Icones-Cards/ida-volta.png';
 import classeIcon from '../../Images/Icones-Cards/classe.png';
 
 import './style_Voo.css';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
+import VooPopular from "../../Componentes/Cards/CadVooPopular/CardVooPopular";
 
 export default function Home() {
     return (
@@ -107,38 +107,24 @@ export default function Home() {
                     </div>
 
                     <div className="cards-voo-popular">
-                        <div className="card-popular-voo">
-                            <img src={Destino_Cards} className="img-card-voo"/>
-                                <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
-                                <span className="companhia-card-voo">Latam</span>
-                                <span className="data-card-voo">11/07 - 21/07</span>
-                                <span className="ida-volta-card-voo">Ida e Volta</span>
-                                <span className="preco-card-voo">R$ 450,00</span>
-                        </div>
-                        <div className="card-popular-voo">
-                            <img src={Destino_Cards} className="img-card-voo"/>
-                                <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
-                                <span className="companhia-card-voo">Latam</span>
-                                <span className="data-card-voo">11/07 - 21/07</span>
-                                <span className="ida-volta-card-voo">Ida e Volta</span>
-                                <span className="preco-card-voo">R$ 450,00</span>
-                        </div>
-                        <div className="card-popular-voo">
-                            <img src={Destino_Cards} className="img-card-voo"/>
-                                <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
-                                <span className="companhia-card-voo">Latam</span>
-                                <span className="data-card-voo">11/07 - 21/07</span>
-                                <span className="ida-volta-card-voo">Ida e Volta</span>
-                                <span className="preco-card-voo">R$ 450,00</span>
-                        </div>
-                        <div className="card-popular-voo">
-                            <img src={Destino_Cards} className="img-card-voo"/>
-                                <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
-                                <span className="companhia-card-voo">Latam</span>
-                                <span className="data-card-voo">11/07 - 21/07</span>
-                                <span className="ida-volta-card-voo">Ida e Volta</span>
-                                <span className="preco-card-voo">R$ 450,00</span>
-                        </div>
+                        
+                        <VooPopular  imgDestino = {Destino_Cards} destino = "Salvador - São Paulo" 
+                        companhia = "Gol" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
+                         preco = "1.800,00"/>
+
+                        <VooPopular  imgDestino = {Destino_Cards} destino = "Rio de Janeiro - Amazonas" 
+                        companhia = "Latam" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
+                         preco = "1.800,00"/>
+
+                        <VooPopular  imgDestino = {Destino_Cards} destino = "Piauí - Minas Gerais" 
+                        companhia = "Azul" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
+                         preco = "1.800,00"/>
+
+                        <VooPopular  imgDestino = {Destino_Cards} destino = "Florianópolis - Acre" 
+                        companhia = "Latam" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
+                         preco = "1.800,00"/>
+                        
+                        
                     </div>
 
                     <div className="btn-voo-popular">
@@ -159,38 +145,23 @@ export default function Home() {
                     </div>
 
                     <div className="cards-voo-popular">
-                        <div className="card-popular-voo">
-                            <img src={Destino_Cards} className="img-card-voo"/>
-                                <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
-                                <span className="companhia-card-voo">Latam</span>
-                                <span className="data-card-voo">11/07 - 21/07</span>
-                                <span className="ida-volta-card-voo">Ida e Volta</span>
-                                <span className="preco-card-voo">R$ 450,00</span>
-                        </div>
-                        <div className="card-popular-voo">
-                            <img src={Destino_Cards} className="img-card-voo"/>
-                                <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
-                                <span className="companhia-card-voo">Latam</span>
-                                <span className="data-card-voo">11/07 - 21/07</span>
-                                <span className="ida-volta-card-voo">Ida e Volta</span>
-                                <span className="preco-card-voo">R$ 450,00</span>
-                        </div>
-                        <div className="card-popular-voo">
-                            <img src={Destino_Cards} className="img-card-voo"/>
-                                <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
-                                <span className="companhia-card-voo">Latam</span>
-                                <span className="data-card-voo">11/07 - 21/07</span>
-                                <span className="ida-volta-card-voo">Ida e Volta</span>
-                                <span className="preco-card-voo">R$ 450,00</span>
-                        </div>
-                        <div className="card-popular-voo">
-                            <img src={Destino_Cards} className="img-card-voo"/>
-                                <span className="viagem-card-voo">São Paulo - Rio de Janeiro</span>
-                                <span className="companhia-card-voo">Latam</span>
-                                <span className="data-card-voo">11/07 - 21/07</span>
-                                <span className="ida-volta-card-voo">Ida e Volta</span>
-                                <span className="preco-card-voo">R$ 450,00</span>
-                        </div>
+                        
+                        <VooPopular  imgDestino = {Destino_Cards} destino = "Salvador - São Paulo" 
+                        companhia = "Gol" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
+                         preco = "1.800,00"/>
+
+                        <VooPopular  imgDestino = {Destino_Cards} destino = "Rio de Janeiro - Amazonas" 
+                        companhia = "Latam" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
+                         preco = "1.800,00"/>
+
+                        <VooPopular  imgDestino = {Destino_Cards} destino = "Piauí - Minas Gerais" 
+                        companhia = "Azul" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
+                         preco = "1.800,00"/>
+
+                        <VooPopular  imgDestino = {Destino_Cards} destino = "Florianópolis - Acre" 
+                        companhia = "Latam" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
+                         preco = "1.800,00"/>
+
                     </div>
 
                     <div className="btn-voo-popular">

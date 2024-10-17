@@ -27,8 +27,6 @@ export default function App() {
           <Route path="/Testes" element={<Testes/>}/>
           <Route path="/Perfil" element={<Perfil/>}/>
           <Route path="/PlanosViagem" element={<PlanosViagem/>}/>
-          <Route path="/Cadastro" element={<Cadastro/>}/>
-          <Route path="/Login" element={<Login/>}/>
           <Route path="/Questionario" element={<Questionario/>}/>
         </Routes>
       </Router>

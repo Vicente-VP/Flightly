@@ -2,26 +2,27 @@
 
 
 .cards_recomendation_hp{
-    posiiton: relative;
+    position: relative;
     height: 400px;
     width: 230px;
     margin-left: 15px;
     border-radius: 1.5rem;
     line-height: 1.375;
     border: 1.5px solid #ACC6E9;
+    cursor: pointer;
 }
 
-#cards_recomendation_hp_ec{
+#hosp-eco{
     background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.5)), url('../../../Images/RecomendacaoHospedagem/hp_economico.jpg');
     background-position: center;
 }
 
-#cards_recomendation_hp_inter{
+#hosp-inter{
     background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.5)), url('../../../Images/RecomendacaoHospedagem/hp_intermediario.jpeg');
     background-position: center;
 }
 
-#cards_recomendation_hp_lux{
+#hosp-lux{
     background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.5)), url('../../../Images/RecomendacaoHospedagem/hp_luxo.jpg');
     background-position: center;
 }

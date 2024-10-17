@@ -10,6 +10,7 @@ import Perfil_popUp from '../../Images/Icones_PopUp/Perfil_popUp.png';
 import Plano_popUp from '../../Images/Icones_PopUp/Plano_popUp.png';
 import Quiz_popUp from '../../Images/Icones_PopUp/Quiz_popUp.png';
 import Sair_popUp from '../../Images/Icones_PopUp/Sair_popUp.png';
+import Fechar_popUpNot from '../../Images/Icones_PopUp/botao-fechar.png';
 
 import './styleNavBar.css';
 import React, { useState } from 'react';
@@ -19,9 +20,14 @@ import { Link } from 'react-router-dom';
 
 export default function NavBar() {
   const [isDropdownActive, setDropdownActive] = useState(false);
+  const [isDropdownActiveNot, setDropdownActiveNot] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownActive(!isDropdownActive);
+  };
+
+  const toggleDropdownNot = () => {
+    setDropdownActiveNot(!isDropdownActiveNot);
   };
   return (
     <header>
@@ -72,7 +78,7 @@ export default function NavBar() {
           <ul className={`perfil-dropdown-list ${isDropdownActive ? 'active' : ''}`}>
             <span className="title-popUp">Nome do usuário</span>
             <li className="perfil-dropdown-list-item">
-              <a>
+              <a onClick={toggleDropdownNot}>
                 <img src={Notificacoes_popUp} alt="Notificações" />
                 Notificações
               </a>
@@ -100,6 +106,60 @@ export default function NavBar() {
                 <img src={Sair_popUp} alt="Sair" />
                 Sair
               </a>
+            </li>
+          </ul>
+
+          {/* dropdow Notificações */}
+          <ul className={`not-dropdown-list ${isDropdownActiveNot ? 'active' : ''}`}>
+            <span className="title-popUp-not"><img src="" />Notificações <img src={Fechar_popUpNot} id='img-fechar' alt="fechar" onClick={toggleDropdownNot}/></span>
+            <hr />
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout"> 
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p></span>
+                <p>Aqui mostramos os melhores pontos turísticos</p>
+              </div>
+              <hr />
+            </li>
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout">
+                {/* Colocar conte className=""údo da notificação */}
+                <span><p>Titulo</p> <aside>Urgente</aside></span>
+                <p>Sua viagem para Salvador mudou de data</p>
+              </div>
+              <hr />
+            </li>
+            <li className="perfil-dropdown-list-item-not">
+              <div  className="Not-layout">
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p></span>
+                <p>Novas promoções de viagens</p>
+              </div>
+              <hr />
+            </li> 
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout">
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p></span>
+                <p>Vamos viajar! 10% de desconto nas hospedagens</p>
+              </div>
+              <hr />
+            </li>
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout">
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p><aside>Urgente</aside></span>
+                <p>Sua viagem para Salvador mudou de data</p>
+              </div>
+              <hr />
+            </li>
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout">
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p><aside>Urgente</aside></span>
+                <p>Sua viagem para Salvador mudou de data</p>
+              </div>
+              <hr />
             </li>
           </ul>
         </div>

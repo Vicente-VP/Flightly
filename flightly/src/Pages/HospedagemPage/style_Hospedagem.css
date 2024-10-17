@@ -75,6 +75,7 @@
     border: none;
     height: 40px;
     box-shadow: 0px 4px 14px 0px #B2C9DB;
+    outline: none;
 }
 
 .btn-pesquisar-hospedagem {
@@ -97,27 +98,63 @@
     cursor: pointer;
 }
 
-#Recommendations_HOSPEDAGENS{
-    font-family: 'Poppins', sans-serif;
-    margin: auto;
-    display: flex;	
-    flex-direction  : row;
-    justify-content: space-evenly;
-    height: 380px;
-    max-width: 1200px;	
+/* Destinos mais Populares Hospedagem */
+
+.destinos-populares-hospedagem{
+    display: grid;
+    width: 100%;
+    margin-top: 200px;
+    justify-items: center;
 }
 
-#cards_recomendation_hp_ec{
-    background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.5)), url('../../Images/RecomendacaoHospedagem/hp_economico.jpg');
-    background-position: center;
+.titulo-populares-hospedagem{
+    font-size: 40px;
+    font-weight: 500;
+    font-style: normal;
 }
 
-#cards_recomendation_hp_inter{
-    background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.5)), url('../../Images/RecomendacaoHospedagem/hp_economico.jpg');
-    background-position: center;
+.destinos-populares-cards{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin-top: 75px;
+    margin-bottom: 75px;
 }
 
-#cards_recomendation_hp_lux{
-    background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.5)), url('../../Images/RecomendacaoHospedagem/hp_economico.jpg');
-    background-position: center;
+/* Recomendação por Orçamento Hospedagem */
+
+.recomendacoesOrcamento-hospedagem{
+    display: grid;
+    width: 100%;
+    margin-top: 150px;
+    margin-bottom: 200px;
+    justify-items: center;
 }
+
+.titulo-recomendacoes-hospedagem{
+    font-size: 40px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.recommendations-HOSPEDAGENS-cards{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    margin-top: 75px;
+    margin-bottom: 75px;
+}
+
+.btn-verMais-hospedagem{
+    width: 203px;
+    height: 50px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #FF6600;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
+}
+
