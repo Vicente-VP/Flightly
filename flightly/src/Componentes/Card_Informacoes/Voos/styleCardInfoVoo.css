@@ -22,18 +22,41 @@
   transition: 0.3s;
 }
 
+
 .btnPopup-AddPlano-Compra{
   display: flex;
-  width: 50px;
+  
   height: 50px;
+  width: 52px;
   align-items: center;
   justify-content: center;
+  margin: 0 0 0 20px;
+  padding: 20px;
 
   background-color: #004369;
   border-radius: 50%;
   border: none;
   visibility: hidden;
 }
+
+.btnPopup-AddPlano-Compra>img{
+  width: 30px;
+  height: 30px;
+}
+
+/* .btnPopup-AddPlano-Compra{
+  display: flex;
+  width: 500px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0 20px;
+
+  background-color: #004369;
+  border-radius: 50%;
+  border: none;
+  visibility: visible;
+} */
 
 .container-Card:hover{
   width: 780px;
@@ -76,6 +99,7 @@
 
 .info > span{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
   font-size: 20.56px;
   font-weight: 400;
   color: #555555;
@@ -97,6 +121,7 @@
 
 .ida-local > span{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
   font-size: 18.15px;
   font-weight: 500;
   color: black;
@@ -104,6 +129,7 @@
 
 .ida-local{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
   font-size: 16.63px;
   font-weight: 300;
   color: #555555;
@@ -111,12 +137,14 @@
 
 .ida-date{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
   font-size: 16.63px;
   font-weight: 300;
 }
 
 .ida-scale{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
   font-size: 10.94px;
   font-weight: 300;
 
@@ -136,6 +164,7 @@
 
 .volta-local > span{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
   font-size: 18.15px;
   font-weight: 500;
   color: black;
@@ -143,6 +172,7 @@
 
 .volta-local{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
   font-size: 16.63px;
   font-weight: 300;
   color: #555555;
@@ -150,12 +180,14 @@
 
 .volta-date{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
   font-size: 16.63px;
   font-weight: 300;
 }
 
 .volta-scale{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
   font-size: 10.94px;
   font-weight: 300;
 
@@ -204,6 +236,7 @@
 .preco-voo{
   font-size: 41.74px;
   color: black;
+  font-style: normal;
 }
 .preco label{
   font-size: 12.88px;
