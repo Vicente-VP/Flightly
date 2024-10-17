@@ -96,10 +96,10 @@ export default function NavBar() {
               </Link>
             </li>
             <li className="perfil-dropdown-list-item">
-              <a>
+              <Link to="/Questionario">
                 <img src={Quiz_popUp} alt="Quiz" />
                 Quiz
-              </a>
+              </Link>
             </li>
             <li className="perfil-dropdown-list-item">
               <a>
