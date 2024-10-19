@@ -1,0 +1,65 @@
+
+
+
+//Geral
+div,h1{
+    font-family: "Poppins", sans serif;
+}
+
+
+h1{
+    font-weight: normal;
+}
+
+//DETALHES DE COMPRA
+
+
+.Details{
+    width: 1000px;
+}
+
+.Name_Price_details{
+    display:flex;
+    justify-content: space-between;
+}
+
+
+
+// FORMA DE PAGAMENTO 
+
+
+.FormaPag{
+    display: grid;
+    justify-content: center;
+    border: solid;
+    border-color: #004639;
+    border-radius: 15px;
+    margin: auto;
+    position: relative;
+    width: 612px;
+    height: 286px;
+    padding: 10px;
+}
+
+.formas_pag{
+    margin:15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: solid;
+    border-color: #004369;
+    border-radius: 10px;
+    width: 545px;
+    height: 183px;
+    line-height: 8px;
+}
+
+.Row_Type{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+input[name=FP]{
+    margin-left:15px;
+}
