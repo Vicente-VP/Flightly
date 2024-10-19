@@ -74,10 +74,6 @@
   padding-left: 35px;
 }
 
-.destino:focus{
-  outline: none;
-}
-
 .search-data{
   display: flex;
   margin: 0 30px 17px 0;
@@ -114,10 +110,6 @@
 
 }
 
-.ida:focus{
-  outline: none;
-}
-
 .volta{
   font-family: "Poppins", sans-serif;
 
@@ -131,10 +123,6 @@
   background-position: 10px; 
   background-repeat: no-repeat;
   padding-left: 35px;
-}
-
-.volta:focus{
-  outline: none;
 }
 
 input[type="date"]::-webkit-inner-spin-button,
@@ -192,10 +180,6 @@ input[type=date]::-webkit-datetime-edit {
   font-size: 15px;
 }
 
-.passageiro:focus{
-  outline: none;
-}
-
 .search-tipo{
   display: flex;
   flex-direction: column;
@@ -236,10 +220,11 @@ input[type=date]::-webkit-datetime-edit {
   font-size: 15px;
 }
 
-.tipo:focus{
+.tipo:focus, .destino:focus, .ida:focus, .volta:focus, .tipo:focus, .passageiro:focus{
   outline: none;
+  border: 2px solid #004369;
 }
 
 span{
-  list-style-type:none;
+  font-style: normal;
 }

@@ -72,36 +72,6 @@ export default function Drop({imagem, widthDrop, topContent, titles, subTitles})
                                 </div>
                             </div>
                         ))}
-                        {/* <div className="dropdown-item">
-                            <label className='title-label'>Adultos</label>
-                            <div id='value'>
-                                <div className='btn-add' onClick={() => decrement(nAdult, setNAdult, 1)}><img src={menos} alt="Remover"/></div>
-                                <span>{nAdult}</span>
-                                <div className='btn-add' onClick={() => increment(nAdult, setNAdult)}><img src={mais} alt="Adicionar"/></div>
-                            </div>
-                        </div>
-                        <div className="dropdown-item">
-                            <div>
-                                <label className='title-label'>Crianças</label>
-                                <label className='sub-title'>no assento</label>
-                            </div>
-                            <div id='value'>
-                                <div className='btn-add' onClick={() => decrement(criancaAssento, setCriancaAssento)}><img src={menos} alt="Remover"/></div>
-                                <span>{criancaAssento}</span>
-                                <div className='btn-add' onClick={() => increment(criancaAssento, setCriancaAssento)}><img src={mais} alt="Adicionar"/></div>
-                            </div>
-                        </div>
-                        <div className="dropdown-item">
-                            <div>
-                                <label className='title-label'>Crianças</label>
-                                <label className='sub-title'>de colo</label>
-                            </div>
-                            <div id='value'>
-                                <div className='btn-add' onClick={() => decrement(criancaColo, setCriancaColo)}><img src={menos} alt="Remover"/></div>
-                                <span>{criancaColo}</span>
-                                <div className='btn-add' onClick={() => increment(criancaColo, setCriancaColo)}><img src={mais} alt="Adicionar"/></div>
-                            </div>
-                        </div> */}
                     </div>
                 )}
             </div>
