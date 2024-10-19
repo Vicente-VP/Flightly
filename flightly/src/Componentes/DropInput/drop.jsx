@@ -13,6 +13,9 @@ export default function Drop({imagem, widthDrop, topContent}){
     const [criancaColo, setCriancaColo] = useState(0);
     const [totalPas, setTotalPas] = useState(1);
 
+    const titles = ["Adultos", "Crianças de", "Crianças", "Crinças no"];
+    const subTitles = ["", "2 a 11 anos", "no assento", "de colo"];
+
     const dropdownRef = useRef(null);
 
     const calcTotal = () =>{

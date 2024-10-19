@@ -48,13 +48,13 @@ export default function Carro_page (){
             </div>
             <div className="car-input-form">
                 <div className="car-etiqueta-className">
-                    <label className="car-etiqueta">Data de Retirada</label>
+                    <label className="car-etiqueta">Data e Hora de Retirada</label>
                 </div>
                 <div className="car-input-className">
                     <div>
                         <input type="date" className="car-input" id="pickup-date" name="pickup-date" placeholder="21/06/2024"
                             style={{ backgroundImage: `url(${IdaVolta_Form})` }} />
-                        <input type="time" className="car-input" id="pickup-time" name="pickup-date"/>
+                        <input type="time" className="car-input" id="pickup-time" name="pickup-hour"/>
                     </div>
                 </div>
             </div>
@@ -66,13 +66,13 @@ export default function Carro_page (){
             </div>
             <div className="car-input-form">
                 <div className="car-etiqueta-className">
-                    <label className="car-etiqueta">Data de devolução</label>
+                    <label className="car-etiqueta">Data e Hora de Devolução</label>
                 </div>
                 <div className="car-input-className">
                     <div>
                         <input type="date" className="car-input" id="return-date" name="return-date" placeholder="30/06/2024"
                             style={{ backgroundImage: `url(${IdaVolta_Form})` }} />
-                        <input type="time" className="car-input" id="return-time" name="return-date" />
+                        <input type="time" className="car-input" id="return-time" name="return-hour" />
                     </div>
                 </div>
             </div>

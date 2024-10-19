@@ -43,8 +43,10 @@ export default function PesquisaVoo() {
                 <div className="search-classe">
                     <span>Classe</span>
                     <select name="classe" className="classe" style={{ backgroundImage: `url(${classe_icon})` }}>
-                        <option value="economica">Econômica</option>
-                        <option value="primeira">Primeira classe</option>
+                        <option value="econômica">Econômica</option>
+                        <option value="econômica Premium">Econômica Premium</option>
+                        <option value="executiva">Executiva</option>
+                        <option value="primeira">Primeira</option>
                     </select>
                 </div>
                 <div className="btn-pesquisar-voo">

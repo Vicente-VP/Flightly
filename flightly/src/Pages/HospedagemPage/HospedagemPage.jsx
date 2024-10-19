@@ -42,7 +42,7 @@ export default function Home() {
                                     <label className="etiqueta-hospedagem">Check-in</label>
                                 </div>
                                 <div className="input-hospedagem">
-                                    <input type="text" className="input-hospedagem" placeholder="21/06/24"
+                                    <input type="date" className="input-hospedagem" placeholder="21/06/24"
                                         style={{ backgroundImage: `url(${idaVoltaIcon})` }} />
                                 </div>
                             </div>
@@ -51,7 +51,7 @@ export default function Home() {
                                     <label className="etiqueta-hospedagem">Check-out</label>
                                 </div>
                                 <div className="input-hospedagem">
-                                    <input type="text" className="input-hospedagem" placeholder="21/06/24"
+                                    <input type="date" className="input-hospedagem" placeholder="21/06/24"
                                         style={{ backgroundImage: `url(${idaVoltaIcon})` }} />
                                 </div>
                             </div>
@@ -62,15 +62,6 @@ export default function Home() {
                                 <div className="input-hospedagem">
                                     <input type="text" className="input-hospedagem" placeholder="Rio de Janeiro"
                                         style={{ backgroundImage: `url(${destinoIcon})` }} />
-                                </div>
-                            </div>
-                            <div className="input-form-hospedagem">
-                                <div className="etiqueta-hospedagem">
-                                    <label className="etiqueta-hospedagem">Quartos</label>
-                                </div>
-                                <div className="input-hospedagem">
-                                    <input type="text" className="input-hospedagem" placeholder="1"
-                                        style={{ backgroundImage: `url(${quartosIcon})` }} />
                                 </div>
                             </div>
                             <div className="input-form-hospedagem">
