@@ -27,6 +27,13 @@
     transition: 0.3s;
 }
 
+.card-horizontal.hover-active {
+    width: 780px;
+    height: 250px;
+    background-color: #C7E2F225;
+    transition: 0.3s;
+}
+
 /* Animação e transição do botão */
 .btnPopup-AddPlano-Compra {
     display: flex;

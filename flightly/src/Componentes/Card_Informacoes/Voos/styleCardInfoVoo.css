@@ -2,10 +2,10 @@
 
 .containerGeral-infoVoo {
   display: flex;
-  grid-template-columns: auto 50px;
   flex-direction: row;
   gap: 20px;
   align-items: center;
+  transform: translateX(45px);
 }
 
 .container-Card.selected {
@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: row;
   cursor: pointer;
-  width: 750px;
+  width: 815px;
   height: 220px;
   border: 1.36px solid rgba(85, 85, 85, 0.29);
   border-radius: 27.17px;
@@ -33,7 +33,7 @@
 /* Aumenta o tamanho e muda a cor quando hover no card ou no botão */
 .container-Card:hover,
 .btnPopup-AddPlano-Compra:hover + .container-Card {
-  width: 780px;
+  width: 835px;
   height: 250px;
   background-color: #c7e2f225;
   transition: 0.3s;
@@ -67,7 +67,7 @@
 
 /* Mantém o estado do card mesmo quando o mouse está sobre o botão */
 .container-Card.hover-active {
-  width: 780px;
+  width: 835px;
   height: 250px;
   background-color: #c7e2f225;
   transition: 0.3s;

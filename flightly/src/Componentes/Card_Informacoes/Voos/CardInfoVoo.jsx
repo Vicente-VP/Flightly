@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import sinalMais from '../../../Images/sinalMais.png';
 import './styleCardInfoVoo.css';
-import sinalMais from "../../../Images/sinalMais.png";
 import InfoVooVolta from './Volta/CardInfoVooVolta';
-import { useState } from 'react';
 import companhia from "../../../Images/Card_Informacoes_Voo/Imagem_Companhia.png";
 
 export default function InfoVoo(props) {
@@ -74,9 +72,6 @@ export default function InfoVoo(props) {
                             </div>
                         </div>
                     </div>
-                    <button className="btnPopup-AddPlano-Compra">
-                        <img src={sinalMais} alt="Botão de abrir Pop-up de Add Plano Viagem ou Compra" />
-                    </button>
                 </div>
                 <button
                     className="btnPopup-AddPlano-Compra"
@@ -85,9 +80,10 @@ export default function InfoVoo(props) {
                 >
                     <img src={sinalMais} alt="Botão de abrir Pop-up de Add Plano Viagem ou Compra" />
                 </button>
+
+                
             </div>
 
-            </div>
             {isClicked && (
                 <div className="info-voo-volta">
                     {vooData.map((voo) => (
