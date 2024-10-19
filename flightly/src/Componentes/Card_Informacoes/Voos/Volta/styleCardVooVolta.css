@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*-----Div------*/
+.CardVolta-Geral{
+  display: flex;
+  grid-template-columns: auto 50px;
+  gap: 20px;
+  align-items: center;
+}
+
+.container-Info{
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+
+  width: 750px;
+  height: 220px;
+
+  border: 1.36px solid rgb(85, 85, 85, 0.29);
+  border-radius: 27.17px;
+  transition: 0.3s;
+}
+
+.container-Info.selected {
+    border: 2px solid #004369;
+}
+
+
+.left{
+  display: flex;
+  align-items: center;
+
+  gap: 62px;
+
+  margin: 0 0 0 50px;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  align-items: baseline;
+}
+
+.ida-Volta{
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.ida{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  width: 150px;
+}
+
+.volta{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  width: 150px;
+}
+
+.right{
+  display: flex;
+  flex-direction: row;
+  align-items: center ;
+}
+
+.info-preco{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+  width: 220px;
+}
+
+
+
+/*-----Div------*/
+
+/*-----IMG-----*/
+.left > img{
+  width: 90px;
+  height: 144px;
+}
+
+.imgs{
+    display: flex;
+    gap: 19.91px;
+  }
+/*-----IMG-----*/
+
+/*-----Label-----*/
+
+.info > label{
+  font-family: "Poppins", sans-serif;
+  font-size: 35.46px;
+  font-weight: 500;
+}
+
+.preco label{
+    font-size: 12.88px;
+    color: #555555;
+  }
+
+.custom-radio {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  user-select: none; 
+}
+
+.custom-radio input:checked ~ .checkmark {
+    background-color: #004369; 
+  }
+  .custom-radio input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+/*-----Label-----*/
+
+/*-----Span-----*/
+.info > span{
+  font-family: "Poppins", sans-serif;
+  font-size: 20.56px;
+  font-weight: 400;
+  color: #555555;
+}
+
+
+.ida-local > span{
+  font-family: "Poppins", sans-serif;
+  font-size: 18.15px;
+  font-weight: 500;
+  color: black;
+}
+
+.ida-local{
+  font-family: "Poppins", sans-serif;
+  font-size: 16.63px;
+  font-weight: 300;
+  color: #555555;
+}
+
+.ida-date{
+  font-family: "Poppins", sans-serif;
+  font-size: 16.63px;
+  font-weight: 300;
+}
+
+.ida-scale{
+  font-family: "Poppins", sans-serif;
+  font-size: 10.94px;
+  font-weight: 300;
+
+  width: 127px;
+
+  text-align: center;
+  background-color: rgb(172, 198, 233, 0.54);
+  border-radius: 5.47px;
+}
+
+
+.volta-local > span{
+  font-family: "Poppins", sans-serif;
+  font-size: 18.15px;
+  font-weight: 500;
+  color: black;
+}
+
+.volta-local{
+  font-family: "Poppins", sans-serif;
+  font-size: 16.63px;
+  font-weight: 300;
+  color: #555555;
+}
+
+.volta-date{
+  font-family: "Poppins", sans-serif;
+  font-size: 16.63px;
+  font-weight: 300;
+}
+
+.volta-scale{
+  font-family: "Poppins", sans-serif;
+  font-size: 10.94px;
+  font-weight: 300;
+
+  width: 127px;
+
+  text-align: center;
+  background-color: rgb(172, 198, 233, 0.54);
+  border-radius: 5.47px;
+}
+
+.info-preco .preco{
+  text-align: left;
+}
+
+.preco{
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.preco-voo{
+  font-size: 41.74px;
+  color: black;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 26px;
+  width: 26px;
+  background-color: #eee;
+  border-radius: 50%; 
+  border: 6px solid #004369;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkmark:after {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #004369; 
+  border: none;
+}
+
+/*-----Span-----*/
+
+/*-----Hr-----*/
+.right hr{
+  box-shadow: none;
+  height: 180px;
+  width: 0.5px;
+
+  margin: 0 0 0 30px
+}
+
+/*-----Hr-----*/
+
+
+/*-----Input-----*/
+.custom-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+/*-----Input-----*/
+  

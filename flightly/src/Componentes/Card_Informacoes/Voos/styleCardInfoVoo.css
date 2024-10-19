@@ -2,11 +2,21 @@
 
 .containerGeral-infoVoo {
   display: flex;
+  grid-template-columns: auto 50px;
+  flex-direction: row;
   gap: 20px;
   align-items: center;
 }
 
-.container-Card {
+.container-Card.selected {
+  border: 2px solid #004369; /* Borda quando selecionado */
+}
+
+.info-voo-volta{
+  margin-top: 15px;
+}
+
+.container-Card{
   margin-top: 10px;
   display: flex;
   flex-direction: row;
