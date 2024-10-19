@@ -1,249 +1,196 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.containerGeral-infoVoo{
+.containerGeral-infoVoo {
   display: flex;
-  grid-template-columns: auto 50px;
   gap: 20px;
   align-items: center;
 }
 
-.container-Card{
+.container-Card {
   margin-top: 10px;
-
   display: flex;
   flex-direction: row;
   cursor: pointer;
-
   width: 750px;
   height: 220px;
-
-  border: 1.36px solid rgb(85, 85, 85, 0.29);
+  border: 1.36px solid rgba(85, 85, 85, 0.29);
   border-radius: 27.17px;
+  background-color: #fff;
+  z-index: 2;
   transition: 0.3s;
 }
 
+/* Aumenta o tamanho e muda a cor quando hover no card ou no botão */
+.container-Card:hover,
+.btnPopup-AddPlano-Compra:hover + .container-Card {
+  width: 780px;
+  height: 250px;
+  background-color: #c7e2f225;
+  transition: 0.3s;
+  position: relative;
+}
 
-.btnPopup-AddPlano-Compra{
+.btnPopup-AddPlano-Compra {
   display: flex;
-  
   height: 50px;
   width: 52px;
   align-items: center;
   justify-content: center;
   margin: 0 0 0 20px;
   padding: 20px;
-
   background-color: #004369;
   border-radius: 50%;
   border: none;
+  overflow: hidden;
   visibility: hidden;
+  transition: transform 0.5s ease, visibility 0.5s ease;
+  transform: translateX(-100px);
+  z-index: 1;
 }
 
-.btnPopup-AddPlano-Compra>img{
+/* Mostra o botão no hover */
+.containerGeral-infoVoo:hover .btnPopup-AddPlano-Compra,
+.btnPopup-AddPlano-Compra:hover {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* Mantém o estado do card mesmo quando o mouse está sobre o botão */
+.container-Card.hover-active {
+  width: 780px;
+  height: 250px;
+  background-color: #c7e2f225;
+  transition: 0.3s;
+  position: relative;
+}
+
+.btnPopup-AddPlano-Compra > img {
   width: 30px;
   height: 30px;
 }
 
-/* .btnPopup-AddPlano-Compra{
-  display: flex;
-  width: 500px;
-  height: 30px;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0 0 20px;
-
-  background-color: #004369;
-  border-radius: 50%;
-  border: none;
-  visibility: visible;
-} */
-
-.container-Card:hover{
-  width: 780px;
-  height: 250px;
-  background-color: #C7E2F225;
-
-  transition: 0.3s;
-}
-
-.container-Card:hover + .btnPopup-AddPlano-Compra{
-  visibility: visible;
-}
-
-.left{
+.left {
   display: flex;
   align-items: center;
-
   gap: 62px;
-
   margin: 0 0 0 50px;
 }
 
-.left > img{
+.left > img {
   width: 90px;
   height: 144px;
 }
 
-.info{
+.info {
   display: flex;
   flex-direction: column;
   text-align: start;
   align-items: baseline;
 }
 
-.info > label{
+.info > label {
   font-family: "Poppins", sans-serif;
   font-size: 35.46px;
   font-weight: 500;
 }
 
-.info > span{
+.info > span {
   font-family: "Poppins", sans-serif;
-  font-style: normal;
   font-size: 20.56px;
   font-weight: 400;
   color: #555555;
 }
 
-.ida-Volta{
+.ida-Volta {
   margin-top: 10px;
-
   display: flex;
   flex-direction: row;
 }
 
-.ida{
+.ida,
+.volta {
   display: flex;
   flex-direction: column;
   align-items: baseline;
   width: 150px;
 }
 
-.ida-local > span{
+.ida-local > span,
+.volta-local > span {
   font-family: "Poppins", sans-serif;
-  font-style: normal;
   font-size: 18.15px;
   font-weight: 500;
   color: black;
 }
 
-.ida-local{
+.ida-local,
+.volta-local {
   font-family: "Poppins", sans-serif;
-  font-style: normal;
   font-size: 16.63px;
   font-weight: 300;
   color: #555555;
 }
 
-.ida-date{
+.ida-date,
+.volta-date {
   font-family: "Poppins", sans-serif;
-  font-style: normal;
   font-size: 16.63px;
   font-weight: 300;
 }
 
-.ida-scale{
+.ida-scale,
+.volta-scale {
   font-family: "Poppins", sans-serif;
-  font-style: normal;
   font-size: 10.94px;
   font-weight: 300;
-
   width: 127px;
-
   text-align: center;
-  background-color: rgb(172, 198, 233, 0.54);
+  background-color: rgba(172, 198, 233, 0.54);
   border-radius: 5.47px;
 }
 
-.volta{
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  width: 150px;
-}
-
-.volta-local > span{
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-size: 18.15px;
-  font-weight: 500;
-  color: black;
-}
-
-.volta-local{
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-size: 16.63px;
-  font-weight: 300;
-  color: #555555;
-}
-
-.volta-date{
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-size: 16.63px;
-  font-weight: 300;
-}
-
-.volta-scale{
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-size: 10.94px;
-  font-weight: 300;
-
-  width: 127px;
-
-  text-align: center;
-  background-color: rgb(172, 198, 233, 0.54);
-  border-radius: 5.47px;
-}
-
-.right{
+.right {
   display: flex;
   flex-direction: row;
-  align-items: center ;
+  align-items: center;
 }
 
-.right hr{
-  box-shadow: none;
+.right hr {
   height: 180px;
   width: 0.5px;
-
-  margin: 0 0 0 30px
+  margin: 0 0 0 30px;
 }
 
-
-.info-preco{
+.info-preco {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  
   width: 220px;
 }
 
-.info-preco .preco{
+.info-preco .preco {
   text-align: left;
 }
 
-.preco{
+.preco {
   display: flex;
   flex-direction: column;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
-.preco-voo{
+.preco-voo {
   font-size: 41.74px;
   color: black;
-  font-style: normal;
 }
-.preco label{
+
+.preco label {
   font-size: 12.88px;
   color: #555555;
 }
 
-.imgs{
+.imgs {
   display: flex;
   gap: 19.91px;
 }
