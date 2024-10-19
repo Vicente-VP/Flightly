@@ -5,7 +5,6 @@ import Rec_Hospedagem from "../../Componentes/Cards/Card Rec Hospedagem/cardsRec
 import Mala_Card from '../../Images/Mala_Card.png';
 import idaVoltaIcon from '../../Images/Icones-Cards/ida-volta.png';
 import destinoIcon from '../../Images/Icones-Cards/destino.png';
-import quartosIcon from '../../Images/Icones-Cards/quartos.png';
 import passageirosIcon from '../../Images/Icones-Cards/passageiros.png';
 
 import CardDestinoPular from "../../Componentes/Cards/CardDestinoPopular/CardDestinoPular";
@@ -17,7 +16,6 @@ import SantaCatarina from '../../Images/img_SantaCatarina.png';
 //import img_economico from '../../Images/RecomendacaoHospedagem/hp_economico.jpg';
 
 import './style_Hospedagem.css';
-import React, { useState } from 'react';
 //import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -28,7 +26,7 @@ export default function Home() {
             <main>
                 {/* ------------------ CARD DE PESQUISA  --------------------- */}
 
-                <img src={Mala_Card} className="hospedagem-imagem" />
+                <img src={Mala_Card} className="hospedagem-imagem" alt="Mala"/>
 
                 <div className="card-hospedagem">
                     <div className="title-hospedagem">

@@ -56,7 +56,7 @@ export default function Home() {
                                 <div className="etiqueta-class-voo">
                                     <label className="etiqueta-voo">Passageiros</label>
                                 </div>
-                                <Drop imagem={passageirosIcon} widthDrop="201px" topContent="30%" />
+                                <Drop imagem={passageirosIcon} widthDrop="201px" topContent="30%" titles={["Adultos", "Crianças de", "Crianças", "Crinças no"]} subTitles={["", "2 a 11 anos", "no assento", "de colo"]}/>
                             </div>
                             <div className="input-form-voo">
                                 <div className="etiqueta-class-voo">
