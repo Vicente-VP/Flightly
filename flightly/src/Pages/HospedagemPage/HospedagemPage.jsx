@@ -1,6 +1,7 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 import Rec_Hospedagem from "../../Componentes/Cards/Card Rec Hospedagem/cardsRecHospedagem";
+import Drop from "../../Componentes/DropInput/drop";
 
 import Mala_Card from '../../Images/Mala_Card.png';
 import idaVoltaIcon from '../../Images/Icones-Cards/ida-volta.png';
@@ -66,10 +67,7 @@ export default function Home() {
                                 <div className="etiqueta-hospedagem">
                                     <label className="etiqueta-hospedagem">Hóspedes</label>
                                 </div>
-                                <div className="input-hospedagem">
-                                    <input type="text" className="input-hospedagem" placeholder="1"
-                                        style={{ backgroundImage: `url(${passageirosIcon})` }} />
-                                </div>
+                                <Drop imagem={passageirosIcon} widthDrop="201px" topContent="45.5%" titles={["Adultos", "Crianças"]} subTitles={[]}/>
                             </div>
                             <div className="btn-pesquisar-hospedagem">
                                 <button className="btn-submit-hospedagem">
