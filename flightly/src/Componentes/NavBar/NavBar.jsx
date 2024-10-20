@@ -38,7 +38,7 @@ export default function NavBar() {
       setActiveLink('carros');
     } else if (currentPath.includes('PontosTuristicos')) {
       setActiveLink('pt');
-    }
+    } 
   }, [location]);
 
   const toggleDropdown = () => {
