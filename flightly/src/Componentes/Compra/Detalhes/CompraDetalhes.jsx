@@ -9,7 +9,9 @@ export default function DetalhesCompra(props) {
 
     return (
         <>
+        
             <div className="Details">
+            <h1>Detalhes da Compra</h1><br/>
                 {itens.map((item, index) => (
                     <div key={index} className="Name_Price_details">
                         <label className="item_details">{item.name}</label>
@@ -23,7 +25,6 @@ export default function DetalhesCompra(props) {
                     <label className="item_details">Total</label>
                     <label className="preco_details">R$ {precoTotal.toFixed(2)}</label>
                 </div>
-                <label>Teste de exec</label>
             </div>
         </>
     );

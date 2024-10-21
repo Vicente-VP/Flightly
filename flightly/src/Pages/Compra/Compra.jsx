@@ -4,6 +4,7 @@ import CompraTotal from "../../Componentes/Compra/CompraTotalPlano/CompraTotal";
 import NavBar from "../../Componentes/NavBar/NavBar";
 import DetalhesCompra from "../../Componentes/Compra/Detalhes/CompraDetalhes";
 import "./style.css";
+import CompraDados from "../../Componentes/Compra/Detalhes/CompraDados";
 
 
 export default function Compra(){
@@ -21,7 +22,10 @@ export default function Compra(){
         </div>
         <div className="ConteudoCompra">
             <DetalhesCompra itens={itensCompra}/>
+            <div>
             <CompraFormaPag/>
+            <CompraDados/>
+            </div>
             <CompraTotal/>
             </div>
         </>       

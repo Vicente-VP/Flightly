@@ -7,6 +7,7 @@ import Footer from "../../Componentes/Footer/Footer";
 import './style_Testes.css';
 import React from 'react';
 import DetalhesCompra from "../../Componentes/Compra/Detalhes/CompraDetalhes";
+import CompraDados from "../../Componentes/Compra/Detalhes/CompraDados";
 //import CompraFormaPag from "../../Componentes/Compra/Detalhes/CompraFormaPag";
 
 export default function Home() {
@@ -25,20 +26,7 @@ export default function Home() {
 
             <DetalhesCompra itens={itensCompra} />
 
-            <div className="Details">
-                <div className="Name_Price_details">
-                        <label className="item_details">Nome produto</label>
-                        <label className="preco_details">R$ ....</label>
-                </div>
-                <hr/>
-
-                <div className="Name_Price_details">
-                    <label className="item_details">Total</label>
-                    <label className="preco_details">R$ ....</label>
-                </div>
-
-
-            </div>
+            <CompraDados/>
                 
             </div>
             

@@ -63,3 +63,50 @@ h1{
 input[name=FP]{
     margin-left:15px;
 }
+
+
+// Confirmar Dados
+
+#iconCarro{
+    width: 15px;
+    height: 15px;
+}
+
+#iconPassageiro{
+    width: 20px;
+    height: 20px;
+}
+
+#iconData{
+    width: 20px;
+    height: 20px;
+}
+
+#iconHospedagem{
+    width: 20px;
+    height: 20px;
+}
+
+.Dados{
+    font-size: 12px;
+}
+
+.ConfirmDados{
+    padding: 15px;
+    border: solid;
+    border-color: #004863;
+    border-radius: 20px;
+    //background-color: #E0E0E0;
+    width:580px;
+    height:286px;
+    display:grid;
+    justify-content: align-start;
+}
+
+.confirm_dados{
+    padding: 8px;
+    display: grid;
+    column-gap: 10px;
+    row-gap: 15px;
+    grid-template-columns: auto auto;
+}
