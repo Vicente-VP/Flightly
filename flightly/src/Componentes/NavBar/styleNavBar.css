@@ -293,3 +293,35 @@ aside{
     font-weight: 350;
     font-size: 17px;
 }
+
+
+
+@media(max-width:1080px){
+    .title_nav{
+        display: none;
+    }
+
+    #iconVoo{
+        width: 33px;
+        height: 33px;
+    }
+    
+    #iconHospedagem{
+        width: 28px;
+        height: 34px;
+    }
+    
+    #iconCarro{
+        width: 31px;
+        height: 31px;
+    }
+    
+    #iconTuristico{
+        width: 29px;
+        height: 31px;
+    }
+
+}
+
+@media(max-width: 580){
+}
