@@ -26,11 +26,12 @@ header{
 .navbar-Logo{
     width: 231px;
     height: 51px;
+    padding-left:10px;
 }
 
 .navbar{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 30px;
 }
 
@@ -294,11 +295,27 @@ aside{
     font-size: 17px;
 }
 
+.toggle-button{
+    margin-left: 20px;
+    display:none;
+    flex-direction: column;
+    justify-content: space-between;
+    width:30px;
+    height: 21px;
+}
+
+.toggle-button .bar{
+    height:3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
 
 
 @media(max-width:1080px){
     .title_nav{
-        display: none;
+        font-size: 12px;
     }
 
     #iconVoo{
@@ -323,5 +340,22 @@ aside{
 
 }
 
-@media(max-width: 580){
+@media(max-width: 580px) {
+
+    .toggle-button{
+        display: flex;
+    }
+
+    .navbar{
+        display: none;
+        width: 200px;
+    }
+
+    
+}
+
+@media(max-width: 400px){
+    .plano{
+        display:none;
+    }
 }

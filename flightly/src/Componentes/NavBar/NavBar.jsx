@@ -31,6 +31,13 @@ export default function NavBar() {
   };
   return (
     <header>
+
+      <a href="#" className="toggle-button">
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </a>
+
       <Link to="/">
         <img src={Logo_Flightly} alt="Logo" className="navbar-Logo"/>
       </Link>
@@ -65,7 +72,7 @@ export default function NavBar() {
       <div id="navbar_buttons">
         <div className="buttons">
           <Link to="/PlanosViagem">
-            <img src={Planos_icon} alt="Planos de viagem" id="plano" />
+            <img src={Planos_icon} alt="Planos de viagem" id="plano" className="plano"/>
           </Link>
           <Link to="/PlanosViagem" className="title_nav">Planos</Link>
         </div>
