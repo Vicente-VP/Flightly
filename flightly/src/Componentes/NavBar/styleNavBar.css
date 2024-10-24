@@ -315,7 +315,7 @@ aside{
 
 @media(max-width:1080px){
     .title_nav{
-        font-size: 12px;
+        display: none;
     }
 
     #iconVoo{
@@ -357,5 +357,14 @@ aside{
 @media(max-width: 400px){
     .plano{
         display:none;
+    }
+    .title_nav{
+        display: none;
+    }
+
+    .navbar{
+        flex-direction: column;
+        justify-content: flex-start;
+        
     }
 }
