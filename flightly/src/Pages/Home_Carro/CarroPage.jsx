@@ -15,9 +15,30 @@ import Rec_Eco from '../../Images/Card_Recomendacao_Carro/Rec_Eco.png';
 import Rec_Inter from '../../Images/Card_Recomendacao_Carro/Rec_Inter.png';
 import Rec_Lux from '../../Images/Card_Recomendacao_Carro/Rec_Lux.png';
 
+import { useState } from "react";
+
 import './Style_carro.css';
 
 export default function Carro_page (){
+    const [locadoras, setLocadoras] = useState([
+        {legenda: "Allauto", image: Loc_Allauto},
+        {legenda: "Rental", image: Loc_Rental},
+        {legenda: "Citta", image: Loc_Citta},
+        {legenda: "Blue", image: Loc_Blue},
+    ]);
+
+
+    const verMais = () => {
+        const novasLocadoras = [
+            { legenda: "Locadora X", image: Loc_Allauto },
+            { legenda: "Locadora Y", image: Loc_Rental },
+            { legenda: "Locadora X", image: Loc_Allauto },
+            { legenda: "Locadora Y", image: Loc_Rental },
+        ];
+        setLocadoras([...locadoras, ...novasLocadoras])
+    }
+
+
     return (
         <>
             <div><NavBar/></div>
@@ -95,14 +116,13 @@ export default function Carro_page (){
                     </div>
                         
                     <div className="space-locadora-popular">
-                        <CardRec legenda="Allauto" image={Loc_Allauto}/>
-                        <CardRec legenda="Rental" image={Loc_Rental}/>
-                        <CardRec legenda="Citta" image={Loc_Citta}/>
-                        <CardRec legenda="Blue" image={Loc_Blue}/>
+                        {locadoras.map((locadora, index) => (
+                            <CardRec key={index} legenda={locadora.legenda} image={locadora.image}/>
+                        ))}
                     </div>
                         
                     <div className="locadora-btn-popular">
-                        <button className="car-pesquisar">Ver Mais</button>
+                        <button className="car-pesquisar" onClick={verMais}>Ver Mais</button>
                     </div>
                 </div>
                 {/* ------------------ LOCADORAS MAIS POPULARES FIM --------------------- */}

@@ -231,6 +231,7 @@ input[type=date]::-webkit-datetime-edit {
     display: grid;
     grid-template-columns: 21% 21% 21% 21%;
     justify-content: space-between;
+    grid-row-gap: 40px;
 }
 
 
