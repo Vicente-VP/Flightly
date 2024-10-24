@@ -32,11 +32,44 @@ export default function NavBar() {
   return (
     <header>
 
-      <a href="#" className="toggle-button">
+      <a href="#" className="toggle-button"onClick={toggleDropdown}>
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>
       </a>
+      <ul className={`perfil-dropdown-list ${isDropdownActive ? 'active' : ''}`}>
+            <span className="title-popUp">Nome do usuário</span>
+            <li className="perfil-dropdown-list-item">
+              <Link to="/">
+              <img src={Aviao_Icon} alt="Voos" id="iconVoo" />
+              </Link>
+              <Link to="/" className="title_nav">Voos</Link>
+            </li>
+            <li className="perfil-dropdown-list-item">
+              <Link to="/Hospedagem">
+              <img src={MalaHospedagem_icon} alt="Hospedagens" id="iconHospedagem" />
+              </Link>
+              <Link to="/Hospedagem" className="title_nav">Hospedagens</Link>
+            </li>
+            <li className="perfil-dropdown-list-item">
+              <Link to="/Carros">
+              <img src={Carro_icon} alt="Carros" id="iconCarro" />
+              </Link>
+              <Link to="/Carros" className="title_nav">Carros</Link>
+            </li>
+            <li className="perfil-dropdown-list-item">
+              <Link to="/PontosTuristicos">
+              <img src={PontoTuristico_icon} alt="Pontos Turísticos" id="iconTuristico" />
+              </Link>
+              <Link to="/PontosTuristicos" className="title_nav">Pontos Turísticos</Link>
+            </li>
+            <li className="perfil-dropdown-list-item">
+              <a>
+                <img src={Sair_popUp} alt="Sair" />
+                Sair
+              </a>
+            </li>
+          </ul>
 
       <Link to="/">
         <img src={Logo_Flightly} alt="Logo" className="navbar-Logo"/>
