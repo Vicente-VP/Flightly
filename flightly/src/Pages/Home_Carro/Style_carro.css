@@ -208,7 +208,7 @@ input[type=date]::-webkit-datetime-edit {
 .locadoras-popular {
     margin: 0 auto;
     width: 70%;
-    height: 580px;
+    height: auto;
     margin-top: 15vh;
     margin-bottom: 15vh;
 
@@ -232,6 +232,7 @@ input[type=date]::-webkit-datetime-edit {
     grid-template-columns: 21% 21% 21% 21%;
     justify-content: space-between;
     grid-row-gap: 40px;
+
 }
 
 
@@ -246,11 +247,13 @@ input[type=date]::-webkit-datetime-edit {
 /*---------------------Recomendação Carro---------------------------------*/
 
 .recomendacao-carro {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
     width: 100%;
+    clear: both;
 }
 
 .title-recomendacao{
