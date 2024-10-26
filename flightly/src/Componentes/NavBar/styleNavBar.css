@@ -316,7 +316,8 @@ aside{
     position: absolute;
     top: 68px;
     left: 0;
-    width: 300px;
+    width: 250px;
+    height: 200px;
 
     background-color: white;
 
@@ -367,7 +368,7 @@ aside{
 }
 
 .links_dropdowm{
-    padding-right: 10px;
+    padding: 5px;
 }
 
 
