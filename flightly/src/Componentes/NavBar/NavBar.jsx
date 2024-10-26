@@ -21,9 +21,13 @@ import { Link } from 'react-router-dom';
 export default function NavBar() {
   const [isDropdownActive, setDropdownActive] = useState(false);
   const [isDropdownActiveNot, setDropdownActiveNot] = useState(false);
+  const [isDropdownActiveMenu, setDropdownActiveMenu] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownActive(!isDropdownActive);
+  };
+  const toggleDropdownMenu = () => {
+    setDropdownActiveMenu(!isDropdownActiveMenu);
   };
 
   const toggleDropdownNot = () => {
@@ -32,44 +36,42 @@ export default function NavBar() {
   return (
     <header>
 
-      <a href="#" className="toggle-button"onClick={toggleDropdown}>
+      <a href="#" className="toggle-button" onClick={toggleDropdownMenu}>
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>
       </a>
-      <ul className={`perfil-dropdown-list ${isDropdownActive ? 'active' : ''}`}>
-            <span className="title-popUp">Nome do usuário</span>
-            <li className="perfil-dropdown-list-item">
+      <ul className={`toggle-dropdown-list ${isDropdownActiveMenu ? 'active' : ''}`}>
+            <span className="title-toggle">Nome do usuário</span>
+            <li className="toggle-dropdown-list-item">
               <Link to="/">
-              <img src={Aviao_Icon} alt="Voos" id="iconVoo" />
+              <img src={Aviao_Icon} alt="Voos" id="iconVoo" className="links_dropdowm"/> 
+              Voos
               </Link>
-              <Link to="/" className="title_nav">Voos</Link>
+              
             </li>
-            <li className="perfil-dropdown-list-item">
+            <li className="toggle-dropdown-list-item">
               <Link to="/Hospedagem">
-              <img src={MalaHospedagem_icon} alt="Hospedagens" id="iconHospedagem" />
+              <img src={MalaHospedagem_icon} alt="Hospedagens" id="iconHospedagem" className="links_dropdowm"/> 
+              Hospegdagens
               </Link>
-              <Link to="/Hospedagem" className="title_nav">Hospedagens</Link>
+              
             </li>
-            <li className="perfil-dropdown-list-item">
+            <li className="toggle-dropdown-list-item">
               <Link to="/Carros">
-              <img src={Carro_icon} alt="Carros" id="iconCarro" />
-              </Link>
-              <Link to="/Carros" className="title_nav">Carros</Link>
+              <img src={Carro_icon} alt="Carros" id="iconCarro" className="links_dropdowm"/>  
+              Carros
+              </Link> 
             </li>
-            <li className="perfil-dropdown-list-item">
+            <li className="toggle-dropdown-list-item">
               <Link to="/PontosTuristicos">
-              <img src={PontoTuristico_icon} alt="Pontos Turísticos" id="iconTuristico" />
-              </Link>
-              <Link to="/PontosTuristicos" className="title_nav">Pontos Turísticos</Link>
-            </li>
-            <li className="perfil-dropdown-list-item">
-              <a>
-                <img src={Sair_popUp} alt="Sair" />
-                Sair
-              </a>
+              <img src={PontoTuristico_icon} alt="Pontos Turísticos" id="iconTuristico" className="links_dropdowm"/>   
+              Pontos turisticos
+              </Link> 
             </li>
           </ul>
+
+
 
       <Link to="/">
         <img src={Logo_Flightly} alt="Logo" className="navbar-Logo"/>
