@@ -2,6 +2,7 @@ import './styleCardQuest.css';
 import ProgressBar from './ProgressBar';
 import { useState, useEffect, useCallback } from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 export default function CardPergunta1(props){
 
@@ -219,6 +220,16 @@ export default function CardPergunta1(props){
             if (refazerTESTE) refazerTESTE.removeEventListener('click', togglePopupClose);
         };
     }, [buttonText]);
+
+
+    // const handleSubmit = async(event) => {
+    //     event.preventDefault();
+    //     axios.post('', values)
+    //     .then(res=>{
+            
+    //     })
+    //     .catch(err => console.log(err));   
+    // }
 
     return(
 
