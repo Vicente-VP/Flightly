@@ -6,6 +6,8 @@
     position: relative;
     grid-template-columns: 245px auto;
     transition: transform 0.5s ease;
+    width: 245px;
+    height: 360px;
 }
 
 .container-card-info-pturisticos {
