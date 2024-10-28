@@ -21,9 +21,13 @@ import { Link } from 'react-router-dom';
 export default function NavBar() {
   const [isDropdownActive, setDropdownActive] = useState(false);
   const [isDropdownActiveNot, setDropdownActiveNot] = useState(false);
+  const [isDropdownActiveMenu, setDropdownActiveMenu] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownActive(!isDropdownActive);
+  };
+  const toggleDropdownMenu = () => {
+    setDropdownActiveMenu(!isDropdownActiveMenu);
   };
 
   const toggleDropdownNot = () => {
@@ -31,6 +35,45 @@ export default function NavBar() {
   };
   return (
     <header>
+
+      <a href="#" className="toggle-button" onClick={toggleDropdownMenu}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </a>
+      <ul className={`toggle-dropdown-list ${isDropdownActiveMenu ? 'active' : ''}`}>
+            <li className="toggle-dropdown-list-item">
+              <Link to="/">
+              <img src={Aviao_Icon} alt="Voos" id="iconVoo" className="links_dropdowm"/> 
+              Voos
+              </Link>
+              
+            </li>
+            <li className="toggle-dropdown-list-item">
+              <Link to="/Hospedagem">
+              <img src={MalaHospedagem_icon} alt="Hospedagens" id="iconHospedagem" className="links_dropdowm"/> 
+              Hospegdagens
+              </Link>
+              
+            </li>
+            <li className="toggle-dropdown-list-item">
+              <Link to="/Carros">
+              <img src={Carro_icon} alt="Carros" id="iconCarro" className="links_dropdowm"/>  
+              Carros
+              </Link> 
+
+            </li>
+            <li className="toggle-dropdown-list-item">
+              <Link to="/PontosTuristicos">
+              <img src={PontoTuristico_icon} alt="Pontos Turísticos" id="iconTuristico" className="links_dropdowm"/>   
+              Pontos turisticos
+              </Link> 
+              
+            </li>
+          </ul>
+
+
+
       <Link to="/">
         <img src={Logo_Flightly} alt="Logo" className="navbar-Logo"/>
       </Link>
@@ -65,7 +108,7 @@ export default function NavBar() {
       <div id="navbar_buttons">
         <div className="buttons">
           <Link to="/PlanosViagem">
-            <img src={Planos_icon} alt="Planos de viagem" id="plano" />
+            <img src={Planos_icon} alt="Planos de viagem" id="plano" className="plano"/>
           </Link>
           <Link to="/PlanosViagem" className="title_nav">Planos</Link>
         </div>
@@ -96,10 +139,10 @@ export default function NavBar() {
               </Link>
             </li>
             <li className="perfil-dropdown-list-item">
-              <a>
+              <Link to="/Questionario">
                 <img src={Quiz_popUp} alt="Quiz" />
                 Quiz
-              </a>
+              </Link>
             </li>
             <li className="perfil-dropdown-list-item">
               <a>

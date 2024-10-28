@@ -11,6 +11,7 @@ import Testes from './Pages/Testes/Testes';
 import Perfil from './Pages/Perfil/Perfil';
 import PlanosViagem from './Pages/PlanosViagem/PlanosViagem';
 import InformacoesPage from './Pages/InformacoesPage/InformacoesPage';
+import Questionario from './Pages/Questionario/QuestionarioPage';
 
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/Perfil" element={<Perfil/>}/>
           <Route path="/PlanosViagem" element={<PlanosViagem/>}/>
           <Route path="/InformacoesPage" element={<InformacoesPage/>}/>
+          <Route path="/Questionario" element={<Questionario/>}/>
         </Routes>
       </Router>
     </>

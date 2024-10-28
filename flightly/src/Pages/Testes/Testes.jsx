@@ -12,7 +12,6 @@ export default function Testes() {
             <div className="navbar-testes"><NavBar/></div>
             
             <div className="conteudo-testes">
-
             </div>
 
             <div className="footer-testes"><Footer/></div>
