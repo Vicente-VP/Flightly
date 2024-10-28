@@ -3,7 +3,7 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 
-import CardInfoVoo from "../../Componentes/Card_Informacoes/PontosTuristicos/CardInfoPTuristicos";
+import CardInfo from "../../Componentes/Card_Informacoes/Infos_Hosp/Infos_Hosp";
 
 import './style_Testes.css';
 import React from 'react';
@@ -15,7 +15,7 @@ export default function Testes() {
             
             <div className="conteudo-testes">
 
-                <CardInfoVoo/>
+                <CardInfo/>
 
             </div>
 

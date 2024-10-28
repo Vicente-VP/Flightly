@@ -2,6 +2,8 @@
     display: flex;
     gap: 20px;
     align-items: center;
+    width: 750px;
+    height: 220px;
 }
 
 .container-Card {
