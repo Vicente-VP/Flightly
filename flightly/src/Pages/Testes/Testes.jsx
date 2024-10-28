@@ -3,7 +3,7 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 
-import CardInfo from "../../Componentes/Card_Informacoes/Infos_Hosp/Infos_Hosp";
+import CardInfo from "../../Componentes/Card_Informacoes/Carros/CardInfoCarros.jsx";
 
 import './style_Testes.css';
 import React from 'react';
