@@ -6,6 +6,8 @@
   gap: 20px;
   align-items: center;
   transform: translateX(45px);
+  width: 915px;
+  height: 220px;
 }
 
 .container-Card.selected {
