@@ -23,26 +23,29 @@ export default function CardPergunta1(props){
     const [selectedAnswers, setSelectedAnswers] = useState([]);
     const [buttonText, setButtonText] = useState('Avançar');
 
-    
 
+    
+    
     const handleButtonClick = (index) => {
         setActiveButton(index);
-
+        
         setSelectedAnswers((prev) => {
             const newAnswers = [...prev];
-            newAnswers[contagem] = index; // Armazena o índice da resposta atual
+            newAnswers[contagem -1] = index; // Armazena o índice da resposta atual
             return newAnswers;
         });
-      };
 
+        updateData(contagem, index)
+    };
+    
     const handleProgress = (increment) => {
         setProgress((prev) => Math.min(Math.max(prev + increment, 10), 100));
     };
 
-  
+    
     const changeAnswers = useCallback(() =>{
         
-
+        
         if(contagem === 1){
             setchangeAnswer(true);
             setchangeAnswer3(false);
@@ -50,7 +53,7 @@ export default function CardPergunta1(props){
             setAnswer2("Meio do ano")
             setButtonText('Avançar');
             console.log(buttonText);
-
+            
         }
         else if(contagem === 2){
             
@@ -114,9 +117,9 @@ export default function CardPergunta1(props){
             setButtonText('Finalizar');
         }
       }, [contagem]);
-
-    const changeQuestions = useCallback(() =>{
-        if(contagem === 1){
+      
+      const changeQuestions = useCallback(() =>{
+          if(contagem === 1){
             setchangeQuestion('Qual seu período de férias ?')
         }
         else if(contagem === 2){
@@ -152,12 +155,12 @@ export default function CardPergunta1(props){
         if (contagem <= 10) {
             setContagem((prev) => prev + 1);
             handleProgress(10);
-            changeAnswers(true);
+            changeAnswers();
             changeQuestions();
             setActiveButton(null);
         }
         
-
+        
         console.log(selectedAnswers);
     };
 
@@ -167,13 +170,13 @@ export default function CardPergunta1(props){
             handleProgress(-10);
             changeAnswers();
             changeQuestions();
-            setActiveButton(null);
-        }
-        if(contagem <=1){
-            changeQuestions(false);
+            
+            // Restaura o botão ativo com a resposta anterior
+            const previousAnswer = selectedAnswers[contagem - 2]; 
+            setActiveButton(previousAnswer);
         }
     };
-
+    
     useEffect(() => {
         changeAnswers();
         changeQuestions();
@@ -184,7 +187,7 @@ export default function CardPergunta1(props){
         const containerPOPUP = document.getElementById('POP-Questionario');
         const refazerTESTE = document.getElementById('refazer-teste');
         const quest = document.getElementById('card');
-
+        
         // Função para exibir o popup
         const togglePopupOpen = () => {
             if (containerPOPUP) {
@@ -203,7 +206,7 @@ export default function CardPergunta1(props){
             handleProgress(-90);
             setContagem(1) ;
         };
-
+        
         // Adicionar evento de click para exibir o popup
         if (popUP && buttonText === 'Finalizar') {
             popUP.addEventListener('click', togglePopupOpen);
@@ -213,24 +216,84 @@ export default function CardPergunta1(props){
         if (refazerTESTE) {
             refazerTESTE.addEventListener('click', togglePopupClose);
         }
-
+        
         // Limpar event listeners ao desmontar componente
         return () => {
             if (popUP) popUP.removeEventListener('click', togglePopupOpen);
             if (refazerTESTE) refazerTESTE.removeEventListener('click', togglePopupClose);
         };
     }, [buttonText]);
-
-
+    
+    
     // const handleSubmit = async(event) => {
     //     event.preventDefault();
     //     axios.post('', values)
     //     .then(res=>{
-            
-    //     })
-    //     .catch(err => console.log(err));   
-    // }
+        
+        //     })
+        //     .catch(err => console.log(err));   
+        // }
 
+        const [data, setData] = useState({
+            periodo:'',
+            tipo_destino:'',
+            atividades:'',
+            ambiente:'',
+            tipo_passeio:'',
+            culinaria:'',
+            companhia:'',
+            passeios:'',
+            duracao:'',
+            clima:''
+        })
+
+        
+        const updateData = (questionNumber, selectedIndex) => {
+            setData((prevData) => {
+                const newData = { ...prevData }; // Copia o estado atual
+        
+                switch (questionNumber) {
+                    case 1:
+                        newData.periodo = selectedIndex === 1 ? 'começo / final do ano' : 'meio do ano';
+                        break;
+                    case 2:
+                        newData.tipo_destino =
+                            selectedIndex === 1 ? 'litoral/praia' :
+                            selectedIndex === 2 ? 'urbano' : 'rural';
+                        break;
+                    case 3:
+                        newData.atividades = selectedIndex === 1 ? 'atividades internas' : 'atividades externas';
+                        break;
+                    case 4:
+                        newData.ambiente = selectedIndex === 1 ? 'reservados' : 'animados';
+                        break;
+                    case 5:
+                        newData.tipo_passeio = selectedIndex === 1 ? 'agitados' : 'tranquilos';
+                        break;
+                    case 6:
+                        newData.culinaria = selectedIndex === 1 ? 'sim' : 'não';
+                        break;
+                    case 7:
+                        newData.companhia = selectedIndex === 1 ? 'sozinho' : 'em Grupo';
+                        break;
+                    case 8:
+                        newData.duracao = selectedIndex === 1 ? 'curtas' : 'longas';
+                        break;
+                    case 9:
+                        newData.passeios = selectedIndex === 1 ? 'tours guiados' : 'sozinho';
+                        break;
+                    case 10:
+                        newData.clima = selectedIndex === 1 ? 'quentes' : 'frios';
+                        break;
+                    default:
+                        break;
+                }
+        
+                console.log('Data Atualizado:', newData); // Debug: Exibe o objeto atualizado no console
+                return newData;
+            });
+        };
+        
     return(
 
         <>
