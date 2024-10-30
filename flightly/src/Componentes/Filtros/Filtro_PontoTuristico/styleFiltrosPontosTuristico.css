@@ -161,33 +161,37 @@
     bottom: 6.9%;
   }
 
-  .btn-Ambiente{
+  .btn-Ambiente {
     border: none;
     border-radius: 10px;
-  
     background-color: white;
-  
     font-size: 15px;
     font-family: "Poppins", sans-serif;
     color: #BFC1C3;
-  
-  
     align-items: center;
-  
     margin-left: 8px;
     width: 85px;
     height: 40px;
-
     transition: all 0.1s ease-in-out;
-  }
+}
 
-  .btn-Ambiente:hover{
+.btn-Ambiente:hover {
     background-color: #b2c9db25;
     cursor: pointer;
     color: #004369;
     border: 2px solid #004369; 
     font-weight: 500;
-  }
+}
+
+.btn-Ambiente.rural.active,
+.btn-Ambiente.urbano.active,
+.btn-Ambiente.praia.active{
+    background-color: #b2c9db25; /* Cor de fundo quando ativo */
+    color: #004369; /* Cor do texto quando ativo */
+    border: 2px solid #004369; /* Borda quando ativo */
+    font-weight: 500; /* Peso da fonte quando ativo */
+}
+
 
 /*--------Buttons--------*/
 
