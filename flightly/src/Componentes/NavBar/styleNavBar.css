@@ -26,11 +26,12 @@ header{
 .navbar-Logo{
     width: 231px;
     height: 51px;
+    padding-left:10px;
 }
 
 .navbar{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 30px;
 }
 
@@ -151,6 +152,7 @@ header{
 .perfil-dropdown-list-item a{
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     text-decoration: none;
     color: black;
@@ -162,4 +164,267 @@ header{
     margin-right: 8px;
     width: 50px;
     height: 50px;
+}
+
+/* dorpdown notificações */
+
+.not-dropdown-list{
+    position: absolute;
+    top: 450px;
+    right: 0;
+    width: 300px;
+
+    background-color: white;
+
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.5s;
+}
+
+.not-dropdown-list.active{
+    max-height: 350px;
+    overflow-y: scroll;
+    display: block;
+}
+
+.not-dropdown-list.active::-webkit-scrollbar{
+    width: 0.1px;
+}
+
+.title-popUp-not{
+    color: black;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    margin: none;
+    padding: 1rem 0 0 1rem;
+
+    width: 95%;
+}
+
+#img-fechar{
+    width: 30px;
+    height: 30px;
+}
+
+#img-fechar:hover{
+    cursor: pointer;
+}
+
+ul hr{
+    width: 100%;
+    height: 0.1px;
+    background-color: #8b8585;
+    border: none;
+    margin: 15px 0 0.8px 0 ;
+}
+
+.perfil-dropdown-list-item-not div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+}
+
+.perfil-dropdown-list-item-not hr{
+    width: 100%;
+    height: 1px;
+    background-color: #8b8585;
+    border: none;
+    margin: 10px 0 0 0;
+}
+
+.perfil-dropdown-list-item-not:hover{
+    background-color: #ebe5f2;
+    cursor: pointer;
+}
+
+.Not-layout{
+    display: flex;
+    flex-direction: column;
+    margin: 0 2px 0 8px;
+    padding: 10px;
+}
+
+.Not-layout span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+aside{
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-transform: uppercase;
+
+    background-color: #601c1c;
+    color: #e7bbb8;
+    border-radius: 5px;
+
+    padding: 1px 5px 1px 5px;
+}
+
+.Not-layout > p{
+    width: 100%;
+    text-align: left;
+    font-weight: 350;
+    font-size: 17px;
+}
+
+.toggle-button{
+    margin-left: 20px;
+    display:none;
+    flex-direction: column;
+    justify-content: space-between;
+    width:30px;
+    height: 21px;
+}
+
+.toggle-button .bar{
+    height:3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+
+.toggle-dropdown-list{
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 250px;
+    height: 200px;
+
+    background-color: white;
+
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.5s;
+}
+
+.toggle-dropdown-list.active{
+    max-height: 500px;
+    display: block;
+}
+
+.title-toggle{
+    color: black;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+
+    padding: 0.5rem 0 7px 1rem;
+    justify-content: center;
+    display: flex;
+}
+
+.toggle-dropdown-list-item{
+    padding: 0.5rem 0 7px 1rem;
+    justify-content: center;
+}
+
+.toggle-dropdown-list-item:hover {
+    padding-left: 1.5rem;
+}
+
+.toggle-dropdown-list-item a{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+}
+
+.links_dropdowm{
+    padding: 5px;
+}
+
+
+
+@media(max-width:1080px){
+    .title_nav{
+        display: none;
+    }
+
+    #iconVoo{
+        width: 33px;
+        height: 33px;
+    }
+    
+    #iconHospedagem{
+        width: 28px;
+        height: 34px;
+    }
+    
+    #iconCarro{
+        width: 31px;
+        height: 31px;
+    }
+    
+    #iconTuristico{
+        width: 29px;
+        height: 31px;
+    }
+
+}
+
+@media(max-width: 580px) {
+
+    .toggle-button{
+        display: flex;
+    }
+
+    .navbar{
+        display: none;
+        width: 200px;
+    }
+
+    
+}
+
+@media(max-width: 400px){
+    .plano{
+        display:none;
+    }
+    .title_nav{
+        display: none;
+    }
+
+    .navbar{
+        flex-direction: column;
+        justify-content: flex-start;
+        
+    }
 }

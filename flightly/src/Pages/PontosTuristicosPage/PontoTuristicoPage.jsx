@@ -13,6 +13,7 @@ import Westminster from '../../Images/Cards_Destinos-Recomendados/Westminster.pn
 import './style_PTuristico.css';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PopularTuristico from "../../Componentes/Cards/CardPopularTuristico/CardPopularTuristico";
 
 export default function Home() {
     return (
@@ -59,22 +60,12 @@ export default function Home() {
                 </div>
 
                 <div className="cards-popular-pturistico">
-                    <div className="card-popular-pturistico">
-                        <img src={ArcoTriunfo} className="img-card-pturistico"/>
-                            <span className="viagem-card-pturistico">Arco do Triunfo</span>
-                    </div>
-                    <div className="card-popular-pturistico">
-                        <img src={Westminster} className="img-card-pturistico"/>
-                            <span className="viagem-card-pturistico">P. de Westminster</span>
-                    </div>
-                    <div className="card-popular-pturistico">
-                        <img src={Basilio} className="img-card-pturistico"/>
-                            <span className="viagem-card-pturistico">Catedral S. Basílio</span>
-                    </div>
-                    <div className="card-popular-pturistico">
-                        <img src={FontanaDiTrevi} className="img-card-pturistico"/>
-                            <span className="viagem-card-pturistico">Fontana di Trevi</span>
-                    </div>
+                    
+                    <PopularTuristico imgDestino= {ArcoTriunfo} legenda = "Arco do Triunfo"/>
+                    <PopularTuristico imgDestino= {Basilio} legenda = "Catedral S. Basilio"/>
+                    <PopularTuristico imgDestino= {FontanaDiTrevi} legenda = "Fontana Di Trevi"/>
+                    <PopularTuristico imgDestino= {Westminster} legenda = "P. Westminster"/>
+                    
                 </div>
 
                 <div className="btn-popular-pturistico">

@@ -8,6 +8,12 @@ import destinoIcon from '../../Images/Icones-Cards/destino.png';
 import quartosIcon from '../../Images/Icones-Cards/quartos.png';
 import passageirosIcon from '../../Images/Icones-Cards/passageiros.png';
 
+import CardDestinoPular from "../../Componentes/Cards/CardDestinoPopular/CardDestinoPular";
+import RioJaneiro from '../../Images/img_Destino_Cards.png';
+import Brasilia from '../../Images/img_Brasilia.png';
+import Bahia from '../../Images/img_Bahia.png';
+import SantaCatarina from '../../Images/img_SantaCatarina.png';
+
 //import img_economico from '../../Images/RecomendacaoHospedagem/hp_economico.jpg';
 
 import './style_Hospedagem.css';
@@ -17,12 +23,12 @@ import React, { useState } from 'react';
 export default function Home() {
     return (
         <>
-            <div><NavBar/></div>
+            <div><NavBar /></div>
 
             <main>
                 {/* ------------------ CARD DE PESQUISA  --------------------- */}
 
-                <img src={Mala_Card} className="hospedagem-imagem"/>
+                <img src={Mala_Card} className="hospedagem-imagem" />
 
                 <div className="card-hospedagem">
                     <div className="title-hospedagem">
@@ -37,7 +43,7 @@ export default function Home() {
                                 </div>
                                 <div className="input-hospedagem">
                                     <input type="text" className="input-hospedagem" placeholder="21/06/24"
-                                        style={{ backgroundImage: `url(${idaVoltaIcon})` }}/>
+                                        style={{ backgroundImage: `url(${idaVoltaIcon})` }} />
                                 </div>
                             </div>
                             <div className="input-form-hospedagem">
@@ -46,7 +52,7 @@ export default function Home() {
                                 </div>
                                 <div className="input-hospedagem">
                                     <input type="text" className="input-hospedagem" placeholder="21/06/24"
-                                        style={{ backgroundImage: `url(${idaVoltaIcon})` }}/>
+                                        style={{ backgroundImage: `url(${idaVoltaIcon})` }} />
                                 </div>
                             </div>
                             <div className="input-form-hospedagem">
@@ -55,7 +61,7 @@ export default function Home() {
                                 </div>
                                 <div className="input-hospedagem">
                                     <input type="text" className="input-hospedagem" placeholder="Rio de Janeiro"
-                                        style={{ backgroundImage: `url(${destinoIcon})` }}/>
+                                        style={{ backgroundImage: `url(${destinoIcon})` }} />
                                 </div>
                             </div>
                             <div className="input-form-hospedagem">
@@ -64,7 +70,7 @@ export default function Home() {
                                 </div>
                                 <div className="input-hospedagem">
                                     <input type="text" className="input-hospedagem" placeholder="1"
-                                        style={{ backgroundImage: `url(${quartosIcon})` }}/>
+                                        style={{ backgroundImage: `url(${quartosIcon})` }} />
                                 </div>
                             </div>
                             <div className="input-form-hospedagem">
@@ -73,7 +79,7 @@ export default function Home() {
                                 </div>
                                 <div className="input-hospedagem">
                                     <input type="text" className="input-hospedagem" placeholder="1"
-                                        style={{ backgroundImage: `url(${passageirosIcon})` }}/>
+                                        style={{ backgroundImage: `url(${passageirosIcon})` }} />
                                 </div>
                             </div>
                             <div className="btn-pesquisar-hospedagem">
@@ -87,19 +93,36 @@ export default function Home() {
 
                 {/* ------------------ FIM DO CARD DE PESQUISA  ----------------- */}
                 {/* ------------------ VOOS MAIS POPULARES  --------------------- */}
+
+                <div className="destinos-populares-hospedagem">
+                    <span className="titulo-populares-hospedagem">Destinos mais Populares</span>
+                    <div className="destinos-populares-cards">
+                        <CardDestinoPular imgDestinoPopular={RioJaneiro} nomeDesninoPopular="Rio de Janeiro" />
+                        <CardDestinoPular imgDestinoPopular={Brasilia} nomeDesninoPopular="Brasília" />
+                        <CardDestinoPular imgDestinoPopular={Bahia} nomeDesninoPopular="Bahia" />
+                        <CardDestinoPular imgDestinoPopular={SantaCatarina} nomeDesninoPopular="Santa Catarina" />
+                    </div>
+                    <button className="btn-verMais-hospedagem">Ver Mais</button>
+                </div>
+
                 {/* ------------------ FIM DE VOOS MAIS POPULARES  --------------------- */}
 
                 {/* ------------------ RECOMENDAÇÕES PARA VOCÊ  ------------------------ */}
-                <section id="Recommendations_HOSPEDAGENS">
-                    <Rec_Hospedagem title="Economico" id="cards_recomendation_hp_ec"/>
-                    <Rec_Hospedagem title="Intermediario" id="cards_recomendation_hp_inter"/>
-                    <Rec_Hospedagem title="Luxo" id="cards_recomendation_hp_lux"/>
-                </section>
+                <div className="recomendacoesOrcamento-hospedagem">
+                    <span className="titulo-recomendacoes-hospedagem">Hospedagens para o seu orçamento</span>
+                    <div className="recommendations-HOSPEDAGENS-cards">
+                        
+                        <Rec_Hospedagem title="Economico" id="hosp-eco" />
+                        <Rec_Hospedagem title="Intermediario" id="hosp-inter" />
+                        <Rec_Hospedagem title="Luxo" id="hosp-lux" />
+                    </div>
+                    <button className="btn-verMais-hospedagem">Ver Mais</button>
+                </div>
                 {/* ------------------ FIM DE RECOMENDAÇÕES PARA VOCÊ  --------------------- */}
             </main>
 
-            <div style={{height: 250+'px'}}><Footer/></div>
+            <div style={{ height: 250 + 'px' }}><Footer /></div>
         </>
-        
+
     )
 }

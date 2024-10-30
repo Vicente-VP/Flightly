@@ -1,161 +1,131 @@
-main{
+main {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 90vh;
 }
 
-.body_login{
+.body_login {
     display: flex;
     justify-content: center;
-    margin: auto;
+    flex-direction: column; /* Mudar a direção para coluna em telas menores */
 }
 
-.container{
-    width: 1247px;
-    height: 749px;
-
+.container {
+    width: 90%; /* Usar porcentagem para flexibilidade */
+    max-width: 1247px; /* Limitar a largura máxima */
+    height: auto; /* Permitir que a altura se ajuste automaticamente */
     position: relative;
 }
 
-.card-login-dir{
+.card-login-dir, .card-login-esq {
+    border-radius: 33px;
+    height: auto; /* Permitir que a altura se ajuste automaticamente */
+    display: flex; /* Mudar para flexbox para centralizar conteúdo */
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login-dir {
     background: linear-gradient(#2378BC, #72A5CD, #B2C9DB);
-    border-radius: 0px 33px 33px 0px;
-
-    width: 50%;
-    height: 100%;
-
-    right: 0;
-    top: 0;
-
-    position: absolute;
-
-    display: grid;
-    place-items: center;
 }
 
-.card-login-esq{
+.card-login-esq {
     background: linear-gradient(#CAD9EE, #ACC6E9);
-    border-radius: 33px 0px 0px 33px;
-
-    width: 50%;
-    height: 100%;
-
-    left: 0;
-    top: 0;
-
-    position: absolute;
-
-    display: grid;
-    place-items: center;
 }
 
-.forms{
-    display: grid;
-    place-items: center;
-
-    position: absolute;
-
-    margin-top: 164px;
-    margin-bottom: 164px;
+.forms {
+    display: flex; /* Mudar para flexbox */
+    flex-direction: column; /* Organizar elementos em coluna */
+    align-items: center; /* Centralizar elementos */
+    padding: 20px; /* Adicionar padding */
 }
 
-.cad{
-    display: grid;
-    place-items: center;
-
-    position: absolute;
-
-    margin-top: 268px;
-    margin-bottom: 268px;
+.cad {
+    display: flex; /* Mudar para flexbox */
+    flex-direction: column; /* Organizar elementos em coluna */
+    align-items: center; /* Centralizar elementos */
+    padding: 20px; /* Adicionar padding */
 }
 
-.title_forms{
-    font-size: 47px;
+.title_forms {
+    font-size: 2.5rem; /* Usar unidades responsivas */
     font-weight: 500;
-
-    Position: relative;
-
-    margin-bottom: 23px;
+    margin-bottom: 20px;
 }
 
-.title_cad{
-    font-size: 59px;
+.title_cad {
+    font-size: 2.5rem;
     font-weight: 600;
-    color:#ffffff;
-
+    color: #ffffff;
     text-align: center;
-    width: 492.5px;
-
-    position: relative;
 }
 
-.link_forms{
-    font-size: 13px;
+.link_forms, .link_cad {
+    font-size: 1rem; /* Ajustar o tamanho da fonte */
     font-weight: 300;
-    color:#000000;
-
-    position: relative;
-    margin-left: 90px;
+    color: #000000;
+    margin: 10px 0; /* Adicionar margem vertical */
 }
 
-.link_cad{
-    font-size: 21px;
-    font-weight: 300;
-    color:#ffffff;
-
-    position: relative;
-}
-
-.input[type=text]{
-    background-size: 24px;
-    background-position: 10px; 
-    background-repeat: no-repeat;
-    display: flex;
-    padding-left: 10px;
-    padding-top: 1px;
+.input[type="text"] {
+    padding: 10px;
     border-radius: 10px;
     border: none;
-    width: 291px;
-    height: 40px;
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 291px; /* Limitar a largura máxima */
     box-shadow: 0px 4px 14px 0px #B2C9DB;
     margin-top: 5px;
-    margin-bottom: 0px;
 }
 
 input[type="checkbox"] {
-    appearance: none;
-    width: 11px;
-    height: 11px;
+    width: 15px; /* Aumentar a área clicável */
+    height: 15px;
     border: 2px solid #000000;
-    border-radius: 1px;
-    cursor: pointer;
-    position: relative;
-    margin-top: 0px;
+    border-radius: 2px;
 }
 
-.img_log_cad{
+.img_log_cad {
     width: 40px;
     height: 40px;
+    margin: 0 5px; /* Adicionar espaçamento entre ícones */
 }
 
-.manter_conectado{
-    font-size: 13px;
+.manter_conectado {
+    font-size: 0.9rem; /* Ajustar o tamanho da fonte */
     color: #A6A6A6;
-    margin-left: 5px;
 }
 
-.btn-submit{
-    width: 177px;
+.btn-submit {
+    max-width: 177px; /* Limitar a largura máxima */
     height: 46px;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 1rem; /* Ajustar o tamanho da fonte */
     font-weight: 500;
     background-color: #FF6600;
     border-radius: 23px;
     border: none;
-    box-shadow: 0px 4px 16px 0px #00000025;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 20px;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .card-login-dir, .card-login-esq {
+        width: 100%; /* Ocupa a largura total */
+        border-radius: 0; /* Remover bordas arredondadas em telas pequenas */
+    }
+
+    .title_forms, .title_cad {
+        font-size: 2rem; /* Reduzir o tamanho da fonte */
+    }
+
+    .link_forms, .link_cad {
+        font-size: 0.9rem; /* Ajustar o tamanho da fonte */
+    }
+
+    .input[type="text"], .btn-submit {
+        max-width: 90%; /* Reduzir a largura máxima */
+    }
 }
 

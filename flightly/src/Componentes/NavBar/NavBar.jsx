@@ -10,6 +10,7 @@ import Perfil_popUp from '../../Images/Icones_PopUp/Perfil_popUp.png';
 import Plano_popUp from '../../Images/Icones_PopUp/Plano_popUp.png';
 import Quiz_popUp from '../../Images/Icones_PopUp/Quiz_popUp.png';
 import Sair_popUp from '../../Images/Icones_PopUp/Sair_popUp.png';
+import Fechar_popUpNot from '../../Images/Icones_PopUp/botao-fechar.png';
 
 import './styleNavBar.css';
 import React, { useState } from 'react';
@@ -19,12 +20,60 @@ import { Link } from 'react-router-dom';
 
 export default function NavBar() {
   const [isDropdownActive, setDropdownActive] = useState(false);
+  const [isDropdownActiveNot, setDropdownActiveNot] = useState(false);
+  const [isDropdownActiveMenu, setDropdownActiveMenu] = useState(false);
 
   const toggleDropdown = () => {
     setDropdownActive(!isDropdownActive);
   };
+  const toggleDropdownMenu = () => {
+    setDropdownActiveMenu(!isDropdownActiveMenu);
+  };
+
+  const toggleDropdownNot = () => {
+    setDropdownActiveNot(!isDropdownActiveNot);
+  };
   return (
     <header>
+
+      <a href="#" className="toggle-button" onClick={toggleDropdownMenu}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </a>
+      <ul className={`toggle-dropdown-list ${isDropdownActiveMenu ? 'active' : ''}`}>
+            <li className="toggle-dropdown-list-item">
+              <Link to="/">
+              <img src={Aviao_Icon} alt="Voos" id="iconVoo" className="links_dropdowm"/> 
+              Voos
+              </Link>
+              
+            </li>
+            <li className="toggle-dropdown-list-item">
+              <Link to="/Hospedagem">
+              <img src={MalaHospedagem_icon} alt="Hospedagens" id="iconHospedagem" className="links_dropdowm"/> 
+              Hospegdagens
+              </Link>
+              
+            </li>
+            <li className="toggle-dropdown-list-item">
+              <Link to="/Carros">
+              <img src={Carro_icon} alt="Carros" id="iconCarro" className="links_dropdowm"/>  
+              Carros
+              </Link> 
+
+            </li>
+            <li className="toggle-dropdown-list-item">
+              <Link to="/PontosTuristicos">
+              <img src={PontoTuristico_icon} alt="Pontos Turísticos" id="iconTuristico" className="links_dropdowm"/>   
+              Pontos turisticos
+              </Link> 
+              
+            </li>
+          </ul>
+
+
+
       <Link to="/">
         <img src={Logo_Flightly} alt="Logo" className="navbar-Logo"/>
       </Link>
@@ -59,7 +108,7 @@ export default function NavBar() {
       <div id="navbar_buttons">
         <div className="buttons">
           <Link to="/PlanosViagem">
-            <img src={Planos_icon} alt="Planos de viagem" id="plano" />
+            <img src={Planos_icon} alt="Planos de viagem" id="plano" className="plano"/>
           </Link>
           <Link to="/PlanosViagem" className="title_nav">Planos</Link>
         </div>
@@ -72,7 +121,7 @@ export default function NavBar() {
           <ul className={`perfil-dropdown-list ${isDropdownActive ? 'active' : ''}`}>
             <span className="title-popUp">Nome do usuário</span>
             <li className="perfil-dropdown-list-item">
-              <a>
+              <a onClick={toggleDropdownNot}>
                 <img src={Notificacoes_popUp} alt="Notificações" />
                 Notificações
               </a>
@@ -90,16 +139,70 @@ export default function NavBar() {
               </Link>
             </li>
             <li className="perfil-dropdown-list-item">
-              <a>
+              <Link to="/Questionario">
                 <img src={Quiz_popUp} alt="Quiz" />
                 Quiz
-              </a>
+              </Link>
             </li>
             <li className="perfil-dropdown-list-item">
               <a>
                 <img src={Sair_popUp} alt="Sair" />
                 Sair
               </a>
+            </li>
+          </ul>
+
+          {/* dropdow Notificações */}
+          <ul className={`not-dropdown-list ${isDropdownActiveNot ? 'active' : ''}`}>
+            <span className="title-popUp-not"><img src="" />Notificações <img src={Fechar_popUpNot} id='img-fechar' alt="fechar" onClick={toggleDropdownNot}/></span>
+            <hr />
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout"> 
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p></span>
+                <p>Aqui mostramos os melhores pontos turísticos</p>
+              </div>
+              <hr />
+            </li>
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout">
+                {/* Colocar conte className=""údo da notificação */}
+                <span><p>Titulo</p> <aside>Urgente</aside></span>
+                <p>Sua viagem para Salvador mudou de data</p>
+              </div>
+              <hr />
+            </li>
+            <li className="perfil-dropdown-list-item-not">
+              <div  className="Not-layout">
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p></span>
+                <p>Novas promoções de viagens</p>
+              </div>
+              <hr />
+            </li> 
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout">
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p></span>
+                <p>Vamos viajar! 10% de desconto nas hospedagens</p>
+              </div>
+              <hr />
+            </li>
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout">
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p><aside>Urgente</aside></span>
+                <p>Sua viagem para Salvador mudou de data</p>
+              </div>
+              <hr />
+            </li>
+            <li className="perfil-dropdown-list-item-not">
+              <div className="Not-layout">
+                {/* Colocar conteúdo da notificação */}
+                <span><p>Titulo</p><aside>Urgente</aside></span>
+                <p>Sua viagem para Salvador mudou de data</p>
+              </div>
+              <hr />
             </li>
           </ul>
         </div>
