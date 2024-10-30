@@ -1,0 +1,80 @@
+.container-popUp-CriarPlano{
+    display: flex;
+    visibility: hidden;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 52px;
+
+    width: 750px;
+    height: 390px;
+    padding: 0 8% 0 8%;
+
+    background-color: #fff;
+    border-radius: 10px;
+    border: 2px solid #BFC1C3;
+    box-shadow: 0 0 10px #00000050;
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.container-popUp-CriarPlano.active{
+    visibility: visible;
+}
+
+.titulo-popUp-CriarPlano{
+    font-size: 30px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.nome-popUp-CriarPlano {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 500;
+    padding-bottom: 12px;
+    color: #ff6600;
+
+    width: 100%;
+    border: none; 
+    border-bottom: 2px solid #BFC1C3;
+    transition: border-color 0.3s; 
+}
+
+.nome-popUp-CriarPlano:focus {
+    outline: none;
+    border-color: #00000080;
+}
+
+/* Para o placeholder */
+.nome-popUp-CriarPlano::placeholder {
+    color: #BFC1C3;
+}
+
+.container-botoes-popUp-CriarPlano{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.container-botoes-popUp-CriarPlano > button{
+    width: 175px;
+    height: 45px;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0 0 10px #00000050;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btn-CriarPlano{
+    background-color: #ff6600;
+    color: #fff;
+}
+
+.cancelar-popUp-CriarPlano{
+    color: #595959;
+}

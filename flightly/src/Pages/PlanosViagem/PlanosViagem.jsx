@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React from 'react';
 import NavBar from '../../Componentes/NavBar/NavBar';
 import BarraPesquisa from '../../Componentes/BarraPesquisaPlano/BarraPesquisaPlano';
 import CardPlanoViagem from '../../Componentes/Cards/Card_Plano_Viagem/CardPlanoViagem';
-import Btns_PlanoViagens from '../../Componentes/Btns_PlanoViagens/Btns_PlanoViagens';
-import { Link } from 'react-router-dom';
+import Btns_PlanoViagens from '../../Componentes/PlanoViagem/Btns_PlanoViagens/Btns_PlanoViagens';
+import PopUpCriarPlano from '../../Componentes/PlanoViagem/PopUp/popUp';
 
 import './PlanosViagem.css';
 
@@ -12,6 +11,8 @@ export default function PlanosViagem() {
 
     return (
         <>
+            <PopUpCriarPlano />
+
             <div style={{ height: '76px' }}>
                 <NavBar />
             </div>

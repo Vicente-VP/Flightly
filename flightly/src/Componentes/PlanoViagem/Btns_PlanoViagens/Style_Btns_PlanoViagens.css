@@ -10,12 +10,12 @@
     }
 
 .btn-criar-planoViagens{
-    background-image: url('../../Images/Icones_PlanoViagens/icon_criar_planoViagens.png');
+    background-image: url('../../../Images/Icones_PlanoViagens/icon_criar_planoViagens.png');
     background-size: 51px, 51px;
 }
 
 .btn-editar-planoViagens{
-    background-image: url('../../Images/Icones_PlanoViagens/icon_editar_planoViagens.png');
+    background-image: url('../../../Images/Icones_PlanoViagens/icon_editar_planoViagens.png');
     background-size: 31px, 31px;
 }
 
