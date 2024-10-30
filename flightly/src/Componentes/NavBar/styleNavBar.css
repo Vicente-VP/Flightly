@@ -414,7 +414,7 @@ aside{
     
 }
 
-@media(max-width: 400px){
+@media(max-width:500px){
     .plano{
         display:none;
     }
@@ -426,5 +426,14 @@ aside{
         flex-direction: column;
         justify-content: flex-start;
         
+    }
+
+    #navbar_buttons{
+        padding-left: 0;
+    }
+
+    #Perfil{
+        width: 30px;
+        height: 30px;
     }
 }
