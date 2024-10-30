@@ -5,6 +5,8 @@ import Footer from "../../Componentes/Footer/Footer";
 
 import './style_Testes.css';
 import React from 'react';
+import CompraDados from "../../Componentes/Compra/Detalhes/CompraDados";
+import CompraFormaPag from "../../Componentes/Compra/Detalhes/CompraFormaPag";
 
 export default function Testes() {
     return (
@@ -12,6 +14,9 @@ export default function Testes() {
             <div className="navbar-testes"><NavBar/></div>
             
             <div className="conteudo-testes">
+
+            <CompraDados/>
+
             </div>
             
             <div className="footer-testes"><Footer/></div>

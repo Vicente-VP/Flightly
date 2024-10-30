@@ -13,12 +13,8 @@ export default function CompraDados(){
         <div className="ConfirmDados">
             <h1>Confirmar Dados</h1>
             <div className="confirm_dados">
-                
-                <div className="Dados">
-                <img src={Carro_icon} alt="Carros" id="iconCarro" />  Aluguel de Carros
-                <p>Chevrolet Onix</p>
-                </div>
-                
+
+
                 <div className="Dados">
                 <img src={idaVoltaIcon} alt="Data" id="iconData" />  Data
                 <p> ida: 27 de setembro de 2024</p>
@@ -26,15 +22,20 @@ export default function CompraDados(){
                 </div>
 
                 <div className="Dados">
-                <img src={passageirosIcon} alt="Passageiros" id="iconPassageiro" />  Passageiros
-                <p> Nome</p>
-                <p> Cpf</p>
-                </div>
-
-                <div className="Dados">
                 <img src={quartosIcon} alt="Hotel" id="iconHospedagem" />  Hotel - Estadia de Yamata
                 <p> check-in: 28 de setembro de 2024</p>
                 <p> check-out: 10 de outubro de 2024</p>
+                </div>
+                
+                <div className="Dados">
+                <img src={Carro_icon} alt="Carros" id="iconCarro" />  Aluguel de Carros
+                <p>Chevrolet Onix</p>
+                </div>
+
+                <div className="Dados">
+                <img src={passageirosIcon} alt="Passageiros" id="iconPassageiro" />  Passageiros
+                <p> Nome</p>
+                <p> Cpf</p>
                 </div>
 
                 <div className="price">

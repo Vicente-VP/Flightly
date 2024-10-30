@@ -1,7 +1,7 @@
 
 
 
-//Geral
+/*Geral*/
 div,h1{
     font-family: "Poppins", sans serif;
 }
@@ -11,7 +11,7 @@ h1{
     font-weight: normal;
 }
 
-//DETALHES DE COMPRA
+/*DETALHES DE COMPRA*/
 
 
 .Details{
@@ -25,33 +25,41 @@ h1{
 
 
 
-// FORMA DE PAGAMENTO 
+/* FORMA DE PAGAMENTO */
 
 
 .FormaPag{
     display: grid;
     justify-content: center;
-    border: solid;
     border-color: #004639;
-    border-radius: 15px;
-    margin: auto;
-    position: relative;
-    width: 612px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+    width:612px;
     height: 286px;
     padding: 10px;
+}
+
+.FormaPag > h1{
+    font-size: 30px;
 }
 
 .formas_pag{
     margin:15px;
     display: flex;
+    font-size: 10px;
     flex-direction: column;
     justify-content: space-around;
-    border: solid;
+    border: 1px solid;
     border-color: #004369;
     border-radius: 10px;
     width: 545px;
     height: 183px;
-    line-height: 8px;
+    line-height: 19px;
+}
+
+.Row_Type > label{
+    font-size: 12px;
+    padding: 5px;
 }
 
 .Row_Type{
@@ -62,10 +70,11 @@ h1{
 
 input[name=FP]{
     margin-left:15px;
+    accent-color: #004369;
 }
 
 
-// Confirmar Dados
+/*Confirmar Dados*/
 
 #iconCarro{
     width: 15px;
@@ -89,15 +98,21 @@ input[name=FP]{
 
 .Dados{
     font-size: 12px;
+    line-height: 18px;
+}
+
+.Dados > p{
+    line-height: 16px;
 }
 
 .ConfirmDados{
     padding: 15px;
-    border: solid;
+    border: 1px solid;
     border-color: #004863;
     border-radius: 20px;
-    //background-color: #E0E0E0;
-    width:580px;
+    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+    border-radius: 10.5088px;
+    width:610px;
     height:286px;
     display:grid;
     justify-content: align-start;
