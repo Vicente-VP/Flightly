@@ -42,6 +42,7 @@ export default function NavBar() {
     } 
   }, [location]);
 
+
   const toggleDropdown = () => {
     setDropdownActive(!isDropdownActive);
   };

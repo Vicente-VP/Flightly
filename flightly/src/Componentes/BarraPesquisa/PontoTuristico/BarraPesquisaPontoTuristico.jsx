@@ -46,6 +46,7 @@ export default function PesquisaPontoTuristico(){
                 </div>
                 <div className="search-avaliation">
                     <span>Avaliação <img src={seta_baixo_icon} alt="Seta para baixo" className='seta'/></span>
+
                     <select className="avaliation" style={{ backgroundImage: `url(${avaliacao_icon})` }}>
                         <option value="5" >5</option>
                         <option value="4" >4</option>
@@ -53,6 +54,7 @@ export default function PesquisaPontoTuristico(){
                         <option value="2" >2</option>
                         <option value="1" >1</option>
                     </select>
+
                 </div>
                 <div className="search-category">
                     <span>Categoria <img src={seta_baixo_icon} alt="Seta para baixo" className='seta'/></span>

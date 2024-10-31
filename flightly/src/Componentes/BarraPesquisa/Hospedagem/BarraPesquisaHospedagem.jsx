@@ -2,8 +2,10 @@ import filter_search_bar from '../../../Images/Barra_Pesquisa/filter-search-bar.
 import destino_icon from '../../../Images/Barra_Pesquisa/destino_icon.png';
 import ida_volta_icon from '../../../Images/Barra_Pesquisa/ida_volta_icon.png';
 import passageirosIcon from '../../../Images/Barra_Pesquisa/passageiro_icon.png';
-import quartos_icon from '../../../Images/Barra_Pesquisa/quartos_icon.png';
 import Drop from '../../DropInput/drop';
+import passageiro_icon from '../../../Images/Barra_Pesquisa/passageiro_icon.png';
+import quartos_icon from '../../../Images/Barra_Pesquisa/quartos_icon.png';
+
 
 import './styleBarraPesquisaHospedagem.css';
 
@@ -30,7 +32,15 @@ export default function PesquisaHospedagem(){
                 </div>
                 <div className="search-hospedes">
                     <span>Hóspedes</span>
+
                     <Drop imagem={passageirosIcon} widthDrop="126px" topContent="69.5%" titles={["Adultos", "Crianças"]} subTitles={[]}/>
+                    <select name="hospedes" className="hospedes" style={{ backgroundImage: `url(${passageiro_icon})` }}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4+">4+</option>
+                    </select>
+
                 </div>
                 <div className="search-quartos">
                     <span>Camas</span>

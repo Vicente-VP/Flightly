@@ -29,6 +29,7 @@ export default function PesquisaCarro(){
                 </div>
                 <div className="search-passageiros">
                     <span>Passageiros</span>
+
                     <select name="TipoCarro" className="passageiro" style={{ backgroundImage: `url(${passageiro_icon})` }}>
                         <option value="2">2</option>
                         <option value="5">5</option>
