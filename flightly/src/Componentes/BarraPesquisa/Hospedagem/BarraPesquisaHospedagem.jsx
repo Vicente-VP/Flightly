@@ -34,12 +34,7 @@ export default function PesquisaHospedagem(){
                     <span>Hóspedes</span>
 
                     <Drop imagem={passageirosIcon} widthDrop="126px" topContent="69.5%" titles={["Adultos", "Crianças"]} subTitles={[]}/>
-                    <select name="hospedes" className="hospedes" style={{ backgroundImage: `url(${passageiro_icon})` }}>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4+">4+</option>
-                    </select>
+                   
 
                 </div>
                 <div className="search-quartos">

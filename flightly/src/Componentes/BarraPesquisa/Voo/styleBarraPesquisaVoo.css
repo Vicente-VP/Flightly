@@ -271,3 +271,4 @@ input[type=date]::-webkit-datetime-edit {
 .classe:focus, .ida:focus, .volta:focus, .origem:focus, .destino:focus{
   outline: none;
   border: 2px solid #004369;
+}

@@ -245,7 +245,8 @@ input[type=date]::-webkit-datetime-edit {
 }
 
 span{
-  font-style: normal;
+  font-style: normal;}
+  
 .tipo:focus{
   outline: none;
 }
