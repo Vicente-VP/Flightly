@@ -126,6 +126,9 @@ main{
     -webkit-appearance: none;
     -moz-appearance: none;
 }
+.input-voo::placeholder{
+    color: #BFC1C3;
+}
 
 .input-voo option{
     background-color: #FFF;
