@@ -2,6 +2,8 @@
 
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
+import BarraPesquisa from "../../Componentes/Barra de pesquisa/Carro/BarraPesquisaCarro";
+
 
 import './style_Testes.css';
 import React from 'react';
@@ -12,6 +14,7 @@ export default function Testes() {
             <div className="navbar-testes"><NavBar/></div>
             
             <div className="conteudo-testes">
+
             </div>
 
             <div className="footer-testes"><Footer/></div>

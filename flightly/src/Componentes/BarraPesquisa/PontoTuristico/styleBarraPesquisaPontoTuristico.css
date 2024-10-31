@@ -183,12 +183,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: black;
 }
 
-
-.avaliation:focus{
-  outline: none;
-}
-
-
 .search-category{
   display: flex;
   flex-direction: column;
@@ -223,10 +217,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -moz-appearance: none;
 }
 
-.category:focus{
-  outline: none;
-}
-
 .category option{
   background-color: #d0e4f0;
 
@@ -238,15 +228,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .seta{
   height: 8px;
   width: 15px;
-}
-
-input:focus {
-  outline: none;
-}
-
-
-input:focus {
-  outline: none;
 }
 
 #input{
@@ -351,6 +332,10 @@ input:focus {
 }
 
 span{
-
   font-style: normal;
+}
+
+.origem:focus, .category:focus, .avaliation:focus{
+  outline: none;
+  border: 2px solid #004369;
 }
