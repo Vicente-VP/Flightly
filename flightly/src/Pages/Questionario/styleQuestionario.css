@@ -1,0 +1,8 @@
+.back{
+    background-color: #EAEAEA;
+    display: flex;
+    height: 100vh;
+    padding-top: 70px;
+    align-items: center;
+    justify-content: center;
+}
