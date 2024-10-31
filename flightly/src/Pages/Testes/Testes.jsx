@@ -5,17 +5,21 @@ import Footer from "../../Componentes/Footer/Footer";
 
 import './style_Testes.css';
 import React from 'react';
-import CompraDados from "../../Componentes/Compra/Detalhes/CompraDados";
-import CompraFormaPag from "../../Componentes/Compra/Detalhes/CompraFormaPag";
+import CompraDetalhes from "../../Componentes/Compra/Detalhes/CompraDetalhes";
 
 export default function Testes() {
+    const itensCompra = [
+        { name: "Item 1", preco: 10.0 },
+        { name: "Item 2", preco: 20.0 },
+        { name: "Item 3", preco: 30.0 },
+    ];
     return (
         <>
             <div className="navbar-testes"><NavBar/></div>
             
             <div className="conteudo-testes">
 
-            <CompraDados/>
+            <CompraDetalhes itens={itensCompra}/>
 
             </div>
             

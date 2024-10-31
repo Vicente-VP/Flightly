@@ -2,9 +2,9 @@ import React from "react";
 import CompraFormaPag from "../../Componentes/Compra/Detalhes/CompraFormaPag";
 import CompraTotal from "../../Componentes/Compra/CompraTotalPlano/CompraTotal";
 import NavBar from "../../Componentes/NavBar/NavBar";
-import DetalhesCompra from "../../Componentes/Compra/Detalhes/CompraDetalhes";
 import "./style.css";
 import CompraDados from "../../Componentes/Compra/Detalhes/CompraDados";
+import CompraDetalhes from "../../Componentes/Compra/Detalhes/CompraDetalhes";
 
 
 export default function Compra(){
@@ -21,7 +21,7 @@ export default function Compra(){
         <NavBar/>
         </div>
         <div className="ConteudoCompra">
-            <DetalhesCompra itens={itensCompra}/>
+            <CompraDetalhes itens={itensCompra}/>
             <div>
             <CompraFormaPag/>
             <CompraDados/>

@@ -15,7 +15,13 @@ h1{
 
 
 .Details{
-    width: 1000px;
+    width: 1255px;
+    height: fit-content;
+    padding: 12px;
+    border: 1px solid;
+    border-color: #004639;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
 }
 
 .Name_Price_details{

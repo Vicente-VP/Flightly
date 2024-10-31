@@ -1,7 +1,7 @@
 import React from "react";
 import "./style_CompraPage.css";
 
-export default function DetalhesCompra(props) {
+export default function CompraDetalhes(props) {
     const { itens } = props;
 
     // Calcula o preço total
