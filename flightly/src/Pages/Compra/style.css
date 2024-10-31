@@ -6,10 +6,14 @@
 
 .ConteudoCompra{
     display: grid;
-    width: 1920px;
-    height: 1080px;
     padding-top: 80px;
 
     justify-items: center;
+    row-gap: 30px;
     align-content: top;
+}
+
+.double-item{
+    display: flex;
+    column-gap: 30px;
 }

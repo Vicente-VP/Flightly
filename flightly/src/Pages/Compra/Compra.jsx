@@ -22,11 +22,11 @@ export default function Compra(){
         </div>
         <div className="ConteudoCompra">
             <CompraDetalhes itens={itensCompra}/>
-            <div>
-            <CompraFormaPag/>
+            <div className="double-item">
             <CompraDados/>
+            <CompraFormaPag/>
             </div>
-            <CompraTotal/>
+
             </div>
         </>       
     );
