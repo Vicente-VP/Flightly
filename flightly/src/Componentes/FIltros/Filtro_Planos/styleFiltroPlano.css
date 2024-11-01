@@ -3,8 +3,10 @@
 
 .filter-space, .filter-container{
     display: flex; /* Utiliza flexbox para alinhamento em linha */
+    width: 100%;
     gap: 58px; /* Espaçamento entre os botões */
     justify-content: center; /* Alinha os botões no centro horizontalmente */
+    align-items: center;
     padding: 20px;
 }
 
@@ -12,7 +14,7 @@
     border-radius: 20px;
     border: 1px solid #d3d3d3; 
 
-    width: 1180px;
+    width: 70%;
     height: 98px;
     background: linear-gradient(to right, #c7e2f240, #73838c10);
     align-items: center;
@@ -163,7 +165,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 .btn-edit{
@@ -180,7 +181,7 @@
     background-size: 31px, 31px;
 }
 
-span{
+.edit-space > span{
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
