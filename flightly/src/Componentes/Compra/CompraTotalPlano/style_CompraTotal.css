@@ -14,7 +14,7 @@
     height: 98px;
 }
 
-label{
+.txt-telaCompra{
     font-weight: 200;
     font-size: 25px;
 }
@@ -44,8 +44,4 @@ label{
 
 .conteudo_preco{
     align-content: center;
-}
-
-span{
-    font-style: normal;
 }

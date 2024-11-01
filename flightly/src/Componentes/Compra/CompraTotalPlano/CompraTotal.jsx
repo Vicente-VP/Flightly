@@ -18,12 +18,12 @@ export default function CompraTotal({props}){
             <div class="Block_Preco"> 
 
                 <div class="conteudo_preco">
-                    <label for="Total_preco">Subtotal: </label>
+                    <label className='txt-telaCompra' for="Total_preco">Subtotal: </label>
                     <span>R$50000</span>
                 </div>
 
                 <div class="conteudo_preco">
-                    <label for="Num_items">Quantidade de Itens : </label>
+                    <label className='txt-telaCompra' for="Num_items">Quantidade de Itens : </label>
                     <span>5</span>
                 </div>
 
