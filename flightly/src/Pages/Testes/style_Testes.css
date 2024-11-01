@@ -14,13 +14,5 @@
 
     justify-items: center;
     align-content: top;
-}
 
-.Details{
-    width: 1200px;
-}
-
-.Name_Price_details{
-    display:flex;
-    justify-content: space-between;
 }
