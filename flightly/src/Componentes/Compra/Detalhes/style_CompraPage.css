@@ -1,12 +1,3 @@
-
-
-
-/*Geral*/
-div,h1{
-    font-family: "Poppins", sans serif;
-}
-
-
 h1{
     font-weight: normal;
 }
@@ -83,22 +74,22 @@ input[name=FP]{
 
 /*Confirmar Dados*/
 
-#iconCarro{
+.iconCarro{
     width: 15px;
     height: 15px;
 }
 
-#iconPassageiro{
+.iconPassageiro{
     width: 20px;
     height: 20px;
 }
 
-#iconData{
+.iconData{
     width: 20px;
     height: 20px;
 }
 
-#iconHospedagem{
+.iconHospedagem{
     width: 20px;
     height: 20px;
 }

@@ -16,24 +16,24 @@ export default function CompraDados(){
 
 
                 <div className="Dados">
-                <img src={idaVoltaIcon} alt="Data" id="iconData" />  Data
+                <img src={idaVoltaIcon} alt="Data" className="iconData" />  Data
                 <p> ida: 27 de setembro de 2024</p>
                 <p> volta: 10 de outubro de 2024</p>
                 </div>
 
                 <div className="Dados">
-                <img src={quartosIcon} alt="Hotel" id="iconHospedagem" />  Hotel - Estadia de Yamata
+                <img src={quartosIcon} alt="Hotel" className="iconHospedagem" />  Hotel - Estadia de Yamata
                 <p> check-in: 28 de setembro de 2024</p>
                 <p> check-out: 10 de outubro de 2024</p>
                 </div>
                 
                 <div className="Dados">
-                <img src={Carro_icon} alt="Carros" id="iconCarro" />  Aluguel de Carros
+                <img src={Carro_icon} alt="Carros" className="iconCarro" />  Aluguel de Carros
                 <p>Chevrolet Onix</p>
                 </div>
 
                 <div className="Dados">
-                <img src={passageirosIcon} alt="Passageiros" id="iconPassageiro" />  Passageiros
+                <img src={passageirosIcon} alt="Passageiros" className="iconPassageiro" />  Passageiros
                 <p> Nome</p>
                 <p> Cpf</p>
                 </div>
