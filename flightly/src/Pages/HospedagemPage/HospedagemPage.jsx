@@ -1,11 +1,11 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 import Rec_Hospedagem from "../../Componentes/Cards/Card Rec Hospedagem/cardsRecHospedagem";
+import Drop from "../../Componentes/DropInput/drop";
 
 import Mala_Card from '../../Images/Mala_Card.png';
 import idaVoltaIcon from '../../Images/Icones-Cards/ida-volta.png';
 import destinoIcon from '../../Images/Icones-Cards/destino.png';
-import quartosIcon from '../../Images/Icones-Cards/quartos.png';
 import passageirosIcon from '../../Images/Icones-Cards/passageiros.png';
 
 import CardDestinoPular from "../../Componentes/Cards/CardDestinoPopular/CardDestinoPular";
@@ -17,7 +17,6 @@ import SantaCatarina from '../../Images/img_SantaCatarina.png';
 //import img_economico from '../../Images/RecomendacaoHospedagem/hp_economico.jpg';
 
 import './style_Hospedagem.css';
-import React, { useState } from 'react';
 //import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -28,7 +27,7 @@ export default function Home() {
             <main>
                 {/* ------------------ CARD DE PESQUISA  --------------------- */}
 
-                <img src={Mala_Card} className="hospedagem-imagem" />
+                <img src={Mala_Card} className="hospedagem-imagem" alt="Mala"/>
 
                 <div className="card-hospedagem">
                     <div className="title-hospedagem">
@@ -42,7 +41,7 @@ export default function Home() {
                                     <label className="etiqueta-hospedagem">Check-in</label>
                                 </div>
                                 <div className="input-hospedagem">
-                                    <input type="text" className="input-hospedagem" placeholder="21/06/24"
+                                    <input type="date" className="input-hospedagem" placeholder="21/06/24"
                                         style={{ backgroundImage: `url(${idaVoltaIcon})` }} />
                                 </div>
                             </div>
@@ -51,7 +50,7 @@ export default function Home() {
                                     <label className="etiqueta-hospedagem">Check-out</label>
                                 </div>
                                 <div className="input-hospedagem">
-                                    <input type="text" className="input-hospedagem" placeholder="21/06/24"
+                                    <input type="date" className="input-hospedagem" placeholder="21/06/24"
                                         style={{ backgroundImage: `url(${idaVoltaIcon})` }} />
                                 </div>
                             </div>
@@ -66,21 +65,9 @@ export default function Home() {
                             </div>
                             <div className="input-form-hospedagem">
                                 <div className="etiqueta-hospedagem">
-                                    <label className="etiqueta-hospedagem">Quartos</label>
-                                </div>
-                                <div className="input-hospedagem">
-                                    <input type="text" className="input-hospedagem" placeholder="1"
-                                        style={{ backgroundImage: `url(${quartosIcon})` }} />
-                                </div>
-                            </div>
-                            <div className="input-form-hospedagem">
-                                <div className="etiqueta-hospedagem">
                                     <label className="etiqueta-hospedagem">Hóspedes</label>
                                 </div>
-                                <div className="input-hospedagem">
-                                    <input type="text" className="input-hospedagem" placeholder="1"
-                                        style={{ backgroundImage: `url(${passageirosIcon})` }} />
-                                </div>
+                                <Drop imagem={passageirosIcon} widthDrop="201px" topContent="45.5%" titles={["Adultos", "Crianças"]} subTitles={[]}/>
                             </div>
                             <div className="btn-pesquisar-hospedagem">
                                 <button className="btn-submit-hospedagem">
@@ -111,9 +98,10 @@ export default function Home() {
                 <div className="recomendacoesOrcamento-hospedagem">
                     <span className="titulo-recomendacoes-hospedagem">Hospedagens para o seu orçamento</span>
                     <div className="recommendations-HOSPEDAGENS-cards">
-                        <Rec_Hospedagem title="Economico" id="cards_recomendation_hp_ec" />
-                        <Rec_Hospedagem title="Intermediario" id="cards_recomendation_hp_inter" />
-                        <Rec_Hospedagem title="Luxo" id="cards_recomendation_hp_lux" />
+                        
+                        <Rec_Hospedagem title="Economico" id="hosp-eco" />
+                        <Rec_Hospedagem title="Intermediario" id="hosp-inter" />
+                        <Rec_Hospedagem title="Luxo" id="hosp-lux" />
                     </div>
                     <button className="btn-verMais-hospedagem">Ver Mais</button>
                 </div>

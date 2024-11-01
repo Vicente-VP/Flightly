@@ -74,7 +74,24 @@
     border-radius: 10px;
     border: none;
     height: 40px;
+    width: 201px;
     box-shadow: 0px 4px 14px 0px #B2C9DB;
+    outline: none;
+}
+
+.input-hospedagem[type=date] {
+    background-size: 24px;
+    background-position: 10px; 
+    background-repeat: no-repeat;
+    display: flex;
+    padding-left: 40px;
+    padding-top: 1px;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: 201px;
+    box-shadow: 0px 4px 14px 0px #B2C9DB;
+    outline: none;
 }
 
 .btn-pesquisar-hospedagem {
@@ -157,17 +174,3 @@
     cursor: pointer;
 }
 
-#cards_recomendation_hp_ec{
-    background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.5)), url('../../Images/RecomendacaoHospedagem/hp_economico.jpg');
-    background-position: center;
-}
-
-#cards_recomendation_hp_inter{
-    background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.5)), url('../../Images/RecomendacaoHospedagem/hp_economico.jpg');
-    background-position: center;
-}
-
-#cards_recomendation_hp_lux{
-    background-image: linear-gradient(rgba(0,0,0,0.01),rgba(0,0,0,0.5)), url('../../Images/RecomendacaoHospedagem/hp_economico.jpg');
-    background-position: center;
-}

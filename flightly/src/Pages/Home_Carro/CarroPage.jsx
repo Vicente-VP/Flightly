@@ -15,9 +15,30 @@ import Rec_Eco from '../../Images/Card_Recomendacao_Carro/Rec_Eco.png';
 import Rec_Inter from '../../Images/Card_Recomendacao_Carro/Rec_Inter.png';
 import Rec_Lux from '../../Images/Card_Recomendacao_Carro/Rec_Lux.png';
 
+import { useState } from "react";
+
 import './Style_carro.css';
 
 export default function Carro_page (){
+    const [locadoras, setLocadoras] = useState([
+        {legenda: "Allauto", image: Loc_Allauto},
+        {legenda: "Rental", image: Loc_Rental},
+        {legenda: "Citta", image: Loc_Citta},
+        {legenda: "Blue", image: Loc_Blue},
+    ]);
+
+
+    const verMais = () => {
+        const novasLocadoras = [
+            { legenda: "Locadora X", image: Loc_Allauto },
+            { legenda: "Locadora Y", image: Loc_Rental },
+            { legenda: "Locadora X", image: Loc_Allauto },
+            { legenda: "Locadora Y", image: Loc_Rental },
+        ];
+        setLocadoras([...locadoras, ...novasLocadoras])
+    }
+
+
     return (
         <>
             <div><NavBar/></div>
@@ -25,54 +46,64 @@ export default function Carro_page (){
             <main>
                     {/* ------------------ CARRO FORM INICIO  --------------------- */}
                 <div className="card-carro">
-                    <div className="car-title">
-                        <label>Aluguel de Carros</label>
-                    </div>
+    <div className="car-title">
+        <label>Aluguel de Carros</label>
+    </div>
 
-                    <div className="car-space">
-                    </div>
+    <div className="car-space">
+        <div className="car-image">
+            <img src={Carro_Form} alt="Carro esportivo" />
+        </div>
+    </div>
 
-                    <div className="form-cardcarro">
-                        <div className="car-grid-inputs">
-                            <div className="car-input-form">
-                                <div className="car-etiqueta-className">
-                                    <label className="car-etiqueta">Local de retirada</label>
-                                </div>
-                                <div className="car-input-className">
-                                    <input type="text" className="car-input" name="pick-location" id="pick-location"
-                                        placeholder="São Paulo" style={{ backgroundImage: `url(${Origem_Form})` }}/>
-                                </div>
-                            </div>
-                            <div className="car-input-form">
-                                <div className="car-etiqueta-className">
-                                    <label className="car-etiqueta">Data de Retirada</label>
-                                </div>
-                                <div className="car-input-className">
-                                    <input type="date" className="car-input" id="pickup-date" name="pickup-date" placeholder="21/06/2024"
-                                        style={{ backgroundImage: `url(${IdaVolta_Form})` }}/>
-                                </div>
-                            </div>
-                            <div className="car-input-form">
-                                <div className="car-etiqueta-className"></div>
-                                <div className="car-input-className"></div>
-                            </div>
-                            <div className="car-input-form">
-                                <div className="car-etiqueta-className">
-                                    <label className="car-etiqueta">Data de devolução</label>
-                                </div>
-                                <div className="car-input-className">
-                                    <input type="date" className="car-input" id="return-date" name="return-date" placeholder="30/06/2024"
-                                        style={{ backgroundImage: `url(${IdaVolta_Form})` }}/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="car-btn-pesquisar">
-                            <button className="car-pesquisar">Pesquisar</button>
-                        </div>
+    <div className="form-cardcarro">
+        <div className="car-grid-inputs">
+            <div className="car-input-form">
+                <div className="car-etiqueta-className">
+                    <label className="car-etiqueta">Local de retirada</label>
+                </div>
+                <div className="car-input-className">
+                    <input type="text" className="car-input" name="pick-location" id="pick-location"
+                        placeholder="São Paulo" style={{ backgroundImage: `url(${Origem_Form})` }} />
+                </div>
+            </div>
+            <div className="car-input-form">
+                <div className="car-etiqueta-className">
+                    <label className="car-etiqueta">Data e Hora de Retirada</label>
+                </div>
+                <div className="car-input-className">
+                    <div>
+                        <input type="date" className="car-input" id="pickup-date" name="pickup-date" placeholder="21/06/2024"
+                            style={{ backgroundImage: `url(${IdaVolta_Form})` }} />
+                        <input type="time" className="car-input" id="pickup-time" name="pickup-hour"/>
                     </div>
                 </div>
+            </div>
+            <div className="car-input-form">
+                <div className="car-etiqueta-className">
+                </div>
+                <div className="car-input-className">
+                </div>
+            </div>
+            <div className="car-input-form">
+                <div className="car-etiqueta-className">
+                    <label className="car-etiqueta">Data e Hora de Devolução</label>
+                </div>
+                <div className="car-input-className">
+                    <div>
+                        <input type="date" className="car-input" id="return-date" name="return-date" placeholder="30/06/2024"
+                            style={{ backgroundImage: `url(${IdaVolta_Form})` }} />
+                        <input type="time" className="car-input" id="return-time" name="return-hour" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div className="car-btn-pesquisar">
+            <button className="car-pesquisar">Pesquisar</button>
+        </div>
+    </div>
+</div>
 
-                <div className="car-image"><img src={Carro_Form} alt=""/></div>
                     {/* ------------------ CARRO FORM FIM  --------------------- */}
 
                     
@@ -85,14 +116,13 @@ export default function Carro_page (){
                     </div>
                         
                     <div className="space-locadora-popular">
-                        <CardRec legenda="Allauto" image={Loc_Allauto}/>
-                        <CardRec legenda="Rental" image={Loc_Rental}/>
-                        <CardRec legenda="Citta" image={Loc_Citta}/>
-                        <CardRec legenda="Blue" image={Loc_Blue}/>
+                        {locadoras.map((locadora, index) => (
+                            <CardRec key={index} legenda={locadora.legenda} image={locadora.image}/>
+                        ))}
                     </div>
                         
                     <div className="locadora-btn-popular">
-                        <button className="car-pesquisar">Ver Mais</button>
+                        <button className="car-pesquisar" onClick={verMais}>Ver Mais</button>
                     </div>
                 </div>
                 {/* ------------------ LOCADORAS MAIS POPULARES FIM --------------------- */}

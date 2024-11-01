@@ -1,0 +1,56 @@
+.card-popular-voo {
+    display: grid;
+    grid-template-rows: 66% 6.4% 4.4% 5.4% 5.4% 12.4%;
+    border: 1.5px solid #ACC6E9;
+    border-radius: 20px;
+    box-shadow: 0px 4px 14px 0px #B2C9DB25;
+    cursor: pointer;
+}
+
+.img-card-voo {
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    height: 285px;
+}
+
+.viagem-card-voo {
+    font-weight: 500;
+    padding-left: 10px;
+    padding-top: 8px;
+    font-size: 14px;
+    align-content: end;
+}
+
+.companhia-card-voo {
+    padding-left: 10px;
+    font-size: 12px;
+    font-weight: 350;
+}
+
+.data-card-voo {
+    padding-left: 10px;
+    padding-top: 4px;
+    font-size: 12px;
+    font-weight: 350;
+}
+
+.ida-volta-card-voo {
+    background-color: #ACC6E954;
+    font-size: 12px;
+    font-weight: 350;
+    align-content: center;
+    margin-left: 10px;
+    margin-top: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: fit-content;
+    border-radius: 3px;
+}
+
+.preco-card-voo {
+    font-weight: 500;
+    padding-left: 10px;
+    font-size: 14px;
+    padding-top: 5px;
+    align-content: top;
+}

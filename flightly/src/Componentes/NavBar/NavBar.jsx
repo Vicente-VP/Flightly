@@ -13,7 +13,8 @@ import Sair_popUp from '../../Images/Icones_PopUp/Sair_popUp.png';
 import Fechar_popUpNot from '../../Images/Icones_PopUp/botao-fechar.png';
 
 import './styleNavBar.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
+import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
@@ -21,9 +22,32 @@ import { Link } from 'react-router-dom';
 export default function NavBar() {
   const [isDropdownActive, setDropdownActive] = useState(false);
   const [isDropdownActiveNot, setDropdownActiveNot] = useState(false);
+  const [isDropdownActiveMenu, setDropdownActiveMenu] = useState(false);
+
+  const [activeLink, setActiveLink] = useState('');
+  const location = useLocation(); // Usar o hook para acessar a URL atual
+
+  // Atualiza o link ativo baseado na URL atual
+  useEffect(() => {
+    const currentPath = location.pathname;
+    
+    if (currentPath === '/') {
+      setActiveLink('voos');
+    } else if (currentPath.includes('Hospedagem')) {
+      setActiveLink('hospedagem');
+    } else if (currentPath.includes('Carros')) {
+      setActiveLink('carros');
+    } else if (currentPath.includes('PontosTuristicos')) {
+      setActiveLink('pt');
+    } 
+  }, [location]);
+
 
   const toggleDropdown = () => {
     setDropdownActive(!isDropdownActive);
+  };
+  const toggleDropdownMenu = () => {
+    setDropdownActiveMenu(!isDropdownActiveMenu);
   };
 
   const toggleDropdownNot = () => {
@@ -31,41 +55,81 @@ export default function NavBar() {
   };
   return (
     <header>
+
+      <a href="#" className="toggle-button" onClick={toggleDropdownMenu}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </a>
+      <ul className={`toggle-dropdown-list ${isDropdownActiveMenu ? 'active' : ''}`}>
+            <li className="toggle-dropdown-list-item">
+              <Link to="/">
+              <img src={Aviao_Icon} alt="Voos" id="iconVoo" className="links_dropdowm"/> 
+              Voos
+              </Link>
+              
+            </li>
+            <li className="toggle-dropdown-list-item">
+              <Link to="/Hospedagem">
+              <img src={MalaHospedagem_icon} alt="Hospedagens" id="iconHospedagem" className="links_dropdowm"/> 
+              Hospegdagens
+              </Link>
+              
+            </li>
+            <li className="toggle-dropdown-list-item">
+              <Link to="/Carros">
+              <img src={Carro_icon} alt="Carros" id="iconCarro" className="links_dropdowm"/>  
+              Carros
+              </Link> 
+
+            </li>
+            <li className="toggle-dropdown-list-item">
+              <Link to="/PontosTuristicos">
+              <img src={PontoTuristico_icon} alt="Pontos Turísticos" id="iconTuristico" className="links_dropdowm"/>   
+              Pontos turisticos
+              </Link> 
+              
+            </li>
+          </ul>
+
+
+
       <Link to="/">
         <img src={Logo_Flightly} alt="Logo" className="navbar-Logo"/>
       </Link>
 
       <nav className="navbar">
-        <div className="nav">
+        <div className="nav" id='linkVoo'>
           <Link to="/">
             <img src={Aviao_Icon} alt="Voos" id="iconVoo" />
           </Link>
-          <Link to="/" className="title_nav">Voos</Link>
+          <Link to="/" className={`title_nav ${activeLink === 'voos' ? 'active' : ''}`}
+          >Voos</Link>
         </div>
-        <div className="nav">
+        <div className="nav" id='linkHospedagem' >
           <Link to="/Hospedagem">
             <img src={MalaHospedagem_icon} alt="Hospedagens" id="iconHospedagem" />
           </Link>
-          <Link to="/Hospedagem" className="title_nav">Hospedagens</Link>
+          <Link to="/Hospedagem" className={`title_nav ${activeLink === 'hospedagem' ? 'active' : ''}`}>Hospedagens</Link>
         </div>
-        <div className="nav">
+        <div className="nav" id='linkCarro'>
           <Link to="/Carros">
             <img src={Carro_icon} alt="Carros" id="iconCarro" />
           </Link>
-          <Link to="/Carros" className="title_nav">Carros</Link>
+          <Link to="/Carros" className={`title_nav ${activeLink === 'carros' ? 'active' : ''}`}>Carros</Link>
         </div>
-        <div className="nav">
+        <div className="nav" id='linkPt'>
           <Link to="/PontosTuristicos">
             <img src={PontoTuristico_icon} alt="Pontos Turísticos" id="iconTuristico" />
           </Link>
-          <Link to="/PontosTuristicos" className="title_nav">Pontos Turísticos</Link>
+          <Link to="/PontosTuristicos" className={`title_nav ${activeLink === 'pt' ? 'active' : ''}`}>Pontos Turísticos</Link>
         </div>
       </nav>
 
       <div id="navbar_buttons">
         <div className="buttons">
           <Link to="/PlanosViagem">
-            <img src={Planos_icon} alt="Planos de viagem" id="plano" />
+            <img src={Planos_icon} alt="Planos de viagem" id="plano" className="plano"/>
           </Link>
           <Link to="/PlanosViagem" className="title_nav">Planos</Link>
         </div>
@@ -96,10 +160,10 @@ export default function NavBar() {
               </Link>
             </li>
             <li className="perfil-dropdown-list-item">
-              <a>
+              <Link to="/Questionario">
                 <img src={Quiz_popUp} alt="Quiz" />
                 Quiz
-              </a>
+              </Link>
             </li>
             <li className="perfil-dropdown-list-item">
               <a>
