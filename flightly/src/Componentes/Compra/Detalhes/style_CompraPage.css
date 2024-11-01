@@ -1,0 +1,134 @@
+
+
+
+/*Geral*/
+div,h1{
+    font-family: "Poppins", sans serif;
+}
+
+
+h1{
+    font-weight: normal;
+}
+
+/*DETALHES DE COMPRA*/
+
+
+.Details{
+    width: 1255px;
+    height: fit-content;
+    padding: 12px;
+    /*border: 1px solid;*/
+    border-color: #004639;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+}
+
+.Name_Price_details{
+    display:flex;
+    justify-content: space-between;
+}
+
+
+
+/* FORMA DE PAGAMENTO */
+
+
+.FormaPag{
+    display: grid;
+    justify-content: center;
+    /*border: 1px solid;*/
+    border-color: #004639;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+    width:612px;
+    height: 286px;
+    padding: 10px;
+}
+
+.FormaPag > h1{
+    font-size: 30px;
+}
+
+.formas_pag{
+    margin:15px;
+    display: flex;
+    font-size: 10px;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid;
+    border-color: #004369;
+    border-radius: 10px;
+    width: 545px;
+    height: 183px;
+    line-height: 19px;
+}
+
+.Row_Type > label{
+    font-size: 12px;
+    padding: 5px;
+}
+
+.Row_Type{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+input[name=FP]{
+    margin-left:15px;
+    accent-color: #004369;
+}
+
+
+/*Confirmar Dados*/
+
+#iconCarro{
+    width: 15px;
+    height: 15px;
+}
+
+#iconPassageiro{
+    width: 20px;
+    height: 20px;
+}
+
+#iconData{
+    width: 20px;
+    height: 20px;
+}
+
+#iconHospedagem{
+    width: 20px;
+    height: 20px;
+}
+
+.Dados{
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.Dados > p{
+    line-height: 16px;
+}
+
+.ConfirmDados{
+    padding: 15px;
+    /*border: 1px solid;*/
+    border-color: #004863;
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+    border-radius: 10.5088px;
+    width:610px;
+    height:286px;
+    display:grid;
+    justify-content: align-start;
+}
+
+.confirm_dados{
+    padding: 8px;
+    display: grid;
+    column-gap: 10px;
+    row-gap: 15px;
+    grid-template-columns: auto auto;
+}
