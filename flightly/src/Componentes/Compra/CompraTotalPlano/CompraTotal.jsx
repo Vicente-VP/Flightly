@@ -13,26 +13,24 @@ export default function CompraTotal({props}){
     }*/
 
     return(
-        <div>
-            <NavBar/>
+        <>
 
-        <div class="Block_Preco"> 
-            
-            <div class="conteudo_preco">
-                <label for="Total_preco">Subtotal: </label>
-                <span>R$50000</span>
+            <div class="Block_Preco"> 
+
+                <div class="conteudo_preco">
+                    <label for="Total_preco">Subtotal: </label>
+                    <span>R$50000</span>
+                </div>
+
+                <div class="conteudo_preco">
+                    <label for="Num_items">Quantidade de Itens : </label>
+                    <span>5</span>
+                </div>
+
+                <button onclick="../../../Pages/Compra/Compra.jsx"  className="btn-submit">Comprar</button>
+
             </div>
 
-            <div class="conteudo_preco">
-                <label for="Num_items">Quantidade de Itens : </label>
-                <span>5</span>
-            </div>
-
-            <button onclick="../../../Pages/Compra/Compra.jsx"  className="btn-submit">Comprar</button>
-
-        </div>
-
-
-        </div>        
+        </>        
     );
 }

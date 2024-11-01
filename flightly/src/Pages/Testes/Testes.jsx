@@ -5,7 +5,7 @@ import Footer from "../../Componentes/Footer/Footer";
 
 import './style_Testes.css';
 import React from 'react';
-import CompraDetalhes from "../../Componentes/Compra/Detalhes/CompraDetalhes";
+import CompraDetalhes from "../../Componentes/Compra/CompraTotalPlano/CompraTotal";
 
 export default function Testes() {
     const itensCompra = [
@@ -20,7 +20,7 @@ export default function Testes() {
 
             <div className="conteudo-testes">
 
-            <CompraDetalhes itens={itensCompra}/>
+                <CompraDetalhes itens={itensCompra}/>
             </div>
 
             <div className="footer-testes"><Footer/></div>
