@@ -15,12 +15,12 @@ export default function Testes() {
     ];
     return (
         <>
-            <div className="navbar-testes"><NavBar /></div>
+
+            <div className="navbar-testes"><NavBar/></div>
 
             <div className="conteudo-testes">
 
             <CompraDetalhes itens={itensCompra}/>
-
             </div>
 
             <div className="footer-testes"><Footer/></div>
