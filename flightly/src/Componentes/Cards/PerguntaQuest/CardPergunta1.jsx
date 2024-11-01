@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-export default function CardPergunta1(props){
+export default function CardPergunta1(){
 
     const [progress, setProgress] = useState(0);
 
@@ -209,6 +209,7 @@ export default function CardPergunta1(props){
         
         // Adicionar evento de click para exibir o popup
         if (popUP && buttonText === 'Finalizar') {
+            handleSubmit();
             popUP.addEventListener('click', togglePopupOpen);
         }
 
@@ -225,28 +226,44 @@ export default function CardPergunta1(props){
     }, [buttonText]);
     
     
-    // const handleSubmit = async(event) => {
-    //     event.preventDefault();
-    //     axios.post('', values)
-    //     .then(res=>{
-        
-        //     })
-        //     .catch(err => console.log(err));   
-        // }
+    
+    const [data, setData] = useState({
+        periodo:'',
+        tipo_destino:'',
+        atividades:'',
+        ambiente:'',
+        tipo_passeio:'',
+        culinaria:'',
+        companhia:'',
+        passeios:'',
+        duracao:'',
+        clima:''
+    })
 
-        const [data, setData] = useState({
-            periodo:'',
-            tipo_destino:'',
-            atividades:'',
-            ambiente:'',
-            tipo_passeio:'',
-            culinaria:'',
-            companhia:'',
-            passeios:'',
-            duracao:'',
-            clima:''
-        })
-
+    const [perfil, setPerfil] = useState('');
+    const [msg, setMsg] = useState('');
+    const [local1, setLocal1] = useState('');
+    const [local2, setLocal2] = useState('');
+    const [local3, setLocal3] = useState('');
+    const [pt1, setPt1] = useState('');
+    const [pt2, setPt2] = useState('');
+    const [pt3, setPt3] = useState('');
+    
+    const handleSubmit = async(event) => {
+        event.preventDefault();
+        axios.post('', data)
+        .then(res=>{
+                setPerfil(res.data.perfil);
+                setMsg(res.data.msg);
+                setLocal1(res.data.local1);
+                setLocal2(res.data.local2);
+                setLocal3(res.data.local3);
+                setPt1(res.data.pt1);
+                setPt2(res.data.pt2);
+                setPt3(res.data.pt3);
+            })
+            .catch(err => console.log(err));   
+        }
         
         const updateData = (questionNumber, selectedIndex) => {
             setData((prevData) => {
@@ -304,21 +321,21 @@ export default function CardPergunta1(props){
                         <span>O seu perfil de viajante é</span>
                         <button id='refazer-teste'>Refazer teste</button>
                     </div>
-                    <span>{props.perfil}</span>
+                    <span>{perfil}</span>
                 </section>
-                <p>{props.msg}</p>
+                <p>{msg}</p>
                 <span>Principais recomendações</span>
                 <section className='card-sec1'>
                     <span className='title'>Destinos</span>
                     <div className='card-flex'>
                         <div className='card-rec'>
-                            {props.local1}
+                            {local1}
                         </div>
                         <div className='card-rec'>
-                            {props.local2}
+                            {local2}
                         </div>
                         <div className='card-rec'>
-                            {props.local3}
+                            {local3}
                         </div>
                     </div>
                 </section>
@@ -326,13 +343,13 @@ export default function CardPergunta1(props){
                     <span className='title'>Pontos Turísticos</span>
                     <div className='card-flex'>
                         <div className='card-rec'>
-                            {props.local4}
+                            {pt1}
                         </div>                    
                         <div className='card-rec'>
-                            {props.local5}
+                            {pt2}
                         </div> 
                         <div className='card-rec'>
-                            {props.local6}
+                            {pt3}
                         </div>                   
                     </div>
                 </section>
