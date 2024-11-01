@@ -188,7 +188,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   outline: none;
 }
 
-
 .search-category{
   display: flex;
   flex-direction: column;
@@ -223,6 +222,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   -moz-appearance: none;
 }
 
+
 .category:focus{
   outline: none;
 }
@@ -239,6 +239,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   height: 8px;
   width: 15px;
 }
+
 
 input:focus {
   outline: none;
@@ -351,6 +352,13 @@ input:focus {
 }
 
 span{
+  font-style: normal;
+}
+
+.origem:focus, .category:focus, .avaliation:focus{
+  outline: none;
+  border: 2px solid #004369;
 
   font-style: normal;
+
 }

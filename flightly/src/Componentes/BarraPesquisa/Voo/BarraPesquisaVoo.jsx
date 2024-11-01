@@ -2,6 +2,9 @@ import filter_search_bar from '../../../Images/Barra_Pesquisa/filter-search-bar.
 import Origem_icon from '../../../Images/Barra_Pesquisa/Origem_icon.png';
 import destino_icon from '../../../Images/Barra_Pesquisa/destino_icon.png';
 import ida_volta_icon from '../../../Images/Barra_Pesquisa/ida_volta_icon.png';
+
+import passageirosIcon from '../../../Images/Barra_Pesquisa/passageiro_icon.png';
+import Drop from "../../DropInput/drop";
 import passageiro_icon from '../../../Images/Barra_Pesquisa/passageiro_icon.png';
 import classe_icon from '../../../Images/Barra_Pesquisa/classe_icon.png';
 
@@ -35,16 +38,17 @@ export default function PesquisaVoo() {
                 </div>
                 <div className="search-passageiros">
                     <span>Passageiros</span>
-                    <select name="classe" className="passageiro" style={{ backgroundImage: `url(${passageiro_icon})` }}>
-                        <option value="2a4">2 a 4</option>
-                        <option value="5a8">5 a 8</option>
-                    </select>
+
+                    <Drop imagem={passageirosIcon} widthDrop="126px" topContent="69.5%" titles={["Adultos", "Crianças de", "Crianças", "Crinças no"]} subTitles={["", "2 a 11 anos", "no assento", "de colo"]}/>
+
                 </div>
                 <div className="search-classe">
                     <span>Classe</span>
                     <select name="classe" className="classe" style={{ backgroundImage: `url(${classe_icon})` }}>
-                        <option value="economica">Econômica</option>
-                        <option value="primeira">Primeira classe</option>
+                        <option value="econômica">Econômica</option>
+                        <option value="econômica Premium">Econômica Premium</option>
+                        <option value="executiva">Executiva</option>
+                        <option value="primeira">Primeira</option>
                     </select>
                 </div>
                 <div className="btn-pesquisar-voo">
