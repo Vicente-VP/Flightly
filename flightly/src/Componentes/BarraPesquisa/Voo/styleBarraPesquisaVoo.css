@@ -75,7 +75,6 @@
   padding-left: 35px;
 }
 
-
 .origem:focus{
   outline: none;
 }
@@ -122,6 +121,9 @@
   font-family: "Poppins", sans-serif;
   color: black;
 
+  display: flex;
+  justify-content: center;
+
   border-right: 0.8px solid #BFC1C3;
   border-bottom: none;
   border-top: none;
@@ -146,6 +148,9 @@
 
 .volta{
   font-family: "Poppins", sans-serif;
+
+  display: flex;
+  justify-content: center;
 
   border: none;
   border-radius: 0 10px 10px 0;
