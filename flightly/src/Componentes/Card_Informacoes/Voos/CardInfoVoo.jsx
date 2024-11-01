@@ -1,10 +1,12 @@
+import React, { useState } from 'react';
+import sinalMais from '../../../Images/sinalMais.png';
 import './styleCardInfoVoo.css';
-import sinalMais from "../../../Images/sinalMais.png";
 import InfoVooVolta from './Volta/CardInfoVooVolta';
-import { useState } from 'react';
 import companhia from "../../../Images/Card_Informacoes_Voo/Imagem_Companhia.png";
 
 export default function InfoVoo(props) {
+    const [hover, setHover] = useState(false);
+
     const [isClicked, setIsClicked] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
 
@@ -24,26 +26,34 @@ export default function InfoVoo(props) {
         { id: 'option4', idalocal: "CGH - POA", dataida: "24/06/24", horarioida: "11:00", escalaida: "Direto", voltalocal: "POA - CGH", datavolta: "27/06/24", horariovolta: "15:00", escalavolta: "1 Escala", Preco: "1.750" },
         { id: 'option5', idalocal: "CGH - MAO", dataida: "25/06/24", horarioida: "12:00", escalaida: "Direto", voltalocal: "MAO - CGH", datavolta: "26/06/24", horariovolta: "14:00", escalavolta: "Direto", Preco: "1.600" }
     ];
-
+  
     return (
         <>
-            <div className='Div-Geral'>
-                <div className={`container-Card ${isClicked ? 'selected' : ''}`} onClick={toggleInfo}>
+            <div className="containerGeral-infoVoo">
+                <div className={`container-Card ${hover ? 'hover-active' : ''} ${isClicked ? 'selected' : ''}`}
+                    onMouseEnter={() => setHover(true)}
+                    onMouseLeave={() => setHover(false)}
+                    onClick={toggleInfo}
+                    >
                     <div className="left">
                         <img src={props.Imagem_Companhia} alt="Logo Companhia" />
                         <div className="info">
-                            <label>Rio de Janeiro</label>
-                            <span>Saindo de São Paulo</span>
+                            <label>{props.cidadeDestino}</label>
+                            <span>Saindo de {props.cidadeOrigem}</span>
                             <div className="ida-Volta">
                                 <div className="ida">
-                                    <span className="ida-local"><span>Ida:</span> CGH - SDU</span>
-                                    <span className="ida-date">21/06/24 - 8:00</span>
-                                    <span className="ida-scale">Direto</span>
+                                    <span className="ida-local">
+                                        <span>Ida:</span> {props.idaLocal}
+                                    </span>
+                                    <span className="ida-date">{props.idaData}</span>
+                                    <span className="ida-scale">{props.idaEscala}</span>
                                 </div>
                                 <div className="volta">
-                                    <span className="volta-local"><span>Volta:</span> SDU - CGH</span>
-                                    <span className="volta-date">30/06/24 - 18:30</span>
-                                    <span className="volta-scale">1 Escala</span>
+                                    <span className="volta-local">
+                                        <span>Volta:</span> {props.voltaLocal}
+                                    </span>
+                                    <span className="volta-date">{props.voltaData}</span>
+                                    <span className="volta-scale">{props.voltaEscala}</span>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +63,7 @@ export default function InfoVoo(props) {
                         <div className="info-preco">
                             <div className="preco">
                                 <label>A partir de:</label>
-                                <span className="preco-voo">R$ 1.678</span>
+                                <span className="preco-voo">{props.precoVoo}</span>
                             </div>
                             <div className="imgs">
                                 <img src={props.MalaCor} alt="Mala" />
@@ -62,11 +72,18 @@ export default function InfoVoo(props) {
                             </div>
                         </div>
                     </div>
-                    <button className="btnPopup-AddPlano-Compra">
-                        <img src={sinalMais} alt="Botão de abrir Pop-up de Add Plano Viagem ou Compra" />
-                    </button>
                 </div>
+                <button
+                    className="btnPopup-AddPlano-Compra"
+                    onMouseEnter={() => setHover(true)}
+                    onMouseLeave={() => setHover(false)}
+                >
+                    <img src={sinalMais} alt="Botão de abrir Pop-up de Add Plano Viagem ou Compra" />
+                </button>
+
+                
             </div>
+
             {isClicked && (
                 <div className="info-voo-volta">
                     {vooData.map((voo) => (
@@ -91,6 +108,7 @@ export default function InfoVoo(props) {
                     ))}
                 </div>
             )}
+
         </>
     );
 }
