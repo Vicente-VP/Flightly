@@ -1,5 +1,6 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
-import Footer from "../../Componentes/Footer/Footer"
+import Footer from "../../Componentes/Footer/Footer";
+import Drop from "../../Componentes/DropInput/drop";
 
 
 import Aviao_Card from '../../Images/Aviao_Card.png';
@@ -22,16 +23,16 @@ export default function Home() {
             <main>
             {/* ------------------ CARD DE PESQUISA  --------------------- */}
 
-                <img src={Aviao_Card} alt="Logo" className="voo-imagem" />
 
                 <div className="card-voo">
                     <div className="title-voo">
                         <label>Voos</label>
                     </div>
+                <img src={Aviao_Card} alt="Logo" className="voo-imagem" />
 
                     <div className="grid-imagem-voo"></div>
 
-                    <div className="form-card-voo">
+                    <div className="form-card-voo" >
                         <div className="grid-inputs-voo">
                             <div className="input-form-voo">
                                 <div className="etiqueta-class-voo">
@@ -55,17 +56,14 @@ export default function Home() {
                                 <div className="etiqueta-class-voo">
                                     <label className="etiqueta-voo">Passageiros</label>
                                 </div>
-                                <div className="input-class-voo">
-                                    <input type="text" className="input-voo" placeholder="1"
-                                        style={{ backgroundImage: `url(${passageirosIcon})` }}/>
-                                </div>
+                                <Drop imagem={passageirosIcon} widthDrop="201px" topContent="30%" titles={["Adultos", "Crianças de", "Crianças", "Crinças no"]} subTitles={["", "2 a 11 anos", "no assento", "de colo"]}/>
                             </div>
                             <div className="input-form-voo">
                                 <div className="etiqueta-class-voo">
                                     <label className="etiqueta-voo">Ida</label>
                                 </div>
                                 <div className="input-class-voo">
-                                    <input type="text" className="input-voo" placeholder="21/06/24"
+                                    <input type="date" className="input-voo" name="ida" placeholder="21/06/24"
                                         style={{ backgroundImage: `url(${idaVoltaIcon})` }}/>
                                 </div>
                             </div>
@@ -74,7 +72,7 @@ export default function Home() {
                                     <label className="etiqueta-voo">Volta</label>
                                 </div>
                                 <div className="input-class-voo">
-                                    <input type="text" className="input-voo" placeholder="30/06/24"
+                                    <input type="date" className="input-voo" name="volta" placeholder="30/06/24"
                                         style={{ backgroundImage: `url(${idaVoltaIcon})` }}/>
                                 </div>
                             </div>
@@ -83,8 +81,13 @@ export default function Home() {
                                     <label className="etiqueta-voo">Classe</label>
                                 </div>
                                 <div className="input-class-voo">
-                                    <input type="text" className="input-voo" placeholder="Executiva"
-                                        style={{ backgroundImage: `url(${classeIcon})` }}/>
+                                    <select name="classe" id="classe" className="input-voo" style={{ backgroundImage: `url(${classeIcon})` }}>
+                                        <option value="econômica">Econômica</option>
+                                        <option value="econômica Premium">Econômica Premium</option>
+                                        <option value="executiva">Executiva</option>
+                                        <option value="erimeira">Primeira</option>
+                                    </select>
+
                                 </div>
                             </div>
                         </div>

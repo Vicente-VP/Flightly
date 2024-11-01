@@ -50,6 +50,8 @@
 
 .search-local > div > span{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
+
   color: #004369;
   font-weight: 450;
   font-size: 15px;
@@ -72,6 +74,7 @@
   background-repeat: no-repeat;
   padding-left: 35px;
 }
+
 
 .origem:focus{
   outline: none;
@@ -108,6 +111,8 @@
 
 .search-data > div > span{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
+
   color: #004369;
   font-weight: 450;
   font-size: 15px;
@@ -133,9 +138,11 @@
 
 }
 
+
 .ida:focus{
   outline: none;
 }
+
 
 .volta{
   font-family: "Poppins", sans-serif;
@@ -151,6 +158,7 @@
   background-repeat: no-repeat;
   padding-left: 35px;
 }
+
 
 .volta:focus{
   outline: none;
@@ -179,10 +187,13 @@ input[type=date]::-webkit-datetime-edit {
 
 .search-passageiros> span{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
+
   color: #004369;
   font-weight: 450;
   font-size: 15px;
 }
+
 
 .passageiro{
   font-family: "Poppins", sans-serif;
@@ -214,6 +225,7 @@ input[type=date]::-webkit-datetime-edit {
 .passageiro:focus{
   outline: none;
 }
+
 
 .search-classe{
   display: flex;
@@ -255,6 +267,8 @@ input[type=date]::-webkit-datetime-edit {
   font-size: 15px;
 }
 
-.classe:focus{
+
+.classe:focus, .ida:focus, .volta:focus, .origem:focus, .destino:focus{
   outline: none;
+  border: 2px solid #004369;
 }
