@@ -13,7 +13,7 @@ export default function InfoHosp(props){
                         <div className='star-rating'>
                             <div className='starinfohosp'/>
                             <span className='numstarinfohosp'>{props.rating}</span>
-                            <span className='numvotinfohosp'>({props.votes})</span>
+                            <span className='numvotinfohosp'>{props.votes}</span>
                         </div>
                         <div>
                             <span className='descinfohosp'>{props.description}</span>
@@ -24,8 +24,8 @@ export default function InfoHosp(props){
                         <div className='services'>
                             {props.services && props.services.length > 0 ? (
                             props.services.map((service, index) => (
-                            <div key={index} className={`card${service.className}`}>
-                                {service.name}
+                            <div key={index} className='card'>
+                                {service}
                             </div>
                             ))
                             ) : (
@@ -40,7 +40,7 @@ export default function InfoHosp(props){
                     <div className="info-preco">
                         <div className="preco">
                             <label className='titleprecoinfohosp'>A partir de:</label>
-                            <span className="precoinfohosp">{props.price}</span>
+                            <span className="precoinfohosp">R$ {props.price.match(/\b\d+\b/)[0]}</span>
                         </div>
                     </div>
                 </div>

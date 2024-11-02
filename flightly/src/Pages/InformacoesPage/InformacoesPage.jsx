@@ -3,8 +3,12 @@ import Footer from "../../Componentes/Footer/Footer";
 
 import BarraPesquisaInfoVoo from "../../Componentes/BarraPesquisa/Voo/BarraPesquisaVoo";
 import FiltroInfoVoo from "../../Componentes/Filtros/FiltroVoo/FiltroVoo";
+import FiltroHosp from "../../Componentes/Filtros/Filtros_Hospedagem/FiltrosHospedagem";
+import FiltroCarro from "../../Componentes/Filtros/Filtro_Carro/FiltrosCarro";
+import FiltroPt from "../../Componentes/Filtros/Filtro_PontoTuristico/FiltrosPontosTuristico";
 import CardInfoVoo from "../../Componentes/Card_Informacoes/Voos/CardInfoVoo";
-//import InfoHosp from "../../Componentes/Card_Informacoes/Hospedagem/Infos_Hosp";
+import PesquisaHospedagem from "../../Componentes/BarraPesquisa/Hospedagem/BarraPesquisaHospedagem";
+import InfoHosp from "../../Componentes/Card_Informacoes/Hospedagem/Infos_Hosp";
 //import InfoCarros from "../../Componentes/Card_Informacoes/Carros/CardInfoCarros";
 
 import './styleInformacoesPage.css';
@@ -31,8 +35,7 @@ export default function InformacoesPage() {
     const [local, setLocal] = useState(params.get('local') || "");
     const [check_in, setCheck_in] = useState(params.get('check_in') || "");
     const [check_out, setCheck_out] = useState(params.get('check_out') || "");
-    const [adults, setAdults] = useState(params.get('adults') || "");
-    const [children, setChildren] = useState(params.get('children') || "");
+
     
     useEffect(() => {
         // Send asynchronous request based on requestType
@@ -73,17 +76,19 @@ export default function InformacoesPage() {
                     case 'hotel':
                         response = await axios.get('http://localhost:8080/hotels', {
                             params: {
-                                place: params.get('destino'),
-                                check_in: params.get('checkIn'), // Assuming check-in date
-                                check_out: params.get('checkOut'), // Assuming check-out date
+                                place: params.get('local'),
+                                check_in: params.get('check_in'), // Assuming check-in date
+                                check_out: params.get('check_out'), // Assuming check-out date
                                 adults: params.get('adultos'),
-                                children: params.get('criancas') // Assuming you have a way to collect this
+                                children: params.get('crianca') // Assuming you have a way to collect this
                             },
                             headers: {
                                 'Content-Type': 'application/json'
                             }
                         });
-                        setResults(response.data); // Assuming all response data is directly usable
+                        console.log(response.data);
+                        setExternalUrl(response.data[0]?.url); // Assuming the first entry contains a URL
+                        setResults(response.data.slice(1)); // Assuming all response data is directly usable
                         break;
         
                     case 'car':
@@ -122,6 +127,7 @@ export default function InformacoesPage() {
                 <div className="barra-pesquisa-infoPage">
                     <span className="titulo-infoPage">Encontre voos e adicione aos seus planos de viagem</span>
                     <div>
+                        {params.get('requestType') === 'flight' && (
                         <BarraPesquisaInfoVoo 
                         origem={origem}
                         destino={destino}
@@ -137,11 +143,41 @@ export default function InformacoesPage() {
                         onIdaChange={setIda}
                         onVoltaChange={setVolta}
                         onClasseChange={setClasse}
+                        />)}
+                        
+                        {params.get('requestType') === 'hotel' && (
+                        <PesquisaHospedagem
+                        local={local}
+                        check_in={check_in}
+                        check_out={check_out}
+                        adultos = {params.get('adultos')}
+                        criancaIdade = {params.get('crianca')}
+                        onLocalChange={setLocal}
+                        onCheck_inChange={setCheck_in}
+                        onCheck_outChange={setCheck_out}
                         />
+                        )}
                     </div>
                 </div>
                 <div className="main">
-                    <div className="filtro-infoPage"><FiltroInfoVoo/></div>
+                    <div className="filtro-infoPage">
+                    {
+                        (() => {
+                            switch (requestType) {
+                                case 'flight':
+                                    return <FiltroInfoVoo />;
+                                case 'hotel':
+                                    return <FiltroHosp />;
+                                case 'carro':
+                                    return <FiltroCarro />;
+                                case 'pontoTuristico':
+                                    return <FiltroPt />;
+                                default:
+                                    return null;
+                            }
+                        })()
+                    }
+                    </div>
                     <div className="container-cards-infoPage">
                         {results.map((result, index) => {
                             switch (requestType) {
@@ -159,7 +195,7 @@ export default function InformacoesPage() {
                                     stops={result.stops}
                                     take_off={result.take_off}
                                     onClick={() => {
-                                        results = [];
+                                        results = {};
                                     }}
                                 />;
                                 }
@@ -176,12 +212,22 @@ export default function InformacoesPage() {
                                     stops={result.stops}
                                     take_off={result.take_off}
                                     onClick={() => {
-                                        results = [];
+                                        setResults({});
                                     }}
                                     />;
                                 }
-                                // case 'hotel':
-                                //     return <InfoHosp key={index} {...result} />;
+                                case 'hotel':
+                                     return <InfoHosp 
+                                     key={index}
+                                     image={result.image[0] || ""}
+                                     hotelName={result.name}
+                                     location={params.get('local')}
+                                     rating={result.stars}
+                                     votes={result.reviews}
+                                     price={result.price}
+                                     services={result.characteristics}
+                                     description=""
+                                     />;
                                 // case 'car':
                                 //     return <InfoCarros key={index} {...result} />;
                                 default:

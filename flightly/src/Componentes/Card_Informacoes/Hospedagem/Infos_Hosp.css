@@ -38,6 +38,12 @@ border-radius: 21px 0px 0px 21px;
     gap: 10px; 
 }
 
+.services{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .info-preco {
     display: flex;
     flex-direction: column;
@@ -100,7 +106,7 @@ line-height: 30px;
 width: 26.8px;
 height: 24px;
 
-background: url('../../Images/Infos_Hosp/Star_Info_Hosp.png');
+background: url('../../../Images/Infos_Hosp/Star_Info_Hosp.png');
 background-repeat: no-repeat;
 }
 
@@ -132,6 +138,29 @@ font-weight: 400;
 font-size: 35.4608px;
 line-height: 53px;
 }
+.card{
+width: auto;
+height: 23px;
+
+background: rgba(172, 198, 233, 0.54);
+border-radius: 3.51333px;
+background-repeat: no-repeat;
+background-position: 4px center;
+background-size: 13px 10px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 11.02667px;
+line-height: 11px;
+text-align: center;
+text-wrap: nowrap;
+
+display: flex;
+align-items: center;
+padding-right: 10px;
+padding-left: 10px;
+}
 
 .cardwifiinfohosp, .cardrefeicaoinfohosp, .cardcafeinfohosp, .cardpsicinainfohosp{
 width: 65.98px;
@@ -157,18 +186,18 @@ padding-left: 20px;
 }
 
 .cardwifiinfohosp{
-    background-image: url('../../Images/Infos_Hosp/Wifi_Info_Hosp.png');
+    background-image: url('../../../Images/Infos_Hosp/Wifi_Info_Hosp.png');
 }
 
 .cardrefeicaoinfohosp{
-    background-image: url('../../Images/Infos_Hosp/Refeicao_Info_Hosp.png');
+    background-image: url('../../../Images/Infos_Hosp/Refeicao_Info_Hosp.png');
 }
 
 .cardcafeinfohosp{
-    background-image: url('../../Images/Infos_Hosp/Cafe_Info_Hosp.png');
+    background-image: url('../../../Images/Infos_Hosp/Cafe_Info_Hosp.png');
 }
 
 .cardpsicinainfohosp{
-    background-image: url('../../Images/Infos_Hosp/Pscina_Info_Hosp.png');
+    background-image: url('../../../Images/Infos_Hosp/Pscina_Info_Hosp.png');
 }
 

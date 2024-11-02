@@ -45,7 +45,7 @@ export default function Login (){
                     <div className="card-login-dir">
                         <div className="cad">
                             <h1 className="title_cad position_title_cad">Seja bem-vindo de volta!</h1>
-                            <a href="Cadastro_page.html" className="link_cad">É novo aqui?</a>
+                            <a href="../Cadastro" className="link_cad">É novo aqui?</a>
                         </div>
                     </div>
                 </div>

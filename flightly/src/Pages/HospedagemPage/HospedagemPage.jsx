@@ -27,8 +27,10 @@ export default function Home() {
     const navigate = useNavigate();
 
     const [guestData, setGuestData] = useState({
-        adults: 1,
-        children: 1
+        nAdult: 1,
+        criancaIdade: 0,
+        criancaAssento: 0,
+        criancaColo: 0,
     });
 
     const handleGuestChange = useCallback((data) => {
@@ -41,8 +43,8 @@ export default function Home() {
         let local = document.querySelector('input[name="local"]').value;
         let check_in = document.querySelector('input[name="check_in"]').value;
         let check_out = document.querySelector('input[name="check_out"]').value;
-        let adultos = guestData.adults;
-        let crianca = guestData.children;
+        let adultos = guestData.nAdult;
+        let crianca = guestData.criancaIdade;
     
         const params = new URLSearchParams({
             requestType: 'hotel',
@@ -107,7 +109,7 @@ export default function Home() {
                                 <Drop imagem={passageirosIcon} widthDrop="201px" topContent="52.5%" titles={["Adultos", "Crianças"]} subTitles={[]} onPassengerChange={handleGuestChange} />
                             </div>
                             <div className="btn-pesquisar-hospedagem">
-                                <button className="btn-submit-hospedagem">
+                                <button className="btn-submit-hospedagem" onClick={PesquisarHotel}>
                                     Pesquisar
                                 </button>
                             </div>

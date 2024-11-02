@@ -1,3 +1,7 @@
+.container-cards-infoPage{
+
+    margin-left: 0%;
+}
 .container-informacoes{
     display: flex;
     flex-direction: column;
@@ -14,6 +18,8 @@
 
 .filtro-infoPage{
     position: sticky;
+    top: 110px;
+    height: auto;
     align-self: start;
     margin: 20px 0 0 50px;
 }
