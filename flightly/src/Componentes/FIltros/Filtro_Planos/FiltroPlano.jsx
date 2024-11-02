@@ -1,10 +1,5 @@
 import './styleFiltroPlano.css';
-import React, { useState } from 'react';
-
-import Aviao_Icon from '../../../Images/NavBar-icons/Aviao_icon.png';
-import MalaHospedagem_icon from '../../../Images/NavBar-icons/MalaHospedagem_icon.png';
-import Carro_icon from '../../../Images/NavBar-icons/Carro_icon.png';
-import PontoTuristico_icon from '../../../Images/NavBar-icons/PontoTuristico_icon.png';
+import React, { useEffect, useState } from 'react';
 
 export default function FiltroPlanoViagem(){
     
@@ -13,6 +8,7 @@ export default function FiltroPlanoViagem(){
     const handleChange = () => {
       setChecked(!checked);
     };
+    
 
     const [activeButton, setActiveButton] = useState(null);
 
@@ -38,13 +34,8 @@ export default function FiltroPlanoViagem(){
                     <div className='turistic-filter'>
                         <button className={`btn-turistic ${activeButton === 4 ? 'active' : ''}`} onClick={() => handleButtonClick(4)}>Pontos Turísticos</button>
                     </div>
-                    <div className="checkbox-container">
-                        <input type="checkbox" id="customCheckbox"
-                          checked={checked}
-                          onChange={handleChange}
-                          className="custom-checkbox"
-                        />
-                        <label htmlFor="customCheckbox" className="custom-label"></label>
+                    <div className="container-checkbox">
+                        <input type="checkbox" id='check' onChange={handleChange} className={checked ? 'checked' : ''}/>
                     </div>
                 </div>
 
