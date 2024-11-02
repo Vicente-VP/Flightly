@@ -38,7 +38,7 @@ export default function PlanosViagem() {
                     <CardPlanoViagem />
                     <CardPlanoViagem />
                     <CardPlanoViagem />
-                    <CardPlanoViagem />
+                    <CardPlanoViagem /> 
                     <div></div>
                 </div>
             </div>

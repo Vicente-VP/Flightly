@@ -1,0 +1,47 @@
+.Block_Preco{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    align-content: center;
+    justify-content: space-evenly;
+    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 20px ;
+    border: 1px solid #999999;
+    top: 85%;
+    left: 20%;
+    width: 1117px;
+    height: 98px;
+}
+
+.txt-telaCompra{
+    font-weight: 200;
+    font-size: 25px;
+}
+#Total_preco{
+    font-weight: 200;
+    font-size: 25px;
+}
+
+#Num_itens{
+    font-weight: 200;
+    font-size: 25px;
+}
+
+.btn-submit{
+    width: 177px;
+    height: 46px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #FF6600;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
+    margin-top: 27px;
+}
+
+.conteudo_preco{
+    align-content: center;
+}
