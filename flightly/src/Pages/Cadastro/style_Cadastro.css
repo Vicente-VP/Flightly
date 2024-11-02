@@ -139,3 +139,19 @@ input[type="checkbox"] {
     margin-top: 29px;
     margin-bottom: 29px;
 }
+
+@media(max-width:960px){
+    
+    .card-cadastro-esq{
+        display: none;
+    }
+
+    .card-cadastro-dir{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: auto;
+        border-radius: 33px;
+        width: 80%;
+    }
+}

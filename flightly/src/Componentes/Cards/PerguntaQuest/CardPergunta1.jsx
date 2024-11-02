@@ -250,24 +250,24 @@ export default function CardPergunta1(){
     const [pt3, setPt3] = useState('');
     
     const handleSubmit = async(event) => {
-        event.preventDefault();
-        axios.post('', data)
+        axios.post('https://flightly-ia.onrender.com/ia', data)
         .then(res=>{
-                setPerfil(res.data.perfil);
-                setMsg(res.data.msg);
-                setLocal1(res.data.local1);
-                setLocal2(res.data.local2);
-                setLocal3(res.data.local3);
-                setPt1(res.data.pt1);
-                setPt2(res.data.pt2);
-                setPt3(res.data.pt3);
+                const { perfil, msg, local1, local2, local3, pt1, pt2, pt3 } = res.data;
+                setPerfil(perfil);
+                setMsg(msg);
+                setLocal1(local1);
+                setLocal2(local2);
+                setLocal3(local3);
+                setPt1(pt1);
+                setPt2(pt2);
+                setPt3(pt3);
             })
             .catch(err => console.log(err));   
         }
         
         const updateData = (questionNumber, selectedIndex) => {
             setData((prevData) => {
-                const newData = { ...prevData }; // Copia o estado atual
+                const newData = { ...prevData }; 
         
                 switch (questionNumber) {
                     case 1:
