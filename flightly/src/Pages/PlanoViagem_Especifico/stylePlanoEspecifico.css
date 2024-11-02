@@ -1,0 +1,52 @@
+.bodyPlanoEspecifico{
+    min-height: 100vh;
+}
+
+.auxilioNavegacao{
+    font-size: 28px;
+    margin: 15px 0 35px 43.5px;
+}
+
+.link-planoViagem{
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+
+.link-planoViagem:hover{
+    text-decoration: underline;
+}
+
+/* Plano Vazio */
+
+.pagina-Vazia{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 50px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pagina-Vazia > span{
+    text-align: center;
+}
+
+.vazioTitulo-PlanoEspecifico{
+    text-align: center;
+    font-size: 60px;
+}
+
+.subtiulo-PlanoEspecifico{
+    font-size: 35px;
+    font-weight: 250;
+}
+
+/* Com Conteúdo */
+
+.conteudo-plano{
+    justify-items: center;
+}

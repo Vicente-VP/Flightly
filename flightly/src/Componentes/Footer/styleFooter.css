@@ -50,7 +50,7 @@ footer{
   text-decoration: none;
 }
 
-span{
+.footer-links > span{
   font-size: 24px;
   font-weight: 600;
   font-style: italic;

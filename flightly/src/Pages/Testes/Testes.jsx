@@ -5,7 +5,8 @@ import Footer from "../../Componentes/Footer/Footer";
 
 import './style_Testes.css';
 import React from 'react';
-import FiltroP from "../../Componentes/FIltros/Filtro_Planos/FiltroPlano";
+
+import CompraDetalhes from "../../Componentes/FIltros/Filtro_Planos/FiltroPlano";
 
 export default function Testes() {
     const itensCompra = [
@@ -20,7 +21,8 @@ export default function Testes() {
 
             <div className="conteudo-testes">
 
-                <FiltroP/>
+                <CompraDetalhes />
+      
             </div>
 
             <div className="footer-testes"><Footer/></div>
