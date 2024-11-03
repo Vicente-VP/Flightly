@@ -11,6 +11,8 @@ import PesquisaHospedagem from "../../Componentes/BarraPesquisa/Hospedagem/Barra
 import InfoHosp from "../../Componentes/Card_Informacoes/Hospedagem/Infos_Hosp";
 //import InfoCarros from "../../Componentes/Card_Informacoes/Carros/CardInfoCarros";
 
+import PopUpAddPlano from "../../Componentes/PopUp_Add_PlanoViagens/PopUpAddPlanoViagens";
+
 import './styleInformacoesPage.css';
 import React from 'react';
 import { useLocation } from "react-router-dom";
@@ -165,7 +167,7 @@ export default function InformacoesPage() {
                         (() => {
                             switch (requestType) {
                                 case 'flight':
-                                    return <FiltroInfoVoo />;
+                                    return <FiltroInfoVoo/>;
                                 case 'hotel':
                                     return <FiltroHosp />;
                                 case 'carro':
@@ -186,6 +188,7 @@ export default function InformacoesPage() {
                                     return <CardInfoVoo
                                     key={index} 
                                     index={index}
+                                    destino={params.get('destino')}
                                     airport_from={result.airport_from}
                                     airport_to={result.airport_to}
                                     arrival={result.arrival} // This can be used if you have return result details

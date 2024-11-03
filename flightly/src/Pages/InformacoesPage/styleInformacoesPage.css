@@ -27,6 +27,6 @@
 .main{
     display: flex;
     flex-direction: row;
-    gap: 160px;
+    gap: 120px;
     margin: 0 0 10px 0;
 }

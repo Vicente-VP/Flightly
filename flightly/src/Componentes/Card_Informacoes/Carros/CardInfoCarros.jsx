@@ -13,7 +13,7 @@ export default function InfoCarros(props) {
     return (
         <>
             <div className="containerGeral-infoCarro">
-                <div class="card-horizontal">
+                <div {`card-horizontal ${hover ? 'hover-active' : ''}`}>
                     <div class="card-image">
                         <img src={props.carImage} className='card-image-car' />
                         <img src={props.locImage} className='card-image-locadora' />

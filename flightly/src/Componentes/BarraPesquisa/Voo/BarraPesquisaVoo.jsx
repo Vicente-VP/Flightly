@@ -1,4 +1,4 @@
-import filter_search_bar from '../../../Images/Barra_Pesquisa/filter-search-bar.png';
+    import filter_search_bar from '../../../Images/Barra_Pesquisa/filter-search-bar.png';
 import Origem_icon from '../../../Images/Barra_Pesquisa/Origem_icon.png';
 import destino_icon from '../../../Images/Barra_Pesquisa/destino_icon.png';
 import ida_volta_icon from '../../../Images/Barra_Pesquisa/ida_volta_icon.png';
@@ -29,7 +29,7 @@ export default function PesquisaVoo(props) {
     }, [props]);
 
     return (
-        <div className="container-search">
+        <div className={`container-search ${props.volta === "null" ? "active" : ""}`}>
             <img src={filter_search_bar} alt="filtros"/>
             <div className="search-local">
                 <div>
@@ -63,8 +63,8 @@ export default function PesquisaVoo(props) {
                         required
                         value={props.ida}
                         onChange={(e) => props.onIdaChange(e.target.value)}
-                        className="ida"
-                        style={{ backgroundImage: `url(${ida_volta_icon})` }}
+                        className={`ida ${props.volta === "null" ? "active" : ""}`}
+                        style={{ backgroundImage: `url(${ida_volta_icon})`}}
                     />
                 </div>
                 {props.volta !== "null" && (
@@ -85,7 +85,7 @@ export default function PesquisaVoo(props) {
                 <Drop
                     imagem={passageirosIcon}
                     widthDrop="126px"
-                    topContent="26.5%"
+                    topContent="21.5%"
                     titles={["Adultos", "Crianças de", "Crianças", "Crianças no"]}
                     subTitles={["", "2 a 11 anos", "no assento", "de colo"]}
                     onPassengerChange={handlePassengerChange}

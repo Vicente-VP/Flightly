@@ -2,6 +2,9 @@
 
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
+import Teste from "../../Componentes/PopUpCriarPlano/PopUpCriarPlano.jsx";
+
+
 
 
 import './style_Testes.css';
@@ -14,8 +17,11 @@ export default function Testes() {
             
             <div className="conteudo-testes">
                 
+               <Teste/>
+               
                
             </div>
+
 
             <div className="footer-testes"><Footer/></div>
         </>

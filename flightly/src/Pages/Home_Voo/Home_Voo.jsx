@@ -19,7 +19,24 @@ import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
+
 export default function Home() {
+    const [toggleStates, setToggleStates] = useState({
+        idaVolta: false,
+        ida: false,
+    });
+    
+
+
+    const handleToggle = (key) => {
+        setToggleStates((prevState) => {
+            // Reseta ambos os estados para falso e ativa apenas o selecionado
+            return key === 'idaVolta'
+                ? { idaVolta: true, ida: false }
+                : { idaVolta: false, ida: true };
+        });
+    };
+
     const navigate = useNavigate();
 
     const [passengerData, setPassengerData] = useState({
@@ -77,7 +94,7 @@ export default function Home() {
                     <div className="title-voo">
                         <label>Voos</label>
                     </div>
-                <img src={Aviao_Card} alt="Logo" className="voo-imagem" />
+                    <img src={Aviao_Card} alt="Logo" className="voo-imagem" />
 
                     <div className="grid-imagem-voo"></div>
 
@@ -105,7 +122,7 @@ export default function Home() {
                                 <div className="etiqueta-class-voo">
                                     <label className="etiqueta-voo">Passageiros</label>
                                 </div>
-                                <Drop imagem={passageirosIcon} widthDrop="201px" topContent="30%" titles={["Adultos", "Crianças de", "Crianças", "Crinças no"]} subTitles={["", "2 a 11 anos", "no assento", "de colo"]} onPassengerChange={handlePassengerChange}/>
+                                <Drop imagem={passageirosIcon} widthDrop="201px" topContent="31%" titles={["Adultos", "Crianças de", "Crianças", "Crinças no"]} subTitles={["", "2 a 11 anos", "no assento", "de colo"]} onPassengerChange={handlePassengerChange}/>
                             </div>
                             <div className="input-form-voo">
                                 <div className="etiqueta-class-voo">
@@ -122,7 +139,8 @@ export default function Home() {
                                 </div>
                                 <div className="input-class-voo">
                                     <input type="date" className="input-voo" name="volta" placeholder="30/06/24" 
-                                        style={{ backgroundImage: `url(${idaVoltaIcon})` }}/>
+                                        style={{ backgroundImage: `url(${idaVoltaIcon})` }}
+                                        disabled={toggleStates.ida}/>
                                 </div>
                             </div>
                             <div className="input-form-voo">
@@ -141,15 +159,22 @@ export default function Home() {
                             </div>
                         </div>
 
-                        <div className="btn-pesquisar-voo">
+                        <div className="btn-pesquisar-voo" id="btn-pesquisar-voo">
+                            <div className="btn-mod-container">
+                                <button className={`btn-mod ${toggleStates.idaVolta ? 'active' : ''}`} onClick={() => handleToggle('idaVolta')}>Ida e Volta</button>
+                                <button className={`btn-mod ${toggleStates.ida ? 'active' : ''}`} onClick={() => handleToggle('ida')}>Só Ida</button>
+                            </div>
                             <button className="btn-submit-voo" onClick={PesquisarVoo}>
                                 Pesquisar
                             </button>
+                            <div className='empty'></div>
                         </div>
                     </div>
                 </div>
 
             {/* ------------------ FIM DO CARD DE PESQUISA  ----------------- */}
+            
+            
             {/* ------------------ VOOS MAIS POPULARES  --------------------- */}
 
                 <div className="geral-voo-popular">

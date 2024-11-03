@@ -14,7 +14,7 @@ import Fechar_popUpNot from '../../Images/Icones_PopUp/botao-fechar.png';
 
 import './styleNavBar.css';
 import React, { useState, useEffect} from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
@@ -26,7 +26,7 @@ export default function NavBar() {
 
   const [activeLink, setActiveLink] = useState('');
   const location = useLocation(); // Usar o hook para acessar a URL atual
-
+  
   // Atualiza o link ativo baseado na URL atual
   useEffect(() => {
     const currentPath = location.pathname;
@@ -41,6 +41,22 @@ export default function NavBar() {
       setActiveLink('pt');
     } 
   }, [location]);
+
+  const navigate = useNavigate();
+  
+  function handleClick() {
+    if(localStorage.getItem('userid'))
+    toggleDropdown();
+    else
+      navigate('/Login');
+    
+  }
+
+  function LogOut() {
+    localStorage.clear();
+    window.location.reload();
+    useNavigate('/')
+  }
 
 
   const toggleDropdown = () => {
@@ -127,16 +143,18 @@ export default function NavBar() {
       </nav>
 
       <div id="navbar_buttons">
-        <div className="buttons">
+        {localStorage.getItem('userid') && (<div className="buttons">
           <Link to="/PlanosViagem">
             <img src={Planos_icon} alt="Planos de viagem" id="plano" className="plano"/>
           </Link>
           <Link to="/PlanosViagem" className="title_nav">Planos</Link>
-        </div>
+        </div>)}
+        
         <div className="perfil-dropdown">
-          <div className="buttons" id="perfil-dropdown-btn" onClick={toggleDropdown}>
+        
+          <div className="buttons" id="perfil-dropdown-btn" onClick={handleClick}>
             <img src={Perfil_icon} alt="Perfil" id="perfil" />
-            <span className="title_nav">Perfil</span>
+            <span className="title_nav">{localStorage.getItem('username') ?? "Perfil"}</span>
           </div>
 
           <ul className={`perfil-dropdown-list ${isDropdownActive ? 'active' : ''}`}>
@@ -166,7 +184,7 @@ export default function NavBar() {
               </Link>
             </li>
             <li className="perfil-dropdown-list-item">
-              <a>
+              <a onClick={LogOut}>
                 <img src={Sair_popUp} alt="Sair" />
                 Sair
               </a>

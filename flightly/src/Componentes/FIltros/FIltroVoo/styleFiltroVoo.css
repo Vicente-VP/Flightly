@@ -582,10 +582,10 @@ input[type=number] {
   }
   
   .range .field .value.left{
-    left: -88px;
+    left: -35px;
   }
   .range .field .value.right{
-    right: -70px;
+    right: -69px;
   }
   
   .range .field input{

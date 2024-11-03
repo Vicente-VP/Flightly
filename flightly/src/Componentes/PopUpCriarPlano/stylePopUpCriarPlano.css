@@ -1,0 +1,99 @@
+.container-criarplano{
+    background: #ffffff;
+    border-radius: 10px;
+
+
+    padding: 20px;
+    height: 387px;
+    max-width: 749px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+
+    z-index: 5;
+
+    justify-content: center;
+    overflow: hidden;
+}
+
+.center-criarplano {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 70px;
+    align-items: center;
+
+}
+
+.title-criar{
+
+    margin-top: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+   
+
+    text-align: center;
+    flex: 1;
+
+    color: #000000;
+}
+
+.nameplano{
+    outline: none;
+    width: 531px;
+    border: none;
+    background: none;
+    background-color: #ffffff;
+    font-size: 30px;
+    border-bottom: 1px solid black;
+}
+
+#nameplano{
+    outline: none;
+}
+
+.nameplano:focus-visible { outline: none; }
+
+input.nameplano:focus, #nameplano:focus {
+    outline: none !important;
+}
+
+.nameplano::placeholder{
+    text-align: center;
+}
+
+.bottom-criarplano {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 70px;
+    padding: 0 130px;
+}
+
+
+.btn-criaplano{
+    width: 177px;
+    height: 46px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #FF6600;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
+}
+
+.btn-cancelaplano{
+    width: 177px;
+    height: 46px;
+    color: #595959;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #ffffff;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
+}

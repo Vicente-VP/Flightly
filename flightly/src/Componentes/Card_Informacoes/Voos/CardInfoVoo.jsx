@@ -1,11 +1,38 @@
 import './styleCardInfoVoo.css';
+
 import sinalMais from "../../../Images/sinalMais.png";
 import InfoVooVolta from './Volta/CardInfoVooVolta';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import Gol from "../../../Images/Card_Informacoes_Voo/Gol.png";
+import Azul from "../../../Images/Card_Informacoes_Voo/AZUL.png";
+import LATAM from "../../../Images/Card_Informacoes_Voo/LATAM.png";
+import Avianca from "../../../Images/Card_Informacoes_Voo/Avianca.png";
+import Voepass from "../../../Images/Card_Informacoes_Voo/VOEPASS.png";
+import SkyAirline from "../../../Images/Card_Informacoes_Voo/Sky_Airline.png";
+
+
+import PopUpAddPlano from "../../../Componentes/PopUp_Add_PlanoViagens/PopUpAddPlanoViagens";
+
+import { checked } from '../../../Componentes/PopUp_Add_PlanoViagens/PopUpAddPlanoViagens';
+
+
 
 export default function CardInfoVoo(props) {
+    const [hover, setHover] = useState(false);
+
     const [isClicked, setIsClicked] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
+
+    const [IsPlano, setIsPlano] = useState(false);
+
+    const companyImage = {
+        Gol: Gol,
+        Azul: Azul,
+        LATAM: LATAM,
+        Avianca: Avianca,
+        VOEPASS: Voepass,
+        SkyAirline: SkyAirline
+    }
 
     const toggleInfo = () => {
         setIsClicked(prev => !prev);
@@ -15,45 +42,71 @@ export default function CardInfoVoo(props) {
         setSelectedOption(option);
     };
 
+    const ShowPlano = () =>{
+
+        if(localStorage.getItem('userid'))
+            setIsPlano(true);
+        if(checked === true)
+            setIsPlano(false);
+    };
+
     // Construct the company image path
-    const companyImage = `${props.company}.png`; // Assuming images are stored in the same folder
+
 
     return (
         <>
-            <div className='Div-Geral' index={props.index}>
-                <div className={`container-Card ${isClicked ? 'selected' : ''}`} onClick={toggleInfo}>
-                    <div className="left">
-                        <img src={companyImage} alt={props.company} />
-                        <div className="info">
-                            <label>{props.airport_from} - {props.airport_to}</label>
-                            <span>Saindo de {props.airport_from}</span>
-                            <div className="ida-Volta">
-                                <div className="ida">
-                                    <span className="ida-local"><span>Ida:</span> {props.airport_from} - {props.airport_to}</span>
-                                    <span className="ida-date">{props.take_off}</span>
-                                    <span className="ida-scale">{props.stops}</span>
-                                </div>
-                                <div className="volta">
-                                    <span className="volta-local"><span>Volta:</span> {props.airport_to} - {props.airport_from}</span>
-                                    <span className="volta-date">{props.arrival}</span>
-                                    <span className="volta-scale">{props.stops}</span>
-                                </div>
+
+            {IsPlano && <PopUpAddPlano tipo={'Voo'} item={props}/>}
+            <div className="containerGeral-infoVoo">
+                <div className={`container-Card-voo ${hover ? 'hover-active' : ''} ${isClicked ? 'selected' : ''}`}
+                    onMouseEnter={() => setHover(true)}
+                    onMouseLeave={() => setHover(false)}
+                    onClick={toggleInfo}
+                    >
+                    <div className="left-voo">
+                        <div className="info-voo">
+                            <img src={companyImage[props.company]} alt="Logo Companhia" className='img-voo'/>
+                            <div className='CompDest-voo'>
+                                <label className='destino-voo'>{props.destino}</label>
+                                <label className='companhia-voo'>{props.company}</label>
                             </div>
+
+                            <div className='HoraLocal-voo'>
+                                <label className='horario-voo'>{props.take_off} - {props.arrival}</label>
+                                <label className='aeroporto-voo'>{props.airport_from} - {props.airport_to}</label>
+                            </div>
+
+                            <div className='DuracaoEsc-voo'>
+                                <label className='duracao-voo'>{props.duration}</label>
+                                <label className='escala-voo'>{props.stops}</label>
+                            </div>
+
+                          
                         </div>
                     </div>
-                    <div className="right">
+                    <div className="right-voo">
                         <hr color="#D4D4D4" />
-                        <div className="info-preco">
-                            <div className="preco">
+                        <div className="info-preco-voo">
+                            <div className="preco-voo">
                                 <label>A partir de:</label>
-                                <span className="preco-voo">R$ {props.price}</span>
+                                <span className="preco-voo-voo">R$ {props.price}</span>
+                            </div>
+                            <div className="categoria-voo">
+                                <label className='tipo-voo'></label>
                             </div>
                         </div>
                     </div>
-                    <button className="btnPopup-AddPlano-Compra">
-                        <img src={sinalMais} alt="Botão de abrir Pop-up de Add Plano Viagem ou Compra" />
-                    </button>
                 </div>
+                <button
+                    className="btnPopup-AddPlano-Compra"
+                    onMouseEnter={() => setHover(true)}
+                    onMouseLeave={() => setHover(false)}
+                    onClick={ShowPlano}
+                >
+                    <img src={sinalMais} alt="Botão de abrir Pop-up de Add Plano Viagem ou Compra" />
+                </button>
+
+                
             </div>
             {isClicked && (
                 <div className="info-voo-volta">
