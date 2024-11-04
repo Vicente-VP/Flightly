@@ -78,35 +78,34 @@ export default function NavBar() {
         <span className="bar"></span>
       </a>
       <ul className={`toggle-dropdown-list ${isDropdownActiveMenu ? 'active' : ''}`}>
-            <li className="toggle-dropdown-list-item">
-              <Link to="/">
-              <img src={Aviao_Icon} alt="Voos" id="iconVoo" className="links_dropdowm"/> 
-              Voos
-              </Link>
-              
-            </li>
-            <li className="toggle-dropdown-list-item">
-              <Link to="/Hospedagem">
-              <img src={MalaHospedagem_icon} alt="Hospedagens" id="iconHospedagem" className="links_dropdowm"/> 
-              Hospegdagens
-              </Link>
-              
-            </li>
-            <li className="toggle-dropdown-list-item">
-              <Link to="/Carros">
-              <img src={Carro_icon} alt="Carros" id="iconCarro" className="links_dropdowm"/>  
-              Carros
-              </Link> 
-
-            </li>
-            <li className="toggle-dropdown-list-item">
-              <Link to="/PontosTuristicos">
-              <img src={PontoTuristico_icon} alt="Pontos Turísticos" id="iconTuristico" className="links_dropdowm"/>   
-              Pontos turisticos
-              </Link> 
-              
-            </li>
-          </ul>
+        <li className="toggle-dropdown-list-item">
+          <Link to="/">
+          <img src={Aviao_Icon} alt="Voos" id="iconVoo" className="links_dropdowm"/> 
+          Voos
+          </Link>
+          
+        </li>
+        <li className="toggle-dropdown-list-item">
+          <Link to="/Hospedagem">
+          <img src={MalaHospedagem_icon} alt="Hospedagens" id="iconHospedagem" className="links_dropdowm"/> 
+          Hospegdagens
+          </Link>
+          
+        </li>
+        <li className="toggle-dropdown-list-item">
+          <Link to="/Carros">
+          <img src={Carro_icon} alt="Carros" id="iconCarro" className="links_dropdowm"/>  
+          Carros
+          </Link>
+        </li>
+        <li className="toggle-dropdown-list-item">
+          <Link to="/PontosTuristicos">
+          <img src={PontoTuristico_icon} alt="Pontos Turísticos" id="iconTuristico" className="links_dropdowm"/>   
+          Pontos turisticos
+          </Link> 
+          
+        </li>
+      </ul>
 
 
 

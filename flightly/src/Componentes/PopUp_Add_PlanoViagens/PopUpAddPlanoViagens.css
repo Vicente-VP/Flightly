@@ -6,13 +6,16 @@
 
     padding: 20px;
     max-width: 1020px;
-    margin: 40px auto; 
+    margin: auto; 
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
     z-index: 4;
 
-    position: fixed;
+    position: absolute;
     justify-content: center;
     overflow: hidden;
+
+    
+    
 }
 
 .cima-addplano {
@@ -49,7 +52,26 @@
     justify-content: center;
     margin-bottom: 70px;
     padding: 0 130px;
+    max-height: 300px; /* Altura máxima da lista de planos */
+    overflow-y: auto;
 }
+
+.meio-addplano::-webkit-scrollbar {
+    width: 12px; 
+}
+  
+.meio-addplano::-webkit-scrollbar-track {
+    background: none;  
+    max-height: 5px;       /* color of the tracking area */
+}
+  
+.meio-addplano::-webkit-scrollbar-thumb {
+    background-color: #004369;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid rgba(255, 166, 0, 0); 
+    height: 5px;   /* creates padding around scroll thumb */
+}
+  
 
 .card-addplano{
     width: 100%;
@@ -64,6 +86,7 @@
     cursor: pointer;
     overflow: hidden;
     transition: all 0.3s;
+
 }
 
 .card-addplano:hover {
@@ -96,6 +119,8 @@
     padding: 1px;
     text-align: left;
     font-size: 8px;
+
+    
 }
 
 
@@ -123,15 +148,147 @@
     justify-content: space-around;
     justify-items: center;
     padding: 0 100px 20px;
+    gap: 20px;
 }
 
 .btn-addplano{
-    width: 177px;
-    height: 46px;
+    width: 200px;
+    height: 56px;
     color: #ffffff;
     font-size: 18px;
     font-weight: 500;
     background-color: #FF6600;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
+}
+
+.btn-addplano.comprar{
+    background-color: #BFC1C3;
+    cursor: auto;
+}
+
+.styleCriarPlano.active{
+    display: block;
+}
+
+/*----------------POP UP------------------*/
+.container-criarplano{
+    background: #ffffff;
+    border-radius: 35.13px;
+
+
+    padding: 20px;
+    height: 170px;
+    width: 450px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+
+
+    position: fixed;
+    
+
+    justify-content: center;
+
+    visibility: hidden;
+}
+
+.container-criarplano.active{
+    z-index: 10;
+    position: fixed;
+    
+    top: 450px;
+    left: 800px;
+    visibility: visible;
+}
+
+.center-criarplano {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: 15px;
+
+}
+
+.top-plano{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+   
+   
+}
+
+.title-criar{
+
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+   
+    
+    text-align: center;
+    flex: 1;
+
+    color: #000000;
+
+    
+}
+
+.close-pop{
+    color: #004369;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.nameplano{
+
+    width: 181px;
+    height: 29px;
+    border-radius: 4.45px;
+    background: none;
+    background-color: #ffffff;
+    font-size: 15px;
+    border: 1px solid #004369;
+}
+
+.nameplano::placeholder{
+    text-align: left;
+    color: #595959;
+}
+
+.bottom-criarplano {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 17px 0 70px 0;
+   
+}
+
+
+.btn-criaplano{
+    width: 100px;
+    height: 30px;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 500;
+    background-color: #FF6600;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
+}
+
+.btn-cancelaplano{
+    width: 177px;
+    height: 46px;
+    color: #595959;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #ffffff;
     border-radius: 23px;
     border: none;
     box-shadow: 0px 4px 16px 0px #00000025;

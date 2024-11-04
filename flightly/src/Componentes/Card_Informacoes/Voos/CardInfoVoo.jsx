@@ -13,8 +13,6 @@ import SkyAirline from "../../../Images/Card_Informacoes_Voo/Sky_Airline.png";
 
 import PopUpAddPlano from "../../../Componentes/PopUp_Add_PlanoViagens/PopUpAddPlanoViagens";
 
-import { checked } from '../../../Componentes/PopUp_Add_PlanoViagens/PopUpAddPlanoViagens';
-
 
 
 export default function CardInfoVoo(props) {
@@ -44,10 +42,10 @@ export default function CardInfoVoo(props) {
 
     const ShowPlano = () =>{
 
-        if(localStorage.getItem('userid'))
+        if(localStorage.getItem('userid')){
             setIsPlano(true);
-        if(checked === true)
-            setIsPlano(false);
+        }
+             
     };
 
     // Construct the company image path
@@ -56,7 +54,7 @@ export default function CardInfoVoo(props) {
     return (
         <>
 
-            {IsPlano && <PopUpAddPlano tipo={'Voo'} item={props}/>}
+            {IsPlano && <PopUpAddPlano tipo={'Voo'} item={props} setIsPlano={setIsPlano}/>}
             <div className="containerGeral-infoVoo">
                 <div className={`container-Card-voo ${hover ? 'hover-active' : ''} ${isClicked ? 'selected' : ''}`}
                     onMouseEnter={() => setHover(true)}

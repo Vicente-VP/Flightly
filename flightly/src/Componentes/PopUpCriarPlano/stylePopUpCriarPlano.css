@@ -8,7 +8,9 @@
     max-width: 749px;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
 
-    z-index: 5;
+    z-index: 10;
+
+    position: fixed;
 
     justify-content: center;
     overflow: hidden;
