@@ -23,12 +23,12 @@ export default function Home() {
             {/* ------------------ CARD DE PESQUISA  --------------------- */}
 
                 <img src={Aviao_Card} alt="Logo" className="voo-imagem" />
-
+ 
                 <div className="card-voo">
                     <div className="title-voo">
                         <label>Voos</label>
                     </div>
-
+ 
                     <div className="grid-imagem-voo"></div>
 
                     <div className="form-card-voo">

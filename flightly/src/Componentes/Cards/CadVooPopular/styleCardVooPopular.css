@@ -1,10 +1,13 @@
 .card-popular-voo {
     display: grid;
-    grid-template-rows: 66% 6.4% 4.4% 5.4% 5.4% 12.4%;
+    grid-template-rows: auto min-content min-content min-content min-content min-content;
     border: 1.5px solid #ACC6E9;
     border-radius: 20px;
     box-shadow: 0px 4px 14px 0px #B2C9DB25;
     cursor: pointer;
+    padding-bottom: 10px;
+    gap: 5px;
+    align-items: start;
 }
 
 .img-card-voo {
@@ -16,9 +19,7 @@
 .viagem-card-voo {
     font-weight: 500;
     padding-left: 10px;
-    padding-top: 8px;
     font-size: 14px;
-    align-content: end;
 }
 
 .companhia-card-voo {
@@ -29,7 +30,6 @@
 
 .data-card-voo {
     padding-left: 10px;
-    padding-top: 4px;
     font-size: 12px;
     font-weight: 350;
 }
@@ -40,7 +40,6 @@
     font-weight: 350;
     align-content: center;
     margin-left: 10px;
-    margin-top: 3px;
     padding-left: 5px;
     padding-right: 5px;
     width: fit-content;
@@ -51,6 +50,6 @@
     font-weight: 500;
     padding-left: 10px;
     font-size: 14px;
-    padding-top: 5px;
     align-content: top;
+    margin-bottom: 10px;
 }

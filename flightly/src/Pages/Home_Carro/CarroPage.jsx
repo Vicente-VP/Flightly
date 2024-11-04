@@ -1,7 +1,7 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 import CardRec from "../../Componentes/Cards/CardRecCarro/cardRecCarro";
-
+ 
 import Carro_Form from '../../Images/Carro_Card.png';
 import Origem_Form from '../../Images/Icones-Cards/origem.png';
 import IdaVolta_Form from '../../Images/Icones-Cards/ida-volta.png';
@@ -34,7 +34,7 @@ export default function Carro_page (){
             <img src={Carro_Form} alt="Carro esportivo" />
         </div>
     </div>
-
+ 
     <div className="form-cardcarro">
         <div className="car-grid-inputs">
             <div className="car-input-form">
@@ -57,12 +57,6 @@ export default function Carro_page (){
             </div>
             <div className="car-input-form">
                 <div className="car-etiqueta-className">
-                </div>
-                <div className="car-input-className">
-                </div>
-            </div>
-            <div className="car-input-form">
-                <div className="car-etiqueta-className">
                     <label className="car-etiqueta">Data de devolução</label>
                 </div>
                 <div className="car-input-className">
@@ -70,9 +64,9 @@ export default function Carro_page (){
                         style={{ backgroundImage: `url(${IdaVolta_Form})` }} />
                 </div>
             </div>
-        </div>
-        <div className="car-btn-pesquisar">
-            <button className="car-pesquisar">Pesquisar</button>
+            <div className="car-btn-pesquisar">
+                <button className="car-pesquisar">Pesquisar</button>
+            </div>
         </div>
     </div>
 </div>
@@ -120,6 +114,7 @@ export default function Carro_page (){
                         </div>
 
                         <div className="card-recomendacao-carro">
+                            <img src={Rec_Inter} className="img-card-recomendacao-inter-cel"/>
                             <span className="carro-card-recomendacao-inter">Intermediário</span>
                             <div className="recomendacao-btn-inter">
                                 <button className="car-pesquisar">Ver Mais</button>

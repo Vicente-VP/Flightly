@@ -111,7 +111,7 @@ export default function Home() {
                 <div className="recomendacoesOrcamento-hospedagem">
                     <span className="titulo-recomendacoes-hospedagem">Hospedagens para o seu orçamento</span>
                     <div className="recommendations-HOSPEDAGENS-cards">
-                        
+                         
                         <Rec_Hospedagem title="Economico" id="hosp-eco" />
                         <Rec_Hospedagem title="Intermediario" id="hosp-inter" />
                         <Rec_Hospedagem title="Luxo" id="hosp-lux" />
