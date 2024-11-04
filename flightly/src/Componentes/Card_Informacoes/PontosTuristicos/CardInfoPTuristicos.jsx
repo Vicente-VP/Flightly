@@ -35,7 +35,7 @@ export default function InfoPTuristicos(props) {
 
                 {/* O botão está agora fora do container principal do card */}
                 <button
-                    className="btnPopup-AddPlano-Compra"
+                    className="btnPopup-AddPlano-Compra-PTURISTICOS"
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
                 >

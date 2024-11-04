@@ -54,7 +54,7 @@ export default function InfoHosp(props) {
 
                 </div>
                 <button
-                    className="btnPopup-AddPlano-Compra"
+                    className="btnPopup-AddPlano-Compra-HOSPEDAGEM"
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
                 >

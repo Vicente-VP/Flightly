@@ -31,7 +31,7 @@
     background-color: #c7e2f225;
 }
 
-.btnPopup-AddPlano-Compra {
+.btnPopup-AddPlano-Compra-PTURISTICOS {
     position: absolute; /* Garantir que o botão esteja posicionado no canto */
     right: -70px; /* Começa fora da área visível */
     top: 50%; /* Centraliza verticalmente */
@@ -48,7 +48,7 @@
     transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.containerFora-pTuristico:hover .btnPopup-AddPlano-Compra {
+.containerFora-pTuristico:hover .btnPopup-AddPlano-Compra-PTURISTICOS {
     visibility: visible;
     opacity: 1;
     transform: translateX(0); /* Move para a posição correta */

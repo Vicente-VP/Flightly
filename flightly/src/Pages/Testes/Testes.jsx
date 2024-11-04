@@ -6,7 +6,7 @@ import Footer from "../../Componentes/Footer/Footer";
 import './style_Testes.css';
 import React from 'react';
 
-import CompraDetalhes from "../../Componentes/FIltros/Filtro_Planos/FiltroPlano";
+import CompraDetalhes from "../../Componentes/Card_Informacoes/PontosTuristicos/CardInfoPTuristicos";
 
 export default function Testes() {
     const itensCompra = [

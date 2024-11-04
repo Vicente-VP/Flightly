@@ -44,7 +44,7 @@ export default function InfoCarros(props) {
                         <label htmlFor="number-mala" className="lbl-mala"> {props.malaGr} Bagagem Grande</label>
                     </div>
                 </div>
-                <hr color="D4D4D4" />
+                <hr className="hr-cardInfo-carros" color="D4D4D4" />
                 <div className="card-price">
                     <div className="info-preco">
                         <div className="preco">
@@ -54,7 +54,7 @@ export default function InfoCarros(props) {
                     </div>
                 </div>
             </div>
-            <button className={`btnPopup-AddPlano-Compra ${hover ? 'visible' : ''}`}>
+            <button className={`btnPopup-AddPlano-Compra-CARROS ${hover ? 'visible' : ''}`}>
                 <img src={sinalMais} alt="Botão de abrir Pop-up de Add Plano Viagem ou Compra" />
             </button>
         </div>

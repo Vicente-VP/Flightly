@@ -37,7 +37,7 @@
 }
 
 /* Animação e transição do botão */
-.btnPopup-AddPlano-Compra {
+.btnPopup-AddPlano-Compra-CARROS {
     display: flex;
     width: 50px;
     height: 50px;
@@ -48,19 +48,19 @@
     border: none;
     visibility: hidden;
     transform: translateX(-100px); /* Botão começa fora da tela */
-    transition: transform 0.5s ease, visibility 0.5s ease;
+    transition: transform 0.5s ease, visibility 3s ease;
     z-index: 1;
 }
 
 /* Mostra e anima o botão quando o card está em hover */
-.card-horizontal:hover + .btnPopup-AddPlano-Compra,
-.btnPopup-AddPlano-Compra:hover {
+.card-horizontal:hover + .btnPopup-AddPlano-Compra-CARROS,
+.btnPopup-AddPlano-Compra-CARROS:hover {
     visibility: visible;
     transform: translateX(0); /* Anima para o estado visível */
 }
 
 /* Mantém o estado do card mesmo quando o mouse está sobre o botão */
-.card-horizontal:hover + .btnPopup-AddPlano-Compra {
+.card-horizontal:hover + .btnPopup-AddPlano-Compra-CARROS {
     visibility: visible;
     transform: translateX(0); /* Anima para o estado visível */
 }
@@ -130,7 +130,7 @@
     height: 20px;
 }
 
-hr {
+.card-horizontal > hr {
     height: 180px;
     width: 0.5px;
     margin: 20px 0;

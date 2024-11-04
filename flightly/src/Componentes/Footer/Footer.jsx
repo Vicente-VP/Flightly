@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 export default function Footer(){
     return(
         <>
-            <footer>
+            <footer id='footer'>
                 <section className="container-logo">
                     <Link to="/">
                         <img src={Logo_Flightly} alt="Logo" className="footer-Logo"/>

@@ -34,7 +34,7 @@
 
 /* Aumenta o tamanho e muda a cor quando hover no card ou no botão */
 .container-Card:hover,
-.btnPopup-AddPlano-Compra:hover + .container-Card {
+.btnPopup-AddPlano-Compra-VOOS:hover + .container-Card {
   width: 835px;
   height: 250px;
   background-color: #c7e2f225;
@@ -42,7 +42,7 @@
   position: relative;
 }
 
-.btnPopup-AddPlano-Compra {
+.btnPopup-AddPlano-Compra-VOOS {
   display: flex;
   height: 50px;
   width: 52px;
@@ -61,8 +61,8 @@
 }
 
 /* Mostra o botão no hover */
-.containerGeral-infoVoo:hover .btnPopup-AddPlano-Compra,
-.btnPopup-AddPlano-Compra:hover {
+.containerGeral-infoVoo:hover .btnPopup-AddPlano-Compra-VOOS,
+.btnPopup-AddPlano-Compra-VOOS:hover {
   visibility: visible;
   transform: translateX(0);
 }
@@ -76,7 +76,7 @@
   position: relative;
 }
 
-.btnPopup-AddPlano-Compra > img {
+.btnPopup-AddPlano-Compra-VOOS > img {
   width: 30px;
   height: 30px;
 }
