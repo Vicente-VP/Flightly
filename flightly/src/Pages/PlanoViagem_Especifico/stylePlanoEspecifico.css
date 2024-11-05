@@ -1,0 +1,101 @@
+.bodyPlanoEspecifico {
+    min-height: 100vh;
+}
+
+.auxilioNavegacao {
+    font-size: 28px;
+    margin: 15px 0 35px 43.5px;
+}
+
+.link-planoViagem {
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}
+
+.link-planoViagem:hover {
+    text-decoration: underline;
+}
+
+/* Plano Vazio */
+
+.pagina-Vazia {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 50px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pagina-Vazia>span {
+    text-align: center;
+}
+
+.vazioTitulo-PlanoEspecifico {
+    text-align: center;
+    font-size: 60px;
+}
+
+.subtiulo-PlanoEspecifico {
+    font-size: 35px;
+    font-weight: 250;
+}
+
+/* Com Conteúdo */
+
+.conteudo-plano {
+    display: grid;
+    grid-template-columns: 100%;
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+    margin: 70px 0 20px 0;
+    gap: 80px;
+}
+
+.container-compraTotal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 250px;
+}
+
+.containerCard-planoEspecifico{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.checkboxDelete-planoEspecifico {
+    display: none;
+}
+
+.checkboxDelete-planoEspecifico.visible {
+    display: block;
+
+    background-color: white;
+
+    border-radius: 10px;
+    border: 2px solid #BC0B0B80;
+
+    height: 40px;
+    width: 40px;
+
+    cursor: pointer;
+
+    transition: background-color 0.1s, border 0.1s;
+}
+
+.checkboxDelete-planoEspecifico:focus {
+    outline: none;
+}
+
+.checkboxDelete-planoEspecifico:checked {
+    background-color: #BC0B0B;
+    border: 6px solid white;
+}

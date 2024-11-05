@@ -134,7 +134,7 @@
     background-size: 24px, 16px;
 }
 
-.search-price{
+.search_price{
   position: absolute;
   left: 20.54%;
   right: 25.68%;
@@ -142,12 +142,12 @@
   bottom: 25.82%;
 }
 
-.search-price > div{
+.search_price > div{
 display: flex;
 flex-direction: column;
 }
 
-.search-price > span{
+.search_price > span{
 font-family: "Poppins", sans-serif;
 color: #004369;
 font-weight: 450;
@@ -158,7 +158,7 @@ font-size: 15px;
   width: 100%;
 }
 
-.range .field{
+.rangeH .campo{
 position: relative;
 display: flex;
 align-items: center;
@@ -166,13 +166,13 @@ justify-content: center;
 height: 100%;
 }
 
-.range .sliderValue{
+.rangeH .sliderValor{
 position: relative;
 width: 100%;
-margin-left: 5px;
+margin-left: 50px;
 }
 
-.range .sliderValue span{
+.rangeH .sliderValor span{
 display: flex;
 justify-content: center;
 position: absolute;
@@ -180,11 +180,11 @@ height: 22px;
 width: 22px;
 
 font-size: 9px;
-color: 004369;
+color: #004369;
 font-weight: 400;
 
 top: -20px;
-transform: translateX(-50%) scale(0);
+transform: translateX(-50%) scale(1);
 transform-origin: bottom;
 transition: transform 0.3s ease-in-out;
 
@@ -192,11 +192,11 @@ line-height: 15px;
 z-index: 2;
 }
 
-.range .sliderValue span.show{
+.rangeH .sliderValor span.show{
 transform: translateX(-50%) scale(1);
 }
 
-.range .sliderValue span:after{
+.rangeH .sliderValor span:after{
 display: flex;
 justify-content: center;
 content: "";
@@ -213,21 +213,21 @@ border-radius: 2px;
 box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 }
 
-.range .field .value{
+.rangeH .campo .valor{
 position: absolute;
 font-size: 13px;
 font-weight: 500;
 color: #004369;
 }
 
-.range .field .value.left{
+.rangeH .campo .valor.left{
 left: -28px;
 }
-.range .field .value.right{
+.rangeH .campo .valor.right{
 right: -59px;
 }
 
-.range .field input{
+.rangeH .campo input{
 -webkit-appearance: none;
 
 height: 3px;
@@ -239,7 +239,7 @@ border-radius: 5px;
 border: none;
 outline: none;
 }
-.range .field input::-webkit-slider-thumb{
+.rangeH .campo input::-webkit-slider-thumb{
 -webkit-appearance: none;
 height: 11px;
 width: 11px;
@@ -248,7 +248,7 @@ border-radius: 50%;
 cursor: pointer;
 }
 
-.range .field input::-moz-range-progress{
+.rangeH .campo input::-moz-range-progress{
 background: #004369;
 }
 

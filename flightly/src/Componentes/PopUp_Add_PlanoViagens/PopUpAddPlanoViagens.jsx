@@ -94,7 +94,26 @@ export default function PopUpAddPlanoViagens(props){
                     return null; // Return null in case of an error
                 }
             case 'Hospedagem':
-                break;
+                try {
+                    const response = await axios.post(`http://localhost:5000/createHospedagem`, {
+                        nome: props.item.hotelName,
+                        data_checkin: params.get('check_in'),
+                        data_checkout: params.get('check_out'),
+                        preco: parseFloat(props.item.price),
+                        estrelas: parseFloat(props.item.rating),
+                        avaliacoes: parseInt(props.item.votes.replace(/[().]/g, '')),
+                        caracteristicas: props.item.services.toString(),
+                        adultos: parseInt(params.get('adultos')),
+                        criancas: parseInt(params.get('crianca')),
+                        imagem: props.item.image
+                    });
+                    console.log(response.data);
+                    return response.data.id_hospedagem;
+                }
+                catch (error) {
+                    console.log(error);
+                    return null;
+                }
             
             default:
                 return null;
@@ -110,7 +129,7 @@ export default function PopUpAddPlanoViagens(props){
             const id_item = await CriarItem();
             console.log(id_item)
             axios.post(`http://localhost:5000/add${props.tipo}Plano`,{
-                id_voo: id_item,
+                id_item: id_item,
                 id_plano: selectedOption
             }).then(response => {
                             console.log(response.data);
