@@ -1,18 +1,22 @@
-.filter-space, .filter-container{
-  display: flex; /* Utiliza flexbox para alinhamento em linha */
+.filter-space,
+.filter-container {
+  display: flex;
+  /* Utiliza flexbox para alinhamento em linha */
   width: 100%;
   height: 138px;
-  gap: 40px; /* Espaçamento entre os botões */
-  justify-content: center; /* Alinha os botões no centro horizontalmente */
+  gap: 40px;
+  /* Espaçamento entre os botões */
+  justify-content: center;
+  /* Alinha os botões no centro horizontalmente */
   align-items: center;
   padding: 20px;
 }
 
-.filter-space{
-justify-content: space-around;
+.filter-space {
+  justify-content: space-around;
 
   border-radius: 20px;
-  border: 1px solid #d3d3d3; 
+  border: 1px solid #d3d3d3;
 
   width: 70%;
   height: 98px;
@@ -21,29 +25,32 @@ justify-content: space-around;
 }
 
 
-.btn-fly, .btn-car, .btn-hotel, .btn-turistic{
+.btn-fly,
+.btn-car,
+.btn-hotel,
+.btn-turistic {
   font-size: 28px;
   font-weight: 300;
   background-color: #ffffff;
-  border: 1px solid #ffffff; 
-  border-radius: 10px; 
+  border: 1px solid #ffffff;
+  border-radius: 10px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
   padding-left: 30px;
   cursor: pointer;
 }
 
-.btn-fly{
+.btn-fly {
   width: 138px;
   height: 40px;
-  
+
   background-image: url('../../../Images/FiltroPlano/Aviao-Icon-Cinza.png');
   background-repeat: no-repeat;
   background-position: 15px;
   background-size: 30px;
-  
+
 }
 
-.btn-hotel{
+.btn-hotel {
   width: 260px;
   height: 40px;
 
@@ -53,7 +60,7 @@ justify-content: space-around;
   background-size: 25px;
 }
 
-.btn-car{
+.btn-car {
   width: 154px;
   height: 40px;
 
@@ -64,10 +71,10 @@ justify-content: space-around;
   background-size: 28px;
 }
 
-.btn-turistic{
+.btn-turistic {
   width: 287px;
   height: 40px;
-  
+
   background-image: url('../../../Images/FiltroPlano/Turistico-Icon-Cinza.png');
   background-repeat: no-repeat;
   background-position: 10px;
@@ -75,186 +82,210 @@ justify-content: space-around;
 }
 
 
-.btn-fly:hover{
-background-image: url('../../../Images/FiltroPlano/Aviao-icon-azul.png');
-background-repeat: no-repeat;
-background-position: 15px;
-background-size: 30px;
+.btn-fly:hover {
+  background-image: url('../../../Images/FiltroPlano/Aviao-icon-azul.png');
+  background-repeat: no-repeat;
+  background-position: 15px;
+  background-size: 30px;
 
 
-color: #ACC6E9;
+  color: #ACC6E9;
 }
 
-.btn-hotel:hover{
-background-image: url('../../../Images/FiltroPlano/Hotel-Icon-Azul.png');
-background-repeat: no-repeat;
-background-position: 15px;
-background-size: 25px;
+.btn-hotel:hover {
+  background-image: url('../../../Images/FiltroPlano/Hotel-Icon-Azul.png');
+  background-repeat: no-repeat;
+  background-position: 15px;
+  background-size: 25px;
 
-color: #ACC6E9;
+  color: #ACC6E9;
 }
 
-.btn-car:hover{
-background-image: url('../../../Images/FiltroPlano/Carro-Icon-Azul.png');
-background-repeat: no-repeat;
-background-position: 10px;
-background-size: 28px;
+.btn-car:hover {
+  background-image: url('../../../Images/FiltroPlano/Carro-Icon-Azul.png');
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 28px;
 
-color: #ACC6E9;
+  color: #ACC6E9;
 }
 
-.btn-turistic:hover{
-background-image: url('../../../Images/FiltroPlano/Turistico-Icon-Azul.png');
-background-repeat: no-repeat;
-background-position: 10px;
-background-size: 28px;
+.btn-turistic:hover {
+  background-image: url('../../../Images/FiltroPlano/Turistico-Icon-Azul.png');
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 28px;
 
-color: #ACC6E9;
+  color: #ACC6E9;
 }
 
-.btn-fly.active{
-filter: none;
-background-image: url('../../../Images/FiltroPlano/Aviao-icon.png');
-background-repeat: no-repeat;
-background-position: 15px;
-background-size: 27px;
-background-color: #2378BC; /* Altera a cor de fundo ao clicar */
-color: #fff; /* Altera a cor do texto ao clicar */
-border-color: #2378BC; /* Altera a cor da borda */
-transform: scale(1.1); /* Aumenta o tamanho do botão ao clicar */
+.btn-fly.active {
+  filter: none;
+  background-image: url('../../../Images/FiltroPlano/Aviao-icon.png');
+  background-repeat: no-repeat;
+  background-position: 15px;
+  background-size: 27px;
+  background-color: #2378BC;
+  /* Altera a cor de fundo ao clicar */
+  color: #fff;
+  /* Altera a cor do texto ao clicar */
+  border-color: #2378BC;
+  /* Altera a cor da borda */
+  transform: scale(1.1);
+  /* Aumenta o tamanho do botão ao clicar */
 }
 
-.btn-hotel.active{
-filter: none;
-background-image: url('../../../Images/FiltroPlano/Hotel-Icon.png');
-background-repeat: no-repeat;
-background-position: 15px;
-background-size: 27px;
-background-color: #2378BC; /* Altera a cor de fundo ao clicar */
-color: #fff; /* Altera a cor do texto ao clicar */
-border-color: #2378BC; /* Altera a cor da borda */
-transform: scale(1.1); /* Aumenta o tamanho do botão ao clicar */
+.btn-hotel.active {
+  filter: none;
+  background-image: url('../../../Images/FiltroPlano/Hotel-Icon.png');
+  background-repeat: no-repeat;
+  background-position: 15px;
+  background-size: 27px;
+  background-color: #2378BC;
+  /* Altera a cor de fundo ao clicar */
+  color: #fff;
+  /* Altera a cor do texto ao clicar */
+  border-color: #2378BC;
+  /* Altera a cor da borda */
+  transform: scale(1.1);
+  /* Aumenta o tamanho do botão ao clicar */
 }
 
-.btn-car.active{
-filter: none;
-background-image: url('../../../Images/FiltroPlano/Carro-Icon.png');
-background-repeat: no-repeat;
-background-position: 10px;
-background-size: 28px;
-background-color: #2378BC; /* Altera a cor de fundo ao clicar */
-color: #fff; /* Altera a cor do texto ao clicar */
-border-color: #2378BC; /* Altera a cor da borda */
-transform: scale(1.1); /* Aumenta o tamanho do botão ao clicar */
+.btn-car.active {
+  filter: none;
+  background-image: url('../../../Images/FiltroPlano/Carro-Icon.png');
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 28px;
+  background-color: #2378BC;
+  /* Altera a cor de fundo ao clicar */
+  color: #fff;
+  /* Altera a cor do texto ao clicar */
+  border-color: #2378BC;
+  /* Altera a cor da borda */
+  transform: scale(1.1);
+  /* Aumenta o tamanho do botão ao clicar */
 }
 
-.btn-turistic.active{
-filter: none;
-background-image: url('../../../Images/FiltroPlano/Turistico-Icon.png');
-background-repeat: no-repeat;
-background-position: 10px;
-background-size: 28px;
-background-color: #2378BC; /* Altera a cor de fundo ao clicar */
-color: #fff; /* Altera a cor do texto ao clicar */
-border-color: #2378BC; /* Altera a cor da borda */
-transform: scale(1.1); /* Aumenta o tamanho do botão ao clicar */
+.btn-turistic.active {
+  filter: none;
+  background-image: url('../../../Images/FiltroPlano/Turistico-Icon.png');
+  background-repeat: no-repeat;
+  background-position: 10px;
+  background-size: 28px;
+  background-color: #2378BC;
+  /* Altera a cor de fundo ao clicar */
+  color: #fff;
+  /* Altera a cor do texto ao clicar */
+  border-color: #2378BC;
+  /* Altera a cor da borda */
+  transform: scale(1.1);
+  /* Aumenta o tamanho do botão ao clicar */
 }
 
-.edit-space{
+.edit-space {
   display: flex;
   align-content: center;
   gap: 25px;
 }
 
-.edit-innerSpace{
+.edit-innerSpace {
   display: flex;
   flex-direction: column;
   align-content: center;
 }
 
-.btn-edit{
-width: 64px;
-height: 64px;
-border-radius: 100%;
-border: none;
-cursor: pointer;
-background-repeat: no-repeat;
-background-position: center;
-
-transition: 0.3s;
+.edit-innerSpace.delete {
+  display: none;
 }
 
-.btn-edit.edit{
-background-color: #FF6600;
-
-background-image: url('../../../Images/Icones_PlanoViagens/icon_editar_planoViagens.png');
-background-size: 31px, 31px;
+.edit-innerSpace.delete.active {
+  display: flex;
 }
 
-.btn-edit.delete{
-visibility: hidden;
-background-color: #BC0B0B;
+.btn-edit {
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
 
-background-image: url('../../../Images/FiltroPlano/deletar.png');
-background-size: 31px, 31px;
-transform: translateX(-89px);
-transition: transform 0.5s ease, visibility 0.5s ease;
-z-index: -10;
+  transition: 0.3s;
 }
 
-.btn-edit.edit.active{
-background-color: #2378BC;
+.btn-edit.edit {
+  background-color: #FF6600;
+
+  background-image: url('../../../Images/Icones_PlanoViagens/icon_editar_planoViagens.png');
+  background-size: 31px, 31px;
 }
 
-.btn-edit.delete.active{
-visibility: visible;
-transform: translateX(0);
+.btn-edit.delete {
+  visibility: hidden;
+  background-color: #BC0B0B;
+
+  background-image: url('../../../Images/FiltroPlano/deletar.png');
+  background-size: 31px, 31px;
+  transform: translateX(-89px);
+  z-index: -10;
 }
 
-.edit-innerSpace > span{
-text-align: center;
-font-weight: 400;
-font-style: normal;
-font-size: 11px;
+.btn-edit.edit.active {
+  background-color: #2378BC;
 }
 
-.spanDelete{
-visibility: hidden;
-transform: translateX(-89px);
-transition: transform 0.5s ease, visibility 0.5s ease;
-z-index: -10;
+.btn-edit.delete.active {
+  visibility: visible;
+  transform: translateX(0);
+  z-index: 10;
 }
 
-.spanDelete.active{
-visibility: visible;
-transform: translateX(0);
+.edit-innerSpace>span {
+  text-align: center;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 11px;
 }
 
-.container-checkbox{
+.spanDelete {
+  visibility: hidden;
+  transform: translateX(-89px);
+  z-index: -10;
+}
+
+.spanDelete.active {
+  visibility: visible;
+  transform: translateX(0);
+  z-index: 10;
+}
+
+.container-checkbox {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#checkBox-filtroPlano{
-background-color: white;
+#checkBox-filtroPlano {
+  background-color: white;
 
-border-radius: 10px;
-border: 2px solid #ACC6E9;
+  border-radius: 10px;
+  border: 2px solid #ACC6E9;
 
-height: 40px;
-width: 40px;
+  height: 40px;
+  width: 40px;
 
-cursor: pointer;
+  cursor: pointer;
 
-transition: background-color 0.1s, border 0.1s;
+  transition: background-color 0.1s, border 0.1s;
 }
 
-#checkBox-filtroPlano:focus{
-outline: none;
+#checkBox-filtroPlano:focus {
+  outline: none;
 }
 
 #checkBox-filtroPlano:checked {
-background-color: #2378BC; 
-border: 6px solid white;
+  background-color: #2378BC;
+  border: 6px solid white;
 }

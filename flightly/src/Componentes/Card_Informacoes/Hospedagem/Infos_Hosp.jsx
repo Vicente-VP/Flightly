@@ -56,14 +56,17 @@ export default function InfoHosp(props) {
                         <div className="info-preco">
                             <div className="preco">
                                 <label className='titleprecoinfohosp'>A partir de:</label>
-                                <span className="precoinfohosp">R$ {props.price.match(/\b\d+\b/)[0]}</span>
+                                <span className="precoinfohosp">
+                                    R$ {(props.price ? props.price.toString().match(/\b\d+\b/)[0] : '0')}
+                                </span>
+
                             </div>
                         </div>
                     </div>
 
                 </div>
                 <button
-                    className="btnPopup-AddPlano-Compra"
+                    className="btnPopup-AddPlano-Compra-HOSP"
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
                     onClick={ShowPlano}

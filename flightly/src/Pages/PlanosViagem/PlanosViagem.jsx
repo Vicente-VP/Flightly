@@ -12,7 +12,7 @@ import './PlanosViagem.css';
 export default function PlanosViagem() {
     const [planos, setPlanos] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:5000/')
+        axios.get(`https://flightlydbapi.onrender.com/getPlanos?id_usuario=${localStorage.getItem('userid')}`)
             .then(response => {
                 console.log(response.data);
                 setPlanos(response.data);
@@ -41,11 +41,11 @@ export default function PlanosViagem() {
                     <div></div>
                     {planos.map((plano) => {
                         return (
-                            <Link to={`/planos-viagem/${plano.id}`}>
+                            <Link to={`/PlanoEspecifico?id=${plano[0]}`}>
                                 <CardPlanoViagem
-                                    key={plano.id}
-                                    id={plano.id}
-                                    nome={plano.nome}
+                                    key={plano[0]}
+                                    id={plano[0]}
+                                    nome={plano[1]}
                                     preco={plano.preco}
                                     descricao={plano.descricao}
                                     imagem={plano.imagem}
@@ -54,13 +54,10 @@ export default function PlanosViagem() {
                         );
                     })}
                     <div>
-                        <Btns_PlanoViagens />
+                        <Btns_PlanoViagens/>
                     </div>
                     <div></div>
-                    <CardPlanoViagem />
-                    <CardPlanoViagem />
-                    <CardPlanoViagem />
-                    <CardPlanoViagem />
+
                     <div></div>
                 </div>
             </div>

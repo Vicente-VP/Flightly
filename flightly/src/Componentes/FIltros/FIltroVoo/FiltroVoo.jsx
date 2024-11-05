@@ -100,13 +100,13 @@ export default function FiltroVoo(){
                     <div className="price">
                         <span>Preço</span>
                         <div className="range">
-                            <div className="sliderValue">
+                            <div className="sliderVal">
                                 <span id="span" ref={priceRef}>{price}</span>
                             </div>
                             <div className="field">
-                                <div className="value left">R$50</div>
-                                <input type="range" min="0" max="10000" value={price} steps="1" id="input" onChange={handlePriceChange}/>
-                                <div className="value right">R$10 000+</div>
+                                <div className="val left">R$50</div>
+                                    <input type="range" min="0" max="10000" value={price} steps="1" id="input" onChange={handlePriceChange}/>
+                                <div className="val right">R$10 000+</div>
                             </div>
                         </div>
                     </div>

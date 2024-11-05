@@ -12,7 +12,7 @@ import Perfil from './Pages/Perfil/Perfil';
 import PlanosViagem from './Pages/PlanosViagem/PlanosViagem';
 import InformacoesPage from './Pages/InformacoesPage/InformacoesPage';
 import Questionario from './Pages/Questionario/QuestionarioPage';
-
+import PlanoEspecifico from './Pages/PlanoViagem_Especifico/PlanoEspecifico';
 
 export default function App() {
   return (
@@ -30,6 +30,7 @@ export default function App() {
           <Route path="/PlanosViagem" element={<PlanosViagem/>}/>
           <Route path="/InformacoesPage" element={<InformacoesPage/>}/>
           <Route path="/Questionario" element={<Questionario/>}/>
+          <Route path="/PlanoEspecifico" element={<PlanoEspecifico/>}/>
         </Routes>
       </Router>
     </>

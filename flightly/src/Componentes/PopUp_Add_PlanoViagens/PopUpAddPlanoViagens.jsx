@@ -43,7 +43,7 @@ export default function PopUpAddPlanoViagens(props){
     
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/getPlanos?id_usuario=${localStorage.getItem('userid')}`)
+        axios.get(`https://flightlydbapi.onrender.com/getPlanos?id_usuario=${localStorage.getItem('userid')}`)
             .then(response => {
                 console.log(response.data);
                 console.log(props.item)
@@ -57,7 +57,7 @@ export default function PopUpAddPlanoViagens(props){
     async function CriarPlanoViagem(){
         let nome = document.getElementById('nameplano').value;
         try {
-            const response = await axios.post(`http://localhost:5000/createPlano`, {
+            const response = await axios.post(`https://flightlydbapi.onrender.com/createPlano`, {
                 nome: nome,
                 id: localStorage.getItem('userid')
             });
@@ -75,8 +75,9 @@ export default function PopUpAddPlanoViagens(props){
             case 'Voo':
                 console.log(parseInt(params.get('criancaAssento')) + parseInt(params.get('criancaColo')) + parseInt(params.get('criancaIdade')));
                 try {
-                    const response = await axios.post(`http://localhost:5000/createVoo`, {
+                    const response = await axios.post(`https://flightlydbapi.onrender.com/createVoo`, {
                         companhia: props.item.company,
+                        destino: params.get('destino'),
                         aeroporto_ida: props.item.airport_from,
                         aeroporto_chegada: props.item.airport_to,
                         hora_ida: props.item.take_off,
@@ -94,12 +95,13 @@ export default function PopUpAddPlanoViagens(props){
                     return null; // Return null in case of an error
                 }
             case 'Hospedagem':
+                
                 try {
-                    const response = await axios.post(`http://localhost:5000/createHospedagem`, {
+                    const response = await axios.post(`https://flightlydbapi.onrender.com/createHospedagem`, {
                         nome: props.item.hotelName,
                         data_checkin: params.get('check_in'),
                         data_checkout: params.get('check_out'),
-                        preco: parseFloat(props.item.price),
+                        preco: parseFloat(props.item.price.toString().match(/\b\d+\b/)[0]),
                         estrelas: parseFloat(props.item.rating),
                         avaliacoes: parseInt(props.item.votes.replace(/[().]/g, '')),
                         caracteristicas: props.item.services.toString(),
@@ -128,7 +130,7 @@ export default function PopUpAddPlanoViagens(props){
         else{
             const id_item = await CriarItem();
             console.log(id_item)
-            axios.post(`http://localhost:5000/add${props.tipo}Plano`,{
+            axios.post(`https://flightlydbapi.onrender.com/add${props.tipo}Plano`,{
                 id_item: id_item,
                 id_plano: selectedOption
             }).then(response => {
@@ -147,7 +149,7 @@ export default function PopUpAddPlanoViagens(props){
         console.log(id_plano)
         const id_item = await CriarItem();
         console.log(id_item)
-        axios.post(`http://localhost:5000/add${props.tipo}Plano`,{
+        axios.post(`https://flightlydbapi.onrender.com/add${props.tipo}Plano`,{
             id_voo: id_item,
             id_plano: id_plano
         }).then(response => {

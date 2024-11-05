@@ -9,11 +9,14 @@ import porta from '../../../Images/Info-Car-Icon/car-door.png';
 import large_bag from '../../../Images/Info-Car-Icon/travelling-bag.png';
 import sinalMais from '../../../Images/sinalMais.png';
 
+import { useState } from 'react';
+
 export default function InfoCarros(props) {
+    const [hover, setHover] = useState(false);
     return (
         <>
             <div className="containerGeral-infoCarro">
-                <div {`card-horizontal ${hover ? 'hover-active' : ''}`}>
+                <div className={`card-horizontal ${hover ? 'hover-active' : ''}`}>
                     <div class="card-image">
                         <img src={props.carImage} className='card-image-car' />
                         <img src={props.locImage} className='card-image-locadora' />
@@ -53,7 +56,7 @@ export default function InfoCarros(props) {
                         </div>
                     </div>
                 </div>
-                <button className="btnPopup-AddPlano-Compra">
+                <button className="btnPopup-AddPlano-Compra-CARROS">
                     <img src={sinalMais} alt="Botão de abrir Pop-up de Add Plano Viagem ou Compra" />
                 </button>
             </div>

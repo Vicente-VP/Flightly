@@ -24,7 +24,7 @@ export default function Cadastro (){
         let password = document.getElementById('senha').value;
         console.log(name, email, date, password);
         
-        axios.post('http://localhost:5000/register', {
+        axios.post('https://flightlydbapi.onrender.com/register', {
             name: name,
             email: email,
             birthdate: date,

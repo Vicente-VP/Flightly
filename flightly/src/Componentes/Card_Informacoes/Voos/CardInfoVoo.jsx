@@ -96,7 +96,7 @@ export default function CardInfoVoo(props) {
                     </div>
                 </div>
                 <button
-                    className="btnPopup-AddPlano-Compra"
+                    className="btnPopup-AddPlano-Compra-VOOS"
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
                     onClick={ShowPlano}

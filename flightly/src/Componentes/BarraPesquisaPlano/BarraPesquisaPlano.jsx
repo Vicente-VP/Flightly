@@ -6,7 +6,7 @@ export default function PesquisaPlano(){
     return(
         <>
             <div className="container-bar">
-                <input type="text" placeholder="Pesquisar" class="barraPesquisa"/>
+                <input type="text" placeholder="Pesquisar" id="barPesquisa"/>
                 <i className="fa fa-search"></i>
             </div>
         </>);

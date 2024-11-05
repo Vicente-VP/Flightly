@@ -2,7 +2,7 @@
     display: flex;
     gap: 20px;
     align-items: center;
-    width: 837.52px;
+    width: auto;
     height: 220px;
     margin-bottom: 50px;
 }
@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: row;
     cursor: pointer;
-    width: 837.52px;
+    width: 837px;
     height: 220px;
     justify-content: space-between;
     border: 1.35864px solid rgba(85, 85, 85, 0.29);
@@ -26,7 +26,7 @@
 
 /* Aumenta o tamanho e muda a cor quando hover no card ou no botão */
 .container-Card:hover,
-.btnPopup-AddPlano-Compra:hover+.container-Card {
+.btnPopup-AddPlano-Compra-HOSP:hover+.container-Card {
     width: 837.52px;
     height: 250px;
     background-color: #c7e2f225;
@@ -34,7 +34,7 @@
     position: relative;
 }
 
-.btnPopup-AddPlano-Compra {
+.btnPopup-AddPlano-Compra-HOSP {
     display: flex;
     height: 50px;
     width: 52px;
@@ -53,8 +53,8 @@
 }
 
 /* Mostra o botão no hover */
-.containerGeral-Hosp:hover .btnPopup-AddPlano-Compra,
-.btnPopup-AddPlano-Compra:hover {
+.containerGeral-Hosp:hover .btnPopup-AddPlano-Compra-HOSP,
+.btnPopup-AddPlano-Compra-HOSP:hover {
     visibility: visible;
     transform: translateX(0);
 }
@@ -70,7 +70,7 @@
 
 
 
-.btnPopup-AddPlano-Compra>img {
+.btnPopup-AddPlano-Compra-HOSP>img {
     width: 30px;
     height: 30px;
 }
@@ -89,7 +89,6 @@
 
 .right {
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 
@@ -112,6 +111,10 @@
     text-align: center;
     padding-right: 25px;
     width: 220px;
+}
+
+.preco{
+    padding-left: 90px;
 }
 
 .hr {

@@ -187,7 +187,10 @@ main{
     border: none;
     box-shadow: 0px 4px 16px 0px #00000025;
     cursor: pointer;
-    margin: 0 230px 0 0;
+}
+
+.btn-pesquisar-voo > .btn-submit-voo {
+    margin-right: 230px;
 }
 
 /* Estilo de Voos Mais Populares */

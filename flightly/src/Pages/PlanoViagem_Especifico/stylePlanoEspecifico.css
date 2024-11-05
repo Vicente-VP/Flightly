@@ -67,9 +67,34 @@
 
 .containerCard-planoEspecifico{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 40px;
+    margin: 0 0 10px 0;
+    padding: 0%;
 }
+
+.containerCard-planoEspecifico-Pt{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardInterno-planoEspecifico{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 40px;
+    margin: 0;
+    padding: 20px;
+}
+
+/* .cardInterno-planoEspecifico.voo{
+    margin: 0 12% 0 0;
+
+} */
 
 .checkboxDelete-planoEspecifico {
     display: none;

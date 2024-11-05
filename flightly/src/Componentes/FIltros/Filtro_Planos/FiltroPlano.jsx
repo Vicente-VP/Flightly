@@ -1,7 +1,7 @@
 import './styleFiltroPlano.css';
 import React, { useState } from 'react';
 
-export default function FiltroPlanoViagem({ onFilterChange, onAllFiltersDeactivated, onEditButtonClick }) {
+export default function FiltroPlanoViagem({ onFilterChange, onAllFiltersDeactivated, onEditButtonClick, DeleteItems }) {
     const [checked, setChecked] = useState(true);
     const [activeButtons, setActiveButtons] = useState({
         voos: true,
@@ -109,9 +109,9 @@ export default function FiltroPlanoViagem({ onFilterChange, onAllFiltersDeactiva
                     <button className={`btn-edit edit ${btnEdit ? 'active' : ''}`} onClick={handleBtnEdit}></button>
                     <span>Editar</span>
                 </div>
-                <div className="edit-innerSpace">
-                    <button className={`btn-edit delete ${btnEdit ? 'active' : ''}`}></button>
-                    <span className={`spanDelete ${btnEdit ? 'active' : ''}`}>Apagar</span>
+                <div className={`edit-innerSpace delete ${btnEdit ? 'active' : ''}`}>
+                    <button className={`btn-edit delete ${btnEdit ? 'active' : ''}`} onClick={DeleteItems}></button>
+                    <span className={`spanDelete ${btnEdit ? 'active' : ''}`} >Apagar</span>
                 </div>
             </div>
         </div>

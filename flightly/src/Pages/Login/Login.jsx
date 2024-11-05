@@ -15,7 +15,7 @@ export default function Login (){
         let password = document.getElementById('senha').value;
         console.log(email, password);
 
-        axios.post('http://localhost:5000/auth', {
+        axios.post('https://flightlydbapi.onrender.com/auth', {
             "email": email,
             "password": password
             }, {
