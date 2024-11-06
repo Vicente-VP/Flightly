@@ -15,6 +15,23 @@
     background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
 }
 
+.container-search.active {
+    margin: auto;
+    border-radius: 20px;
+    border: 1px solid #d3d3d3; 
+
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding-left: 17.5%;
+    gap: 5px;
+
+    height: 98px;
+    width: 1325px;
+    
+    background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
+}
+
 .container-search > img{
   width: 37px;
   height: 34px;
@@ -75,7 +92,6 @@
   padding-left: 35px;
 }
 
-
 .origem:focus{
   outline: none;
 }
@@ -122,11 +138,37 @@
   font-family: "Poppins", sans-serif;
   color: black;
 
+  display: flex;
+  justify-content: center;
+
   border-right: 0.8px solid #BFC1C3;
   border-bottom: none;
   border-top: none;
   border-left: none;
   border-radius: 10px 0 0 10px;
+
+  height: 35px;
+  width: 164px;
+
+  background-size: 20px;
+  background-position: 10px; 
+  background-repeat: no-repeat;
+  padding-left: 35px;
+
+}
+
+.ida.active{
+  font-family: "Poppins", sans-serif;
+  color: black;
+
+  display: flex;
+  justify-content: center;
+
+  border-right: 0.8px solid #BFC1C3;
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+  border-radius: 10px;
 
   height: 35px;
   width: 164px;
@@ -146,6 +188,9 @@
 
 .volta{
   font-family: "Poppins", sans-serif;
+
+  display: flex;
+  justify-content: center;
 
   border: none;
   border-radius: 0 10px 10px 0;

@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 export default function Footer(){
     return(
         <>
-            <footer>
+            <footer id='footer'>
                 <section className="container-logo">
                     <Link to="/">
                         <img src={Logo_Flightly} alt="Logo" className="footer-Logo"/>
@@ -25,15 +25,15 @@ export default function Footer(){
                     </div>
                     <div className="container-links"> 
                         <Link to="/Ajuda">
-                            <span>Ajuda</span> 
+                            <span className="spanFooter">Ajuda</span> 
                             <i class="bi bi-arrow-up-right"></i>
                         </Link>
                         <Link to="/Segurança">
-                            <span>Segurança</span> 
+                            <span className="spanFooter">Segurança</span> 
                             <i class="bi bi-arrow-up-right"></i>
                         </Link>
                         <Link to="/Termos">
-                            <span>Termos e Condições</span> 
+                            <span className="spanFooter">Termos e Condições</span> 
                             <i class="bi bi-arrow-up-right"></i>
                         </Link>
                     </div>

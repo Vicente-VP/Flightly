@@ -25,7 +25,7 @@
     cursor: pointer;
 }
 
-.barraPesquisa{
+#barPesquisa{
     height: 35px;
     width: 769px;
 
@@ -39,12 +39,13 @@
 
     border: none;
     border-radius: 10px;
+
 }
 
-.barraPesquisa::placeholder{
+#barPesquisa::placeholder{
     color: #BFC1C3;
 }
 
-.barraPesquisa:focus{
+#barPesquisa:focus{
     outline: none;
 }

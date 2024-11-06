@@ -18,25 +18,58 @@
     height: 220px;
     overflow: hidden;
     margin: 20px;
-    transition: 0.3s;
-    z-index: 2;
+
 }
 
-.card-horizontal:hover {
-    width: 780px;
-    height: 250px;
-    background-color: #C7E2F225;
-    transition: 0.3s;
+/* Aumenta o tamanho e muda a cor quando hover no card ou no botão */
+.card-horizontal:hover,
+.btnPopup-AddPlano-Compra-CARROS:hover + .card-horizontal {
+  width: 1120px;
+  height: 149px;
+  background-color: #c7e2f225;
+  transition: 0.3s;
+  position: relative;
 }
 
+.btnPopup-AddPlano-Compra-CARROS {
+  display: flex;
+  height: 50px;
+  width: 52px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0 20px;
+  padding: 20px;
+  background-color: #004369;
+  border-radius: 50%;
+  border: none;
+  overflow: hidden;
+  visibility: hidden;
+  transition: transform 0.5s ease, visibility 0.5s ease;
+  transform: translateX(-100px);
+  z-index: 1;
+}
+
+/* Mostra o botão no hover */
+.containerGeral-infoCarro:hover .btnPopup-AddPlano-Compra-CARROS,
+.btnPopup-AddPlano-Compra-CARROS:hover {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* Mantém o estado do card mesmo quando o mouse está sobre o botão */
 .card-horizontal.hover-active {
-    width: 780px;
-    height: 250px;
-    background-color: #C7E2F225;
-    transition: 0.3s;
+  width: 1120px;
+  height: 149px;
+  background-color: #c7e2f225;
+  transition: 0.3s;
+  position: relative;
 }
 
-/* Animação e transição do botão */
+.btnPopup-AddPlano-Compra > img {
+  width: 30px;
+  height: 30px;
+}
+
 .btnPopup-AddPlano-Compra {
     display: flex;
     width: 50px;
