@@ -6,35 +6,35 @@ import { useNavigate } from 'react-router-dom';
 import icon_apple from '../../Images/Icones_Login_e_Cad/icon_apple.png';
 import icon_google from '../../Images/Icones_Login_e_Cad/icon_google.png';
 import icon_face from '../../Images/Icones_Login_e_Cad/icon_face.png';
+import axios from 'axios';
   
 export default function Cadastro (){
 
 
     const navigate = useNavigate();
 
-    const Registred = () => {
-      navigate('/Perfil'); 
-    };
 
-    let Cadastro = {
-        nome: "",
-        email: "",
-        data: "",
-        senha: ""
-      };
+
+
 
     function Register(){
         let name = document.getElementById('nome').value;
         let email = document.getElementById('email').value;
         let date = document.getElementById('data_nascimento').value;
         let password = document.getElementById('senha').value;
+        console.log(name, email, date, password);
+        
+        axios.post('https://flightlydbapi.onrender.com/register', {
+            name: name,
+            email: email,
+            birthdate: date,
+            password: password
+        }, {
+            headers:{
+            'Content-Type': 'application/json'
+        }
+    }).then(()=>{alert("Cadastro realizado com sucesso!"); navigate('/Login')}).catch(()=>{alert("Erro ao cadastrar")})
 
-        Cadastro.nome = name;
-        Cadastro.email = email;
-        Cadastro.data = date;
-        Cadastro.senha = password;
-
-        console.log(Cadastro);
     }  
 
     const [checked, setChecked] = useState(false);
@@ -47,7 +47,6 @@ export default function Cadastro (){
 
         if(document.getElementById('senha').value === document.getElementById('confirmar_senha').value){
             Register();
-            Registred();
         }
         else{
             openPop();
@@ -77,7 +76,7 @@ export default function Cadastro (){
                     <div className="card-cadastro-esq">
                         <div className="position_title_log">
                             <h1 className="title_log">Seja bem-vindo ao Flightly!</h1>
-                            <a href="../Pages/Login" className="link_log">Já tem cadastro?</a>
+                            <a href="../Login" className="link_log">Já tem cadastro?</a>
                         </div>
                     </div>
                     <div className="card-cadastro-dir">

@@ -30,18 +30,15 @@
 }
 
 .car-image {
-    position: absolute;
-    left: 120px;
-    top: -125px;
-    width: 100%;
+    width: 100%; 
     height: auto;
-    z-index: 1;
+    object-fit: contain; 
 }
 
 .car-image img {
-    width: 750px;
-    
-    height: 100%;
+    width: 100%; 
+    height: auto;
+    object-fit: contain; 
 }
 
 
@@ -51,46 +48,39 @@
     align-items: center;
 
     justify-content: left;
-    font-size: 65px;
+    font-size: 50px;
     font-weight: 500;
 
     font-family: "Poppins", sans-serif;
 }
 
 .form-cardcarro {
-     grid-area: form;
-
+    grid-area: form;
     display: grid;
-    grid-template-rows: 80% 20%;
-
-    padding-top: 20px;
-    padding-right: 35px;
-    padding-left: 35px;
-    padding-bottom: 25px;
-
+    grid-template-rows: 1fr auto;
+    padding: 20px;
     background: linear-gradient(to bottom, #ffffff40, #ffffff10);
     border: 1.5px solid #ffffff80;
     border-radius: 20px;
-    
+    margin: 0 auto;
 }
 
-.car-grid-inputs{
+.car-grid-inputs {
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto; 
     justify-items: center;
-    z-index: 2;
 }
 
-.car-input-form{
+.car-input-form {
     display: grid;
-    width: 90%;
-    grid-template-rows: 30% 70%;
+    width: 100%;
     justify-content: center;
 }
 
 .car-etiqueta{
-    margin-left: 15px;
+    margin-left: 5px;
 }
 
 .car-input[type=text]{
@@ -175,26 +165,28 @@ input[type=date]::-webkit-datetime-edit {
   color: #BFC1C3;
 }
 
-
-
-.car-btn-pesquisar{
+.car-btn-pesquisar {
+    grid-column: 2 / 3; 
+    grid-row: 2 / 3; 
     display: flex;
+    width: 70%;
     position: relative;
     align-items: right;
     justify-content: right;
     left: -70px;
 }
 
-.car-pesquisar{
+.car-pesquisar {
     width: 200px;
-    height: 100%;
-    color: #ffffff;
+    max-width: 200px;
+    height: 40%;
+    min-height: 40px;
     font-size: 18px;
+    color: #ffffff;
     background-color: #FF6600;
     border-radius: 23px;
     border: none;
     box-shadow: 0px 4px 16px 0px #ffffff25;
-
     font-family: "Poppins", sans-serif;
 }
 
@@ -229,7 +221,8 @@ input[type=date]::-webkit-datetime-edit {
 
 .space-locadora-popular{
     display: grid;
-    grid-template-columns: 21% 21% 21% 21%;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
     justify-content: space-between;
     grid-row-gap: 40px;
 
@@ -273,6 +266,7 @@ input[type=date]::-webkit-datetime-edit {
 .card-recomendacao-carro{
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -338,11 +332,13 @@ input[type=date]::-webkit-datetime-edit {
     position: relative;
     margin-top: 10px;
     font-family: "Poppins", sans-serif;
-    /*margin-left: 150px;
-    margin-bottom: 70px;*/
     top: -30px;
     left: 150px;
     font-style: normal;
+}
+
+.img-card-recomendacao-inter-cel{
+    display: none;
 }
 
 .img-card-recomendacao-inter {
@@ -389,3 +385,146 @@ input[type=date]::-webkit-datetime-edit {
     left: 40px;
 }
 
+@media (max-width: 1024px) {
+    .car-image {
+        display: none;
+    }
+
+    .card-carro {
+        grid-template-areas:
+        "title"
+        "form";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        padding: 20px;
+        height: auto;
+    }
+    
+    .form-cardcarro{
+        width: 70%;
+    }
+
+    .car-title {
+        font-size: 40px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .car-grid-inputs {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .space-locadora-popular {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .img-card-recomendacao-inter{
+        display: none;
+    }
+
+    .img-card-recomendacao-inter-cel{
+        display: flex;
+        max-width: 500px;
+        height: auto;
+        width: 495px; 
+        margin: 10px 0;
+    }
+
+    .img-card-recomendacao-eco, .img-card-recomendacao-lux{
+        max-width: 500px;
+    }
+
+    .space-recomendacao-carro {
+        flex-direction: column; /* Muda para coluna */
+        align-items: center; /* Centraliza os cards */
+        width: 100%; /* Largura total */
+    }
+
+    .card-recomendacao-carro {
+        width: 90%; 
+        margin-bottom: 30px; 
+        flex-direction: column; 
+        align-items: center;
+        width: 100%; 
+    }
+
+    .title-recomendacao{
+        text-align: center;
+    }
+
+    .recomendacao-btn-eco, .recomendacao-btn-inter, .recomendacao-btn-lux{
+        align-items: center;
+        margin-left: 0;
+        left: 0;
+    }
+
+    .carro-card-recomendacao-eco, .carro-card-recomendacao-inter, .carro-card-recomendacao-lux{
+        left: 0;
+    }
+}
+
+@media (max-width: 580px) {
+    .card-carro {
+        background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
+        width: 100%;
+        border-radius: 0;
+        padding: 15px;
+        height: auto;
+    }
+
+    .car-title {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .form-cardcarro {
+        width: 100%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .car-grid-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .car-btn-pesquisar {
+        justify-content: center;
+        width: 100%;
+        padding: 0px;
+    }
+
+    .car-pesquisar {
+        width: 100%;
+        max-width: 150px;
+    }
+
+    .space-locadora-popular {
+        grid-template-columns: 1fr; 
+        justify-items: center;
+    }
+    
+    .title-locadora {
+        font-size: 28px; 
+    }
+
+    .title-recomendacao{
+        font-size: 28px;
+    }
+
+    .locadora-btn-popular {
+        height: 40px; 
+    }
+
+    .recomendacao-btn-eco, .recomendacao-btn-inter, .recomendacao-btn-lux{
+        width: 200px;
+    }
+
+    .img-card-recomendacao-eco, .img-card-recomendacao-lux, .img-card-recomendacao-inter-cel{
+        max-width: 350px;
+    }
+}

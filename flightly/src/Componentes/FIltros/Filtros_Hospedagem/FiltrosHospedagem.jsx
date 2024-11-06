@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef  } from "react";
 import "./style_FiltrosHospedagem.css";
 
 export default function FiltrosHospedagem() {
   const [price, setPrice] = useState(100);
+  const priceSpanRef = useRef(null);
 
   function handlePriceChange(e) {
     const value = e.target.value;
@@ -57,31 +58,26 @@ export default function FiltrosHospedagem() {
           </select>
         </div>
         <label className="lbl-filtrohosp4">Preço</label>
-        <div className="search-price">
-          <div className="range">
-            <div className="sliderValue">
-              <span id="span" style={{ left: `${price / 10.6}%` }}>
+        <div className="search_price">
+          <div className="rangeH">
+            <div className="sliderValor">
+              <span id="span" style={{ left: `${price / 10.6}%` }} className={priceSpanRef.current && "show"}>
                 {price}
               </span>
             </div>
-            <div className="field">
-              <div className="value left">R$0</div>
+            <div className="campo">
+              <div className="valor left">R$0</div>
               <input
                 type="range"
                 min="0"
-                max="1000"
+                max="1000" 
                 value={price}
                 steps="1"
-                id="input"
                 onChange={handlePriceChange}
-                onBlur={() => {
-                  document.getElementById("span").classList.remove("show");
-                }}
-                onInput={() => {
-                  document.getElementById("span").classList.add("show");
-                }}
+                onInput={() => priceSpanRef.current.classList.add("show")}
+                onBlur={() => priceSpanRef.current.classList.remove("show")}
               />
-              <div className="value right">R$1000+</div>
+              <div className="valor right">R$1000+</div>
             </div>
           </div>
         </div>

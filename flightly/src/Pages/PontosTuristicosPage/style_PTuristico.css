@@ -39,6 +39,10 @@
     font-weight: 500;
 }
 
+.title-pturistico-cel{
+    display: none;
+}
+
 .form-card-pturistico {
     display: grid;
     grid-template-rows: 32% 38% 30%;
@@ -78,6 +82,7 @@
     border: none;
     height: 40px;
     width: 70%;
+    min-width: 150px;
     box-shadow: 0px 4px 14px 0px #B2C9DB;
     outline: none;
 }
@@ -135,4 +140,60 @@
     justify-content: center;
     margin-top: 6vh;
     height: 48px;
+}
+
+@media (max-width: 700px) {
+    .pturistico-img-class{
+        display: none;
+    }
+
+    .card-pturistico{
+        background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .form-card-pturistico{
+        width: 60%;
+    }
+
+    .title-pturistico{
+        display: none;
+    }
+
+    .title-pturistico-cel{
+        text-align: center;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        padding-top: 15px;
+        gap: 70px;
+        font-size: 40px;
+        font-weight: 500;
+    }
+
+    .etiqueta-class-pturistico {
+        margin-left: 30px;
+    }
+
+    .btn-submit-pturistico {
+        width: 110px;
+        font-size: 15px;
+    }
+
+    .title-popular-pturistico{
+        text-align: center;
+    }
+
+    .cards-popular-pturistico {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .geral-popular-pturistico{
+        margin-bottom: 430px;
+    }
 }
