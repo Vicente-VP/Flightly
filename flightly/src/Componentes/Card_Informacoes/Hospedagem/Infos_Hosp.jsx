@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import sinalMais from '../../../Images/sinalMais.png';
-import PopUpAddPlano from '../../PopUp_Add_PlanoViagens/PopUpAddPlanoViagens';
+import PopUpAddPlano from '../../PopUp_Add_PlanoViagens/popUpAddPlanoViagens';
 import './Infos_Hosp.css';
 
 export default function InfoHosp(props) {
