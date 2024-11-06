@@ -3,7 +3,7 @@ import Footer from "../../Componentes/Footer/Footer";
 
 import BarraPesquisaInfoVoo from "../../Componentes/BarraPesquisa/Voo/BarraPesquisaVoo";
 import FiltroInfoVoo from "../../Componentes/FIltros/FIltroVoo/FiltroVoo";
-import FiltroHosp from "../../Componentes/Filtros/Filtros_Hospedagem/FiltrosHospedagem";
+import FiltroHosp from "../../Componentes/FIltros/Filtros_Hospedagem/FiltrosHospedagem";
 import FiltroCarro from "../../Componentes/Filtros/Filtro_Carro/FiltrosCarro";
 import FiltroPt from "../../Componentes/Filtros/Filtro_PontoTuristico/FiltrosPontosTuristico";
 import CardInfoVoo from "../../Componentes/Card_Informacoes/Voos/CardInfoVoo";
