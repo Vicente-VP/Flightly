@@ -1,4 +1,4 @@
-.container-criarplano{
+.container-criarplan{
     background: #ffffff;
     border-radius: 10px;
 
@@ -10,22 +10,25 @@
 
     z-index: 10;
 
-    position: fixed;
-
-    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
     overflow: hidden;
 }
 
-.center-criarplano {
+.center-criarplan {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     gap: 70px;
     align-items: center;
+    margin:0 0 51px 0;
 
 }
 
-.title-criar{
+.title-create{
 
     margin-top: 20px;
     font-family: 'Poppins';
@@ -40,8 +43,8 @@
     color: #000000;
 }
 
-.nameplano{
-    outline: none;
+.nameplan{
+    outline: white;
     width: 531px;
     border: none;
     background: none;
@@ -50,21 +53,15 @@
     border-bottom: 1px solid black;
 }
 
-#nameplano{
-    outline: none;
+.nameplan:focus{
+    outline: non !important;
 }
 
-.nameplano:focus-visible { outline: none; }
-
-input.nameplano:focus, #nameplano:focus {
-    outline: none !important;
-}
-
-.nameplano::placeholder{
+.nameplan::placeholder{
     text-align: center;
 }
 
-.bottom-criarplano {
+.bottom-criarplan {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -74,7 +71,7 @@ input.nameplano:focus, #nameplano:focus {
 }
 
 
-.btn-criaplano{
+.btn-criaplan{
     width: 177px;
     height: 46px;
     color: #ffffff;
@@ -87,7 +84,7 @@ input.nameplano:focus, #nameplano:focus {
     cursor: pointer;
 }
 
-.btn-cancelaplano{
+.btn-cancelaplan{
     width: 177px;
     height: 46px;
     color: #595959;

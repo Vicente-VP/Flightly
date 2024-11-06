@@ -150,7 +150,7 @@ export default function PopUpAddPlanoViagens(props){
         const id_item = await CriarItem();
         console.log(id_item)
         axios.post(`https://flightlydbapi.onrender.com/add${props.tipo}Plano`,{
-            id_voo: id_item,
+            id_item: id_item,
             id_plano: id_plano
         }).then(response => {
                         console.log(response.data);

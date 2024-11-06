@@ -6,6 +6,7 @@ import CardPlanoViagem from '../../Componentes/Cards/Card_Plano_Viagem/CardPlano
 import Btns_PlanoViagens from '../../Componentes/Btns_PlanoViagens/Btns_PlanoViagens';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import PopUpCriarPlano from '../../Componentes/PopUpCriarPlano/PopUpCriarPlano';
 
 import './PlanosViagem.css';
 
@@ -21,6 +22,13 @@ export default function PlanosViagem() {
                 console.log(error);
             })
     }, []);
+
+    const [clicked, setClicked] = useState(false);
+
+    function handleClick(){
+      setClicked(!clicked);
+      console.log(clicked);
+    }
 
     return (
         <>
@@ -38,7 +46,7 @@ export default function PlanosViagem() {
                 </div>
 
                 <div className="grid-cards-planos-viagem">
-                    <div></div>
+                    {clicked ? <div className="popupadd"><PopUpCriarPlano handleClick={handleClick}/></div> : null}
                     {planos.map((plano) => {
                         return (
                             <Link to={`/PlanoEspecifico?id=${plano[0]}`}>
@@ -53,12 +61,9 @@ export default function PlanosViagem() {
                             </Link>
                         );
                     })}
-                    <div>
-                        <Btns_PlanoViagens/>
+                    <div className='divBtnCriarPlano'>
+                        <Btns_PlanoViagens handleClick={handleClick}/>
                     </div>
-                    <div></div>
-
-                    <div></div>
                 </div>
             </div>
         </>

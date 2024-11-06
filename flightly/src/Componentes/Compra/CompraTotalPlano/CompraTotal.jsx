@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './style_CompraTotal.css';
 
-export default function CompraTotal({ props }) {
+export default function CompraTotal( props ) {
 
     const [priceTot, setPriceTot] = useState();
     const [voos, setVoos] = useState([]);
@@ -39,12 +39,12 @@ return (
         <div className={`Block_Preco ${isSticky ? 'sticky' : 'fixed'}`} id='preco-total'>
             <div className="conteudo_preco">
                 <label className='txt-telaCompra' htmlFor="Total_preco">Subtotal: </label>
-                <span>R$50000</span>
+                <span>{props.preco}</span>
             </div>
 
             <div className="conteudo_preco">
                 <label className='txt-telaCompra' htmlFor="Num_items">Quantidade de Itens : </label>
-                <span>5</span>
+                <span>{props.items}</span>
             </div>
 
             <button onClick={() => window.location.href = "../../../Pages/Compra/Compra.jsx"} className="btn-submit">Comprar</button>

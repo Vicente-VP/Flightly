@@ -174,6 +174,8 @@ export default function PlanoEspecifico() {
             pontosTuristicos: !prevState.pontosTuristicos,
         })); // Alterna a visibilidade de todas as checkboxes ao clicar no botão de editar
     };
+    var total = 0;
+    var items = 0;
 
     return (
         <>
@@ -198,6 +200,8 @@ export default function PlanoEspecifico() {
                             <div className="containerCard-planoEspecifico">
                                 {activeFilters.voos && voos.map((voo, index) => {
                                     console.log("aaa")
+                                    total += voo[5];
+                                    items++;
                                     return (
                                         <div className="cardInterno-planoEspecifico voo">
                                             <input
@@ -230,6 +234,8 @@ export default function PlanoEspecifico() {
 
                             <div className="containerCard-planoEspecifico">
                                 {activeFilters.hospedagens && hospedagens.map((hospedagem, index) => {
+                                    total += hospedagem[3];
+                                    items++;
                                     return (
                                         <div className="cardInterno-planoEspecifico">
                                             <input
@@ -297,7 +303,7 @@ export default function PlanoEspecifico() {
                         </div>
                         {compraTotalVisible && (
                             <div className='container-compraTotal'>
-                                <CompraTotal />
+                                <CompraTotal preco={total} items={items}/>
                             </div>
                         )}
                     </>
