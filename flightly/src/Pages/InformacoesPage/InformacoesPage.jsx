@@ -11,7 +11,7 @@ import PesquisaHospedagem from "../../Componentes/BarraPesquisa/Hospedagem/Barra
 import InfoHosp from "../../Componentes/Card_Informacoes/Hospedagem/Infos_Hosp";
 //import InfoCarros from "../../Componentes/Card_Informacoes/Carros/CardInfoCarros";
 
-import PopUpAddPlano from "../../Componentes/PopUp_Add_PlanoViagens/PopUpAddPlanoViagens";
+import PopUpAddPlano from "../../Componentes/PopUp_Add_PlanoViagens/PopUpAddPlanoVIagens";
 
 import './styleInformacoesPage.css';
 import React from 'react';
