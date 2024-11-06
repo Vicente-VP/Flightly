@@ -37,7 +37,7 @@
     color: #004369;
 }
 
-.promotion > button{
+.btnTogglePromocao {
     border: none;
     border-radius: 10px;
 
@@ -63,8 +63,31 @@
     color: #BFC1C3;
 }
 
-.promotion > button:hover{
+.btnTogglePromocao:hover {
   border: 2px solid #004369;
+  transition: background-color 0.3s ease;
+
+  background-image: url('../../../Images/Filtros/promocaoHover_icon.png');
+  background-size: 20px;
+  background-position-x: 12%;
+  background-color: #B2C9DB;
+  color: #004369;
+}
+
+.btnTogglePromocao.active {
+  border: 2px solid #004369;
+  transition: background-color 0.3s ease;
+
+  background-image: url('../../../Images/Filtros/promocaoHover_icon.png');
+  background-size: 20px;
+  background-position-x: 12%;
+  background-color: #B2C9DB;
+  color: #004369;
+}
+
+#btnToggleFiltro.active{
+  border: 2px solid #004369;
+  transition: background-color 0.3s ease;
 
   background-image: url('../../../Images/Filtros/promocaoHover_icon.png');
   background-size: 20px;
@@ -120,8 +143,16 @@
     align-items: center;
     cursor: pointer;
 }
-
 .primavera:hover{
+  background-size: 18px 21px;
+  background-image: url('../../../Images/Filtros/primaveraHover_icon.png');
+
+  border: 2px solid #004369;
+  background-position-x: 7.5%;
+  background-color: #B2C9DB;
+  color: #004369;
+}
+.primavera.active{
   background-size: 18px 21px;
   background-image: url('../../../Images/Filtros/primaveraHover_icon.png');
 
@@ -168,6 +199,15 @@
   background-color: #B2C9DB;
   color: #004369;
 }
+.set-buttons.verao.active{
+  background-size: 22px 22px;
+  background-image: url('../../../Images/Filtros/veraoHover_icon.png');
+
+  border: 2px solid #004369;
+  background-position-x: 11%;
+  background-color: #B2C9DB;
+  color: #004369;
+}
 
 .set-buttons.inverno{
   background-size: 20px 20px;
@@ -182,12 +222,30 @@
   background-color: #B2C9DB;
   color: #004369;
 }
+.set-buttons.inverno.active{
+  background-size: 20px 20px;
+  background-image: url('../../../Images/Filtros/invernoHover_icon.png');
+
+  border: 2px solid #004369;
+  background-position-x: 11%;
+  background-color: #B2C9DB;
+  color: #004369;
+}
 
 .set-buttons.outono{
   background-size: 16px 20px;
   background-image: url('../../../Images/Filtros/outono_icon.png');
 }
 .set-buttons.outono:hover{
+  background-size: 16px 20px;
+  background-image: url('../../../Images/Filtros/outonoHover_icon.png');
+
+  border: 2px solid #004369;
+  background-position-x: 11%;
+  background-color: #B2C9DB;
+  color: #004369;
+}
+.set-buttons.outono.active{
   background-size: 16px 20px;
   background-image: url('../../../Images/Filtros/outonoHover_icon.png');
 
@@ -420,8 +478,13 @@ input[type=number] {
     width: 80px;
     height: 40px;
 }
-
 .button-companies-gol:hover{
+  border: 2px solid #004369;
+  background-color: #B2C9DB;
+  color: #004369;
+  background-position: 10px center; 
+}
+.button-companies-gol.active{
   border: 2px solid #004369;
   background-color: #B2C9DB;
   color: #004369;
@@ -449,8 +512,13 @@ input[type=number] {
     width: 98px;
     height: 40px;
 }
-
 .button-companies-latam:hover{
+  border: 2px solid #004369;
+  background-color: #B2C9DB;
+  color: #004369;
+  background-position: 10px center; 
+}
+.button-companies-latam.active{
   border: 2px solid #004369;
   background-color: #B2C9DB;
   color: #004369;
@@ -478,8 +546,13 @@ input[type=number] {
     width: 85px;
     height: 40px;
 }
-
 .button-companies-azul:hover{
+  border: 2px solid #004369;
+  background-color: #B2C9DB;
+  color: #004369;
+  background-position: 10px center; 
+}
+.button-companies-azul.active{
   border: 2px solid #004369;
   background-color: #B2C9DB;
   color: #004369;

@@ -89,11 +89,13 @@ export default function Home() {
             <main>
             {/* ------------------ CARD DE PESQUISA  --------------------- */}
 
+
                 <div className="card-voo">
                     <div className="title-voo">
                         <label>Voos</label>
                     </div>
                     <img src={Aviao_Card} alt="Logo" className="voo-imagem" />
+
                     <div className="grid-imagem-voo"></div>
 
                     <div className="form-card-voo" >

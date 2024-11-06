@@ -1,23 +1,26 @@
 import './styleFiltrosPontosTuristico.css';
 import React, { useState } from 'react';
-
 import Acessibilidade from '../../../Images/FiltroPontoTuristico/accessibility.png';
 import Entretenimento from '../../../Images/FiltroPontoTuristico/entretenimento.png';
-import seta from'../../../Images/FiltroCarro/icon-seta.png';
+import seta from '../../../Images/FiltroCarro/icon-seta.png';
 import idade from '../../../Images/FiltroPontoTuristico/idade.png';
 
-
-
-export default function FiltrosPontosTuristicos(){
-
+export default function FiltrosPontosTuristicos() {
     const [price, setPrice] = useState(100);
+    const [activeAmbientes, setActiveAmbientes] = useState([]);
 
-    function handlePriceChange(e){
+    function handlePriceChange(e) {
         const value = e.target.value;
         setPrice(value);
     }
 
-    return(
+    const toggleAmbiente = (ambiente) => {
+        setActiveAmbientes((prev) => 
+            prev.includes(ambiente) ? prev.filter(a => a !== ambiente) : [...prev, ambiente]
+        );
+    };
+
+    return (
         <>
             <div className='container-filtroturistico'>
                 <div className='entretenimento'>
@@ -30,7 +33,7 @@ export default function FiltrosPontosTuristicos(){
                         <option value="trilha">Trilha</option>
                         <option value="museu">Museu</option>
                         <option value="monumentos">Monumentos</option>
-                        <option value="cultaral">Cultural</option>
+                        <option value="cultural">Cultural</option>
                         <option value="bares">Bares</option>
                         <option value="festivais">Festivais</option>
                         <option value="restaurantes">Restaurantes</option>
@@ -46,9 +49,24 @@ export default function FiltrosPontosTuristicos(){
                     <label htmlFor="Ambiente" className='lbl-filtroturistico2'>
                         Ambiente
                     </label><br />
-                    <button className='btn-Ambiente'>Rural</button>
-                    <button className='btn-Ambiente'>Urbano</button>
-                    <button className='btn-Ambiente'>Praia</button>
+                    <button 
+                        className={`btn-Ambiente rural ${activeAmbientes.includes('Rural') ? 'active' : ''}`} 
+                        onClick={() => toggleAmbiente('Rural')}
+                    >
+                        Rural
+                    </button>
+                    <button 
+                        className={`btn-Ambiente urbano ${activeAmbientes.includes('Urbano') ? 'active' : ''}`} 
+                        onClick={() => toggleAmbiente('Urbano')}
+                    >
+                        Urbano
+                    </button>
+                    <button 
+                        className={`btn-Ambiente praia ${activeAmbientes.includes('Praia') ? 'active' : ''}`} 
+                        onClick={() => toggleAmbiente('Praia')}
+                    >
+                        Praia
+                    </button>
                 </div>
                 <div className='faixaetaria'>
                     <label htmlFor="FaixaEtaria" className='lbl-filtroturistico3'>
@@ -72,27 +90,27 @@ export default function FiltrosPontosTuristicos(){
                         <div className="range">
                             <div className="sliderValue">
                                 <span id="span" style={{ left: `${price / 10.6}%` }}>
-                                {price}
+                                    {price}
                                 </span>
                             </div>
                             <div className="field">
-                            <div className="value left">R$0</div>
-                            <input
-                              type="range"
-                              min="0"
-                              max="1000"
-                              value={price}
-                              steps="1"
-                              id="input"
-                              onChange={handlePriceChange}
-                              onBlur={() => {
-                                document.getElementById("span").classList.remove("show");
-                              }}
-                              onInput={() => {
-                                document.getElementById("span").classList.add("show");
-                              }}
-                            />
-                            <div className="value right">R$1000+</div>
+                                <div className="value left">R$0</div>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="1000"
+                                    value={price}
+                                    steps="1"
+                                    id="input"
+                                    onChange={handlePriceChange}
+                                    onBlur={() => {
+                                        document.getElementById("span").classList.remove("show");
+                                    }}
+                                    onInput={() => {
+                                        document.getElementById("span").classList.add("show");
+                                    }}
+                                />
+                                <div className="value right">R$1000+</div>
                             </div>
                         </div>
                     </div>
@@ -106,7 +124,7 @@ export default function FiltrosPontosTuristicos(){
                         <option value="nenhum">Nenhum</option>
                         <option value="rampas">Rampas de Acesso</option>
                         <option value="transporte">Transporte Adaptado</option>
-                        <option value="banheiro"> Banheiros Acessíveis</option>
+                        <option value="banheiro">Banheiros Acessíveis</option>
                         <option value="assento">Assentos Adaptados</option>
                         <option value="estacionamento">Estacionamento Acessível</option>
                         <option value="braille">Guias em Braille</option>
@@ -115,12 +133,10 @@ export default function FiltrosPontosTuristicos(){
                 </div>
                 <div>
                     <button type="submit" className="btn-pesq-filtroturis">
-                    Pesquisar
+                        Pesquisar
                     </button>
                 </div>
             </div>
-
-
         </>
-    )
+    );
 }
