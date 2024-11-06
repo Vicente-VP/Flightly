@@ -6,6 +6,8 @@
   grid-template-columns: auto 50px;
   gap: 20px;
   align-items: center;
+  width: 750px;
+  height: 220px;
 }
 
 .container-Info{

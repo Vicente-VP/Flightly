@@ -1,0 +1,89 @@
+.container-infoPassageiro-compra{
+    display: grid;
+    width: 700px;
+    height: 580px;
+    background: linear-gradient(to left, #C7E2F260, #73838C20);
+    border: solid 1.5px #004369;
+    border-radius: 10px;
+
+    padding: 40px;
+    grid-template-rows: auto auto auto auto auto auto auto;
+}
+
+.titulo-infoPassageiro-compra{
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.titulo-infoPassageiro{
+    font-size: 30px;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.div-input-infoPassageiro{
+    display: grid;
+}
+
+.etiqueta-input-infoPassageiro{
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    align-self: end;
+}
+
+.input-input-infoPassageiro{
+    border: solid 1.5px #A6A6A6;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.container-calendario-input-infoPassageiro{
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendario-input-infoPassageiro{
+    border: solid 1.5px #A6A6A6;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.container-geral-genero-infoPassageiro{
+    display: grid;
+    grid-template-columns: auto auto 30px;
+}
+
+.container-inputs-genero-infoPassageiro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div-radio-genero-infoPassageiro{
+    display: flex;
+    align-content: center;
+}
+
+.genero-radio-infoPassageiro{
+    width: 20px;
+    height: 20px;
+    accent-color: #004369;
+}
+
+.genero-etiqueta-infoPassageiro{
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 12px;
+    align-items: center;
+}
+
+.btnAddPassageiro-infoPassageiro{
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+}

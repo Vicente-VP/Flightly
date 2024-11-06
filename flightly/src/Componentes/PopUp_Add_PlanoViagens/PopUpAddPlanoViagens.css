@@ -1,0 +1,297 @@
+.container-addplano{
+    background: #ffffff;
+    border-radius: 79px;
+
+    border: #000000 1px solid;
+
+    padding: 20px;
+    max-width: 1020px;
+    margin: auto; 
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    z-index: 4;
+
+    position: absolute;
+    justify-content: center;
+    overflow: hidden;
+
+    
+    
+}
+
+.cima-addplano {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+    padding: 0 60px;
+}
+
+.titulo-addplano{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+
+    text-align: center;
+    flex: 1;
+
+    color: #000000;
+}
+
+.x-addplano{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.meio-addplano {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 70px;
+    padding: 0 130px;
+    max-height: 300px; /* Altura máxima da lista de planos */
+    overflow-y: auto;
+}
+
+.meio-addplano::-webkit-scrollbar {
+    width: 12px; 
+}
+  
+.meio-addplano::-webkit-scrollbar-track {
+    background: none;  
+    max-height: 5px;       /* color of the tracking area */
+}
+  
+.meio-addplano::-webkit-scrollbar-thumb {
+    background-color: #004369;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid rgba(255, 166, 0, 0); 
+    height: 5px;   /* creates padding around scroll thumb */
+}
+  
+
+.card-addplano{
+    width: 100%;
+    max-width: 117.99px;
+    height: 100%;
+    max-height: 213px;
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid #ACC6E9;
+    border-radius: 12.42px;
+    box-shadow: 0px 4px 14px rgba(178, 201, 219, 0.15);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s;
+
+}
+
+.card-addplano:hover {
+    background: #C7E2F2;
+    border-width: 0px 0.62px 0.62px 0.62px;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 12.42px 12.42px 9.31px 9.31px;
+}
+
+.img-cardaddplano{
+    width: 100%;
+    height: 180px; 
+    object-fit: cover;
+    border-radius: 12.42px 12.42px 0 0;
+    transition: background 0.3s, border 0.3s;
+}
+
+.card-addplano:hover .img-cardaddplano {
+    background: rgba(0, 0, 0, 0.33);
+    border-width: 0px 0.62px 0.62px 0.62px;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: 12.42px 12.42px 0 0;
+}
+
+.nome-cardaddplano,
+.data-cardaddplano,
+.preco-cardaddplano {
+    padding: 1px;
+    text-align: left;
+    font-size: 8px;
+
+    
+}
+
+
+.nome-cardaddplano{
+    font-weight: 500;
+    padding-left: 10px;
+    padding-top: 8px;
+}
+
+.data-cardaddplano{
+    padding-left: 10px;
+    padding-top: 4px;
+    font-weight: 250;
+}
+
+.preco-cardaddplano{
+    font-weight: 500;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 9px;
+}
+
+.baixo-addplano {
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    padding: 0 100px 20px;
+    gap: 20px;
+}
+
+.btn-addplano{
+    width: 200px;
+    height: 56px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #FF6600;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
+}
+
+.btn-addplano.comprar{
+    background-color: #BFC1C3;
+    cursor: auto;
+}
+
+.styleCriarPlano.active{
+    display: block;
+}
+
+/*----------------POP UP------------------*/
+.container-criarplano{
+    background: #ffffff;
+    border-radius: 35.13px;
+
+
+    
+    height: 170px;
+    width: 450px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+
+
+    position: fixed;
+    
+
+    justify-content: center;
+    margin: auto;
+
+    visibility: hidden;
+}
+
+.container-criarplano.active{
+    z-index: 10;
+    
+    top: 480px;
+    left: 750px;
+    visibility: visible;
+}
+
+.center-criarplano {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: 15px;
+
+}
+
+.top-plano{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+   
+   
+}
+
+.title-criar{
+
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+   
+    
+    text-align: center;
+    flex: 1;
+
+    color: #000000;
+
+    
+}
+
+.close-pop{
+    color: #004369;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.nameplano{
+
+    width: 181px;
+    height: 29px;
+    border-radius: 4.45px;
+    background: none;
+    background-color: #ffffff;
+    font-size: 15px;
+    border: 1px solid #004369;
+}
+
+
+.nameplano::placeholder{
+    text-align: left;
+    color: #595959;
+}
+
+.bottom-criarplano {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 17px 0 70px 0;
+   
+}
+
+
+.btn-criaplano{
+    width: 100px;
+    height: 30px;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 500;
+    background-color: #FF6600;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
+}
+
+.btn-cancelaplano{
+    width: 177px;
+    height: 46px;
+    color: #595959;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #ffffff;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
+}

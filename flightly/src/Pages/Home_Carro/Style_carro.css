@@ -93,13 +93,40 @@
     border-radius: 10px;
     padding-left: 35px;
     font-family: "Poppins", sans-serif;
+    border: none;
+    border-radius: 10px 0 0 10px;
+
+    height: 35px;
+    width: 150px;
+
     background-size: 20px;
     background-position: 10px; 
     background-repeat: no-repeat;
     
 }
 
-.car-input[type=date]:focus, .car-input[type=text]:focus{
+.car-input[type=time]{
+    font-family: "Poppins", sans-serif;
+    border: none;
+    box-shadow: 10px 4px 14px 0 #B2C9DB;
+    border-radius: 0 10px 10px 0;
+
+    height: 35px;
+    width: 120px;
+
+    background-size: 20px;
+    background-position: 10px; 
+    background-repeat: no-repeat;
+    padding-left: 35px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    place-items: left / left;
+    padding-top: 1px;
+
+}
+
+.car-input[type=date]:focus, .car-input[type=text]:focus, .car-input[type=time]:focus{
     outline: none;
 }
 
@@ -122,8 +149,10 @@ input[type=date]::-webkit-datetime-edit {
     grid-row: 2 / 3; 
     display: flex;
     width: 70%;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    align-items: right;
+    justify-content: right;
+    left: -70px;
 }
 
 .car-pesquisar {
@@ -138,6 +167,11 @@ input[type=date]::-webkit-datetime-edit {
     border: none;
     box-shadow: 0px 4px 16px 0px #ffffff25;
     font-family: "Poppins", sans-serif;
+}
+
+.car-input-className>div{
+    display: flex;
+    flex-direction: row;
 }
 
 /*---------------------Locadoras Populares---------------------------------*/
@@ -169,6 +203,8 @@ input[type=date]::-webkit-datetime-edit {
     grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
     justify-content: space-between;
+    grid-row-gap: 40px;
+
 }
 
 
@@ -183,11 +219,13 @@ input[type=date]::-webkit-datetime-edit {
 /*---------------------Recomendação Carro---------------------------------*/
 
 .recomendacao-carro {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
     width: 100%;
+    clear: both;
 }
 
 .title-recomendacao{
@@ -207,6 +245,7 @@ input[type=date]::-webkit-datetime-edit {
 .card-recomendacao-carro{
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;

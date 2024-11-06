@@ -1,0 +1,19 @@
+
+.save_navbar{
+    position:fixed;
+    padding-bottom: 10px;
+}
+
+.ConteudoCompra{
+    display: grid;
+    padding-top: 80px;
+
+    justify-items: center;
+    row-gap: 30px;
+    align-content: top;
+}
+
+.double-item{
+    display: flex;
+    column-gap: 30px;
+}
