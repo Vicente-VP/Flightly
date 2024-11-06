@@ -527,13 +527,13 @@ input[type=number] {
     margin-bottom: 5px;
   }
   
-  .range .sliderValue{
+  .range .sliderVal{
     position: relative;
     width: 100%;
     margin-left: 42px;
   }
   
-  .range .sliderValue span{
+  .range .sliderVal span{
     display: flex;
     justify-content: center;
     position: absolute;
@@ -553,11 +553,11 @@ input[type=number] {
     z-index: 2;
   }
   
-  .range .sliderValue span.show{
+  .range .sliderVal span.show{
     transform: translateX(-50%) scale(1);
   }
   
-  .range .sliderValue span:after{
+  .range .sliderVal span:after{
     display: flex;
     justify-content: center;
     content: "";
@@ -574,17 +574,17 @@ input[type=number] {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
   }
   
-  .range .field .value{
+  .range .field .val{
     position: absolute;
     font-size: 13px;
     font-weight: 500;
     color: #004369;
   }
   
-  .range .field .value.left{
-    left: -87px;
+  .range .field .val.left{
+    left: -35px;
   }
-  .range .field .value.right{
+  .range .field .val.right{
     right: -69px;
   }
   

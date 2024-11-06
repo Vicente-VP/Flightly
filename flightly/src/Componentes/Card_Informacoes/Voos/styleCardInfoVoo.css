@@ -1,16 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 .containerGeral-infoVoo {
   display: flex;
   flex-direction: row;
   gap: 20px;
   align-items: center;
   transform: translateX(45px);
-  width: 915px;
-  height: 220px;
+  width: 1120px;
+  height: 149px;
+  margin-bottom: 20px;
+  margin-left: 0;
+  margin-right: 0%;
 }
 
-.container-Card.selected {
+
+.container-Card-voo.selected {
   border: 2px solid #004369; /* Borda quando selecionado */
 }
 
@@ -18,41 +20,45 @@
   margin-top: 15px;
 }
 
-.container-Card{
+.container-Card-voo{
   margin-top: 10px;
   display: flex;
   flex-direction: row;
   cursor: pointer;
-  width: 815px;
-  height: 220px;
+  width: 1120px;
+  height: 149px;
   border: 1.36px solid rgba(85, 85, 85, 0.29);
   border-radius: 27.17px;
   background-color: #fff;
   z-index: 2;
   transition: 0.3s;
+
+  background-color: white;
 }
 
 /* Aumenta o tamanho e muda a cor quando hover no card ou no botão */
-.container-Card:hover,
-.btnPopup-AddPlano-Compra:hover + .container-Card {
-  width: 835px;
-  height: 250px;
+.container-Card-voo:hover,
+.btnPopup-AddPlano-Compra-VOOS:hover + .container-Card-voo {
+  width: 1120px;
+  height: 149px;
   background-color: #c7e2f225;
   transition: 0.3s;
   position: relative;
 }
 
-.btnPopup-AddPlano-Compra {
+.btnPopup-AddPlano-Compra-VOOS {
   display: flex;
   height: 50px;
   width: 52px;
+  width: 52px;
   align-items: center;
   justify-content: center;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 10px;
   padding: 20px;
   background-color: #004369;
   border-radius: 50%;
   border: none;
+  overflow: hidden;
   overflow: hidden;
   visibility: hidden;
   transition: transform 0.5s ease, visibility 0.5s ease;
@@ -61,18 +67,19 @@
 }
 
 /* Mostra o botão no hover */
-.containerGeral-infoVoo:hover .btnPopup-AddPlano-Compra,
-.btnPopup-AddPlano-Compra:hover {
+.containerGeral-infoVoo:hover .btnPopup-AddPlano-Compra-VOOS,
+.btnPopup-AddPlano-Compra-VOOS:hover {
   visibility: visible;
   transform: translateX(0);
 }
 
 /* Mantém o estado do card mesmo quando o mouse está sobre o botão */
-.container-Card.hover-active {
-  width: 835px;
-  height: 250px;
+.container-Card-voo.hover-active {
+  width: 1120px;
+  height: 149px;
   background-color: #c7e2f225;
   transition: 0.3s;
+  position: relative;
   position: relative;
 }
 
@@ -81,128 +88,414 @@
   height: 30px;
 }
 
-.left {
+.left-voo {
   display: flex;
   align-items: center;
   gap: 62px;
   margin: 0 0 0 50px;
 }
 
-.left > img {
-  width: 90px;
-  height: 144px;
+.img-voo {
+  width: 48px;
+  height: 79px;
 }
 
-.info {
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  align-items: baseline;
-}
-
-.info > label {
-  font-family: "Poppins", sans-serif;
-  font-size: 35.46px;
-  font-weight: 500;
-}
-
-.info > span {
-  font-family: "Poppins", sans-serif;
-  font-size: 20.56px;
-  font-weight: 400;
-  color: #555555;
-}
-
-.ida-Volta {
-  margin-top: 10px;
+.info-voo {
   display: flex;
   flex-direction: row;
+  text-align: center;
+  align-items: center;
+  
+
 }
 
-.ida,
-.volta {
+.HoraLocal-voo, .DuracaoEsc-voo{
   display: flex;
   flex-direction: column;
-  align-items: baseline;
-  width: 150px;
+  text-align: center;
+  align-items: center;
+
+  gap: 10px;
+  width: 250px;
+  height: 100px;
 }
 
-.ida-local > span,
-.volta-local > span {
-  font-family: "Poppins", sans-serif;
-  font-size: 18.15px;
-  font-weight: 500;
-  color: black;
+.CompDest-voo{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  width: 300px;
+  height: 100px;
 }
 
-.ida-local,
-.volta-local {
+
+
+.companhia-voo, .aeroporto-voo{
   font-family: "Poppins", sans-serif;
-  font-size: 16.63px;
+  font-size: 20px;
   font-weight: 300;
   color: #555555;
-}
 
-.ida-date,
-.volta-date {
-  font-family: "Poppins", sans-serif;
-  font-size: 16.63px;
-  font-weight: 300;
-}
-
-.ida-scale,
-.volta-scale {
-  font-family: "Poppins", sans-serif;
-  font-size: 10.94px;
-  font-weight: 300;
-  width: 127px;
-  text-align: center;
-  background-color: rgba(172, 198, 233, 0.54);
-  border-radius: 5.47px;
-}
-
-.right {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.right hr {
-  height: 180px;
-  width: 0.5px;
-  margin: 0 0 0 30px;
-}
-
-.info-preco {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 220px;
-}
-
-.info-preco .preco {
   text-align: left;
 }
 
-.preco {
+.companhia-voo{
+
+  margin-right: 25px;
+}
+
+
+.destino-voo{
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+
+  text-align: left;
+
+  margin-top: -2px;
+  margin-bottom: 15px;
+}
+
+.horario-voo{
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+
+  text-align: left;
+
+  margin-top: 10px;
+
+  
+}
+
+.aeroporto-voo{
+
+  margin-right: 55px;
+}
+
+.duracao-voo{
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+
+  text-align: left;
+
+  margin-top: 10px;
+
+}
+
+
+.escala-voo {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  width: 142px;
+  text-align: center;
+  background-color: rgba(172, 198, 233, 0.54);
+  border-radius: 8.71px;
+  margin-top: 5px;
+}
+
+.right-voo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-items: center;
+}
+
+.right-voo hr {
+  height: 130px;
+  width: 0.3px;
+  margin: 0 0 0 30px;
+}
+
+.info-preco-voo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-right: 25px;
+  width: 220px;
+}
+
+.info-preco-voo .preco-voo {
+  text-align: left;
+}
+
+.preco-voo {
   display: flex;
   flex-direction: column;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
 
-.preco-voo {
+.preco-voo-voo {
   font-size: 41.74px;
   color: black;
+  font-style: normal;
+  font-weight: 350;
 }
 
-.preco label {
+.preco-voo label {
   font-size: 12.88px;
   color: #555555;
 }
 
-.imgs {
+.categoria-voo {
   display: flex;
   gap: 19.91px;
 }
+
+.tipo-voo{
+  font-size: 12.88px;
+  font-weight: 350;
+  text-align: center;
+}
+
+
+/*----------Volta-----------*/
+
+
+
+.CardVolta-Geral{
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  transform: translateX(45px);
+  width: 835px;
+  height: 130px;
+  margin-bottom: 20px;
+}
+
+.container-Info{
+
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  width: 845px;
+  height: 130px;
+  border: 1.36px solid rgba(85, 85, 85, 0.29);
+  border-radius: 27.17px;
+  background-color: #fff;
+  z-index: 2;
+  transition: 0.3s;
+
+}
+
+.container-Info.selected {
+    border: 2px solid #004369;
+}
+
+.custom-radio {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  user-select: none; 
+}
+
+.custom-radio input:checked ~ .checkmark {
+    background-color: #004369; 
+  }
+  .custom-radio input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 26px;
+    width: 26px;
+    background-color: #eee;
+    border-radius: 50%; 
+    border: 6px solid #004369;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .checkmark:after {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #004369; 
+    border: none;
+  }
+
+  .custom-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+
+  .left-volta {
+    display: flex;
+    align-items: center;
+    
+    margin: 0 0 0 50px;
+  }
+  
+  .img-volta {
+    width: 42px;
+    height: 69px;
+    margin-right: -10px;
+  }
+  
+  .info-volta {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    
+  
+  }
+  
+  .CompDest-volta{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    width: 170px;
+    height: 74px;
+  }
+
+  .HoraLocal-volta, .DuracaoEsc-volta{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    width: 170px;
+    height: 60px;
+  }
+  
+  
+  
+  .companhia-volta, .aeroporto-volta{
+    font-family: "Poppins", sans-serif;
+    font-size: 17.53px;
+    font-weight: 300;
+    color: #555555;
+  
+    text-align: left;
+
+  }
+  
+  .companhia-volta{
+  
+    height: auto;
+    margin-right: 40px;
+  }
+  
+  
+  .destino-volta{
+    font-family: "Poppins", sans-serif;
+    font-size: 31px;
+    font-weight: 500;
+  
+    text-align: left;
+
+    
+  }
+  
+  .horario-volta{
+    font-family: "Poppins", sans-serif;
+    font-size: 24.54px;
+    font-weight: 500;
+  
+    text-align: left;
+
+  
+    
+  }
+  
+  .aeroporto-volta{
+  
+    margin-right: 60px;
+  }
+  
+  .duracao-volta{
+    font-family: "Poppins", sans-serif;
+    font-size: 24.54px;
+    font-weight: 500;
+  
+    text-align: left;
+
+  
+  }
+  
+  
+  .escala-volta {
+    font-family: "Poppins", sans-serif;
+    font-size: 15.27px;
+    font-weight: 300;
+    width: 142px;
+    text-align: center;
+    background-color: rgba(172, 198, 233, 0.54);
+    border-radius: 8.71px;
+
+  }
+  
+  .right-volta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .right-volta hr {
+    height: 114px;
+    width: 0.3px;
+    margin: 0 0 0 55px;
+  }
+  
+  .info-preco-volta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-right: 25px;
+    width: 220px;
+  }
+  
+  .info-preco-volta .preco-volta {
+    text-align: left;
+  }
+  
+  .preco-volta {
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+  }
+  
+  .preco-voo-volta {
+    font-size: 36.59px;
+    color: black;
+    font-style: normal;
+    font-weight: 350;
+  }
+  
+  .preco-volta label {
+    font-size: 11.29px;
+    color: #555555;
+  }
+  
+  .categoria-volta {
+    display: flex;
+    gap: 19.91px;
+  }
+  
+  .tipo-volta{
+    font-size: 11.29px;
+    font-weight: 350;
+    text-align: center;
+  }

@@ -2,8 +2,9 @@
     display: flex;
     gap: 20px;
     align-items: center;
-    width: 750px;
+    width: auto;
     height: 220px;
+    margin-bottom: 50px;
 }
 
 .container-Card {
@@ -11,7 +12,7 @@
     display: flex;
     flex-direction: row;
     cursor: pointer;
-    width: 750px;
+    width: 837px;
     height: 220px;
     justify-content: space-between;
     border: 1.35864px solid rgba(85, 85, 85, 0.29);
@@ -25,15 +26,15 @@
 
 /* Aumenta o tamanho e muda a cor quando hover no card ou no botão */
 .container-Card:hover,
-.btnPopup-AddPlano-Compra:hover+.container-Card {
-    width: 780px;
+.btnPopup-AddPlano-Compra-HOSP:hover+.container-Card {
+    width: 837.52px;
     height: 250px;
     background-color: #c7e2f225;
     transition: 0.3s;
     position: relative;
 }
 
-.btnPopup-AddPlano-Compra {
+.btnPopup-AddPlano-Compra-HOSP {
     display: flex;
     height: 50px;
     width: 52px;
@@ -52,28 +53,31 @@
 }
 
 /* Mostra o botão no hover */
-.containerGeral-Hosp:hover .btnPopup-AddPlano-Compra,
-.btnPopup-AddPlano-Compra:hover {
+.containerGeral-Hosp:hover .btnPopup-AddPlano-Compra-HOSP,
+.btnPopup-AddPlano-Compra-HOSP:hover {
     visibility: visible;
     transform: translateX(0);
 }
 
 /* Mantém o estado do card mesmo quando o mouse está sobre o botão */
 .container-Card.hover-active {
-    width: 780px;
+    width: 837.52px;
     height: 250px;
     background-color: #c7e2f225;
     transition: 0.3s;
     position: relative;
 }
 
-.btnPopup-AddPlano-Compra>img {
+
+
+.btnPopup-AddPlano-Compra-HOSP>img {
     width: 30px;
     height: 30px;
 }
 
 .left {
     display: flex;
+    width: 600px;
     width: 600px;
 }
 
@@ -82,23 +86,26 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 10px;
+    justify-content: space-around;
+    padding: 10px;
 }
 
 .right {
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 
 .imghosp {
     width: 212px;
-    height: 220px;
+    height: auto;
 
+    border-radius: 21px 0px 0px 21px;
     border-radius: 21px 0px 0px 21px;
 }
 
 .info .services {
     display: flex;
+    gap: 10px;
     gap: 10px;
 }
 
@@ -107,15 +114,21 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-
+    padding-right: 25px;
     width: 220px;
+}
+
+.preco{
+    padding-left: 90px;
 }
 
 .hr {
     width: 80%;
+    width: 80%;
     box-shadow: none;
     height: 180px;
     width: 0.5px;
+
 
     margin: 0 0 0 30px
 }
@@ -123,7 +136,8 @@
 .preco {
     display: flex;
     flex-direction: column;
-    align-items: left;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
 }
 
 .titleinfohosp {
@@ -144,6 +158,10 @@
 
 .star-rating {
     display: flex;
+    align-items: center;
+    /* Para alinhar verticalmente o conteúdo */
+    gap: 5px;
+    /* Espaço entre a estrela, a avaliação e o número de votos */
     align-items: center;
     /* Para alinhar verticalmente o conteúdo */
     gap: 5px;
@@ -169,12 +187,19 @@
 
     background: url('../../../Images/Infos_Hosp/Star_Info_Hosp.png');
     background-repeat: no-repeat;
+    background: url('../../../Images/Infos_Hosp/Star_Info_Hosp.png');
+    background-repeat: no-repeat;
 }
 
 .descinfohosp {
     width: 361px;
     height: 56px;
 
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 275;
+    font-size: 10px;
+    line-height: 15px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 275;
@@ -188,7 +213,6 @@
     font-weight: 400;
     font-size: 10.9391px;
     line-height: 16px;
-
     color: #555555;
 }
 
@@ -198,6 +222,29 @@
     font-weight: 400;
     font-size: 35.4608px;
     line-height: 53px;
+}
+
+.services{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.card{
+    background: rgba(172, 198, 233, 0.54);
+    border-radius: 3.51333px;
+    background-repeat: no-repeat;
+    background-position: 4px center;
+    background-size: 13px 10px;
+    width: auto;
+    text-wrap: nowrap;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8.02667px;
+    line-height: 11px;
+    text-align: center;
+    padding: 4px;
 }
 
 .cardwifiinfohosp,
@@ -212,6 +259,11 @@
     background-repeat: no-repeat;
     background-position: 4px center;
     background-size: 13px 10px;
+    background: rgba(172, 198, 233, 0.54);
+    border-radius: 3.51333px;
+    background-repeat: no-repeat;
+    background-position: 4px center;
+    background-size: 13px 10px;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -219,7 +271,17 @@
     font-size: 7.02667px;
     line-height: 11px;
     text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 7.02667px;
+    line-height: 11px;
+    text-align: center;
 
+    display: flex;
+    align-items: center;
+    padding-right: 4px;
+    padding-left: 20px;
     display: flex;
     align-items: center;
     padding-right: 4px;

@@ -1,14 +1,36 @@
 import React, { useState } from 'react';
-import sinalMais from '../../../Images/sinalMais.png';
 import './styleCardInfoVoo.css';
-import InfoVooVolta from './Volta/CardInfoVooVolta';
-import companhia from "../../../Images/Card_Informacoes_Voo/Imagem_Companhia.png";
 
-export default function InfoVoo(props) {
+import sinalMais from "../../../Images/sinalMais.png";
+import InfoVooVolta from './Volta/CardInfoVooVolta';
+import Gol from "../../../Images/Card_Informacoes_Voo/Gol.png";
+import Azul from "../../../Images/Card_Informacoes_Voo/AZUL.png";
+import LATAM from "../../../Images/Card_Informacoes_Voo/LATAM.png";
+import Avianca from "../../../Images/Card_Informacoes_Voo/Avianca.png";
+import Voepass from "../../../Images/Card_Informacoes_Voo/VOEPASS.png";
+import SkyAirline from "../../../Images/Card_Informacoes_Voo/Sky_Airline.png";
+
+
+import PopUpAddPlano from "../../../Componentes/PopUp_Add_PlanoViagens/PopUpAddPlanoVIagens";
+
+
+
+export default function CardInfoVoo(props) {
     const [hover, setHover] = useState(false);
 
     const [isClicked, setIsClicked] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
+
+    const [IsPlano, setIsPlano] = useState(false);
+
+    const companyImage = {
+        Gol: Gol,
+        Azul: Azul,
+        LATAM: LATAM,
+        Avianca: Avianca,
+        VOEPASS: Voepass,
+        SkyAirline: SkyAirline
+    }
 
     const toggleInfo = () => {
         setIsClicked(prev => !prev);
@@ -18,65 +40,66 @@ export default function InfoVoo(props) {
         setSelectedOption(option);
     };
 
-    // Alterar para mostrar conforme o BD
-    const vooData = [
-        { id: 'option1', idalocal: "CGH - SDU", dataida: "21/06/24", horarioida: "08:00", escalaida: "Direto", voltalocal: "SDU - CGH", datavolta: "30/06/24", horariovolta: "18:30", escalavolta: "1 Escala", Preco: "1.655" },
-        { id: 'option2', idalocal: "CGH - GIG", dataida: "22/06/24", horarioida: "09:00", escalaida: "Direto", voltalocal: "GIG - CGH", datavolta: "29/06/24", horariovolta: "17:00", escalavolta: "Direto", Preco: "1.700" },
-        { id: 'option3', idalocal: "CGH - BSB", dataida: "23/06/24", horarioida: "10:00", escalaida: "1 Escala", voltalocal: "BSB - CGH", datavolta: "28/06/24", horariovolta: "16:30", escalavolta: "Direto", Preco: "1.800" },
-        { id: 'option4', idalocal: "CGH - POA", dataida: "24/06/24", horarioida: "11:00", escalaida: "Direto", voltalocal: "POA - CGH", datavolta: "27/06/24", horariovolta: "15:00", escalavolta: "1 Escala", Preco: "1.750" },
-        { id: 'option5', idalocal: "CGH - MAO", dataida: "25/06/24", horarioida: "12:00", escalaida: "Direto", voltalocal: "MAO - CGH", datavolta: "26/06/24", horariovolta: "14:00", escalavolta: "Direto", Preco: "1.600" }
-    ];
-  
+    const ShowPlano = () =>{
+
+        if(localStorage.getItem('userid')){
+            setIsPlano(true);
+        }
+             
+    };
+
+    // Construct the company image path
+
+
     return (
         <>
+
+            {IsPlano && <PopUpAddPlano tipo={'Voo'} item={props} setIsPlano={setIsPlano}/>}
             <div className="containerGeral-infoVoo">
-                <div className={`container-Card ${hover ? 'hover-active' : ''} ${isClicked ? 'selected' : ''}`}
+                <div className={`container-Card-voo ${hover ? 'hover-active' : ''} ${isClicked ? 'selected' : ''}`}
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
                     onClick={toggleInfo}
                     >
-                    <div className="left">
-                        <img src={props.Imagem_Companhia} alt="Logo Companhia" />
-                        <div className="info">
-                            <label>{props.cidadeDestino}</label>
-                            <span>Saindo de {props.cidadeOrigem}</span>
-                            <div className="ida-Volta">
-                                <div className="ida">
-                                    <span className="ida-local">
-                                        <span>Ida:</span> {props.idaLocal}
-                                    </span>
-                                    <span className="ida-date">{props.idaData}</span>
-                                    <span className="ida-scale">{props.idaEscala}</span>
-                                </div>
-                                <div className="volta">
-                                    <span className="volta-local">
-                                        <span>Volta:</span> {props.voltaLocal}
-                                    </span>
-                                    <span className="volta-date">{props.voltaData}</span>
-                                    <span className="volta-scale">{props.voltaEscala}</span>
-                                </div>
+                    <div className="left-voo">
+                        <div className="info-voo">
+                            <img src={companyImage[props.company]} alt="Logo Companhia" className='img-voo'/>
+                            <div className='CompDest-voo'>
+                                <label className='destino-voo'>{props.destino}</label>
+                                <label className='companhia-voo'>{props.company}</label>
                             </div>
+
+                            <div className='HoraLocal-voo'>
+                                <label className='horario-voo'>{props.take_off} - {props.arrival}</label>
+                                <label className='aeroporto-voo'>{props.airport_from} - {props.airport_to}</label>
+                            </div>
+
+                            <div className='DuracaoEsc-voo'>
+                                <label className='duracao-voo'>{props.duration}</label>
+                                <label className='escala-voo'>{props.stops}</label>
+                            </div>
+
+                          
                         </div>
                     </div>
-                    <div className="right">
+                    <div className="right-voo">
                         <hr color="#D4D4D4" />
-                        <div className="info-preco">
-                            <div className="preco">
+                        <div className="info-preco-voo">
+                            <div className="preco-voo">
                                 <label>A partir de:</label>
-                                <span className="preco-voo">{props.precoVoo}</span>
+                                <span className="preco-voo-voo">R$ {props.price}</span>
                             </div>
-                            <div className="imgs">
-                                <img src={props.MalaCor} alt="Mala" />
-                                <img src={props.MalaCor} alt="Mala" />
-                                <img src={props.Mala} alt="Mala" />
+                            <div className="categoria-voo">
+                                <label className='tipo-voo'></label>
                             </div>
                         </div>
                     </div>
                 </div>
                 <button
-                    className="btnPopup-AddPlano-Compra"
+                    className="btnPopup-AddPlano-Compra-VOOS"
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
+                    onClick={ShowPlano}
                 >
                     <img src={sinalMais} alt="Botão de abrir Pop-up de Add Plano Viagem ou Compra" />
                 </button>
@@ -86,26 +109,23 @@ export default function InfoVoo(props) {
 
             {isClicked && (
                 <div className="info-voo-volta">
-                    {vooData.map((voo) => (
-                        <InfoVooVolta
-                            key={voo.id}
-                            Imagem_Companhia={companhia}
-                            Saída="São Paulo"
-                            Chegada="Rio de Janeiro"
-                            idalocal={voo.idalocal}
-                            dataida={voo.dataida}
-                            horarioida={voo.horarioida}
-                            escalaida={voo.escalaida}
-                            voltalocal={voo.voltalocal}
-                            datavolta={voo.datavolta}
-                            horariovolta={voo.horariovolta}
-                            escalavolta={voo.escalavolta}
-                            Preco={voo.Preco}
-                            selectedOption={selectedOption}
-                            onRadioChange={handleRadioChange}
-                            id={voo.id} 
-                        />
-                    ))}
+                    <InfoVooVolta
+                        key={props.id}
+                        Imagem_Companhia={companyImage}
+                        Saída={props.airport_from}
+                        Chegada={props.airport_to}
+                        idalocal={`${props.airport_from} - ${props.airport_to}`} // Using the data structure
+                        dataida={props.take_offDate} // Assuming dataida refers to the departure time
+                        horarioida={props.take_off}
+                        escalaida={props.stops}
+                        voltalocal={`${props.airport_to} - ${props.airport_from}`} // Use appropriate values for return trip
+                        datavolta={props.arrivalDate} // Use appropriate value for return date
+                        horariovolta={props.arrival}
+                        escalavolta={props.stops}
+                        Preco={props.price}
+                        selectedOption={selectedOption}
+                        onRadioChange={handleRadioChange}
+                    />
                 </div>
             )}
 

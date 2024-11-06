@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
 import sinalMais from '../../../Images/sinalMais.png';
+import PopUpAddPlano from '../../PopUp_Add_PlanoViagens/PopUpAddPlanoVIagens';
 import './Infos_Hosp.css';
 
 export default function InfoHosp(props) {
     const [hover, setHover] = useState(false);
+    const [IsPlano, setIsPlano] = useState(false);
+
+    const ShowPlano = () => {
+        if (localStorage.getItem('userid')) {
+            setIsPlano(true);
+        }
+    }
 
     return (
         <>
             <div className="containerGeral-Hosp">
+                {IsPlano && <PopUpAddPlano tipo={'Hospedagem'} item={props} setIsPlano={setIsPlano} />}
                 <div className={`container-Card ${hover ? 'hover-active' : ''}`}
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}>
@@ -20,7 +29,7 @@ export default function InfoHosp(props) {
                             <div className='star-rating'>
                                 <div className='starinfohosp' />
                                 <span className='numstarinfohosp'>{props.rating}</span>
-                                <span className='numvotinfohosp'>({props.votes})</span>
+                                <span className='numvotinfohosp'>{props.votes}</span>
                             </div>
                             <div>
                                 <span className='descinfohosp'>{props.description}</span>
@@ -31,8 +40,8 @@ export default function InfoHosp(props) {
                             <div className='services'>
                                 {props.services && props.services.length > 0 ? (
                                     props.services.map((service, index) => (
-                                        <div key={index} className={`card${service.className}`}>
-                                            {service.name}
+                                        <div key={index} className={`card`}>
+                                            {service}
                                         </div>
                                     ))
                                 ) : (
@@ -47,16 +56,20 @@ export default function InfoHosp(props) {
                         <div className="info-preco">
                             <div className="preco">
                                 <label className='titleprecoinfohosp'>A partir de:</label>
-                                <span className="precoinfohosp">{props.price}</span>
+                                <span className="precoinfohosp">
+                                    R$ {(props.price ? props.price.toString().match(/\b\d+\b/)[0] : '0')}
+                                </span>
+
                             </div>
                         </div>
                     </div>
 
                 </div>
                 <button
-                    className="btnPopup-AddPlano-Compra"
+                    className="btnPopup-AddPlano-Compra-HOSP"
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
+                    onClick={ShowPlano}
                 >
                     <img src={sinalMais} alt="Botão de abrir Pop-up de Add Plano Viagem ou Compra" />
                 </button>
@@ -64,3 +77,4 @@ export default function InfoHosp(props) {
         </>
     );
 }
+
