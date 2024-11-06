@@ -96,7 +96,7 @@
 
 .btn-pesquisar-hospedagem {
     display: flex;
-    align-self: top;
+    align-self: center;
     justify-content: center;
     padding-top: 22px;
 }

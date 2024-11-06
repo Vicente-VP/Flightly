@@ -1,57 +1,89 @@
 import { useState, useEffect, useRef } from 'react';
-
 import menos from '../../Images/sinalMenos.png';
 import mais from '../../Images/sinalMais.png';
 import './styleDrop.css';
 
-export default function Drop({imagem, widthDrop, topContent, titles, subTitles}){
+export default function Drop({ imagem, widthDrop, topContent, titles, subTitles, onPassengerChange, nAdult: initialNAdult, criancaIdade: initialCriancaIdade, criancaAssento: initialCriancaAssento, criancaColo: initialCriancaColo }) {
+    
     const [isActive, setIsActive] = useState(false);
-
-    const [nAdult, setNAdult] = useState(1);
-    const [criancaIdade, setCriancaIdade] = useState(0);
-    const [criancaAssento, setCriancaAssento] = useState(0);
-    const [criancaColo, setCriancaColo] = useState(0);
-    const [totalPas, setTotalPas] = useState(1);
+    
+    const [nAdult, setNAdult] = useState(parseInt(initialNAdult) || 1);
+    const [criancaIdade, setCriancaIdade] = useState(parseInt(initialCriancaIdade) || 0);
+    const [criancaAssento, setCriancaAssento] = useState(parseInt(initialCriancaAssento) || 0);
+    const [criancaColo, setCriancaColo] = useState(parseInt(initialCriancaColo) || 0);
+    const [totalPas, setTotalPas] = useState(nAdult + criancaIdade + criancaAssento + criancaColo);
 
     const dropdownRef = useRef(null);
 
-    const calcTotal = () =>{
+    // Update total passengers count
+    const calcTotal = () => {
         const total = nAdult + criancaAssento + criancaColo + criancaIdade;
-        setTotalPas(total)
-    }
+        setTotalPas(total);
+    };
 
+    // Update passenger data and calculate total when any state changes
+    const updatePassengerData = () => {
+        if (onPassengerChange) { // Check if onPassengerChange is defined
+            onPassengerChange({
+                nAdult,
+                criancaIdade,
+                criancaAssento,
+                criancaColo
+            });
+            calcTotal()
+        }
+    };
+
+    useEffect(() => {
+        updatePassengerData();
+
+        return () => {
+            // Cleanup function to avoid calling onPassengerChange after unmount
+            onPassengerChange = () => {};
+        };
+    }, [nAdult, criancaIdade, criancaAssento, criancaColo]);
+
+    // Handle dropdown click to toggle active state
     const handleClickInside = (event) => {
         event.stopPropagation();
-      };
-
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsActive(false);
-        calcTotal();
-      }
     };
-    
+
+    // Close dropdown if clicked outside
+    const handleClickOutside = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setIsActive(false);
+        }
+    };
+
     useEffect(() => {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }, [nAdult, criancaAssento, criancaColo, criancaIdade]);
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
 
-    const increment = (value, setter) =>{
-        if ( value < 9) setter(value + 1);
-    }
+    // Increment function for passenger counts
+    const increment = (value, setter) => {
+        if (value < 9) {
+            setter(value + 1);
+        }
+    };
 
-    const decrement = (value, setter, min=0) =>{
-        if ( value > min) setter(value - 1);
-    }
+    // Decrement function for passenger counts
+    const decrement = (value, setter, min = 0) => {
+        if (value > min) {
+            setter(value - 1);
+        }
+    };
 
-    return(
+    return (
         <>
-            <div className="dropdown" style={{width: widthDrop}}>
-                <div className="dropdown-btn" style={{width: widthDrop}} onClick={e=>setIsActive(!isActive)} ref={dropdownRef}><img src={imagem} alt="Passageiros"/>{totalPas}</div>
-                {isActive &&(
-                    <div className="dropdown-content" style={{top: topContent}} onMouseDown={handleClickInside}>
+            <div className="dropdown" style={{ width: widthDrop }}>
+                <div className="dropdown-btn" style={{ width: widthDrop }} onClick={e => setIsActive(!isActive)} ref={dropdownRef}>
+                    <img src={imagem} alt="Passageiros" />{totalPas}
+                </div>
+                {isActive && (
+                    <div className="dropdown-content" style={{ top: topContent }} onMouseDown={handleClickInside}>
                         {titles.map((option, index) => (
                             <div className="dropdown-item" key={index}>
                                 <div>
@@ -63,12 +95,12 @@ export default function Drop({imagem, widthDrop, topContent, titles, subTitles})
                                         index === 0 ? nAdult : index === 1 ? criancaIdade : index === 2 ? criancaAssento : criancaColo,
                                         index === 0 ? setNAdult : index === 1 ? setCriancaIdade : index === 2 ? setCriancaAssento : setCriancaColo,
                                         index === 0 ? 1 : 0
-                                    )}><img src={menos} alt="Remover"/></div>
+                                    )}><img src={menos} alt="Remover" /></div>
                                     <span>{index === 0 ? nAdult : index === 1 ? criancaIdade : index === 2 ? criancaAssento : criancaColo}</span>
                                     <div className='btn-add' onClick={() => increment(
                                         index === 0 ? nAdult : index === 1 ? criancaIdade : index === 2 ? criancaAssento : criancaColo,
                                         index === 0 ? setNAdult : index === 1 ? setCriancaIdade : index === 2 ? setCriancaAssento : setCriancaColo
-                                    )}><img src={mais} alt="Adicionar"/></div>
+                                    )}><img src={mais} alt="Adicionar" /></div>
                                 </div>
                             </div>
                         ))}

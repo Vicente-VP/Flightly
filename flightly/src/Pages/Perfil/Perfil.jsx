@@ -322,10 +322,6 @@ export default function Perfil() {
                                     <label className="nomeViagem-reservado-perfil">Viagem do Balacubaco</label>
                                     <label className="precoViagem-reservado-perfil">R$ 3500,00</label>
                                     <label className="localizacaoViagem-reservado-perfil">Cancun, Londres, Havaí</label>
-                                    <div className="botoes-reservado-perfil">
-                                        <button className="btnEditar-reservado-perfil"></button>
-                                        <button className="btnExcluir-reservado-perfil"></button>
-                                    </div>
                                 </div>
                                 <div className="planoEspecifico-reservados-perfil">
                                     <img src={planoReservado} className="imagemViagem-reservado-perfil"
@@ -333,10 +329,6 @@ export default function Perfil() {
                                     <label className="nomeViagem-reservado-perfil">Viagem do Balacubaco</label>
                                     <label className="precoViagem-reservado-perfil">R$ 3500,00</label>
                                     <label className="localizacaoViagem-reservado-perfil">Cancun, Londres, Havaí</label>
-                                    <div className="botoes-reservado-perfil">
-                                        <button className="btnEditar-reservado-perfil"></button>
-                                        <button className="btnExcluir-reservado-perfil"></button>
-                                    </div>
                                 </div>
                             </div>
                             <div className="slide-plano-reservado-perfil">
@@ -346,10 +338,6 @@ export default function Perfil() {
                                     <label className="nomeViagem-reservado-perfil">Enzo</label>
                                     <label className="precoViagem-reservado-perfil">R$ 3500,00</label>
                                     <label className="localizacaoViagem-reservado-perfil">Cancun, Londres, Havaí</label>
-                                    <div className="botoes-reservado-perfil">
-                                        <button className="btnEditar-reservado-perfil"></button>
-                                        <button className="btnExcluir-reservado-perfil"></button>
-                                    </div>
                                 </div>
                                 <div className="planoEspecifico-reservados-perfil">
                                     <img src={planoReservado} className="imagemViagem-reservado-perfil"
@@ -357,10 +345,6 @@ export default function Perfil() {
                                     <label className="nomeViagem-reservado-perfil">Viagem do Balacubaco</label>
                                     <label className="precoViagem-reservado-perfil">R$ 3500,00</label>
                                     <label className="localizacaoViagem-reservado-perfil">Cancun, Londres, Havaí</label>
-                                    <div className="botoes-reservado-perfil">
-                                        <button className="btnEditar-reservado-perfil"></button>
-                                        <button className="btnExcluir-reservado-perfil"></button>
-                                    </div>
                                 </div>
                             </div>
                             <div className="slide-plano-reservado-perfil">
@@ -370,10 +354,6 @@ export default function Perfil() {
                                     <label className="nomeViagem-reservado-perfil">Vinicius</label>
                                     <label className="precoViagem-reservado-perfil">R$ 3500,00</label>
                                     <label className="localizacaoViagem-reservado-perfil">Cancun, Londres, Havaí</label>
-                                    <div className="botoes-reservado-perfil">
-                                        <button className="btnEditar-reservado-perfil"></button>
-                                        <button className="btnExcluir-reservado-perfil"></button>
-                                    </div>
                                 </div>
                                 <div className="planoEspecifico-reservados-perfil">
                                     <img src={planoReservado} className="imagemViagem-reservado-perfil"
@@ -381,10 +361,6 @@ export default function Perfil() {
                                     <label className="nomeViagem-reservado-perfil">Viagem do Balacubaco</label>
                                     <label className="precoViagem-reservado-perfil">R$ 3500,00</label>
                                     <label className="localizacaoViagem-reservado-perfil">Cancun, Londres, Havaí</label>
-                                    <div className="botoes-reservado-perfil">
-                                        <button className="btnEditar-reservado-perfil"></button>
-                                        <button className="btnExcluir-reservado-perfil"></button>
-                                    </div>
                                 </div>
                             </div>
                             <div className="paginas-plano-reservado-perfil">

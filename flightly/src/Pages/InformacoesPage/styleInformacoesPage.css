@@ -1,0 +1,32 @@
+.container-cards-infoPage{
+
+    margin-left: 0%;
+}
+.container-informacoes{
+    display: flex;
+    flex-direction: column;
+}
+
+.barra-pesquisa-infoPage{
+    text-align: center;
+    margin: 0 0 46px 0;
+}
+
+.barra-pesquisa-infoPage>div{
+    text-align: start;
+}
+
+.filtro-infoPage{
+    position: sticky;
+    top: 110px;
+    height: auto;
+    align-self: start;
+    margin: 20px 0 0 50px;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+    margin: 0 0 10px 0;
+}

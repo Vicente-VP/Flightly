@@ -5,6 +5,7 @@
     width: 190px;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 
     border-left: 1px solid #ACC6E9;
     border-right: 1px solid #ACC6E9;
