@@ -11,7 +11,7 @@ import Voepass from "../../../Images/Card_Informacoes_Voo/VOEPASS.png";
 import SkyAirline from "../../../Images/Card_Informacoes_Voo/Sky_Airline.png";
 
 
-import PopUpAddPlano from "../../../Componentes/PopUp_Add_PlanoViagens/PopUpAddPlanoVIagens";
+import PopUpAddPlano from "../../../Componentes/PopUp_Add_PlanoViagens/PopUpAddPlanoViagens";
 
 
 
