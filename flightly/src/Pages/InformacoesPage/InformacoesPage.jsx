@@ -2,10 +2,10 @@ import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 
 import BarraPesquisaInfoVoo from "../../Componentes/BarraPesquisa/Voo/BarraPesquisaVoo";
-import FiltroInfoVoo from "../../Componentes/Filtros/FIltroVoo/FiltroVoo";
-import FiltroHosp from "../../Componentes/Filtros/Filtros_Hospedagem/FiltrosHospedagem";
-import FiltroCarro from "../../Componentes/Filtros/Filtro_Carro/FiltrosCarro";
-import FiltroPt from "../../Componentes/Filtros/Filtro_PontoTuristico/FiltrosPontosTuristico";
+import FiltroInfoVoo from "../../Componentes/FIltros/FiltroVoo/FiltroVoo";
+import FiltroHosp from "../../Componentes/FIltros/Filtros_Hospedagem/FiltrosHospedagem";
+import FiltroCarro from "../../Componentes/FIltros/Filtro_Carro/FiltrosCarro";
+import FiltroPt from "../../Componentes/FIltros/Filtro_PontoTuristico/FiltrosPontosTuristico";
 import CardInfoVoo from "../../Componentes/Card_Informacoes/Voos/CardInfoVoo";
 import PesquisaHospedagem from "../../Componentes/BarraPesquisa/Hospedagem/BarraPesquisaHospedagem";
 import InfoHosp from "../../Componentes/Card_Informacoes/Hospedagem/Infos_Hosp";

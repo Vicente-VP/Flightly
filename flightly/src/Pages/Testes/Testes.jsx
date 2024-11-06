@@ -2,7 +2,7 @@
 
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
-import Filtro from "../../Componentes/Filtros/Filtro_PontoTuristico/FiltrosPontosTuristico";
+
 
 
 import './style_Testes.css';
@@ -14,7 +14,7 @@ export default function Testes() {
             <div className="navbar-testes"><NavBar/></div>
 
                 <div className="conteudo-testes">               
-                   <Filtro/>
+                 
                 </div>
 
 
