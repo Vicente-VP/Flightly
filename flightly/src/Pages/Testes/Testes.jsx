@@ -7,7 +7,7 @@ import Footer from "../../Componentes/Footer/Footer";
 import './style_Testes.css';
 import React from 'react';
 
-import CompraDetalhes from "../../Componentes/FIltros/Filtro_Planos/FiltroPlano";
+import Filtro from "../../Componentes/Filtros/Filtros_Hospedagem/FiltrosHospedagem";
 
 export default function Testes() {
     const itensCompra = [
@@ -18,14 +18,11 @@ export default function Testes() {
     return (
         <>
             <div className="navbar-testes"><NavBar/></div>
-            
-
-            <div className="navbar-testes"><NavBar/></div>
+        
 
             <div className="conteudo-testes">
 
-                <CompraDetalhes />
-      
+                <Filtro/>
             </div>
 
             <div className="footer-testes"><Footer/></div>

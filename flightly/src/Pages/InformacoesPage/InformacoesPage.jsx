@@ -2,7 +2,7 @@ import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 
 import BarraPesquisaInfoVoo from "../../Componentes/BarraPesquisa/Voo/BarraPesquisaVoo";
-import FiltroInfoVoo from "../../Componentes/FIltros/FIltroVoo/FiltroVoo";
+import FiltroInfoVoo from "../../Componentes/Filtros/Filtros_Hospedagem/FiltrosHospedagem";
 import CardInfoVoo from "../../Componentes/Card_Informacoes/Voos/CardInfoVoo";
 
 import './styleInformacoesPage.css';
