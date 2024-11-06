@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 import Filtro from "../../Componentes/Filtros/Filtro_Planos/FiltroPlano";
+
 import CardVoo from "../../Componentes/Card_Informacoes/Voos/CardInfoVoo";
 import CardHospedagem from "../../Componentes/Card_Informacoes/Hospedagem/Infos_Hosp";
 import CardPTuristico from "../../Componentes/Card_Informacoes/PontosTuristicos/CardInfoPTuristicos";
