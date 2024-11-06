@@ -60,7 +60,7 @@ export default function PopUpAddPlanoViagens(){
                             />
                         ))
                     ) : (
-                        <p>Você ainda não fez um plano de viagem :(</p>
+                        <p>Você ainda não fez um plano de viagem :( </p>
                     )}
                 </div>
                 <div className='baixo-addplano'>
