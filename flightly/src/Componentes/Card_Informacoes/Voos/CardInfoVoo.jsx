@@ -1,8 +1,8 @@
+import React, { useState } from 'react';
 import './styleCardInfoVoo.css';
 
 import sinalMais from "../../../Images/sinalMais.png";
 import InfoVooVolta from './Volta/CardInfoVooVolta';
-import React, { useState } from 'react';
 import Gol from "../../../Images/Card_Informacoes_Voo/Gol.png";
 import Azul from "../../../Images/Card_Informacoes_Voo/AZUL.png";
 import LATAM from "../../../Images/Card_Informacoes_Voo/LATAM.png";
@@ -11,7 +11,7 @@ import Voepass from "../../../Images/Card_Informacoes_Voo/VOEPASS.png";
 import SkyAirline from "../../../Images/Card_Informacoes_Voo/Sky_Airline.png";
 
 
-import PopUpAddPlano from "../../../Componentes/PopUp_Add_PlanoViagens/PopUpAddPlanoViagens";
+import PopUpAddPlano from "../../../Componentes/PopUp_Add_PlanoViagens/PopUpAddPlanoVIagens";
 
 
 
@@ -106,6 +106,7 @@ export default function CardInfoVoo(props) {
 
                 
             </div>
+
             {isClicked && (
                 <div className="info-voo-volta">
                     <InfoVooVolta
@@ -127,6 +128,7 @@ export default function CardInfoVoo(props) {
                     />
                 </div>
             )}
+
         </>
     );
 }

@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 .containerGeral-infoCarro {
     display: flex;
-    grid-template-columns: auto 50px;
     gap: 20px;
     align-items: center;
+    width: 750px;
+    height: 220px;
 }
 
+/* Estilos do card horizontal */
 .card-horizontal {
     display: flex;
     background-color: #fff;
@@ -74,25 +76,29 @@
     height: 50px;
     align-items: center;
     justify-content: center;
-
     background-color: #004369;
     border-radius: 50%;
     border: none;
     visibility: hidden;
+    transform: translateX(-100px); /* Botão começa fora da tela */
+    transition: transform 0.5s ease, visibility 0.5s ease;
+    z-index: 1;
 }
 
-.card-horizontal:hover {
-    width: 780px;
-    height: 250px;
-    background-color: #C7E2F225;
-
-    transition: 0.3s;
-}
-
-.card-horizontal:hover+.btnPopup-AddPlano-Compra {
+/* Mostra e anima o botão quando o card está em hover */
+.card-horizontal:hover + .btnPopup-AddPlano-Compra,
+.btnPopup-AddPlano-Compra:hover {
     visibility: visible;
+    transform: translateX(0); /* Anima para o estado visível */
 }
 
+/* Mantém o estado do card mesmo quando o mouse está sobre o botão */
+.card-horizontal:hover + .btnPopup-AddPlano-Compra {
+    visibility: visible;
+    transform: translateX(0); /* Anima para o estado visível */
+}
+
+/* Estilos para o conteúdo da imagem e texto */
 .card-image {
     display: flex;
     flex-direction: column;
@@ -110,7 +116,6 @@
     width: 100px;
     height: 50px;
     object-fit: cover;
-
 }
 
 .card-content {
@@ -119,20 +124,10 @@
 }
 
 .info-left {
-    position: relative;
-    left: 0%;
-    right: 32.16%;
-    top: 6%;
-    bottom: 87.55%;
     width: 250px;
 }
 
 .info-right {
-    position: relative;
-    left: 50%;
-    right: 32.16%;
-    top: -35%;
-    bottom: 87.55%;
     width: 250px;
 }
 
@@ -149,18 +144,16 @@
     color: #555555;
 }
 
+/* Ícones e textos */
 .lbl-assento,
 .lbl-mala,
 .lbl-cambio,
 .lbl-porta {
-    position: relative;
     font-size: 14px;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     color: #555555;
-    bottom: 3px;
 }
-
 
 .icon-assento,
 .icon-bag,
@@ -171,11 +164,9 @@
 }
 
 hr {
-    box-shadow: none;
     height: 180px;
     width: 0.5px;
-
-    margin: 20px 0 20px 0
+    margin: 20px 0;
 }
 
 .card-price {
@@ -189,7 +180,6 @@ hr {
     flex-direction: column;
     align-items: center;
     text-align: center;
-
     width: 201px;
 }
 

@@ -34,6 +34,7 @@ export default function FiltroPlanoViagem({ onFilterChange, onAllFiltersDeactiva
         setActiveButtons(newActiveState);
         onFilterChange(newActiveState);
     };
+    
 
     const handleButtonClick = (buttonKey) => {
         setActiveButtons((prevActiveButtons) => {
@@ -51,7 +52,6 @@ export default function FiltroPlanoViagem({ onFilterChange, onAllFiltersDeactiva
             return newActiveButtons;
         });
     };
-
     const handleBtnEdit = () => {
         setBtnEdit(!btnEdit);
         if (onEditButtonClick) {

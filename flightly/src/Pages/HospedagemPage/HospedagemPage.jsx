@@ -36,6 +36,8 @@ export default function Home() {
     const handleGuestChange = useCallback((data) => {
         setGuestData(data);
     }, []);
+    
+
 
     function PesquisarHotel() {
     

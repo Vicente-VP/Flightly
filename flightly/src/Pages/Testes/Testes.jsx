@@ -2,7 +2,6 @@
 
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
-import PopUpCriarPlano from "../../Componentes/PopUpCriarPlano/PopUpCriarPlano.jsx";
 
 
 
@@ -14,11 +13,7 @@ export default function Testes() {
         <>
             <div className="navbar-testes"><NavBar/></div>
             
-            <div className="conteudo-testes">
-                
-
-               <PopUpCriarPlano/>
-               
+            <div className="conteudo-testes">               
                
             </div>
 

@@ -10,6 +10,7 @@ import Login from './Pages/Login/Login';
 import Testes from './Pages/Testes/Testes';
 import Perfil from './Pages/Perfil/Perfil';
 import PlanosViagem from './Pages/PlanosViagem/PlanosViagem';
+import Compra from './Pages/Compra/Compra';
 import InformacoesPage from './Pages/InformacoesPage/InformacoesPage';
 import Questionario from './Pages/Questionario/QuestionarioPage';
 import PlanoEspecifico from './Pages/PlanoViagem_Especifico/PlanoEspecifico';
@@ -28,8 +29,10 @@ export default function App() {
           <Route path="/Testes" element={<Testes/>}/>
           <Route path="/Perfil" element={<Perfil/>}/>
           <Route path="/PlanosViagem" element={<PlanosViagem/>}/>
+          <Route path="/Compra" element={<Compra/>}/>
           <Route path="/InformacoesPage" element={<InformacoesPage/>}/>
           <Route path="/Questionario" element={<Questionario/>}/>
+          <Route path="/PlanoEspecifico" element={<PlanoEspecifico/>}/>
           <Route path="/PlanoEspecifico" element={<PlanoEspecifico/>}/>
         </Routes>
       </Router>

@@ -78,11 +78,14 @@
 .left {
     display: flex;
     width: 600px;
+    width: 600px;
 }
 
 .info {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
     justify-content: space-around;
     padding: 10px;
 }
@@ -97,10 +100,12 @@
     height: auto;
 
     border-radius: 21px 0px 0px 21px;
+    border-radius: 21px 0px 0px 21px;
 }
 
 .info .services {
     display: flex;
+    gap: 10px;
     gap: 10px;
 }
 
@@ -119,9 +124,11 @@
 
 .hr {
     width: 80%;
+    width: 80%;
     box-shadow: none;
     height: 180px;
     width: 0.5px;
+
 
     margin: 0 0 0 30px
 }
@@ -155,6 +162,10 @@
     /* Para alinhar verticalmente o conteúdo */
     gap: 5px;
     /* Espaço entre a estrela, a avaliação e o número de votos */
+    align-items: center;
+    /* Para alinhar verticalmente o conteúdo */
+    gap: 5px;
+    /* Espaço entre a estrela, a avaliação e o número de votos */
 }
 
 .numstarinfohosp,
@@ -176,12 +187,19 @@
 
     background: url('../../../Images/Infos_Hosp/Star_Info_Hosp.png');
     background-repeat: no-repeat;
+    background: url('../../../Images/Infos_Hosp/Star_Info_Hosp.png');
+    background-repeat: no-repeat;
 }
 
 .descinfohosp {
     width: 361px;
     height: 56px;
 
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 275;
+    font-size: 10px;
+    line-height: 15px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 275;
@@ -195,7 +213,6 @@
     font-weight: 400;
     font-size: 10.9391px;
     line-height: 16px;
-
     color: #555555;
 }
 
@@ -242,6 +259,11 @@
     background-repeat: no-repeat;
     background-position: 4px center;
     background-size: 13px 10px;
+    background: rgba(172, 198, 233, 0.54);
+    border-radius: 3.51333px;
+    background-repeat: no-repeat;
+    background-position: 4px center;
+    background-size: 13px 10px;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -249,7 +271,17 @@
     font-size: 7.02667px;
     line-height: 11px;
     text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 7.02667px;
+    line-height: 11px;
+    text-align: center;
 
+    display: flex;
+    align-items: center;
+    padding-right: 4px;
+    padding-left: 20px;
     display: flex;
     align-items: center;
     padding-right: 4px;
