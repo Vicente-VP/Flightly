@@ -2,8 +2,9 @@ import './styleCardQuest.css';
 import ProgressBar from './ProgressBar';
 import { useState, useEffect, useCallback } from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
-export default function CardPergunta1(props){
+export default function CardPergunta1(){
 
     const [progress, setProgress] = useState(0);
 
@@ -22,26 +23,29 @@ export default function CardPergunta1(props){
     const [selectedAnswers, setSelectedAnswers] = useState([]);
     const [buttonText, setButtonText] = useState('Avançar');
 
-    
 
+    
+    
     const handleButtonClick = (index) => {
         setActiveButton(index);
-
+        
         setSelectedAnswers((prev) => {
             const newAnswers = [...prev];
-            newAnswers[contagem] = index; // Armazena o índice da resposta atual
+            newAnswers[contagem -1] = index; // Armazena o índice da resposta atual
             return newAnswers;
         });
-      };
 
+        updateData(contagem, index)
+    };
+    
     const handleProgress = (increment) => {
         setProgress((prev) => Math.min(Math.max(prev + increment, 10), 100));
     };
 
-  
+    
     const changeAnswers = useCallback(() =>{
         
-
+        
         if(contagem === 1){
             setchangeAnswer(true);
             setchangeAnswer3(false);
@@ -49,7 +53,7 @@ export default function CardPergunta1(props){
             setAnswer2("Meio do ano")
             setButtonText('Avançar');
             console.log(buttonText);
-
+            
         }
         else if(contagem === 2){
             
@@ -113,9 +117,9 @@ export default function CardPergunta1(props){
             setButtonText('Finalizar');
         }
       }, [contagem]);
-
-    const changeQuestions = useCallback(() =>{
-        if(contagem === 1){
+      
+      const changeQuestions = useCallback(() =>{
+          if(contagem === 1){
             setchangeQuestion('Qual seu período de férias ?')
         }
         else if(contagem === 2){
@@ -151,12 +155,12 @@ export default function CardPergunta1(props){
         if (contagem <= 10) {
             setContagem((prev) => prev + 1);
             handleProgress(10);
-            changeAnswers(true);
+            changeAnswers();
             changeQuestions();
             setActiveButton(null);
         }
         
-
+        
         console.log(selectedAnswers);
     };
 
@@ -166,13 +170,13 @@ export default function CardPergunta1(props){
             handleProgress(-10);
             changeAnswers();
             changeQuestions();
-            setActiveButton(null);
-        }
-        if(contagem <=1){
-            changeQuestions(false);
+            
+            // Restaura o botão ativo com a resposta anterior
+            const previousAnswer = selectedAnswers[contagem - 2]; 
+            setActiveButton(previousAnswer);
         }
     };
-
+    
     useEffect(() => {
         changeAnswers();
         changeQuestions();
@@ -183,7 +187,7 @@ export default function CardPergunta1(props){
         const containerPOPUP = document.getElementById('POP-Questionario');
         const refazerTESTE = document.getElementById('refazer-teste');
         const quest = document.getElementById('card');
-
+        
         // Função para exibir o popup
         const togglePopupOpen = () => {
             if (containerPOPUP) {
@@ -202,9 +206,10 @@ export default function CardPergunta1(props){
             handleProgress(-90);
             setContagem(1) ;
         };
-
+        
         // Adicionar evento de click para exibir o popup
         if (popUP && buttonText === 'Finalizar') {
+            handleSubmit();
             popUP.addEventListener('click', togglePopupOpen);
         }
 
@@ -212,14 +217,100 @@ export default function CardPergunta1(props){
         if (refazerTESTE) {
             refazerTESTE.addEventListener('click', togglePopupClose);
         }
-
+        
         // Limpar event listeners ao desmontar componente
         return () => {
             if (popUP) popUP.removeEventListener('click', togglePopupOpen);
             if (refazerTESTE) refazerTESTE.removeEventListener('click', togglePopupClose);
         };
     }, [buttonText]);
+    
+    
+    
+    const [data, setData] = useState({
+        periodo:'',
+        tipo_destino:'',
+        atividades:'',
+        ambiente:'',
+        tipo_passeio:'',
+        culinaria:'',
+        companhia:'',
+        passeios:'',
+        duracao:'',
+        clima:''
+    })
 
+    const [perfil, setPerfil] = useState('');
+    const [msg, setMsg] = useState('');
+    const [local1, setLocal1] = useState('');
+    const [local2, setLocal2] = useState('');
+    const [local3, setLocal3] = useState('');
+    const [pt1, setPt1] = useState('');
+    const [pt2, setPt2] = useState('');
+    const [pt3, setPt3] = useState('');
+    
+    const handleSubmit = async(event) => {
+        axios.post('https://flightly-ia.onrender.com/ia', data)
+        .then(res=>{
+                const { perfil, msg, local1, local2, local3, pt1, pt2, pt3 } = res.data;
+                setPerfil(perfil);
+                setMsg(msg);
+                setLocal1(local1);
+                setLocal2(local2);
+                setLocal3(local3);
+                setPt1(pt1);
+                setPt2(pt2);
+                setPt3(pt3);
+            })
+            .catch(err => console.log(err));   
+        }
+        
+        const updateData = (questionNumber, selectedIndex) => {
+            setData((prevData) => {
+                const newData = { ...prevData }; 
+        
+                switch (questionNumber) {
+                    case 1:
+                        newData.periodo = selectedIndex === 1 ? 'começo / final do ano' : 'meio do ano';
+                        break;
+                    case 2:
+                        newData.tipo_destino =
+                            selectedIndex === 1 ? 'litoral/praia' :
+                            selectedIndex === 2 ? 'urbano' : 'rural';
+                        break;
+                    case 3:
+                        newData.atividades = selectedIndex === 1 ? 'atividades internas' : 'atividades externas';
+                        break;
+                    case 4:
+                        newData.ambiente = selectedIndex === 1 ? 'reservados' : 'animados';
+                        break;
+                    case 5:
+                        newData.tipo_passeio = selectedIndex === 1 ? 'agitados' : 'tranquilos';
+                        break;
+                    case 6:
+                        newData.culinaria = selectedIndex === 1 ? 'sim' : 'não';
+                        break;
+                    case 7:
+                        newData.companhia = selectedIndex === 1 ? 'sozinho' : 'em Grupo';
+                        break;
+                    case 8:
+                        newData.duracao = selectedIndex === 1 ? 'curtas' : 'longas';
+                        break;
+                    case 9:
+                        newData.passeios = selectedIndex === 1 ? 'tours guiados' : 'sozinho';
+                        break;
+                    case 10:
+                        newData.clima = selectedIndex === 1 ? 'quentes' : 'frios';
+                        break;
+                    default:
+                        break;
+                }
+        
+                console.log('Data Atualizado:', newData); // Debug: Exibe o objeto atualizado no console
+                return newData;
+            });
+        };
+        
     return(
 
         <>
@@ -230,21 +321,21 @@ export default function CardPergunta1(props){
                         <span>O seu perfil de viajante é</span>
                         <button id='refazer-teste'>Refazer teste</button>
                     </div>
-                    <span>{props.perfil}</span>
+                    <span>{perfil}</span>
                 </section>
-                <p>{props.msg}</p>
+                <p>{msg}</p>
                 <span>Principais recomendações</span>
                 <section className='card-sec1'>
                     <span className='title'>Destinos</span>
                     <div className='card-flex'>
                         <div className='card-rec'>
-                            {props.local1}
+                            {local1}
                         </div>
                         <div className='card-rec'>
-                            {props.local2}
+                            {local2}
                         </div>
                         <div className='card-rec'>
-                            {props.local3}
+                            {local3}
                         </div>
                     </div>
                 </section>
@@ -252,13 +343,13 @@ export default function CardPergunta1(props){
                     <span className='title'>Pontos Turísticos</span>
                     <div className='card-flex'>
                         <div className='card-rec'>
-                            {props.local4}
+                            {pt1}
                         </div>                    
                         <div className='card-rec'>
-                            {props.local5}
+                            {pt2}
                         </div> 
                         <div className='card-rec'>
-                            {props.local6}
+                            {pt3}
                         </div>                   
                     </div>
                 </section>
