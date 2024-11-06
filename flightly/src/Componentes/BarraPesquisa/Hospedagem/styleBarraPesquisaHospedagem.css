@@ -24,6 +24,8 @@
 .btn-pesquisar-hospedagem {
     display: flex;
     justify-content: center;
+    padding: 0;
+
 }
 
 .btn-submit-hospedagem {
@@ -37,6 +39,10 @@
     border: none;
     box-shadow: 0px 4px 16px 0px #00000025;
     cursor: pointer;
+
+    padding: none;
+    margin: none;
+
 }
 
 .search-local{
@@ -51,6 +57,9 @@
 
 .search-local > div > span{
   font-family: "Poppins", sans-serif;
+
+  font-style: normal;
+
   color: #004369;
   font-weight: 450;
   font-size: 15px;
@@ -83,6 +92,8 @@
 
 .search-date > div > span{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
+
   color: #004369;
   font-weight: 450;
   font-size: 15px;
@@ -145,10 +156,13 @@ input[type=date]::-webkit-datetime-edit {
 
 .search-hospedes> span{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
+
   color: #004369;
   font-weight: 450;
   font-size: 15px;
 }
+
 
 .hospedes{
   font-family: "Poppins", sans-serif;
@@ -189,6 +203,8 @@ input[type=date]::-webkit-datetime-edit {
 
 .search-quartos> span{
   font-family: "Poppins", sans-serif;
+  font-style: normal;
+
   color: #004369;
   font-weight: 450;
   font-size: 15px;
@@ -223,8 +239,12 @@ input[type=date]::-webkit-datetime-edit {
 
 .quartos:focus{
   outline: none;
+  border: 2px solid #004369;
+
 }
 
-input:focus {
+.Check-out:focus, .Check-in:focus, .local:focus{
   outline: none;
+  border: 2px solid #004369;
+
 }
