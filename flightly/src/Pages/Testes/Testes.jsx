@@ -2,8 +2,8 @@
 
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
+import Filtro from "../../Componentes/Filtros/Filtro_PontoTuristico/FiltrosPontosTuristico";
 
-import FiltroVoo from "../../Componentes/FIltros/Filtro_PontoTuristico/FiltrosPontosTuristico";
 
 import './style_Testes.css';
 import React from 'react';
@@ -12,10 +12,11 @@ export default function Testes() {
     return (
         <>
             <div className="navbar-testes"><NavBar/></div>
-            
-            <div className="conteudo-testes">
-                <FiltroVoo />
-            </div>
+
+                <div className="conteudo-testes">               
+                   <Filtro/>
+                </div>
+
 
             <div className="footer-testes"><Footer/></div>
         </>

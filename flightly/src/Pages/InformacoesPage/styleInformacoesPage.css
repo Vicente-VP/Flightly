@@ -1,37 +1,32 @@
+.container-cards-infoPage{
+
+    margin-left: 0%;
+}
 .container-informacoes{
-    display: grid;
-    width: 100%;
-    height: 110vh;
-
-    grid-template: 18% auto / 30% auto;
-    grid-template-areas: 
-    "barra-pesquisa-infoPage barra-pesquisa-infoPage"
-    "filtro-infoPage cards-infoPage";
-
-    justify-items: center;
-    align-items: center;
-    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
 .barra-pesquisa-infoPage{
-    grid-area: barra-pesquisa-infoPage;
-
-    display: grid;
-    grid-template-rows: 30% auto;
-    height: 100%;
-    justify-items: center;
+    text-align: center;
+    margin: 0 0 46px 0;
 }
 
-.titulo-infoPage{
-    font-size: 36px;
-    font-weight: medium;
-    text-decoration: none;
+.barra-pesquisa-infoPage>div{
+    text-align: start;
 }
 
 .filtro-infoPage{
-    grid-area: filtro-infoPage;
+    position: sticky;
+    top: 110px;
+    height: auto;
+    align-self: start;
+    margin: 20px 0 0 50px;
 }
 
-.container-cards-infoPage{
-    grid-area: cards-infoPage;
+.main{
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+    margin: 0 0 10px 0;
 }

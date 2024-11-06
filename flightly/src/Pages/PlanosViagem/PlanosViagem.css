@@ -25,3 +25,16 @@
     margin-bottom: 40px;
     gap: 40px;
 }
+
+.divBtnCriarPlano{
+    grid-column: 6 / 7;
+    grid-row: 1 / 2;
+}
+
+.popupadd{
+    
+    top: 500px;
+    position: fixed;
+    justify-content: center;
+    
+}

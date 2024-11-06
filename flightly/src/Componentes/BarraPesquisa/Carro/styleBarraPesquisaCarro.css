@@ -118,6 +118,7 @@
   outline: none;
 }
 
+
 .volta{
   font-family: "Poppins", sans-serif;
 
@@ -132,6 +133,7 @@
   background-repeat: no-repeat;
   padding-left: 35px;
 }
+
 
 .volta:focus{
   outline: none;
@@ -192,6 +194,7 @@ input[type=date]::-webkit-datetime-edit {
   font-size: 15px;
 }
 
+
 .passageiro:focus{
   outline: none;
 }
@@ -236,6 +239,14 @@ input[type=date]::-webkit-datetime-edit {
   font-size: 15px;
 }
 
+.tipo:focus, .destino:focus, .ida:focus, .volta:focus, .tipo:focus, .passageiro:focus{
+  outline: none;
+  border: 2px solid #004369;
+}
+
+span{
+  font-style: normal;}
+  
 .tipo:focus{
   outline: none;
 }

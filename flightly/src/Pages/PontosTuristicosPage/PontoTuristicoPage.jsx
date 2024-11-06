@@ -33,6 +33,9 @@ export default function Home() {
                     <label>Pontos</label>
                     <label>Turísticos</label>
                 </div>
+                <div className="title-pturistico-cel">
+                    <label>Pontos Turísticos</label>
+                </div>
 
                 <div className="form-card-pturistico">
                     <div className="etiqueta-class-pturistico">

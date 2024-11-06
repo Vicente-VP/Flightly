@@ -1,19 +1,28 @@
+/* Estilo do Card de Hospedagem */
+.hospedagem-imagem {
+    grid-area: imagem;
+    position: absolute;
+    width: 35%;
+    height: auto;
+    bottom: 250px;
+    left: 5%;
+    max-width: 100%;
+}
+
 .card-hospedagem {
     background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
     border-radius: 20px;
 
     margin: 0 auto;
     width: 90%;
-    height: 400px;
+    height: auto;
     margin-top: 15vh;
     justify-items: center;
 
     display: grid;
-    grid-template-rows: 25% 75%; /*Linhas e Colunas*/
-    padding-top: 50px;
-    padding-right: 90px;
-    padding-left: 90px;
-    padding-bottom: 65px;
+    grid-template-rows: 25% 75%; 
+    padding: 50px 90px 65px;
+    margin-bottom: 40px;
 }
 
 .title-hospedagem {
@@ -24,47 +33,53 @@
     font-weight: 500;
 }
 
-.hospedagem-imagem {
-    position: absolute;
-    width: 38%;
-    height: 62%;
-    top: 10%;
-    left: 5%;
-}
-
 .form-card-hospedagem {
     display: grid;
-    padding-top: 20px;
-    padding-right: 35px;
-    padding-left: 35px;
-    padding-bottom: 25px;
-    width: 60%;
-
+    padding: 20px 35px 25px;
+    width: 70%;
+    height: fit-content;
     background: linear-gradient(to bottom, #ffffff80, #ffffff40);
     border: 1.5px solid #a6a6a680;
     border-radius: 20px;
+
     z-index: 1;
 }
 
 .grid-inputs-hospedagem {    
     display: grid;
-    grid-template-columns: 33.3% 33.3% 33.3%;
-    grid-template-rows: 50% 50%;
-    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+
+    z-index: 2;
 }
 
 .input-form-hospedagem {
     display: grid;
-    width: 90%;
-    grid-template-rows: 30% 70%;
+    width: 100%;
+    grid-template-rows: auto auto;
     justify-content: center;
 }
 
 .etiqueta-hospedagem {
     margin-left: 15px;
+    margin-bottom: 5px;
 }
 
 .input-hospedagem[type=text] {
+    background-size: 24px;
+    background-position: 10px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    padding-top: 1px;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: 201px;
+    box-shadow: 0px 4px 14px 0px #B2C9DB;
+    outline: none;
+}
+
+.input-hospedagem[type=date] {
     background-size: 24px;
     background-position: 10px; 
     background-repeat: no-repeat;
@@ -74,20 +89,24 @@
     border-radius: 10px;
     border: none;
     height: 40px;
+    width: 201px;
     box-shadow: 0px 4px 14px 0px #B2C9DB;
+}
+
+.input-hospedagem:focus{
     outline: none;
 }
 
 .btn-pesquisar-hospedagem {
     display: flex;
-    align-self: top;
+    align-self: center;
     justify-content: center;
-    padding-top: 22px;
 }
 
 .btn-submit-hospedagem {
-    width: 203px;
-    height: 46px;
+    width: 100%; 
+    max-width: 203px; 
+    padding: 10px 30px; 
     color: #ffffff;
     font-size: 18px;
     font-weight: 500;
@@ -111,6 +130,7 @@
     font-size: 40px;
     font-weight: 500;
     font-style: normal;
+    text-align: center;
 }
 
 .destinos-populares-cards{
@@ -135,6 +155,7 @@
     font-size: 40px;
     font-weight: 500;
     font-style: normal;
+    text-align: center;
 }
 
 .recommendations-HOSPEDAGENS-cards{
@@ -156,5 +177,80 @@
     border: none;
     box-shadow: 0px 4px 16px 0px #00000025;
     cursor: pointer;
+}
+
+/* Responsividade */
+
+@media (max-width: 1250px) {
+    .hospedagem-imagem {
+        display: none; 
+    }
+
+    .grid-inputs-hospedagem {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hospedagem-imagem {
+        display: none; 
+    }
+
+    .card-hospedagem {
+        grid-template: 20% 80% / 1fr;
+        grid-template-areas:
+            "title"
+            "form";
+        padding: 20px;
+    }
+
+    .title-hospedagem {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .grid-inputs-hospedagem {
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    .destinos-populares-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .recommendations-HOSPEDAGENS-cards {
+        display: grid;
+        grid-template-columns: 1fr; 
+        gap: 20px;
+        width: 80%;
+        justify-items: center;
+    }
+
+}
+
+@media (max-width: 650px) {
+    .card-hospedagem {
+        background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
+        width: 100%;
+        height: 900px;
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .grid-inputs-hospedagem {
+        grid-template-columns: 1fr; 
+    }
+
+    .input-form-hospedagem {
+        gap: 5px; 
+    }
+
+    .btn-pesquisar-hospedagem {
+        width: 100%;
+        margin-top: 35px;
+    }
 }
 

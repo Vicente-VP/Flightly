@@ -10,6 +10,8 @@
     line-height: 1.375;
     border: 1.5px solid #ACC6E9;
     cursor: pointer;
+    display: flex; 
+    flex-direction: column; 
 }
 
 #hosp-eco{
@@ -29,7 +31,7 @@
 
 .text_card_hp{
     color:white;
-    margin-top: 150%;
+    margin-top: auto;
     text-align: center;
     font-size: 1.5rem;
 }
