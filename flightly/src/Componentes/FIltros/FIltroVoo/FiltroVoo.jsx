@@ -138,12 +138,6 @@ export default function FiltroVoo(){
                     </div>
                 </div>
                 <div className="price">
-                    <span>Preço</span>
-                    <div className="range">
-                        <div className="sliderValue">
-                            <span id="span" ref={priceRef}>{price}</span>
-                        </div>
-                    </div>
                     <div className="price">
                         <span>Preço</span>
                         <div className="range">

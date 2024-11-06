@@ -49,7 +49,7 @@ export default function PlanosViagem() {
                     {clicked ? <div className="popupadd"><PopUpCriarPlano handleClick={handleClick}/></div> : null}
                     {planos.map((plano) => {
                         return (
-                            <Link to={`/PlanoEspecifico?id=${plano[0]}`}>
+                            <Link to={`/PlanoEspecifico?id=${plano[0]}&nome=${plano[1]}`} className='LinkPlanos'>
                                 <CardPlanoViagem
                                     key={plano[0]}
                                     id={plano[0]}

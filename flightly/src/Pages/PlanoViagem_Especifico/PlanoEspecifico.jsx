@@ -185,7 +185,7 @@ export default function PlanoEspecifico() {
             <div className="bodyPlanoEspecifico">
                 <div className="auxilioNavegacao">
                     <Link to="/PlanosViagem" className="link-planoViagem">Plano de Viagem</Link>
-                    <span className="planoViagem-Atual"> / Viagem Formatura</span>
+                    <span className="planoViagem-Atual"> / {params.get('nome')}</span>
                 </div>
 
                 {loading ? (
