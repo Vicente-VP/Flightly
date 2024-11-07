@@ -143,6 +143,10 @@ main{
     font-size: 15px;
   }
 
+  .input-voo option.selecione{
+    color:#bdbfc0 ;
+}
+
 #btn-pesquisar-voo {
     display: flex;
     align-items: center;

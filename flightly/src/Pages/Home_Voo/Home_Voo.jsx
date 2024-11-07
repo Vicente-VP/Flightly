@@ -4,7 +4,16 @@ import Drop from "../../Componentes/DropInput/drop";
 
 
 import Aviao_Card from '../../Images/Aviao_Card.png';
-import Destino_Cards from '../../Images/img_Destino_Cards.png';
+import Destino_Rio from '../../Images/img_Destino_Cards.png';
+import Destino_Bra from '../../Images/img_Brasilia.png';
+import Destino_Bah from '../../Images/img_Bahia.png';
+import Destino_Floripa from '../../Images/img_Floripa.png';
+
+import Destino_Tokyo from '../../Images/img_Tokyo.jpg';
+import Destino_Texas from '../../Images/img_Texas.jpg';
+import Destino_Bombaim from '../../Images/img_Bombaim.jpg';
+import Destino_Vanc from '../../Images/img_Vancouver.jpg';
+
 import origemIcon from '../../Images/Icones-Cards/origem.png';
 import destinoIcon from '../../Images/Icones-Cards/destino.png';
 import passageirosIcon from '../../Images/Icones-Cards/passageiros.png';
@@ -21,6 +30,9 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function Home() {
+
+    const [fundoRec, setFundoRec] = useState([Destino_Tokyo, Destino_Texas, Destino_Bombaim, Destino_Vanc])
+
     const [toggleStates, setToggleStates] = useState({
         idaVolta: false,
         ida: false,
@@ -149,6 +161,7 @@ export default function Home() {
                                 </div>
                                 <div className="input-class-voo">
                                     <select name="classe" id="classe" className="input-voo"  style={{ backgroundImage: `url(${classeIcon})` }}>
+                                        <option value="selcione" disabled selected className="selecione">Selecione</option>
                                         <option value="econômica">Econômica</option>
                                         <option value="econômica Premium">Econômica Premium</option>
                                         <option value="executiva">Executiva</option>
@@ -185,19 +198,19 @@ export default function Home() {
 
                     <div className="cards-voo-popular">
                         
-                        <VooPopular  imgDestino = {Destino_Cards} destino = "Salvador - São Paulo" 
+                        <VooPopular  imgDestino = {Destino_Rio} destino = "Rio de Janeiro - Rio de Janeiro" 
                         companhia = "Gol" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
                          preco = "1.800,00"/>
 
-                        <VooPopular  imgDestino = {Destino_Cards} destino = "Rio de Janeiro - Amazonas" 
+                        <VooPopular  imgDestino = {Destino_Bra} destino = "Goiás - Brasilia" 
                         companhia = "Latam" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
                          preco = "1.800,00"/>
 
-                        <VooPopular  imgDestino = {Destino_Cards} destino = "Piauí - Minas Gerais" 
+                        <VooPopular  imgDestino = {Destino_Bah} destino = "Bahia - Salvador" 
                         companhia = "Azul" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
                          preco = "1.800,00"/>
 
-                        <VooPopular  imgDestino = {Destino_Cards} destino = "Florianópolis - Acre" 
+                        <VooPopular  imgDestino = {Destino_Floripa} destino = "Santa Catarina - Florianópolis" 
                         companhia = "Latam" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
                          preco = "1.800,00"/>
                         
@@ -223,19 +236,19 @@ export default function Home() {
 
                     <div className="cards-voo-popular">
                         
-                        <VooPopular  imgDestino = {Destino_Cards} destino = "Salvador - São Paulo" 
+                        <VooPopular  imgDestino ={fundoRec[0]} destino = "China - Tokyo" 
                         companhia = "Gol" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
                          preco = "1.800,00"/>
 
-                        <VooPopular  imgDestino = {Destino_Cards} destino = "Rio de Janeiro - Amazonas" 
+                        <VooPopular  imgDestino ={fundoRec[1]} destino = "EUA - Texas" 
                         companhia = "Latam" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
                          preco = "1.800,00"/>
 
-                        <VooPopular  imgDestino = {Destino_Cards} destino = "Piauí - Minas Gerais" 
+                        <VooPopular  imgDestino = {fundoRec[2]} destino = "India - Bombaim" 
                         companhia = "Azul" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
                          preco = "1.800,00"/>
 
-                        <VooPopular  imgDestino = {Destino_Cards} destino = "Florianópolis - Acre" 
+                        <VooPopular  imgDestino ={fundoRec[3]} destino = "Canadá - Vancouver" 
                         companhia = "Latam" dataIdaVolta = "21/10/24 - 31/10/24" idaVolta = "Ida - Volta"
                          preco = "1.800,00"/>
 

@@ -8,9 +8,15 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import PopUpCriarPlano from '../../Componentes/PopUpCriarPlano/PopUpCriarPlano';
 
+import FundoPlano from '../../Images/Card_Plano_Viagem/recife_cardInfo.png';
+import FundoPlano2 from '../../Images/Card_Plano_Viagem/Maceio.png';
+
 import './PlanosViagem.css';
 
 export default function PlanosViagem() {
+
+    const [fundos, setFundos] = useState([FundoPlano, FundoPlano2])
+
     const [planos, setPlanos] = useState([]);
     useEffect(() => {
         axios.get(`https://flightlydbapi.onrender.com/getPlanos?id_usuario=${localStorage.getItem('userid')}`)
@@ -25,9 +31,9 @@ export default function PlanosViagem() {
 
     const [clicked, setClicked] = useState(false);
 
-    function handleClick(){
-      setClicked(!clicked);
-      console.log(clicked);
+    function handleClick() {
+        setClicked(!clicked);
+        console.log(clicked);
     }
 
     return (
@@ -46,23 +52,27 @@ export default function PlanosViagem() {
                 </div>
 
                 <div className="grid-cards-planos-viagem">
-                    {clicked ? <div className="popupadd"><PopUpCriarPlano handleClick={handleClick}/></div> : null}
-                    {planos.map((plano) => {
-                        return (
-                            <Link to={`/PlanoEspecifico?id=${plano[0]}&nome=${plano[1]}`} className='LinkPlanos'>
-                                <CardPlanoViagem
-                                    key={plano[0]}
-                                    id={plano[0]}
-                                    nome={plano[1]}
-                                    preco={plano.preco}
-                                    descricao={plano.descricao}
-                                    imagem={plano.imagem}
-                                />
-                            </Link>
-                        );
-                    })}
+                    <div className="container-cardsPlanoViagem">
+                        {clicked ? <div className="popupadd"><PopUpCriarPlano handleClick={handleClick} /></div> : null}
+                        {planos.map((plano, i) => {
+                            return (
+                                <Link to={`/PlanoEspecifico?id=${plano[0]}&nome=${plano[1]}`} className='LinkPlanos'>
+                                    <CardPlanoViagem
+                                        fundos ={fundos[i]}
+                                        key={plano[0]}
+                                        id={plano[0]}
+                                        nome={plano[1]}
+                                        preco={plano.preco}
+                                        descricao={plano.descricao}
+                                        imagem={plano.imagem}
+                                    />
+                                </Link>
+                            );
+                        })}
+                    </div>
+
                     <div className='divBtnCriarPlano'>
-                        <Btns_PlanoViagens handleClick={handleClick}/>
+                        <Btns_PlanoViagens handleClick={handleClick} />
                     </div>
                 </div>
             </div>

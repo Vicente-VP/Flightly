@@ -1,5 +1,4 @@
 .container-cards-infoPage{
-
     margin-left: 0%;
 }
 .container-informacoes{
@@ -27,6 +26,6 @@
 .main{
     display: flex;
     flex-direction: row;
-    gap: 120px;
+    gap: 80px;
     margin: 0 0 10px 0;
 }
