@@ -2,7 +2,7 @@ import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 
 import BarraPesquisaInfoVoo from "../../Componentes/BarraPesquisa/Voo/BarraPesquisaVoo";
-import FiltroInfoVoo from "../../Componentes/Filtros/FIltroVoo/FiltroVoo";
+import FiltroInfoVoo from "../../Componentes/Filtros/FiltroVoo/FiltroVoo";
 import FiltroHosp from "../../Componentes/Filtros/Filtros_Hospedagem/FiltrosHospedagem";
 import FiltroCarro from "../../Componentes/Filtros/Filtro_Carro/FiltrosCarro";
 import FiltroPt from "../../Componentes/Filtros/Filtro_PontoTuristico/FiltrosPontosTuristico";
@@ -45,7 +45,8 @@ export default function InformacoesPage() {
         
                 switch (requestType) {
                     case 'flight':
-                        response = await axios.get('http://144.22.183.38:8080/flights', {
+                        response = await axios.get('http://localhost:8080/flights', {
+                            // http://144.22.183.38:8080
                             params: {
                                 type: params.get('travel_type'), // Round trip or one way
                                 from: params.get('origem'),
@@ -74,7 +75,7 @@ export default function InformacoesPage() {
                         break;
         
                     case 'hotel':
-                        response = await axios.get('http://144.22.183.38:8080/hotels', {
+                        response = await axios.get('http://localhost:8080/hotels', {
                             params: {
                                 place: params.get('local'),
                                 check_in: params.get('check_in'), // Assuming check-in date
