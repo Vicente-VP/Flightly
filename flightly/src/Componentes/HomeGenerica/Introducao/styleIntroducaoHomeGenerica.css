@@ -1,0 +1,76 @@
+.backgroundHomeGenerica {
+    width: 100%;
+    position: absolute;
+    top: -850px;
+    z-index: -5;
+}
+
+.fundoInicio-homeGenerica {
+    height: 700px;
+    display: grid;
+    grid-template-rows: 28% 25% auto;
+    grid-template-columns: 100%;
+    margin-top: 100px;
+    margin-bottom: 120px;
+}
+
+.containerTitulo-homeG {
+    display: flex;
+}
+
+.titulo-homeG {
+    width: 100%;
+    text-align: center;
+    align-self: flex-end;
+    font-size: 110px;
+    font-weight: 900;
+    font-style: normal;
+    color: white; /* Cor do texto alterada para branco */
+}
+
+.containerSubTitulo-homeG {
+    display: flex;
+}
+
+.subtitulo-homeG {
+    width: 100%;
+    text-align: center;
+    align-self: top;
+    font-size: 33px;
+    font-weight: 300;
+    font-style: normal;
+    color: white; /* Cor do texto alterada para branco */
+}
+
+.containerVantagens-homeG {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin: 0 7.5% 0 7.5%;
+}
+
+.subcontainerVantagens-homeG {
+    display: grid;
+    grid-template-columns: 100%;
+    align-content: space-evenly;
+}
+
+.circuloVantagem-homeG {
+    width: 64px;
+    height: 64px;
+    background-color: #004369;
+    border: 8px solid #C6D5EA;
+    border-radius: 50%;
+}
+
+.divTextoVantagem-homeG {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.divTextoVantagem-homeG > span {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: white; /* Cor do texto alterada para branco */
+}
