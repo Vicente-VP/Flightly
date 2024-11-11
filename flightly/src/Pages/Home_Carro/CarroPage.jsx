@@ -16,6 +16,7 @@ import Rec_Inter from '../../Images/Card_Recomendacao_Carro/Rec_Inter.png';
 import Rec_Lux from '../../Images/Card_Recomendacao_Carro/Rec_Lux.png';
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import './Style_carro.css';
 
@@ -38,6 +39,30 @@ export default function Carro_page (){
         setLocadoras([...locadoras, ...novasLocadoras])
     }
 
+    const navigate = useNavigate();
+
+    function PesquisarCarro() {
+        // Coleta os dados do formulário na página
+        let place = document.querySelector('input[name="pick-location"]').value;
+        let data_retirada = document.querySelector('input[name="pickup-date"]').value;
+        let hora_retirada = document.querySelector('input[name="pickup-time"]').value;
+        let data_devolucao = document.querySelector('input[name="return-date"]').value;
+        let hora_devolucao = document.querySelector('input[name="return-time"]').value;
+        
+        // Define os parâmetros como no exemplo do voo
+        const params = new URLSearchParams({
+            requestType: 'carro',
+            place,
+            data_retirada,
+            hora_retirada,
+            data_devolucao,
+            hora_devolucao,
+        }).toString();
+    
+        // Navega para a página InformacoesPage com os parâmetros
+        navigate(`/InformacoesPage?${params}`);
+    }
+    
 
     return (
         <>
@@ -99,7 +124,7 @@ export default function Carro_page (){
             </div>
         </div>
         <div className="car-btn-pesquisar">
-            <button className="car-pesquisar">Pesquisar</button>
+            <button className="car-pesquisar" onClick={PesquisarCarro}>Pesquisar</button>
         </div>
     </div>
 </div>

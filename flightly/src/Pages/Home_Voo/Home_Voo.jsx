@@ -37,8 +37,6 @@ export default function Home() {
         idaVolta: false,
         ida: false,
     });
-    
-
 
     const handleToggle = (key) => {
         setToggleStates((prevState) => {
