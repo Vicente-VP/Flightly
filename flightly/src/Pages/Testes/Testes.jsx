@@ -3,7 +3,7 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 
-import BarraPesquisaCarro from "../../Componentes/BarraPesquisa/PontoTuristico/BarraPesquisaPontoTuristico"
+import BarraPesquisaCarro from "../../Componentes/BarraPesquisa/PontoTuristico/BarraPesquisaPontoTuristicoB"
 
 import './style_Testes.css';
 import React from 'react';

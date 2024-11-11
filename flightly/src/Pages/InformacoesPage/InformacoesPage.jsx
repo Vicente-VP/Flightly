@@ -42,7 +42,7 @@ export default function InformacoesPage() {
     const [check_in, setCheck_in] = useState(params.get('check_in') || "");
     const [check_out, setCheck_out] = useState(params.get('check_out') || "");
 
-    const [localRetirada, setLocalRetirada] = useState(params.get('place') || "");
+    const [place, setPlace] = useState(params.get('place') || "");
     const [dataRetirada, setDataRetirada] = useState(params.get('data_retirada') || "");
     const [horaRetirada, setHoraRetirada] = useState(params.get('hora_retirada') || "");
     const [dataDevolucao, setDataDevolucao] = useState(params.get('data_devolucao') || "");
@@ -106,10 +106,10 @@ export default function InformacoesPage() {
                         setResults(response.data.slice(1)); // Assuming all response data is directly usable
                         break;
 
-                    case 'car':
+                    case 'carro':
                         response = await axios.get('http://localhost:8080/cars', {
                             params: {
-                                localRetirada: params.get('place'),
+                                place: params.get('place'),
                                 data_retirada: params.get('data_retirada'),
                                 hora_retirada: params.get('hora_retirada'),
                                 data_devolucao: params.get('data_devolucao'),
@@ -191,7 +191,7 @@ export default function InformacoesPage() {
                         )}
                         {params.get('requestType') === 'car' && (
                             <BarraPesquisaCarro
-                                localRetirada={localRetirada}
+                                place={place}
                                 dataRetirada={dataRetirada}
                                 dataDevolucao={dataDevolucao}
                             />
