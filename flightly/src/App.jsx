@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
-import Home from './Pages/Home_Voo/Home_Voo';
+import VooPage from './Pages/Home_Voo/Home_Voo';
 import HospedagemPage from './Pages/HospedagemPage/HospedagemPage';
 import CarroPage from './Pages/Home_Carro/CarroPage';
 import PontoTuristicoPage from './Pages/PontosTuristicosPage/PontoTuristicoPage';
@@ -14,13 +14,15 @@ import Compra from './Pages/Compra/Compra';
 import InformacoesPage from './Pages/InformacoesPage/InformacoesPage';
 import Questionario from './Pages/Questionario/QuestionarioPage';
 import PlanoEspecifico from './Pages/PlanoViagem_Especifico/PlanoEspecifico';
+import HomeGenerica from './Pages/Home_Generica/Home_Generica';
 
 export default function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Home/>}/>
+          <Route path="/" element={<HomeGenerica/>}/>
+          <Route path="/Voo" element={<VooPage/>}/>
           <Route path="/Hospedagem" element={<HospedagemPage/>}/>
           <Route path="/Carros" element={<CarroPage/>}/>
           <Route path="/PontosTuristicos" element={<PontoTuristicoPage/>}/>

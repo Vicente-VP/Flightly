@@ -11,8 +11,7 @@ import Voepass from "../../../Images/Card_Informacoes_Voo/VOEPASS.png";
 import SkyAirline from "../../../Images/Card_Informacoes_Voo/Sky_Airline.png";
 
 
-import PopUpAddPlano from "../../PopUp_Add_PlanoViagens/PopUpAddPlanoViagens";
-
+import PopUpAddPlano from '../../PopUp_Add_PlanoViagens/popUpAddPlanoViagens';
 
 
 export default function CardInfoVoo(props) {

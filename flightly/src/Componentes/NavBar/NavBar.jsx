@@ -79,7 +79,7 @@ export default function NavBar() {
       </a>
       <ul className={`toggle-dropdown-list ${isDropdownActiveMenu ? 'active' : ''}`}>
         <li className="toggle-dropdown-list-item">
-          <Link to="/">
+          <Link to="/Voo">
           <img src={Aviao_Icon} alt="Voos" id="iconVoo" className="links_dropdowm"/> 
           Voos
           </Link>
@@ -115,10 +115,10 @@ export default function NavBar() {
 
       <nav className="navbar">
         <div className="nav" id='linkVoo'>
-          <Link to="/">
+          <Link to="/Voo">
             <img src={Aviao_Icon} alt="Voos" id="iconVoo" />
           </Link>
-          <Link to="/" className={`title_nav ${activeLink === 'voos' ? 'active' : ''}`}
+          <Link to="/Voo" className={`title_nav ${activeLink === 'voos' ? 'active' : ''}`}
           >Voos</Link>
         </div>
         <div className="nav" id='linkHospedagem' >
