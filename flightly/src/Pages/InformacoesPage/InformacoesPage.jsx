@@ -22,6 +22,7 @@ export default function InformacoesPage() {
     const [externalUrl, setExternalUrl] = useState(null);
     const location = useLocation(); // Get location object to access query parameters
     const params = new URLSearchParams(location.search); // Parse query parameters
+    const [loading, setLoading] = useState(true);
 
     const requestType = params.get('requestType'); // Get request type
     
@@ -45,6 +46,7 @@ export default function InformacoesPage() {
         
                 switch (requestType) {
                     case 'flight':
+                        try{
                         response = await axios.get('http://144.22.183.38:8080/flights', {
                             // http://144.22.183.38:8080
                             params: {
@@ -71,10 +73,19 @@ export default function InformacoesPage() {
                         // Store the URL and flight data in state
                         setExternalUrl(urlData?.url); // Assuming the first entry contains a URL
                         setResults(flightData); // Remaining data for flights
+                    } catch (error) {
+                        console.error("Error fetching data:", error);
+                        setResults([]);
+
+                    }
+                    finally {
+                        setLoading(false);
+                    }
                         
                         break;
         
                     case 'hotel':
+                        try{
                         response = await axios.get('http://144.22.183.38:8080/hotels', {
                             params: {
                                 place: params.get('local'),
@@ -90,6 +101,14 @@ export default function InformacoesPage() {
                         console.log(response.data);
                         setExternalUrl(response.data[0]?.url); // Assuming the first entry contains a URL
                         setResults(response.data.slice(1)); // Assuming all response data is directly usable
+                    }
+                    catch (error) {
+                        console.error("Error fetching data:", error);
+                        setResults([]);
+                    }
+                    finally {
+                        setLoading(false);
+                    }
                         break;
         
                     case 'car':
@@ -180,6 +199,41 @@ export default function InformacoesPage() {
                     }
                     </div>
                     <div className="container-cards-infoPage">
+                        {loading && (
+                        <>
+                        <div class="loadingCard">
+                            <div class="loading-overlay"></div>
+                            <div class="skeleton-title skeleton"></div>
+                            <div class="skeleton-line skeleton"></div>
+                            <div class="skeleton-line skeleton" style={{width: "80%"}}></div>
+                        </div>
+                        <div class="loadingCard">
+                            <div class="loading-overlay"></div>
+                            <div class="skeleton-title skeleton"></div>
+                            <div class="skeleton-line skeleton"></div>
+                            <div class="skeleton-line skeleton" style={{width: "80%"}}></div>
+                        </div>
+                        <div class="loadingCard">
+                            <div class="loading-overlay"></div>
+                            <div class="skeleton-title skeleton"></div>
+                            <div class="skeleton-line skeleton"></div>
+                            <div class="skeleton-line skeleton" style={{width: "80%"}}></div>
+                        </div>
+                        <div class="loadingCard">
+                            <div class="loading-overlay"></div>
+                            <div class="skeleton-title skeleton"></div>
+                            <div class="skeleton-line skeleton"></div>
+                            <div class="skeleton-line skeleton" style={{width: "80%"}}></div>
+                        </div>
+                        <div class="loadingCard">
+                            <div class="loading-overlay"></div>
+                            <div class="skeleton-title skeleton"></div>
+                            <div class="skeleton-line skeleton"></div>
+                            <div class="skeleton-line skeleton" style={{width: "80%"}}></div>
+                        </div>
+                        </>
+                        )}
+                        {!results && !loading && <div>No results found</div>}
                         {results.map((result, index) => {
                             switch (requestType) {
                                 case 'flight':

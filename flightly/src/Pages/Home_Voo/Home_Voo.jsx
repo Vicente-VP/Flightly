@@ -120,24 +120,33 @@ const handleDestinoChange = (e) => {
 
 // Fetch suggestions for Origem
 useEffect(() => {
-    if (origemInput) {
-        axios.get(`http://144.22.183.38:8080/suggestion/flights/place?typed=${origemInput}`)
-            .then(response => setOrigemSuggestions(response.data))
-            .catch(error => console.error("Error fetching origem suggestions:", error));
-    } else {
-        setOrigemSuggestions([]);
-    }
+    const delayDebounce = setTimeout(() => {
+        if (origemInput) {
+            axios.get(`http://144.22.183.38:8080/suggestion/flights/place?typed=${origemInput}`)
+                .then(response => setOrigemSuggestions(response.data))
+                .catch(error => console.error("Error fetching origem suggestions:", error));
+        } else {
+            setOrigemSuggestions([]);
+        }
+    }, 2000); // 2-second delay
+
+    return () => clearTimeout(delayDebounce); // Clear timeout if origemInput changes before 2 seconds
 }, [origemInput]);
+
 
 // Fetch suggestions for Destino
 useEffect(() => {
-    if (destinoInput) {
-        axios.get(`http://144.22.183.38:8080/suggestion/flights/place?typed=${destinoInput}`)
-            .then(response => setDestinoSuggestions(response.data))
-            .catch(error => console.error("Error fetching destino suggestions:", error));
-    } else {
-        setDestinoSuggestions([]);
-    }
+    const delayDebounce = setTimeout(() => {
+        if (destinoInput) {
+            axios.get(`http://144.22.183.38:8080/suggestion/flights/place?typed=${destinoInput}`)
+                .then(response => setDestinoSuggestions(response.data))
+                .catch(error => console.error("Error fetching destino suggestions:", error));
+        } else {
+            setDestinoSuggestions([]);
+        }
+    }, 2000); // 2-second delay
+
+    return () => clearTimeout(delayDebounce); // Clear timeout if destinoInput changes before 2 seconds
 }, [destinoInput]);
 
 // Handle Origem suggestion selection
