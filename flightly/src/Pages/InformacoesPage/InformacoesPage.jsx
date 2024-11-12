@@ -45,7 +45,7 @@ export default function InformacoesPage() {
         
                 switch (requestType) {
                     case 'flight':
-                        response = await axios.get('http://localhost:8080/flights', {
+                        response = await axios.get('http://144.22.183.38:8080/flights', {
                             // http://144.22.183.38:8080
                             params: {
                                 type: params.get('travel_type'), // Round trip or one way
@@ -75,7 +75,7 @@ export default function InformacoesPage() {
                         break;
         
                     case 'hotel':
-                        response = await axios.get('http://localhost:8080/hotels', {
+                        response = await axios.get('http://144.22.183.38:8080/hotels', {
                             params: {
                                 place: params.get('local'),
                                 check_in: params.get('check_in'), // Assuming check-in date
@@ -93,7 +93,7 @@ export default function InformacoesPage() {
                         break;
         
                     case 'car':
-                        response = await axios.get('http://localhost:8080/cars', {
+                        response = await axios.get('http://144.22.183.38:8080/cars', {
                             params: {
                                 pickupLocation: params.get('origem'),
                                 dropoffLocation: params.get('destino'),

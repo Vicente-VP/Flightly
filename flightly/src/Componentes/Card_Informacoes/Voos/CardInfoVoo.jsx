@@ -11,7 +11,7 @@ import Voepass from "../../../Images/Card_Informacoes_Voo/VOEPASS.png";
 import SkyAirline from "../../../Images/Card_Informacoes_Voo/Sky_Airline.png";
 
 
-import PopUpAddPlano from "../../PopUp_Add_PlanoViagens/popUpAddPlanoViagens";
+import PopUpAddPlano from "../../PopUp_Add_PlanoViagens/PopUpAddPlanoViagens";
 
 
 
@@ -63,7 +63,7 @@ export default function CardInfoVoo(props) {
                     >
                     <div className="left-voo">
                         <div className="info-voo">
-                            <img src={companyImage[props.company]} alt="Logo Companhia" className='img-voo'/>
+                            <img src={companyImage[props.company]} alt={props.company} className='img-voo'/>
                             <div className='CompDest-voo'>
                                 <label className='destino-voo'>{props.destino}</label>
                                 <label className='companhia-voo'>{props.company}</label>
