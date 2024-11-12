@@ -10,12 +10,15 @@ import PopUpCriarPlano from '../../Componentes/PopUpCriarPlano/PopUpCriarPlano';
 
 import FundoPlano from '../../Images/Card_Plano_Viagem/recife_cardInfo.png';
 import FundoPlano2 from '../../Images/Card_Plano_Viagem/Maceio.png';
+import FundoPlano3 from '../../Images/Card_Plano_Viagem/Los_Angeles.png';
+import FundoPlano4 from '../../Images/Card_Plano_Viagem/Rio_de_Janeiro.png';
+import FundoPlano5 from '../../Images/Card_Plano_Viagem/Sampa.png';
 
 import './PlanosViagem.css';
 
 export default function PlanosViagem() {
 
-    const [fundos, setFundos] = useState([FundoPlano, FundoPlano2])
+    const [fundos, setFundos] = useState([FundoPlano, FundoPlano2, FundoPlano3, FundoPlano4, FundoPlano5]);
 
     const [planos, setPlanos] = useState([]);
     useEffect(() => {
@@ -67,7 +70,7 @@ export default function PlanosViagem() {
                                         <Link to={`/PlanoEspecifico?id=${subPlano[0]}&nome=${subPlano[1]}`} className='LinkPlanos' key={subPlano[0]}>
                                             <CardPlanoViagem
                                                 index={i + j}
-                                                fundos={fundos[getRandomInt(2)]}
+                                                fundos={fundos[getRandomInt(5)]}
                                                 id={subPlano[0]}
                                                 nome={subPlano[1]}
                                                 preco={subPlano.preco}
