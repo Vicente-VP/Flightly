@@ -128,9 +128,9 @@ useEffect(() => {
         } else {
             setOrigemSuggestions([]);
         }
-    }, 2000); // 2-second delay
+    }, 1000); // 1-second delay
 
-    return () => clearTimeout(delayDebounce); // Clear timeout if origemInput changes before 2 seconds
+    return () => clearTimeout(delayDebounce); // Clear timeout if origemInput changes before 1 seconds
 }, [origemInput]);
 
 
@@ -144,7 +144,7 @@ useEffect(() => {
         } else {
             setDestinoSuggestions([]);
         }
-    }, 2000); // 2-second delay
+    }, 1000); // 1-second delay
 
     return () => clearTimeout(delayDebounce); // Clear timeout if destinoInput changes before 2 seconds
 }, [destinoInput]);
