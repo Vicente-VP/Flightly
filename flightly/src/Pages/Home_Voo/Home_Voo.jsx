@@ -167,14 +167,14 @@ const handleDestinoSuggestionClick = (suggestion) => {
 const handleOrigemBlur = () => {
     setTimeout(() => {
         setIsOrigemFocused(false);
-    }, 100);
+    }, 300);
 };
 
 // Validation on blur for Destino with a delay
 const handleDestinoBlur = () => {
     setTimeout(() => {
         setIsDestinoFocused(false);
-    }, 100);
+    }, 300);
 };
 
     return (
