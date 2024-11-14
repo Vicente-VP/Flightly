@@ -128,9 +128,10 @@ useEffect(() => {
         } else {
             setOrigemSuggestions([]);
         }
-    }, 1000); // 2-second delay
+    }, 1000); // 1-second delay
 
-    return () => clearTimeout(delayDebounce); // Clear timeout if origemInput changes before 2 seconds
+
+    return () => clearTimeout(delayDebounce); // Clear timeout if origemInput changes before 1 seconds
 }, [origemInput]);
 
 
@@ -144,7 +145,7 @@ useEffect(() => {
         } else {
             setDestinoSuggestions([]);
         }
-    }, 1000); // 2-second delay
+    }, 1000); // 1-second delay
 
     return () => clearTimeout(delayDebounce); // Clear timeout if destinoInput changes before 2 seconds
 }, [destinoInput]);
@@ -167,14 +168,14 @@ const handleDestinoSuggestionClick = (suggestion) => {
 const handleOrigemBlur = () => {
     setTimeout(() => {
         setIsOrigemFocused(false);
-    }, 100);
+    }, 300);
 };
 
 // Validation on blur for Destino with a delay
 const handleDestinoBlur = () => {
     setTimeout(() => {
         setIsDestinoFocused(false);
-    }, 100);
+    }, 300);
 };
 
     return (
