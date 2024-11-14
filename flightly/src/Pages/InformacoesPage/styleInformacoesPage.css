@@ -92,4 +92,12 @@
     height: 15px;
     margin-bottom: 10px;
   }
+
+.notFound{
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+}
   

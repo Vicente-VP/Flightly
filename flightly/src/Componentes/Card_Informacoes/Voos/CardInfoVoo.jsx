@@ -11,7 +11,7 @@ import Voepass from "../../../Images/Card_Informacoes_Voo/VOEPASS.png";
 import SkyAirline from "../../../Images/Card_Informacoes_Voo/Sky_Airline.png";
 
 
-import PopUpAddPlano from '../../PopUp_Add_PlanoViagens/PopUpAddPlanoViagens';
+import PopUpAddPlano from '../../PopUp_Add_PlanoViagens/popUpAddPlanoViagens';
 
 
 export default function CardInfoVoo(props) {
@@ -31,9 +31,9 @@ export default function CardInfoVoo(props) {
         SkyAirline: SkyAirline
     }
 
-    const toggleInfo = () => {
-        setIsClicked(prev => !prev);
-    };
+    // const toggleInfo = () => {
+    //     setIsClicked(prev => !prev);
+    // };
 
     const handleRadioChange = (option) => {
         setSelectedOption(option);
@@ -58,7 +58,7 @@ export default function CardInfoVoo(props) {
                 <div className={`container-Card-voo ${hover ? 'hover-active' : ''} ${isClicked ? 'selected' : ''}`}
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
-                    onClick={toggleInfo}
+                    // onClick={toggleInfo}
                     >
                     <div className="left-voo">
                         <div className="info-voo">

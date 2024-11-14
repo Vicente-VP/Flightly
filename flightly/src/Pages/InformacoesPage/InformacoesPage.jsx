@@ -233,8 +233,8 @@ export default function InformacoesPage() {
                         </div>
                         </>
                         )}
-                        {!results && !loading && <div>No results found</div>}
-                        {results.map((result, index) => {
+                        {(results.length <= 0)  && !loading ? (<div className="notFound">No results found ...</div>):
+                        results.map((result, index) => {
                             switch (requestType) {
                                 case 'flight':
                                     if(params.get('travel_type') === 'ow') {
