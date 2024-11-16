@@ -10,12 +10,15 @@ import PopUpCriarPlano from '../../Componentes/PopUpCriarPlano/PopUpCriarPlano';
 
 import FundoPlano from '../../Images/Card_Plano_Viagem/recife_cardInfo.png';
 import FundoPlano2 from '../../Images/Card_Plano_Viagem/Maceio.png';
+import FundoPlano3 from '../../Images/Card_Plano_Viagem/Los_Angeles.png';
+import FundoPlano4 from '../../Images/Card_Plano_Viagem/Rio_de_Janeiro.png';
+import FundoPlano5 from '../../Images/Card_Plano_Viagem/Sampa.png';
 
 import './PlanosViagem.css';
 
 export default function PlanosViagem() {
 
-    const [fundos, setFundos] = useState([FundoPlano, FundoPlano2])
+    const [fundos, setFundos] = useState([FundoPlano, FundoPlano2, FundoPlano3, FundoPlano4, FundoPlano5]);
 
     const [planos, setPlanos] = useState([]);
     useEffect(() => {
@@ -36,6 +39,10 @@ export default function PlanosViagem() {
         console.log(clicked);
     }
 
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+
     return (
         <>
             <div style={{ height: '76px' }}>
@@ -52,24 +59,32 @@ export default function PlanosViagem() {
                 </div>
 
                 <div className="grid-cards-planos-viagem">
-                    <div className="container-cardsPlanoViagem">
-                        {clicked ? <div className="popupadd"><PopUpCriarPlano handleClick={handleClick} /></div> : null}
-                        {planos.map((plano, i) => {
+                {clicked ? <div className="popupadd"><PopUpCriarPlano handleClick={handleClick} /></div> : null}
+
+                    {planos.map((plano, i) => {
+                        // Only create a new container when the index is divisible by 4
+                        if (i % 4 === 0) {
                             return (
-                                <Link to={`/PlanoEspecifico?id=${plano[0]}&nome=${plano[1]}`} className='LinkPlanos'>
-                                    <CardPlanoViagem
-                                        fundos ={fundos[i]}
-                                        key={plano[0]}
-                                        id={plano[0]}
-                                        nome={plano[1]}
-                                        preco={plano.preco}
-                                        descricao={plano.descricao}
-                                        imagem={plano.imagem}
-                                    />
-                                </Link>
+                                <div className="container-cardsPlanoViagem" key={`container-${i}`}>
+                                    {planos.slice(i, i + 4).map((subPlano, j) => (
+                                        <Link to={`/PlanoEspecifico?id=${subPlano[0]}&nome=${subPlano[1]}`} className='LinkPlanos' key={subPlano[0]}>
+                                            <CardPlanoViagem
+                                                index={i + j}
+                                                fundos={fundos[getRandomInt(5)]}
+                                                id={subPlano[0]}
+                                                nome={subPlano[1]}
+                                                preco={subPlano.preco}
+                                                descricao={subPlano.descricao}
+                                                imagem={subPlano.imagem}
+                                            />
+                                        </Link>
+                                    ))}
+                                </div>
                             );
-                        })}
-                    </div>
+                        }
+                        return null; // Skip rendering here, as the items are handled within the grouped div above.
+                    })}
+
 
                     <div className='divBtnCriarPlano'>
                         <Btns_PlanoViagens handleClick={handleClick} />

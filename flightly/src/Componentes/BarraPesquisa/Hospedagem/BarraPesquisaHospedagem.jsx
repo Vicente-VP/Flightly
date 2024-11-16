@@ -9,6 +9,7 @@ import quartos_icon from '../../../Images/Barra_Pesquisa/quartos_icon.png';
 
 import './styleBarraPesquisaHospedagem.css';
 import { useCallback, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function PesquisaHospedagem(props){
     
@@ -26,6 +27,31 @@ export default function PesquisaHospedagem(props){
         }
     }, [props]);
 
+    const navigate = useNavigate();
+
+    function PesquisarHotel() {
+    
+        // Collect the data as you were already doing
+        let local = document.querySelector('input[name="local"]').value;
+        let check_in = document.querySelector('input[name="check_in"]').value;
+        let check_out = document.querySelector('input[name="check_out"]').value;
+        let adultos = GuestData.nAdult;
+        let crianca = GuestData.criancaIdade;
+    
+        const params = new URLSearchParams({
+            requestType: 'hotel',
+            local,
+            check_in,
+            check_out,
+            adultos,
+            crianca,
+        }).toString();
+    
+        // Navigate to the new page, passing the requestData as state
+        navigate(`/InformacoesPage?${params}`);
+        window.location.reload();
+    }
+
     return(
         <>
             <div className="container-search">
@@ -33,17 +59,17 @@ export default function PesquisaHospedagem(props){
                 <div className="search-local">
                     <div>
                         <span>Local</span>
-                        <input type="text" placeholder="São Paulo" className="local" style={{ backgroundImage: `url(${destino_icon})` }} value={props.local} onChange={(e)=>{props.onLocalChange(e.target.value)}}/>
+                        <input type="text" placeholder="São Paulo" name='local' className="local" style={{ backgroundImage: `url(${destino_icon})` }} value={props.local} onChange={(e)=>{props.onLocalChange(e.target.value)}}/>
                     </div>
                 </div>
                 <div className="search-date">
                     <div>
                         <span>Check-in</span>
-                        <input type="date" placeholder="21/06/2024" className="Check-in" style={{ backgroundImage: `url(${ida_volta_icon})` }} value={props.check_in} onChange={(e)=>{props.onCheckInChange(e.target.value)}}/>
+                        <input type="date" placeholder="21/06/2024" name='check_in' className="Check-in" style={{ backgroundImage: `url(${ida_volta_icon})` }} value={props.check_in} onChange={(e)=>{props.onCheck_inChange(e.target.value)}}/>
                     </div>
                     <div>
                         <span>Check-out</span>
-                        <input type="date" placeholder="30/06/2024" className="Check-out" style={{ backgroundImage: `url(${ida_volta_icon})` }} value={props.check_out} onChange={(e)=>{props.onCheckOutChange(e.target.value)}} />
+                        <input type="date" placeholder="30/06/2024" name='check_out' className="Check-out" style={{ backgroundImage: `url(${ida_volta_icon})` }} value={props.check_out} onChange={(e)=>{props.onCheck_outChange(e.target.value)}} />
                     </div>
                 </div>
                 <div className="search-hospedes">
@@ -58,7 +84,7 @@ export default function PesquisaHospedagem(props){
 
                 </div>
                 <div className="btn-pesquisar-hospedagem">
-                    <button className="btn-submit-hospedagem">Pesquisar</button>
+                    <button className="btn-submit-hospedagem" onClick={PesquisarHotel}>Pesquisar</button>
                 </div>
             </div>
         </>

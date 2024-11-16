@@ -24,8 +24,10 @@ import './style_Voo.css';
 
 import VooPopular from "../../Componentes/Cards/CadVooPopular/CardVooPopular";
 
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 
 
 
@@ -92,6 +94,88 @@ export default function Home() {
         navigate(`/InformacoesPage?${params}`);
     }
 
+// State variables for Origem
+const [origemInput, setOrigemInput] = useState("");
+const [origemSuggestions, setOrigemSuggestions] = useState([]);
+const [isOrigemFocused, setIsOrigemFocused] = useState(false);
+
+// State variables for Destino
+const [destinoInput, setDestinoInput] = useState("");
+const [destinoSuggestions, setDestinoSuggestions] = useState([]);
+const [isDestinoFocused, setIsDestinoFocused] = useState(false);
+
+// Handle changes for Origem input
+const handleOrigemChange = (e) => {
+    const value = e.target.value;
+    setOrigemInput(value);
+};
+
+// Handle changes for Destino input
+const handleDestinoChange = (e) => {
+    const value = e.target.value;
+    setDestinoInput(value);
+};
+
+// Fetch suggestions for Origem
+useEffect(() => {
+    const delayDebounce = setTimeout(() => {
+        if (origemInput) {
+            axios.get(`http://144.22.183.38:8080/suggestion/flights/place?typed=${origemInput}`)
+                .then(response => setOrigemSuggestions(response.data))
+                .catch(error => console.error("Error fetching origem suggestions:", error));
+        } else {
+            setOrigemSuggestions([]);
+        }
+    }, 1000); // 1-second delay
+
+
+    return () => clearTimeout(delayDebounce); // Clear timeout if origemInput changes before 1 seconds
+}, [origemInput]);
+
+
+// Fetch suggestions for Destino
+useEffect(() => {
+    const delayDebounce = setTimeout(() => {
+        if (destinoInput) {
+            axios.get(`http://144.22.183.38:8080/suggestion/flights/place?typed=${destinoInput}`)
+                .then(response => setDestinoSuggestions(response.data))
+                .catch(error => console.error("Error fetching destino suggestions:", error));
+        } else {
+            setDestinoSuggestions([]);
+        }
+    }, 1000); // 1-second delay
+
+    return () => clearTimeout(delayDebounce); // Clear timeout if destinoInput changes before 2 seconds
+}, [destinoInput]);
+
+// Handle Origem suggestion selection
+const handleOrigemSuggestionClick = (suggestion) => {
+    setOrigemInput(suggestion);
+    setOrigemSuggestions([]);
+    setIsOrigemFocused(false);
+};
+
+// Handle Destino suggestion selection
+const handleDestinoSuggestionClick = (suggestion) => {
+    setDestinoInput(suggestion);
+    setDestinoSuggestions([]);
+    setIsDestinoFocused(false);
+};
+
+// Validation on blur for Origem with a delay
+const handleOrigemBlur = () => {
+    setTimeout(() => {
+        setIsOrigemFocused(false);
+    }, 300);
+};
+
+// Validation on blur for Destino with a delay
+const handleDestinoBlur = () => {
+    setTimeout(() => {
+        setIsDestinoFocused(false);
+    }, 300);
+};
+
     return (
         <>
             <div><NavBar/></div>
@@ -115,8 +199,30 @@ export default function Home() {
                                     <label className="etiqueta-voo">Origem</label>
                                 </div>
                                 <div className="input-class-voo">
-                                    <input type="text" className="input-voo" placeholder="São Paulo" name="origem"
-                                        style={{ backgroundImage: `url(${origemIcon})` }}/>
+                                    <input
+                                        type="text"
+                                        className="input-voo"
+                                        placeholder="São Paulo"
+                                        name="origem"
+                                        style={{ backgroundImage: `url(${origemIcon})` }}
+                                        value={origemInput}
+                                        onChange={handleOrigemChange}
+                                        onFocus={() => setIsOrigemFocused(true)}  // Set focus state
+                                        onBlur={handleOrigemBlur}   // Clear focus state
+                                    />
+                                    {origemSuggestions.length > 0 && isOrigemFocused && (
+                                        <ul className="suggestions-list">
+                                            {origemSuggestions.map((suggestion, index) => (
+                                                <li
+                                                    key={index}
+                                                    onClick={() => handleOrigemSuggestionClick(suggestion.suggestion)}
+                                                    className="suggestion-item"
+                                                >
+                                                    {suggestion.suggestion}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
                                 </div>
                             </div>
                             <div className="input-form-voo">
@@ -124,8 +230,30 @@ export default function Home() {
                                     <label className="etiqueta-voo">Destino</label>
                                 </div>
                                 <div className="input-class-voo">
-                                    <input type="text" className="input-voo" placeholder="Rio de Janeiro" name="destino"
-                                        style={{ backgroundImage: `url(${destinoIcon})` }}/>
+                                    <input
+                                        type="text"
+                                        className="input-voo"
+                                        placeholder="Rio de Janeiro"
+                                        name="destino"
+                                        style={{ backgroundImage: `url(${destinoIcon})` }}
+                                        value={destinoInput}
+                                        onChange={handleDestinoChange}
+                                        onFocus={() => setIsDestinoFocused(true)}  // Set focus state
+                                        onBlur={handleDestinoBlur}   // Clear focus state
+                                    />
+                                    {destinoSuggestions.length > 0 &&  isDestinoFocused && (
+                                        <ul className="suggestions-list">
+                                            {destinoSuggestions.map((suggestion, index) => (
+                                                <li
+                                                    key={index}
+                                                    onClick={() => handleDestinoSuggestionClick(suggestion.suggestion)}
+                                                    className="suggestion-item"
+                                                >
+                                                    {suggestion.suggestion}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
                                 </div>
                             </div>
                             <div className="input-form-voo">
