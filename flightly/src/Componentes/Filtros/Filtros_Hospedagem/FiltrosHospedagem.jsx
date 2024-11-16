@@ -2,13 +2,18 @@ import React, { useState, useRef  } from "react";
 import "./style_FiltrosHospedagem.css";
 
 export default function FiltrosHospedagem() {
-  const [price, setPrice] = useState(100);
-  const priceSpanRef = useRef(null);
 
-  function handlePriceChange(e) {
-    const value = e.target.value;
-    setPrice(value);
-  }
+  const [precoHosp, setPrecoHosp] = useState(100)
+
+  const handleChangePriceHosp = (event) => {
+    const newValue = event.target.value;
+    setPrecoHosp(newValue);
+
+    // Calcula o percentual de preenchimento do slider
+    const percent = ((newValue - 100) / (10000 - 100)) * 100;
+    event.target.style.setProperty('--progress', `${percent}%`);
+};
+
   return (
     <>
       <div className="container-filtrohosp">
@@ -58,30 +63,19 @@ export default function FiltrosHospedagem() {
           </select>
         </div>
         <label className="lbl-filtrohosp4">Preço</label>
-        <div className="search_price">
-          <div className="rangeH">
-            <div className="sliderValor">
-              <span id="span" style={{ left: `${price / 10.6}%` }} className={priceSpanRef.current && "show"}>
-                {price}
-              </span>
-            </div>
-            <div className="campo">
-              <div className="valor left">R$0</div>
-              <input
-                type="range"
-                min="0"
-                max="1000" 
-                value={price}
-                steps="1"
-                onChange={handlePriceChange}
-                onInput={() => priceSpanRef.current.classList.add("show")}
-                onBlur={() => priceSpanRef.current.classList.remove("show")}
-              />
-              <div className="valor right">R$1000+</div>
-            </div>
+        <div className="price-hosp">
+          <div className='values-priceHosp'>
+              <label className='valor-hosp'>R$100</label>
+              <label className='valor-hosp'>R${Number(precoHosp).toLocaleString('pt-BR')}</label>
+          </div>
+          <div className='slider-Hosp'>
+              <input type="range" min="100" max="10000" value={precoHosp}
+              onChange={handleChangePriceHosp}
+              style={{
+                  '--progress': `${((precoHosp - 100) / (10000 - 100)) * 100}%`
+              }}/>
           </div>
         </div>
-
         <div>
           <button type="submit" className="btn-pesq-filtrohosp">
             Pesquisar
