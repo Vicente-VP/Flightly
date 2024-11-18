@@ -61,8 +61,8 @@ export default function InformacoesPage() {
                 switch (requestType) {
                     case 'flight':
                         try{
-                        response = await axios.get('http://144.22.183.38:8080/flights', {
-                            // http://144.22.183.38:8080
+                        response = await axios.get('http://localhost:8080/flights', {
+                            // http://localhost:8080
                             params: {
                                 type: params.get('travel_type'), // Round trip or one way
                                 from: params.get('origem'),
@@ -99,7 +99,7 @@ export default function InformacoesPage() {
 
                     case 'hotel':
                         try{
-                        response = await axios.get('http://144.22.183.38:8080/hotels', {
+                        response = await axios.get('http://localhost:8080/hotels', {
                             params: {
                                 place: params.get('local'),
                                 check_in: params.get('check_in'), // Assuming check-in date
@@ -125,7 +125,8 @@ export default function InformacoesPage() {
                         break;
         
                     case 'car':
-                        response = await axios.get('http://144.22.183.38:8080/cars', {
+                        try{
+                        response = await axios.get('http://localhost:8080/cars', {
                             params: {
                                 place: params.get('place'),
                                 data_retirada: params.get('data_retirada'),
@@ -140,6 +141,14 @@ export default function InformacoesPage() {
                         console.log(response.data);
                         setExternalUrl(response.data[0]?.url);
                         setResults(response.data.slice(1)); // Assuming all response data is directly usable
+                    }
+                    catch(error){
+                        console.error("Error fetching data:", error);
+                        setResults([]);
+                    }
+                    finally {
+                        setLoading(false);
+                    }
                         break;
 
                     case 'pturistico':
@@ -330,8 +339,8 @@ export default function InformacoesPage() {
                                 case 'car':
                                     return <CardInfoCarros
                                         key={index}
-                                        carImage={result.imageCar[0] || ""}
-                                        locImage={result.imageLoc[0] || ""}
+                                        carImage={result.image || ""}
+                                        locImage={result.companyImage || ""}
                                         retirada={params.get('local')}
                                         assento={result.assentos}
                                         cambio={result.cambio}
