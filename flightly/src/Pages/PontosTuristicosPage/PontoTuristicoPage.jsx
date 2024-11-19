@@ -22,11 +22,11 @@ export default function HomePTuristico() {
 
     function PesquisarPTuristico() {
         
-        let attraction = document.querySelector('input[name="input-attraction"]').value;
+        let place = document.querySelector('input[name="input-attraction"]').value;
 
         const params = new URLSearchParams({
             requestType: 'pturistico',
-            attraction,
+            place,
         }).toString();
     
         // Navigate to the new page, passing the requestData as state

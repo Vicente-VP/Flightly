@@ -152,9 +152,10 @@ export default function InformacoesPage() {
                         break;
 
                     case 'pturistico':
-                        response = await axios.get('http://localhost:8080/pturistico', {
+                        try{
+                        response = await axios.get('http://localhost:8080/attractions', {
                             params: {
-                                attraction: params.get('attractions'),
+                                place: params.get('place')
                             },
                             headers: {
                                 'Content-Type': 'application/json'
@@ -163,6 +164,14 @@ export default function InformacoesPage() {
                         console.log(response.data);
                         setExternalUrl(response.data[0]?.url);
                         setResults(response.data.slice(1)); // Assuming all response data is directly usable
+                    }
+                    catch(error){
+                        console.error("Error fetching data:", error);
+                        setResults([]);
+                    }
+                    finally {
+                        setLoading(false);
+                    }
                         break;
 
                     default:
@@ -240,9 +249,9 @@ export default function InformacoesPage() {
                                         return <FiltroInfoVoo />;
                                     case 'hotel':
                                         return <FiltroHosp />;
-                                    case 'carro':
+                                    case 'car':
                                         return <FiltroCarro />;
-                                    case 'pontoTuristico':
+                                    case 'pturistico':
                                         return <FiltroPt />;
                                     default:
                                         return null;
@@ -352,7 +361,11 @@ export default function InformacoesPage() {
                                 case 'pturistico':
                                     return <CardInfoPTuristicos
                                         key={index}
-                                        titulo={result.attraction}
+                                        titulo={result.name}
+                                        image={result.image}
+                                        preco={result.price}
+                                        estrelas={result.stars}
+                                        reviews={parseFloat((result.reviews).match(/\d+(\.\d+)?/)[0])}
                                     />
                                 default:
                                     return null;

@@ -61,7 +61,7 @@
 }
 
 .titulo-card-info-pturisticos {
-    font-size: 24px;
+    font-size: auto;
     font-weight: 400;
     margin-top: 5px;
     margin-left: 10px;
@@ -69,8 +69,10 @@
 
 .div-rating-pturisticos {
     display: flex;
+    position: relative;
     align-items: center;
     margin-left: 10px;
+    margin-top: auto;
     gap: 5px;
 }
 
