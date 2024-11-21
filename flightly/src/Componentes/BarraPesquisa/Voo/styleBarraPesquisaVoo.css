@@ -74,7 +74,7 @@
   font-size: 15px;
 }
 
-.origem{
+.origem-voo{
   font-family: "Poppins", sans-serif;
 
   border-right: 0.8px solid #BFC1C3;
@@ -92,12 +92,10 @@
   padding-left: 35px;
 }
 
-.origem:focus{
-  outline: none;
-}
-
-.destino{
+.destino-voo{
   font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
 
   border: none;
   border-radius: 0 10px 10px 0;
@@ -109,10 +107,8 @@
   background-position: 10px; 
   background-repeat: no-repeat;
   padding-left: 35px;
-}
 
-.destino:focus{
-  outline: none;
+  margin: 0;
 }
 
 .search-data{
@@ -181,11 +177,6 @@
 }
 
 
-.ida:focus{
-  outline: none;
-}
-
-
 .volta{
   font-family: "Poppins", sans-serif;
 
@@ -202,11 +193,6 @@
   background-position: 10px; 
   background-repeat: no-repeat;
   padding-left: 35px;
-}
-
-
-.volta:focus{
-  outline: none;
 }
 
 input[type="date"]::-webkit-inner-spin-button,
@@ -265,10 +251,6 @@ input[type=date]::-webkit-datetime-edit {
   color: black;
   font-family: "Poppins", sans-serif;
   font-size: 15px;
-}
-
-.passageiro:focus{
-  outline: none;
 }
 
 

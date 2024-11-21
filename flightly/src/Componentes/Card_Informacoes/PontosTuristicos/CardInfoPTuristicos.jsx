@@ -3,12 +3,22 @@ import React, { useState } from 'react';
 
 import estrelaPturisticos from '../../../Images/Card-Informacoes-PTuristicos/estrela.png';
 import sinalMais from '../../../Images/sinalMais.png';
+import PopUpAddPlano from '../../PopUp_Add_PlanoViagens/PopUpAddPlanoViagens';
 
 export default function InfoPTuristicos(props) {
     const [hover, setHover] = useState(false);
 
+    const[IsPlano, setIsPlano] = useState(false);
+
+    const ShowPlano = () => {   
+        if(localStorage.getItem('userid')){
+            setIsPlano(true);
+        }
+    }
+
     return (
         <>
+        {IsPlano && <PopUpAddPlano tipo={'PontoTuristico'} item={props} setIsPlano={setIsPlano}/>}
             <div
                 className={`containerFora-pTuristico ${hover ? 'hover-active' : ''}`}
                 onMouseEnter={() => setHover(true)}
@@ -30,7 +40,7 @@ export default function InfoPTuristicos(props) {
                         <span className="nota-card-info-pturisticos">{props.estrelas}</span>
                         <span className="qtdVotos-card-info-pturisticos">({props.reviews})</span>
                     </div>
-                    <span className="descricao-card-info-pturistico">{props.descricao}</span>
+                    <span className="preco-card-info-pturistico">{props.preco}</span>
                 </div>
 
                 {/* O botão está agora fora do container principal do card */}
@@ -38,8 +48,9 @@ export default function InfoPTuristicos(props) {
                     className="btnPopup-AddPlano-Compra"
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
+                    onClick={ShowPlano}
                 >
-                    <img src={sinalMais} alt="Botão de abrir Pop-up de Add Plano Viagem ou Compra" />
+                    <img src={sinalMais} alt="Botão de abrir Pop-up de Add Plano Viagem ou Compra"/>
                 </button>
             </div>
         </>

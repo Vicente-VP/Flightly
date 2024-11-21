@@ -6,15 +6,14 @@
     position: relative;
     grid-template-columns: 245px auto;
     transition: transform 0.5s ease;
-    width: 245px;
-    height: 360px;
+    width: 300px;
+    height: auto;
 }
 
 .container-card-info-pturisticos {
     display: grid;
-    width: 245px;
-    height: 360px;
-    grid-template-rows: 58% 10% 10% 22%;
+    height: 500px;
+    grid-template-rows: 58% auto auto auto;
     border: 1.5px solid #ACC6E9;
     border-radius: 20px;
     box-shadow: 0px 4px 14px 0px #B2C9DB25;
@@ -26,8 +25,7 @@
 }
 
 .container-card-info-pturisticos:hover {
-    width: 275px;
-    height: 390px;
+    width: 320px;
     background-color: #c7e2f225;
 }
 
@@ -61,10 +59,9 @@
 }
 
 .titulo-card-info-pturisticos {
-    font-size: auto;
-    font-weight: 400;
-    margin-top: 5px;
-    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 350;
+    margin: 5px 10px;
 }
 
 .div-rating-pturisticos {
@@ -72,7 +69,6 @@
     position: relative;
     align-items: center;
     margin-left: 10px;
-    margin-top: auto;
     gap: 5px;
 }
 
@@ -92,9 +88,9 @@
     color: #00000050;
 }
 
-.descricao-card-info-pturistico{
-    font-size: 16px;
-    font-weight: 500;
-    color: #00000065;
+.preco-card-info-pturistico{
+    font-size: 20px;
+    font-weight: 400;
     margin-left: 10px;
+    margin-bottom: 62px;
 }

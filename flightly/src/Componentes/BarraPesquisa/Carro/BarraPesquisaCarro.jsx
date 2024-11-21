@@ -27,7 +27,7 @@ export default function PesquisaCarro(props) {
 
     return (
         <>
-            <div className="container-search">
+            <div className="container-search-car">
                 <img src={filter_search_bar} alt="filtros" />
                 <div className="search-local">
                     <div>
@@ -42,7 +42,7 @@ export default function PesquisaCarro(props) {
                         />
                     </div>
                 </div>
-                <div className="search-data">
+                <div className="search-data-car">
                     <div>
                         <span>Retirada</span>
                         <input 
@@ -66,20 +66,6 @@ export default function PesquisaCarro(props) {
                             onChange={(e) => props.onDataVoltaChange(e.target.value)}
                         />
                     </div>
-                </div>
-                <div className="search-passageiros">
-                    <span>Passageiros</span>
-                    <select 
-                        name="TipoCarro" 
-                        className="passageiro" 
-                        style={{ backgroundImage: `url(${passageiro_icon})` }} 
-                        value={passageiros} 
-                        onChange={handlePassageirosChange}
-                    >
-                        <option value="2">2</option>
-                        <option value="5">5</option>
-                        <option value="6+">6+</option>
-                    </select>
                 </div>
                 <div className="search-tipo">
                     <span>Tipo</span>

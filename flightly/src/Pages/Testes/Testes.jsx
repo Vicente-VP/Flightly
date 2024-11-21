@@ -2,6 +2,7 @@
 
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
+import Car from "../../Componentes/Card_Informacoes/Carros/CardInfoCarros";
 
 
 
@@ -13,7 +14,8 @@ export default function Testes() {
         <>
             <div className="navbar-testes"><NavBar/></div>
 
-                <div className="conteudo-testes">               
+                <div className="conteudo-testes">           
+                    <Car/>    
                 </div>
 
 

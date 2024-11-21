@@ -259,7 +259,7 @@ export default function InformacoesPage() {
                             })()
                         }
                     </div>
-                    <div className="container-cards-infoPage">
+                    <div className={'container-cards-infoPage ' + (requestType==='pturistico' ? 'pt' : '')}>
                         {loading && (
                         <>
                         <div class="loadingCard">
@@ -350,13 +350,17 @@ export default function InformacoesPage() {
                                         key={index}
                                         carImage={result.image || ""}
                                         locImage={result.companyImage || ""}
-                                        retirada={params.get('local')}
+                                        retirada={params.get('place')}
                                         assento={result.assentos}
                                         cambio={result.cambio}
+                                        locadora={result.company}
+                                        marca={result.marca}
+                                        modelo={result.modelo}
                                         //porta={result.}
                                         //malaPeq={result.}
                                         //malaGr={result.}
                                         preco={result.price}
+                                        tipo={result.tipo}
                                     />;
                                 case 'pturistico':
                                     return <CardInfoPTuristicos
