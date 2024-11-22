@@ -39,8 +39,6 @@ export default function Home() {
         idaVolta: false,
         ida: false,
     });
-    
-
 
     const handleToggle = (key) => {
         setToggleStates((prevState) => {
@@ -122,7 +120,7 @@ const handleDestinoChange = (e) => {
 useEffect(() => {
     const delayDebounce = setTimeout(() => {
         if (origemInput) {
-            axios.get(`http://144.22.183.38:8080/suggestion/flights/place?typed=${origemInput}`)
+            axios.get(`http://localhost:8080/suggestion/flights/place?typed=${origemInput}`)
                 .then(response => setOrigemSuggestions(response.data))
                 .catch(error => console.error("Error fetching origem suggestions:", error));
         } else {
@@ -139,7 +137,7 @@ useEffect(() => {
 useEffect(() => {
     const delayDebounce = setTimeout(() => {
         if (destinoInput) {
-            axios.get(`http://144.22.183.38:8080/suggestion/flights/place?typed=${destinoInput}`)
+            axios.get(`http://localhost:8080/suggestion/flights/place?typed=${destinoInput}`)
                 .then(response => setDestinoSuggestions(response.data))
                 .catch(error => console.error("Error fetching destino suggestions:", error));
         } else {
