@@ -6,13 +6,17 @@ import seta from '../../../Images/FiltroCarro/icon-seta.png';
 import idade from '../../../Images/FiltroPontoTuristico/idade.png';
 
 export default function FiltrosPontosTuristicos() {
-    const [price, setPrice] = useState(100);
+    const [pricePt, setPricePt] = useState(100);
     const [activeAmbientes, setActiveAmbientes] = useState([]);
 
-    function handlePriceChange(e) {
-        const value = e.target.value;
-        setPrice(value);
-    }
+    const handleChangePricePt = (event) => {
+        const newValue = event.target.value;
+        setPricePt(newValue);
+    
+        // Calcula o percentual de preenchimento do slider
+        const per = ((newValue - 1500) / (29350 - 1500)) * 100;
+        event.target.style.setProperty('--progress', `${per}%`);
+    };
 
     const toggleAmbiente = (ambiente) => {
         setActiveAmbientes((prev) => 
@@ -82,36 +86,21 @@ export default function FiltrosPontosTuristicos() {
                         <option value="18">18</option>
                     </select>
                 </div>
-                <div className='preco'>
+                <div className='preco-pt'>
                     <label htmlFor="Preco" className='lbl-filtroturistico4'>
                         Preço
                     </label>
-                    <div className="search-price">
-                        <div className="range">
-                            <div className="sliderValue">
-                                <span id="span" style={{ left: `${price / 10.6}%` }}>
-                                    {price}
-                                </span>
-                            </div>
-                            <div className="field">
-                                <div className="value left">R$0</div>
-                                <input
-                                    type="range"
-                                    min="0"
-                                    max="1000"
-                                    value={price}
-                                    steps="1"
-                                    id="input"
-                                    onChange={handlePriceChange}
-                                    onBlur={() => {
-                                        document.getElementById("span").classList.remove("show");
-                                    }}
-                                    onInput={() => {
-                                        document.getElementById("span").classList.add("show");
-                                    }}
-                                />
-                                <div className="value right">R$1000+</div>
-                            </div>
+                    <div className="search-pricePt">
+                        <div className='values-pricePt'>
+                            <label className='valor-pt'>R$0</label>
+                            <label className='valor-pt'>R${Number(pricePt).toLocaleString('pt-BR')}</label>
+                        </div>
+                        <div className='slider-pt'>
+                            <input type="range" min="0" max="1000" value={pricePt}
+                            onChange={handleChangePricePt}
+                            style={{
+                                '--progress': `${((pricePt - 0) / (1000 - 0)) * 100}%`
+                            }}/>
                         </div>
                     </div>
                 </div>

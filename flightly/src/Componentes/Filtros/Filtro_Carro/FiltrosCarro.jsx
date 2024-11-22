@@ -8,17 +8,21 @@ import spec from '../../../Images/FiltroCarro/spec-image.png';
 import seta from '../../../Images/FiltroCarro/icon-seta.png';
 
 export default function FiltrosCarros() {
-    const [price, setPrice] = useState(100);
+    const [priceCar, setPriceCar] = useState(100);
     const [selectedCompanies, setSelectedCompanies] = useState({
         movida: false,
         localiza: false,
         foco: false
     });
 
-    function handlePriceChange(e) {
-        const value = e.target.value;
-        setPrice(value);
-    }
+    const handleChangePriceCar = (event) => {
+        const newValue = event.target.value;
+        setPriceCar(newValue);
+    
+        // Calcula o percentual de preenchimento do slider
+        const porcento = ((newValue - 100) / (500 - 100)) * 100;
+        event.target.style.setProperty('--progress', `${porcento}%`);
+    };
 
     function updatePeople(p) {
         const peopleInput = document.querySelector('#people_capacity');
@@ -56,11 +60,11 @@ export default function FiltrosCarros() {
                     </label><br />
                     <label htmlFor="people" className="label-people">Pessoas</label><br/>
                     <button onClick={() => updatePeople(-1)} className='btn-capacidade-esq'>-</button> 
-                    <input type="number" className='input-capacidade' id="people_capacity" min="1" max="5" defaultValue={0} />
+                    <input type="number" className='input-capacidade' id="people_capacity" min="1" max="5" defaultValue={1} />
                     <button onClick={() => updatePeople(1)} className='btn-capacidade-dir'>+</button><br /><br />
                     <label htmlFor="bag" className="label-bag">Malas</label><br />
                     <button onClick={() => updateBag(-1)} className='btn-capacidade-esq'>-</button>
-                    <input type="number" className='input-capacidade' id="bag_capacity" min="1" max="9" defaultValue={0} />
+                    <input type="number" className='input-capacidade' id="bag_capacity" min="1" max="9" defaultValue={1} />
                     <button onClick={() => updateBag(1)} className='btn-capacidade-dir'>+</button>
                 </div>
 
@@ -83,40 +87,27 @@ export default function FiltrosCarros() {
                     </select>
                 </div>
                 
-                <div className='preco'>
-                    <label className="lbl-filtrocar4">Preço</label>
-                    <div className="search-price">
-                        <div className="range">
-                            <div className="sliderValue">
-                                <span id="span" style={{ left: `${price / 10.6}%` }}>
-                                    {price}
-                                </span>
-                            </div>
-                            <div className="field">
-                                <div className="value left">R$0</div>
-                                <input
-                                    type="range"
-                                    min="0"
-                                    max="1000"
-                                    value={price}
-                                    steps="1"
-                                    id="input"
-                                    onChange={handlePriceChange}
-                                    onBlur={() => {
-                                        document.getElementById("span").classList.remove("show");
-                                    }}
-                                    onInput={() => {
-                                        document.getElementById("span").classList.add("show");
-                                    }}
-                                />
-                                <div className="value right">R$1000+</div>
-                            </div>
+                <div className='preco-car'>
+                    <label className="lbl-filtrocar4">
+                        Preço
+                    </label>
+                    <div className="search-priceCar">
+                        <div className='values-priceCar'>
+                            <label className='valor-car'>R$100</label>
+                            <label className='valor-car'>R${Number(priceCar).toLocaleString('pt-BR')}</label>
+                        </div>
+                        <div className='slider-car'>
+                            <input type="range" min="100" max="500" value={priceCar}
+                            onChange={handleChangePriceCar}
+                            style={{
+                                '--progress': `${((priceCar - 100) / (500 - 100)) * 100}%`
+                            }}/>
                         </div>
                     </div>
                 </div>
 
-                <div className='companhias'>
-                    <label htmlFor="Companhias" className="lbl-filtrocar3">
+                <div className='locadoras'>
+                    <label htmlFor="locadoras" className="lbl-filtrocar3">
                         Locadoras
                     </label>
                     <div className="btn-companias">
