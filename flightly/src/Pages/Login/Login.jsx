@@ -22,8 +22,10 @@ export default function Login (){
             headers:{
             'Content-Type': 'application/json'
         }
-    }).then((response)=>{localStorage.setItem('userid', response.data.id[0]); localStorage.setItem('username', response.data.id[1]); navigate("/");}).catch(()=>{alert("Erro ao fazer login")})
+    }).then((response)=>{localStorage.setItem('userid', response.data.id[0]); localStorage.setItem('username', response.data.id[1]); localStorage.setItem('email', email); localStorage.setItem('password', password); localStorage.setItem('data_nasc', response.data.id[2]) ;navigate("/");}).catch(()=>{alert("Erro ao fazer login")})
     }
+
+    
 
     return (
         <>

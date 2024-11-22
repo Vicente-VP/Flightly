@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import NavBar from '../../Componentes/NavBar/NavBar';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 import editarBranco from '../../Images/icones-perfil/editar-branco.png';
 import fotoPerfil from '../../Images/icones-perfil/foto-perfil.png';
@@ -12,9 +14,80 @@ import seguinte from '../../Images/icones-perfil/seguinte.png';
 import logout from '../../Images/icones-perfil/logout.png';
 import fotoLocal from '../../Images/icones-perfil/recife.png';
 import planoReservado from '../../Images/icones-perfil/plano-reservado.png';
+
+import CardPlanoViagem from '../../Componentes/Cards/Card_Plano_Viagem/CardPlanoViagem';
+import FundoPlano from '../../Images/Card_Plano_Viagem/recife_cardInfo.png';
+import FundoPlano2 from '../../Images/Card_Plano_Viagem/Maceio.png';
+import FundoPlano3 from '../../Images/Card_Plano_Viagem/Los_Angeles.png';
+import FundoPlano4 from '../../Images/Card_Plano_Viagem/Rio_de_Janeiro.png';
+import FundoPlano5 from '../../Images/Card_Plano_Viagem/Sampa.png';
 import './style_Perfil.css';
 
 export default function Perfil() {
+
+    const navigate = useNavigate();
+
+    function Alterar(){
+        
+        let nome = document.getElementById('nomeAlt').value || localStorage.getItem('username');
+        let email = document.getElementById('emailAlt').value || localStorage.getItem('email');
+        var data_nasc = '';
+
+        if(document.getElementById('diaAlt').value){
+            let dia_nasc = document.getElementById('diaAlt').value;
+            let mes_nasc = document.getElementById('mesAlt').value;
+            let ano_nasc = document.getElementById('anoAlt').value;
+    
+             data_nasc = `${dia_nasc}/${mes_nasc}/${ano_nasc}`;
+        }
+        else{
+             data_nasc = localStorage.getItem('data_nasc');
+        }
+
+        let ID = localStorage.getItem('userid');
+        let password = localStorage.getItem('password');
+
+
+        console.log(nome, email, data_nasc);
+
+        
+
+        axios.post(`https://flightlydbapi.onrender.com/updateUser`, {
+            "id_usuario": ID,
+            "email": email,
+            "senha": password,
+            "nome": nome,
+            "data_nasc": data_nasc,
+            
+            }, {
+            headers:{
+            'Content-Type': 'application/json'
+        }
+    }
+).then(()=>{
+        localStorage.setItem('username', nome); 
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);  
+        localStorage.setItem('data_nasc', data_nasc) 
+        ;navigate("/Perfil");}).catch(()=>{alert("Erro ao alterar dados")})
+    
+    }
+    const [fundos, setFundos] = useState([FundoPlano, FundoPlano2, FundoPlano3, FundoPlano4, FundoPlano5]);
+    const [planos, setPlanos] = useState([]);
+    useEffect(() => {
+        axios.get(`https://flightlydbapi.onrender.com/getPlanos?id_usuario=${localStorage.getItem('userid')}`)
+            .then(response => {
+                console.log(response.data);
+                setPlanos(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }, []);
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
 
     useEffect(() => {
         const elementoMes = document.getElementById('mes-calendario');
@@ -149,6 +222,8 @@ export default function Perfil() {
         };
       }, []);
 
+      
+
     return (
         <>
             <div style={{ height: '76px' }}>
@@ -168,22 +243,22 @@ export default function Perfil() {
                 </div>
                 <div className="div-popup-perfil">
                     <label className="label-popup-perfil">Nome</label>
-                    <input type="text" className="input-popup-perfil" placeholder="Insira o nome do usuário" />
+                    <input type="text" className="input-popup-perfil" id='nomeAlt' placeholder="Insira o nome do usuário" />
                 </div>
                 <div className="div-popup-perfil">
                     <label className="label-popup-perfil">E-mail</label>
-                    <input type="text" className="input-popup-perfil" placeholder="Insira o email do usuário" />
+                    <input type="text" className="input-popup-perfil" id='emailAlt' placeholder="Insira o email do usuário" />
                 </div>
                 <div className="div-popup-perfil">
                     <label className="label-popup-perfil-data">Data de Nascimento</label>
                     <div className="div-data-popup-perfil">
-                        <input type="number" className="input-popup-perfil-data" placeholder="Dia" min="1" max="31" />
-                        <input type="number" className="input-popup-perfil-data" placeholder="Mês" min="1" max="12" />
-                        <input type="number" className="input-popup-perfil-data" placeholder="Ano" min="1900" max="2024" />
+                        <input type="number" className="input-popup-perfil-data" id='diaAlt' placeholder="Dia" min="1" max="31" />
+                        <input type="number" className="input-popup-perfil-data" id='mesAlt' placeholder="Mês" min="1" max="12" />
+                        <input type="number" className="input-popup-perfil-data" id='anoAlt' placeholder="Ano" min="1900" max="2024" />
                     </div>
                 </div>
                 <div className="base-popup-perfil">
-                    <button className="btn-alterar-dados-perfil" id="btn-alterar-dados-perfil">Alterar</button>
+                    <button className="btn-alterar-dados-perfil" id="btn-alterar-dados-perfil" onClick={Alterar}>Alterar</button>
                 </div>
             </div>
 
@@ -198,10 +273,10 @@ export default function Perfil() {
                     </div>
                     <div className="info-dados-perfil">
                         <img src={fotoPerfil} className="userfoto-perfil" alt="Foto de Perfil do Usuário" />
-                        <label className="usernome-perfil">Thiago Elias</label>
-                        <label className="useremail-perfil">thiago.elias@gmail.com</label>
+                        <label className="usernome-perfil">{localStorage.getItem('username')}</label>
+                        <label className="useremail-perfil">{localStorage.getItem('email')}</label>
                         <label className="usersenha-perfil">✱✱✱✱✱✱✱</label>
-                        <label className="usernasc-perfil">05/01/2000</label>
+                        <label className="usernasc-perfil">{localStorage.getItem('data_nasc')}</label>
                     </div>
                     <div className="userperfil-perfil">
                         <hr className="hr-perfil-cima" />
@@ -252,54 +327,32 @@ export default function Perfil() {
                         <a href="" className="ver-todos-andamento-perfil">Ver Todos</a>
                     </div>
                     <div className="cards-plano-andamento-perfil">
-                        <div className="card-andamento-perfil">
-                            <img src={fotoLocal} className="foto-local-perfil"
-                                alt="Foto Panorâmica de Recife" />
-                            <label className="nome-local-perfil">Recife</label>
-                            <div className="preco-editar-local-perfil">
-                                <label className="preco-local-perfil">R$ 3.500,00</label>
-                                <a href="#" className="btn-editar-local-perfil">
-                                    <img src={editarAzul} className="btn-editar-local-perfil"
-                                        alt="Botão de Editar Viagem em Andamento" />
-                                </a>
-                            </div>
-                        </div>
-                        <div className="card-andamento-perfil">
-                            <img src={fotoLocal} className="foto-local-perfil"
-                                alt="Foto Panorâmica de Recife" />
-                            <label className="nome-local-perfil">Recife</label>
-                            <div className="preco-editar-local-perfil">
-                                <label className="preco-local-perfil">R$ 3.500,00</label>
-                                <a href="#" className="btn-editar-local-perfil">
-                                    <img src={editarAzul} className="btn-editar-local-perfil"
-                                        alt="Botão de Editar Viagem em Andamento" />
-                                </a>
-                            </div>
-                        </div>
-                        <div className="card-andamento-perfil">
-                            <img src={fotoLocal} className="foto-local-perfil"
-                                alt="Foto Panorâmica de Recife" />
-                            <label className="nome-local-perfil">Recife</label>
-                            <div className="preco-editar-local-perfil">
-                                <label className="preco-local-perfil">R$ 3.500,00</label>
-                                <a href="#" className="btn-editar-local-perfil">
-                                    <img src={editarAzul} className="btn-editar-local-perfil"
-                                        alt="Botão de Editar Viagem em Andamento" />
-                                </a>
-                            </div>
-                        </div>
-                        <div className="card-andamento-perfil">
-                            <img src={fotoLocal} className="foto-local-perfil"
-                                alt="Foto Panorâmica de Recife" />
-                            <label className="nome-local-perfil">Recife</label>
-                            <div className="preco-editar-local-perfil">
-                                <label className="preco-local-perfil">R$ 3.500,00</label>
-                                <a href="#" className="btn-editar-local-perfil">
-                                    <img src={editarAzul} className="btn-editar-local-perfil"
-                                        alt="Botão de Editar Viagem em Andamento" />
-                                </a>
-                            </div>
-                        </div>
+                        
+                    {planos.map((plano, i) => {
+                        // Only create a new container when the index is divisible by 4
+                        if (i % 7 === 0) {
+                            return (
+                                <div className="container-cardsPlanoViagem-perfil" key={`container-${i}`}>
+                                    {planos.slice(i, i + 8).map((subPlano, j) => (
+                                        <Link to={`/PlanoEspecifico?id=${subPlano[0]}&nome=${subPlano[1]}`} className='LinkPlanos' key={subPlano[0]}>
+                                            <CardPlanoViagem
+                                                index={i + j}
+                                                fundos={fundos[getRandomInt(5)]}
+                                                id={subPlano[0]}
+                                                nome={subPlano[1]}
+                                                preco={subPlano.preco}
+                                                descricao={subPlano.descricao}
+                                                imagem={subPlano.imagem}
+                                            />
+                                        </Link>
+                                    ))}
+                                </div>
+                            );
+                        }
+                        return null; // Skip rendering here, as the items are handled within the grouped div above.
+                    })}
+                        
+                        
                     </div>
                 </div>
                 <div className="planos-reservados-perfil">
