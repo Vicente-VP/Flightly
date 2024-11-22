@@ -209,6 +209,7 @@ export default function CardPergunta1(){
         
         // Adicionar evento de click para exibir o popup
         if (popUP && buttonText === 'Finalizar') {
+            console.log("12321321321")
             handleSubmit();
             popUP.addEventListener('click', togglePopupOpen);
         }
@@ -249,21 +250,44 @@ export default function CardPergunta1(){
     const [pt2, setPt2] = useState('');
     const [pt3, setPt3] = useState('');
     
-    const handleSubmit = async(event) => {
-        axios.post('https://flightly-ia.onrender.com/ia', data)
-        .then(res=>{
-                const { perfil, msg, local1, local2, local3, pt1, pt2, pt3 } = res.data;
-                setPerfil(perfil);
-                setMsg(msg);
-                setLocal1(local1);
-                setLocal2(local2);
-                setLocal3(local3);
-                setPt1(pt1);
-                setPt2(pt2);
-                setPt3(pt3);
-            })
-            .catch(err => console.log(err));   
+    const handleSubmit = async (event) => {
+        try {
+            console.log("1");
+            // First request
+            const res = await axios.post('https://flightly-ia.onrender.com/ia', data);
+            const { perfil, msg, local1, local2, local3, pt1, pt2, pt3 } = res.data;
+            
+            // Update state with the response data
+            setPerfil(perfil);
+            setMsg(msg);
+            setLocal1(local1);
+            setLocal2(local2);
+            setLocal3(local3);
+            setPt1(pt1);
+            setPt2(pt2);
+            setPt3(pt3);
+            
+            console.log("2");
+            
+            // Second request
+            await axios.post('https://flightlydbapi.onrender.com/assignPerfil', {
+                "perfil": perfil,
+                "id_usuario": localStorage.getItem('userid')
+            },{
+                headers:{
+                'Content-Type': 'application/json'
+            }
+        });
+            
+            // Handle success
+            console.log("deu certo");
+            localStorage.setItem('perfil', perfil); // Save 'perfil' correctly
+        } catch (err) {
+            // Catch any error from either request
+            console.log("deu errado", err);
         }
+    };
+    
         
         const updateData = (questionNumber, selectedIndex) => {
             setData((prevData) => {
