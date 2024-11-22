@@ -265,51 +265,51 @@ export default function CardPergunta1(){
             .catch(err => console.log(err));   
         }
         
-        const updateData = (questionNumber, selectedIndex) => {
-            setData((prevData) => {
-                const newData = { ...prevData }; 
-        
-                switch (questionNumber) {
-                    case 1:
-                        newData.periodo = selectedIndex === 1 ? 'começo / final do ano' : 'meio do ano';
-                        break;
-                    case 2:
-                        newData.tipo_destino =
-                            selectedIndex === 1 ? 'litoral/praia' :
-                            selectedIndex === 2 ? 'urbano' : 'rural';
-                        break;
-                    case 3:
-                        newData.atividades = selectedIndex === 1 ? 'atividades internas' : 'atividades externas';
-                        break;
-                    case 4:
-                        newData.ambiente = selectedIndex === 1 ? 'reservados' : 'animados';
-                        break;
-                    case 5:
-                        newData.tipo_passeio = selectedIndex === 1 ? 'agitados' : 'tranquilos';
-                        break;
-                    case 6:
-                        newData.culinaria = selectedIndex === 1 ? 'sim' : 'não';
-                        break;
-                    case 7:
-                        newData.companhia = selectedIndex === 1 ? 'sozinho' : 'em Grupo';
-                        break;
-                    case 8:
-                        newData.duracao = selectedIndex === 1 ? 'curtas' : 'longas';
-                        break;
-                    case 9:
-                        newData.passeios = selectedIndex === 1 ? 'tours guiados' : 'sozinho';
-                        break;
-                    case 10:
-                        newData.clima = selectedIndex === 1 ? 'quentes' : 'frios';
-                        break;
-                    default:
-                        break;
-                }
-        
-                console.log('Data Atualizado:', newData); // Debug: Exibe o objeto atualizado no console
-                return newData;
-            });
-        };
+    const updateData = (questionNumber, selectedIndex) => {
+        setData((prevData) => {
+            const newData = { ...prevData }; 
+    
+            switch (questionNumber) {
+                case 1:
+                    newData.periodo = selectedIndex === 1 ? 'começo / final do ano' : 'meio do ano';
+                    break;
+                case 2:
+                    newData.tipo_destino =
+                        selectedIndex === 1 ? 'litoral/praia' :
+                        selectedIndex === 2 ? 'urbano' : 'rural';
+                    break;
+                case 3:
+                    newData.atividades = selectedIndex === 1 ? 'atividades internas' : 'atividades externas';
+                    break;
+                case 4:
+                    newData.ambiente = selectedIndex === 1 ? 'reservados' : 'animados';
+                    break;
+                case 5:
+                    newData.tipo_passeio = selectedIndex === 1 ? 'agitados' : 'tranquilos';
+                    break;
+                case 6:
+                    newData.culinaria = selectedIndex === 1 ? 'sim' : 'não';
+                    break;
+                case 7:
+                    newData.companhia = selectedIndex === 1 ? 'sozinho' : 'em Grupo';
+                    break;
+                case 8:
+                    newData.duracao = selectedIndex === 1 ? 'curtas' : 'longas';
+                    break;
+                case 9:
+                    newData.passeios = selectedIndex === 1 ? 'tours guiados' : 'sozinho';
+                    break;
+                case 10:
+                    newData.clima = selectedIndex === 1 ? 'quentes' : 'frios';
+                    break;
+                default:
+                    break;
+            }
+    
+            console.log('Data Atualizado:', newData); // Debug: Exibe o objeto atualizado no console
+            return newData;
+        });
+    };
         
     return(
 
@@ -329,13 +329,13 @@ export default function CardPergunta1(){
                     <span className='title'>Destinos</span>
                     <div className='card-flex'>
                         <div className='card-rec'>
-                            {local1}
+                            1.{local1}
                         </div>
                         <div className='card-rec'>
-                            {local2}
+                            2.{local2}
                         </div>
                         <div className='card-rec'>
-                            {local3}
+                            3.{local3}
                         </div>
                     </div>
                 </section>
@@ -343,13 +343,13 @@ export default function CardPergunta1(){
                     <span className='title'>Pontos Turísticos</span>
                     <div className='card-flex'>
                         <div className='card-rec'>
-                            {pt1}
+                            1.{pt1}
                         </div>                    
                         <div className='card-rec'>
-                            {pt2}
+                            2.{pt2}
                         </div> 
                         <div className='card-rec'>
-                            {pt3}
+                            3.{pt3}
                         </div>                   
                     </div>
                 </section>
