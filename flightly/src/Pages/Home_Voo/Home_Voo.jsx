@@ -2,7 +2,6 @@ import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 import Drop from "../../Componentes/DropInput/drop";
 
-
 import Aviao_Card from '../../Images/Aviao_Card.png';
 import Destino_Rio from '../../Images/img_Destino_Cards.png';
 import Destino_Bra from '../../Images/img_Brasilia.png';
@@ -288,14 +287,13 @@ const handleDestinoBlur = () => {
                                     <label className="etiqueta-voo">Classe</label>
                                 </div>
                                 <div className="input-class-voo">
-                                    <select name="classe" id="classe" className="input-voo"  style={{ backgroundImage: `url(${classeIcon})` }}>
+                                    <select name="classe" id="classe" className="input-voo" style={{ backgroundImage: `url(${classeIcon})` }}>
                                         <option value="selcione" disabled selected className="selecione">Selecione</option>
                                         <option value="econômica">Econômica</option>
                                         <option value="econômica Premium">Econômica Premium</option>
                                         <option value="executiva">Executiva</option>
                                         <option value="erimeira">Primeira</option>
                                     </select>
-
                                 </div>
                             </div>
                         </div>

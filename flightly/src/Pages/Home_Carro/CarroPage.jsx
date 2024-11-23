@@ -79,12 +79,9 @@ export default function Carro_page (){
                     </div>
                 </div>
             </div>
-            <div className="car-input-form">
-                <div className="car-etiqueta-className">
-                </div>
-                <div className="car-input-className">
-                </div>
-            </div>
+        <div className="car-btn-pesquisar">
+            <button className="car-pesquisar">Pesquisar</button>
+        </div>
             <div className="car-input-form">
                 <div className="car-etiqueta-className">
                     <label className="car-etiqueta">Data e Hora de Devolução</label>
@@ -97,9 +94,6 @@ export default function Carro_page (){
                     </div>
                 </div>
             </div>
-        </div>
-        <div className="car-btn-pesquisar">
-            <button className="car-pesquisar">Pesquisar</button>
         </div>
     </div>
 </div>

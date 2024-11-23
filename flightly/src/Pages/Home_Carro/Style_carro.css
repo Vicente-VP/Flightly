@@ -58,7 +58,7 @@
     grid-area: form;
     display: grid;
     grid-template-rows: 1fr auto;
-    padding: 20px;
+    padding: 30px;
     background: linear-gradient(to bottom, #ffffff40, #ffffff10);
     border: 1.5px solid #ffffff80;
     border-radius: 20px;
@@ -84,70 +84,67 @@
 }
 
 .car-input[type=text]{
-    border: none;
-    box-shadow: 0px 4px 14px 0px #B2C9DB;
-    width: 215px;
-    height: 40px;
-    border-radius: 10px 10px 10px 10px;
-  
-    height: 35px;
-    width: 200px;
-  
-    background-size: 20px;
+    background-size: 24px;
     background-position: 10px; 
     background-repeat: no-repeat;
-    padding-left: 35px;
-    display: flex;
-    justify-content: right;
-    align-items: right;
-    place-items: right / right;
+    padding-left: 40px;
     padding-top: 1px;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: 100%;
+    min-width: 180px;
+    max-width: 180px;
+    box-shadow: 0px 4px 14px 0px #B2C9DB;
+    color: #BFC1C3;
+    outline: none;
 
-    font-family: "Poppins", sans-serif;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .car-input[type=date]{
-    font-family: "Poppins", sans-serif;
-    border: none;
-    border-radius: 10px 0 0 10px;
-
-    height: 35px;
-    width: 150px;
-
-    background-size: 20px;
+    background-size: 24px;
     background-position: 10px; 
     background-repeat: no-repeat;
-    padding-left: 35px;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    place-items: left / left;
+    padding-left: 40px;
     padding-top: 1px;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: 100%;
+    min-width: 180px;
+    max-width: 180px;
+    box-shadow: 0px 4px 14px 0px #B2C9DB;
+    color: #BFC1C3;
+    outline: none;
+    margin-right: 10px;
 
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .car-input[type=time]{
-    font-family: "Poppins", sans-serif;
-    border: none;
-    box-shadow: 10px 4px 14px 0 #B2C9DB;
-    border-radius: 0 10px 10px 0;
-
-    height: 35px;
-    width: 120px;
-
-    background-size: 20px;
-    background-position: 10px; 
-    background-repeat: no-repeat;
-    padding-left: 35px;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    place-items: left / left;
+    padding-left: 12px;
     padding-top: 1px;
-
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    width: 100%;
+    min-width: 60px;
+    max-width: 60px;
+    box-shadow: 0px 4px 14px 0px #B2C9DB;
+    color: #BFC1C3;
+    outline: none;
 }
 
-.car-input[type=date]:focus, .car-input[type=text]:focus, .car-input[type=time]:focus{
+.car-input[type=time]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.car-input[type=date]:focus, .car-input[type=text]:focus, .car-input.selectHours:focus{
     outline: none;
 }
 
@@ -166,21 +163,16 @@ input[type=date]::-webkit-datetime-edit {
 }
 
 .car-btn-pesquisar {
-    grid-column: 2 / 3; 
-    grid-row: 2 / 3; 
-    display: flex;
-    width: 70%;
-    position: relative;
-    align-items: right;
-    justify-content: right;
-    left: -70px;
+    grid-column: 1 / 2; /* Coloca na primeira coluna */
+    grid-row: 2 / 3; /* Segunda linha */
+    margin-top: 50px;
 }
 
 .car-pesquisar {
-    width: 200px;
-    max-width: 200px;
-    height: 40%;
-    min-height: 40px;
+    height: 40px;
+    width: 100%;
+    min-width: 180px;
+    max-width: 180px;
     font-size: 18px;
     color: #ffffff;
     background-color: #FF6600;
@@ -385,7 +377,7 @@ input[type=date]::-webkit-datetime-edit {
     left: 40px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1300px) {
     .car-image {
         display: none;
     }
@@ -462,9 +454,17 @@ input[type=date]::-webkit-datetime-edit {
     .carro-card-recomendacao-eco, .carro-card-recomendacao-inter, .carro-card-recomendacao-lux{
         left: 0;
     }
+
+    .car-btn-pesquisar {
+        margin-top: 23px;
+    }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 800px) {
+    .car-grid-inputs {
+        order: 1; 
+    }
+
     .card-carro {
         background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
         width: 100%;
@@ -479,7 +479,7 @@ input[type=date]::-webkit-datetime-edit {
     }
 
     .form-cardcarro {
-        width: 100%;
+        width: 70%;
         padding: 15px;
         display: flex;
         flex-direction: column;
@@ -493,9 +493,12 @@ input[type=date]::-webkit-datetime-edit {
     }
 
     .car-btn-pesquisar {
-        justify-content: center;
-        width: 100%;
-        padding: 0px;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        width: 100%; 
+        margin: 0 auto; 
+        order: 2; 
     }
 
     .car-pesquisar {
