@@ -42,7 +42,7 @@ export default function Home() {
                         <label className="etiqueta">Local</label>
                     </div>
                     <div className="input-class-pturistico">
-                        <input type="text" className="input-pturistico" placeholder="Rio de Janeiro"
+                        <input type="text" className="input-pturistico" placeholder="Ex: Rio de Janeiro"
                             style={{ backgroundImage: `url(${destinoIcon})` }}/>
                     </div>
 

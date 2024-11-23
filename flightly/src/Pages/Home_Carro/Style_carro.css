@@ -30,9 +30,12 @@
 }
 
 .car-image {
-    width: 100%; 
-    height: auto;
-    object-fit: contain; 
+    position: absolute;
+    width: 45%;
+    height: 90%;
+    top: 12%;
+    left: 12%;
+    z-index: 1;
 }
 
 .car-image img {

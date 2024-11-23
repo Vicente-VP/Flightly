@@ -1,5 +1,6 @@
 import './styleFiltroPlano.css';
 import React, { useState } from 'react';
+import setaIcon from "../../../Images/FiltroPlano/icon-seta.png";
 
 export default function FiltroPlanoViagem({ onFilterChange, onAllFiltersDeactivated, onEditButtonClick, DeleteItems }) {
     const [checked, setChecked] = useState(true);
@@ -106,12 +107,13 @@ export default function FiltroPlanoViagem({ onFilterChange, onAllFiltersDeactiva
 
             <div className='edit-space'>
                 <div className="edit-innerSpace">
-                    <button className={`btn-edit edit ${btnEdit ? 'active' : ''}`} onClick={handleBtnEdit}></button>
-                    <span>Editar</span>
+                    <button className={`btn-edit openDelete ${btnEdit ? 'active' : ''}`} onClick={handleBtnEdit}></button>
+                    <span>{btnEdit ? 'Cancelar' : 'Deletar'}</span>
                 </div>
+                <img src={setaIcon} className={`setaDireita-btnDelete ${btnEdit ? 'active' : ''}`}></img>
                 <div className={`edit-innerSpace delete ${btnEdit ? 'active' : ''}`}>
-                    <button className={`btn-edit delete ${btnEdit ? 'active' : ''}`} onClick={DeleteItems}></button>
-                    <span className={`spanDelete ${btnEdit ? 'active' : ''}`} >Apagar</span>
+                    <button className={`btn-edit confirmDelete ${btnEdit ? 'active' : ''}`} onClick={DeleteItems}></button>
+                    <span className={`spanDelete ${btnEdit ? 'active' : ''}`} >Confirmar</span>
                 </div>
             </div>
         </div>

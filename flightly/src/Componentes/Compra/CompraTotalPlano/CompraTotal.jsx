@@ -38,12 +38,12 @@ return (
     <>
         <div className={`Block_Preco ${isSticky ? 'sticky' : 'fixed'}`} id='preco-total'>
             <div className="conteudo_preco">
-                <label className='txt-telaCompra' htmlFor="Total_preco">Subtotal: </label>
+                <label className='txt-telaCompra' htmlFor="Total_preco">Subtotal: R$ </label>
                 <span>{props.preco}</span>
             </div>
 
             <div className="conteudo_preco">
-                <label className='txt-telaCompra' htmlFor="Num_items">Quantidade de Itens : </label>
+                <label className='txt-telaCompra' htmlFor="Num_items">Quantidade de Itens: </label>
                 <span>{props.items}</span>
             </div>
 

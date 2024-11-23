@@ -100,7 +100,7 @@ export default function Home() {
                                     <label className="etiqueta-hospedagem">Local</label>
                                 </div>
                                 <div className="input-hospedagem">
-                                    <input type="text" className="input-hospedagem" placeholder="Rio de Janeiro" name="local"
+                                    <input type="text" className="input-hospedagem" placeholder="Ex: Rio de Janeiro" name="local"
                                         style={{ backgroundImage: `url(${destinoIcon})` }} />
                                 </div>
                             </div>

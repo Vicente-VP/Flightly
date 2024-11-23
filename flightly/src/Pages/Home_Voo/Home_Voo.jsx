@@ -204,7 +204,7 @@ const handleDestinoBlur = () => {
                                     <input
                                         type="text"
                                         className="input-voo"
-                                        placeholder="São Paulo"
+                                        placeholder="Ex: São Paulo"
                                         name="origem"
                                         style={{ backgroundImage: `url(${origemIcon})` }}
                                         value={origemInput}
@@ -235,7 +235,7 @@ const handleDestinoBlur = () => {
                                     <input
                                         type="text"
                                         className="input-voo"
-                                        placeholder="Rio de Janeiro"
+                                        placeholder="Ex: Rio de Janeiro"
                                         name="destino"
                                         style={{ backgroundImage: `url(${destinoIcon})` }}
                                         value={destinoInput}

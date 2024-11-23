@@ -41,7 +41,7 @@ export default function PlanosViagem() {
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
-      }
+    }
 
     return (
         <>
@@ -54,12 +54,16 @@ export default function PlanosViagem() {
                     Planos de Viagem
                 </label>
 
-                <div className="barra-pesquisa-planos-viagem">
-                    <BarraPesquisa />
+                <div className="barraBotoes-container">
+                    <div className="barra-pesquisa-planos-viagem">
+                        <BarraPesquisa />
+                    </div>
+                    <Btns_PlanoViagens handleClick={handleClick} />
                 </div>
 
+
                 <div className="grid-cards-planos-viagem">
-                {clicked ? <div className="popupadd"><PopUpCriarPlano handleClick={handleClick} /></div> : null}
+                    {clicked ? <div className="popupadd"><PopUpCriarPlano handleClick={handleClick} /></div> : null}
 
                     {planos.map((plano, i) => {
                         // Only create a new container when the index is divisible by 4
@@ -85,10 +89,6 @@ export default function PlanosViagem() {
                         return null; // Skip rendering here, as the items are handled within the grouped div above.
                     })}
 
-
-                    <div className='divBtnCriarPlano'>
-                        <Btns_PlanoViagens handleClick={handleClick} />
-                    </div>
                 </div>
             </div>
         </>

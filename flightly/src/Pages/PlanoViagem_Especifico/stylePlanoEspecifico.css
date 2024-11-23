@@ -8,13 +8,17 @@
 }
 
 .link-planoViagem {
+    font-size: 28px;
     font-style: normal;
-    text-decoration: none;
+    text-decoration: underline;
     color: black;
+    transition: 0.2s;
 }
 
 .link-planoViagem:hover {
-    text-decoration: underline;
+    color: #2378BC;
+    font-size: 28.2px;
+    transition: 0.2s;
 }
 
 /* Plano Vazio */
