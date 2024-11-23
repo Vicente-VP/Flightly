@@ -87,8 +87,8 @@ export default function CardPergunta1(){
             console.log(buttonText);
         }
         else if(contagem === 6){
-            setAnswer1("Sim");
-            setAnswer2("Não")
+            setAnswer1("Experimento");
+            setAnswer2("Não Experimento")
             setButtonText('Avançar');
             console.log(buttonText);
         }
@@ -99,8 +99,8 @@ export default function CardPergunta1(){
             console.log(buttonText);
         }
         else if(contagem === 8){
-            setAnswer1("Curtas");
-            setAnswer2("Longas")
+            setAnswer1("1 a 2 semanas");
+            setAnswer2("Mais de 3 semanas")
             setButtonText('Avançar');
             console.log(buttonText);
         }
@@ -123,13 +123,13 @@ export default function CardPergunta1(){
             setchangeQuestion('Qual seu período de férias ?')
         }
         else if(contagem === 2){
-            setchangeQuestion('Selecione sua preferência')
+            setchangeQuestion('Selecione um local de sua preferência')
         }
         else if(contagem === 3){
-            setchangeQuestion('Selecione sua preferência')
+            setchangeQuestion('Você prefere qual tipo de atividade?')
         }
         else if(contagem === 4){
-            setchangeQuestion('Gosta de ir a lugares mais reservados ou mais animados ?')
+            setchangeQuestion('Prefere ir a lugares mais reservados ou mais animados ?')
         }
         else if(contagem === 5){
             setchangeQuestion('Prefere passeios mais agitados ou tranquilos ?')
@@ -138,13 +138,13 @@ export default function CardPergunta1(){
             setchangeQuestion('Você gosta de experimentar a culinária local ?')
         }
         else if(contagem === 7){
-            setchangeQuestion('Você costuma sair sozinho ou em grupo ?')
+            setchangeQuestion('Você costuma sair sozinho ou em grupo (amigos/namorada) ?')
         }
         else if(contagem === 8){
             setchangeQuestion('Suas viagens são curtas ou longas ?')
         }
         else if(contagem === 9){
-            setchangeQuestion('Você gosta de participar de tours guiados ou prefere ir sozinho ?')
+            setchangeQuestion('Você gosta de participar de tours guiados ou prefere descobrir lugares sozinho ?')
         }
         else if(contagem === 10){
             setchangeQuestion('Você prefere destinos mais quentes ou frios ?')
