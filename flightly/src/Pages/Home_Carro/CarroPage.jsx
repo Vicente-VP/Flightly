@@ -116,7 +116,7 @@ export default function Carro_page() {
             }
         }
         return options;
-    };    
+    };
 
     return (
         <>
@@ -128,104 +128,81 @@ export default function Carro_page() {
                     <div className="car-title">
                         <label>Aluguel de Carros</label>
                     </div>
-<div className="car-space">
-    <div className="car-image">
-        <img src={Carro_Form} alt="Carro esportivo" />
-    </div>
-</div>
+                    <div className="car-space">
+                        <div className="car-image">
+                            <img src={Carro_Form} alt="Carro esportivo" />
+                        </div>
+                    </div>
 
-<div className="form-cardcarro">
-    <div className="car-grid-inputs">
-        <div className="car-input-form">
-            <div className="car-etiqueta-className">
-                <label className="car-etiqueta">Local de retirada</label>
-            </div>
-            <div className="car-input-className">
-                <input
-                    type="text"
-                    className="car-input"
-                    name="pick-location"
-                    id="pick-location"
-                    placeholder="São Paulo"
-                    style={{ backgroundImage: `url(${Origem_Form})` }}
-                    value={localInput}
-                    onChange={handleLocalChange}
-                    onFocus={() => setIsLocalFocused(true)}
-                    onBlur={handleLocalBlur}
-                />
-                {localSuggestions.length > 0 && isLocalFocused && (
-                    <ul className="suggestions-list">
-                        {localSuggestions.map((suggestion, index) => (
-                            <li
-                                key={index}
-                                onClick={() => handleLocalSuggestionClick(suggestion.suggestion)}
-                                className="suggestion-item"
-                            >
-                                {suggestion.suggestion}
-                            </li>
-                        ))}
-                    </ul>
-                )}
-            </div>
-        </div>
+                    <div className="form-cardcarro">
+                        <div className="car-grid-inputs">
+                            <div className="car-input-form">
+                                <div className="car-etiqueta-className">
+                                    <label className="car-etiqueta">Local de retirada</label>
+                                </div>
+                                <div className="car-input-className">
+                                    <input
+                                        type="text"
+                                        className="car-input"
+                                        name="pick-location"
+                                        id="pick-location"
+                                        placeholder="São Paulo"
+                                        style={{ backgroundImage: `url(${Origem_Form})` }}
+                                        value={localInput}
+                                        onChange={handleLocalChange}
+                                        onFocus={() => setIsLocalFocused(true)}  // Set focus state
+                                        onBlur={handleLocalBlur}   // Clear focus state
+                                    />
+                                    {localSuggestions.length > 0 && isLocalFocused && (
+                                        <ul className="suggestions-list">
+                                            {localSuggestions.map((suggestion, index) => (
+                                                <li
+                                                    key={index}
+                                                    onClick={() => handleLocalSuggestionClick(suggestion.suggestion)}
+                                                    className="suggestion-item"
+                                                >
+                                                    {suggestion.suggestion}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </div>
+                            </div>
+                            <div className="car-input-form">
+                                <div className="car-etiqueta-className">
+                                    <label className="car-etiqueta">Data e Hora de Retirada</label>
+                                </div>
+                                <div className="car-input-className">
+                                    <div>
+                                        <input type="date" className="car-input" id="pickup-date" name="pickup-date" placeholder="21/06/2024"
+                                            style={{ backgroundImage: `url(${IdaVolta_Form})` }} />
+                                        <select className="car-input selectHours" id="pickup-time" name="pickup-hour">
+                                            {generateTimeOptions()}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="car-btn-pesquisar">
+                                <button className="car-pesquisar" onClick={PesquisarCarro}>Pesquisar</button>
+                            </div>
+                            <div className="car-input-form">
+                                <div className="car-etiqueta-className">
+                                    <label className="car-etiqueta">Data e Hora de Devolução</label>
+                                </div>
+                                <div className="car-input-className">
+                                    <div>
+                                        <input type="date" className="car-input" id="return-date" name="return-date" placeholder="30/06/2024"
+                                            style={{ backgroundImage: `url(${IdaVolta_Form})` }} />
+                                        <select className="car-input selectHours" id="return-time" name="return-hour">
+                                            {generateTimeOptions()}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
 
-        <div className="car-input-form">
-            <div className="car-etiqueta-className">
-                <label className="car-etiqueta">Data e Hora de Retirada</label>
-            </div>
-            <div className="car-input-className">
-                <div>
-                    <input
-                        type="date"
-                        className="car-input"
-                        id="pickup-date"
-                        name="pickup-date"
-                        placeholder="21/06/2024"
-                        style={{ backgroundImage: `url(${IdaVolta_Form})` }}
-                    />
-                    <select
-                        className="car-input selectHours"
-                        id="pickup-time"
-                        name="pickup-hour"
-                    >
-                        {generateTimeOptions()}
-                    </select>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div className="car-input-form">
-            <div className="car-etiqueta-className">
-                <label className="car-etiqueta">Data e Hora de Devolução</label>
-            </div>
-            <div className="car-input-className">
-                <div>
-                    <input
-                        type="date"
-                        className="car-input"
-                        id="return-date"
-                        name="return-date"
-                        placeholder="30/06/2024"
-                        style={{ backgroundImage: `url(${IdaVolta_Form})` }}
-                    />
-                    <select
-                        className="car-input selectHours"
-                        id="return-time"
-                        name="return-hour"
-                    >
-                        {generateTimeOptions()}
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div className="car-btn-pesquisar">
-        <button className="car-pesquisar" onClick={PesquisarCarro}>
-            Pesquisar
-        </button>
-    </div>
-</div>
-
 
                 {/* ------------------ CARRO FORM FIM  --------------------- */}
 
@@ -287,7 +264,7 @@ export default function Carro_page() {
                 </div>
 
                 {/* ------------------ RECOMENDAÇÃO DE CARRO FIM --------------------- */}
-            </main>
+            </main >
 
             <div style={{ height: 250 + 'px' }}><Footer /></div>
         </>
