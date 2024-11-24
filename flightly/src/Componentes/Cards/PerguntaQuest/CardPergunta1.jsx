@@ -249,7 +249,7 @@ export default function CardPergunta1(){
     const [pt2, setPt2] = useState('');
     const [pt3, setPt3] = useState('');
     
-    const handleSubmit = async(event) => {
+    const handleSubmit = async(e) => {
         axios.post('https://flightly-ia.onrender.com/ia', data)
         .then(res=>{
                 const { perfil, msg, local1, local2, local3, pt1, pt2, pt3 } = res.data;
