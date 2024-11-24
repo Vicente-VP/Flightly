@@ -116,7 +116,7 @@ export default function Carro_page() {
             }
         }
         return options;
-    };    
+    };
 
     return (
         <>
@@ -128,7 +128,6 @@ export default function Carro_page() {
                     <div className="car-title">
                         <label>Aluguel de Carros</label>
                     </div>
-
                     <div className="car-space">
                         <div className="car-image">
                             <img src={Carro_Form} alt="Carro esportivo" />
@@ -183,9 +182,8 @@ export default function Carro_page() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="car-input-form">
-                                <div className="car-etiqueta-className"></div>
-                                <div className="car-input-className"></div>
+                            <div className="car-btn-pesquisar">
+                                <button className="car-pesquisar" onClick={PesquisarCarro}>Pesquisar</button>
                             </div>
                             <div className="car-input-form">
                                 <div className="car-etiqueta-className">
@@ -202,9 +200,6 @@ export default function Carro_page() {
                                 </div>
                             </div>
 
-                        </div>
-                        <div className="car-btn-pesquisar">
-                            <button className="car-pesquisar" onClick={PesquisarCarro}>Pesquisar</button>
                         </div>
                     </div>
                 </div>
@@ -269,7 +264,7 @@ export default function Carro_page() {
                 </div>
 
                 {/* ------------------ RECOMENDAÇÃO DE CARRO FIM --------------------- */}
-            </main>
+            </main >
 
             <div style={{ height: 250 + 'px' }}><Footer /></div>
         </>
