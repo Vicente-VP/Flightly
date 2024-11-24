@@ -31,7 +31,7 @@ export default function NavBar() {
   useEffect(() => {
     const currentPath = location.pathname;
     
-    if (currentPath === '/') {
+    if (currentPath === '/Voo') {
       setActiveLink('voos');
     } else if (currentPath.includes('Hospedagem')) {
       setActiveLink('hospedagem');

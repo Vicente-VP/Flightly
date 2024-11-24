@@ -116,6 +116,42 @@ export default function PopUpAddPlanoViagens(props){
                     console.log(error);
                     return null;
                 }
+            case 'Carro':
+                try{
+                    const response = await axios.post(`https://flightlydbapi.onrender.com/createCarro`, {
+                        modelo: props.item.modelo,
+                        marca: props.item.marca,
+                        preco: parseFloat(props.item.preco),
+                        tipo: props.item.tipo,
+                        fornecedor: props.item.locadora,
+                        assentos: parseInt(props.item.assento),
+                        localizacao: params.get('place'),
+                        cambio: props.item.cambio,
+                        imagem: props.item.carImage,
+                        imagem_locadora: props.item.locImage
+                    })
+                    return response.data.id_carro;
+                }
+                catch(error){
+                    console.log(error);
+                    return null;
+                }
+            case 'PontoTuristico':
+                try{
+                    const response = await axios.post(`https://flightlydbapi.onrender.com/createPontoTuristico`, {
+                        nome: props.item.titulo,
+                        imagem: props.item.image,
+                        estrelas: parseFloat(props.item.estrelas),
+                        avaliacao: props.item.reviews,
+                        preco: parseFloat(props.item.preco.toString().match(/\b\d+(\.\d+)?\b/)[0])
+                    })
+                    return response.data.id_pontot;
+                }
+                catch(error){
+                    console.log(error);
+                    return null;
+                }
+                
             
             default:
                 return null;

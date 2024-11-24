@@ -14,8 +14,26 @@ import './style_PTuristico.css';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PopularTuristico from "../../Componentes/Cards/CardPopularTuristico/CardPopularTuristico";
+import { useNavigate } from "react-router-dom";
 
-export default function Home() {
+export default function HomePTuristico() {
+
+    const navigate = useNavigate();
+
+    function PesquisarPTuristico() {
+        
+        let place = document.querySelector('input[name="input-attraction"]').value;
+
+        const params = new URLSearchParams({
+            requestType: 'pturistico',
+            place,
+        }).toString();
+    
+        // Navigate to the new page, passing the requestData as state
+        navigate(`/InformacoesPage?${params}`);
+
+    }
+
     return (
     <>
         <div><NavBar/></div>
@@ -42,12 +60,12 @@ export default function Home() {
                         <label className="etiqueta">Local</label>
                     </div>
                     <div className="input-class-pturistico">
-                        <input type="text" className="input-pturistico" placeholder="Rio de Janeiro"
+                        <input type="text" name="input-attraction" className="input-pturistico" placeholder="Rio de Janeiro"
                             style={{ backgroundImage: `url(${destinoIcon})` }}/>
                     </div>
 
                     <div className="btn-pesquisar-pturistico">
-                        <button className="btn-submit-pturistico">Pesquisar</button>
+                        <button className="btn-submit-pturistico" onClick={PesquisarPTuristico}>Pesquisar</button>
                     </div>
                 </div>
             </div>

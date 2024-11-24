@@ -1,4 +1,4 @@
-    import filter_search_bar from '../../../Images/Barra_Pesquisa/filter-search-bar.png';
+import filter_search_bar from '../../../Images/Barra_Pesquisa/filter-search-bar.png';
 import Origem_icon from '../../../Images/Barra_Pesquisa/Origem_icon.png';
 import destino_icon from '../../../Images/Barra_Pesquisa/destino_icon.png';
 import ida_volta_icon from '../../../Images/Barra_Pesquisa/ida_volta_icon.png';
@@ -75,7 +75,7 @@ export default function PesquisaVoo(props) {
                         placeholder="São Paulo"
                         value={props.origem}
                         onChange={(e) => props.onOrigemChange(e.target.value)}
-                        className="origem"
+                        className="origem-voo"
                         name='origem'
                         style={{ backgroundImage: `url(${Origem_icon})` }}
                     />
@@ -88,7 +88,7 @@ export default function PesquisaVoo(props) {
                         name='destino'
                         value={props.destino}
                         onChange={(e) => props.onDestinoChange(e.target.value)}
-                        className="destino"
+                        className="destino-voo"
                         style={{ backgroundImage: `url(${destino_icon})` }}
                     />
                 </div>

@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 
 import './styleBarraPesquisaPontoTuristico.css'
 
-export default function PesquisaPontoTuristico(){
+export default function PesquisaPontoTuristico(props){
     const [price, setPrice] = useState(100);
 
   function handlePriceChange(e) {
@@ -20,7 +20,7 @@ export default function PesquisaPontoTuristico(){
                 <div className="search-local">
                     <div>
                         <span>Local</span>
-                        <input type="text" placeholder="São Paulo" className="origem" style={{ backgroundImage: `url(${destino_icon})` }}/>
+                        <input type="text" placeholder="São Paulo" className="origem" value={props.attraction} style={{ backgroundImage: `url(${destino_icon})` }}/>
                     </div>
                 </div>
                 <div className="search-price">

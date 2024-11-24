@@ -1,6 +1,13 @@
 .container-cards-infoPage{
-    margin-left: 0%;
+    margin: 50px;
 }
+
+.container-cards-infoPage.pt{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 120px;
+}
+
 .container-informacoes{
     display: flex;
     flex-direction: column;

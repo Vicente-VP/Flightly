@@ -13,8 +13,8 @@ export default function Testes() {
         <>
             <div className="navbar-testes"><NavBar/></div>
 
-                <div className="conteudo-testes">               
-
+                <div className="conteudo-testes">           
+                    
                 </div>
 
 
