@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import NavBar from '../../Componentes/NavBar/NavBar';
+import Footer from '../../Componentes/Footer/Footer';
 import BarraPesquisa from '../../Componentes/BarraPesquisaPlano/BarraPesquisaPlano';
 import CardPlanoViagem from '../../Componentes/Cards/Card_Plano_Viagem/CardPlanoViagem';
 import Btns_PlanoViagens from '../../Componentes/Btns_PlanoViagens/Btns_PlanoViagens';
@@ -70,7 +71,7 @@ export default function PlanosViagem() {
                         if (i % 4 === 0) {
                             return (
                                 <div className="container-cardsPlanoViagem" key={`container-${i}`}>
-                                    {planos.slice(i, i + 4).map((subPlano, j) => (
+                                    {planos.slice(i, i + 5).map((subPlano, j) => (
                                         <Link to={`/PlanoEspecifico?id=${subPlano[0]}&nome=${subPlano[1]}`} className='LinkPlanos' key={subPlano[0]}>
                                             <CardPlanoViagem
                                                 index={i + j}
@@ -90,6 +91,7 @@ export default function PlanosViagem() {
                     })}
 
                 </div>
+                <Footer />
             </div>
         </>
     );

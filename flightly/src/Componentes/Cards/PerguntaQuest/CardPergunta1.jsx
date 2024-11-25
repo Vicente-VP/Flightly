@@ -305,7 +305,6 @@ export default function CardPergunta1() {
                 default:
                     break;
             }
-
             console.log('Data Atualizado:', newData); // Debug: Exibe o objeto atualizado no console
             return newData;
         });
@@ -335,13 +334,13 @@ export default function CardPergunta1() {
                     <span className='title'>Destinos</span>
                     <div className='card-flex'>
                         <div className='card-rec'>
-                            {local1}
+                            1.{local1}
                         </div>
                         <div className='card-rec'>
-                            {local2}
+                            2.{local2}
                         </div>
                         <div className='card-rec'>
-                            {local3}
+                            3.{local3}
                         </div>
                     </div>
                 </section>

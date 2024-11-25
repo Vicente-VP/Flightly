@@ -1,16 +1,21 @@
 .dropdown{
-    height: 40.72px;
+    height: 40px;
+    width: 100%;
+    min-width: 180px;
+    max-width: 180px;
 }
 
-
 .dropdown .dropdown-btn{
-    height: 39.72px;
+    height: 40px;
+    width: 100%;
+    min-width: 180px;
+    max-width: 180px;
 
     display: flex;
     align-items: center;
     background-color: #FFF;
 
-    color: black;
+    color: #BFC1C3;
 
     padding: 0 0 0 10px;
 
@@ -105,4 +110,48 @@
 .sub-title{
     font-size: 13px;
     color: black;
+}
+
+@media (max-width: 1200px){
+    .dropdown{
+        min-width: 140px;
+        max-width: 140px;
+    }
+    .dropdown .dropdown-btn{
+        min-width: 140px;
+        max-width: 140px;
+    }
+}
+
+@media (max-width: 850px){
+    .dropdown{
+        min-width: 200px;
+        max-width: 200px;
+    }
+    .dropdown .dropdown-btn{
+        min-width: 200px;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 600px){
+    .dropdown{
+        min-width: 150px;
+        max-width: 150px;
+    }
+    .dropdown .dropdown-btn{
+        min-width: 150px;
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px){
+    .dropdown{
+        min-width: 180px;
+        max-width: 180px;
+    }
+    .dropdown .dropdown-btn{
+        min-width: 180px;
+        max-width: 180px;
+    }
 }

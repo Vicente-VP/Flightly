@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './styleChatIA.css';
+import axios from 'axios';
 
 import setaBaixo from "../../../Images/HomeGenerica/setaBaixo.png";
 import btnEnviar from "../../../Images/HomeGenerica/enviar.png";
@@ -11,7 +12,7 @@ export default function ChatIA() {
     const [conversationStarted, setConversationStarted] = useState(false); // Controle para iniciar a conversa
 
     // Função para enviar a mensagem do usuário
-    const handleSendMessage = () => {
+    const handleSendMessage = async () => {
         if (textInInput.trim()) {
             setMessages([...messages, { text: textInInput, sender: 'user' }]);
             setTextInInput(''); // Limpa o input após enviar
@@ -19,13 +20,29 @@ export default function ChatIA() {
 
             // Simula o carregamento e a resposta da IA após o envio da primeira mensagem
             setLoading(true);
-            setTimeout(() => {
+
+            try{
+                const texto = {
+                    msg: textInInput
+                };
+
+                const res = await axios.post('https://flightly-ia.onrender.com/bot', texto);
+                const reply = res.data.msg;
+
                 setMessages((prevMessages) => [
                     ...prevMessages,
-                    { text: 'Olá! Como posso ajudar na sua viagem?', sender: 'IA' }
+                    { text: reply || 'Desculpe, algo deu errado?', sender: 'IA' }
                 ]);
-                setLoading(false);
-            }, 1000); // Delay de 1 segundo para a resposta da IA
+            }catch(er){
+                console.error('Erro ao enviar mensagem para a IA:', er);
+                setMessages((prevMessages) => [
+                    ...prevMessages,
+                    { text: 'Desculpe, não consegui processar sua mensagem.', sender: 'IA' },
+                ]);
+            } finally {
+                setLoading(false); // Para o círculo de carregamento
+            }
+
         }
     };
 

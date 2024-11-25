@@ -15,7 +15,9 @@ import Rec_Eco from '../../Images/Card_Recomendacao_Carro/Rec_Eco.png';
 import Rec_Inter from '../../Images/Card_Recomendacao_Carro/Rec_Inter.png';
 import Rec_Lux from '../../Images/Card_Recomendacao_Carro/Rec_Lux.png';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import './Style_carro.css';
 
@@ -37,6 +39,83 @@ export default function Carro_page() {
         ];
         setLocadoras([...locadoras, ...novasLocadoras])
     }
+
+    const navigate = useNavigate();
+
+    function PesquisarCarro() {
+        // Coleta os dados do formulário na página
+        let place = document.querySelector('input[name="pick-location"]').value;
+        let data_retirada = document.querySelector('input[name="pickup-date"]').value;
+        let hora_retirada = document.querySelector('select[name="pickup-hour"]').value;
+        let data_devolucao = document.querySelector('input[name="return-date"]').value;
+        let hora_devolucao = document.querySelector('select[name="return-hour"]').value;
+
+        // Define os parâmetros como no exemplo do voo
+        const params = new URLSearchParams({
+            requestType: 'car',
+            place,
+            data_retirada,
+            hora_retirada,
+            data_devolucao,
+            hora_devolucao,
+        }).toString();
+
+        // Navega para a página InformacoesPage com os parâmetros
+        navigate(`/InformacoesPage?${params}`);
+    }
+
+    const [localInput, setLocalInput] = useState("");
+    const [localSuggestions, setLocalSuggestions] = useState([]);
+    const [isLocalFocused, setIsLocalFocused] = useState(false);
+
+    const handleLocalChange = (e) => {
+        const value = e.target.value;
+        setLocalInput(value);
+    };
+
+    useEffect(() => {
+        const delayDebounce = setTimeout(() => {
+            if (localInput) {
+                axios.get(`http://144.22.183.38:8080/suggestion/cars?typed=${localInput}`)
+                    .then(response => setLocalSuggestions(response.data))
+                    .catch(error => console.error("Error fetching local suggestions:", error));
+            } else {
+                setLocalSuggestions([]);
+            }
+        }, 1000); // 1-second delay
+
+
+        return () => clearTimeout(delayDebounce); // Clear timeout if localInput changes before 1 seconds
+    }, [localInput]);
+
+    const handleLocalSuggestionClick = (suggestion) => {
+        setLocalInput(suggestion);
+        setLocalSuggestions([]);
+        setIsLocalFocused(false);
+    };
+
+    const handleLocalBlur = () => {
+        setTimeout(() => {
+            setIsLocalFocused(false);
+        }, 300);
+    };
+
+    const generateTimeOptions = () => {
+        const options = [];
+        for (let hour = 0; hour < 24; hour++) {
+            for (let minute = 0; minute < 60; minute += 30) {
+                const formattedHour = hour.toString().padStart(2, "0");
+                const formattedMinute = minute.toString().padStart(2, "0");
+                const timeValue = `${formattedHour}:${formattedMinute}`;
+                options.push(
+                    <option key={timeValue} value={timeValue}>
+                        {timeValue}
+                    </option>
+                );
+            }
+        }
+        return options;
+    };
 
 
     return (
@@ -65,8 +144,31 @@ export default function Carro_page() {
                                     <label className="car-etiqueta">Local de retirada</label>
                                 </div>
                                 <div className="car-input-className">
-                                    <input type="text" className="car-input" name="pick-location" id="pick-location"
-                                        placeholder="Ex: São Paulo" style={{ backgroundImage: `url(${Origem_Form})` }} />
+                                <input
+                                        type="text"
+                                        className="car-input"
+                                        name="pick-location"
+                                        id="pick-location"
+                                        placeholder="São Paulo"
+                                        style={{ backgroundImage: `url(${Origem_Form})` }}
+                                        value={localInput}
+                                        onChange={handleLocalChange}
+                                        onFocus={() => setIsLocalFocused(true)}  // Set focus state
+                                        onBlur={handleLocalBlur}   // Clear focus state
+                                    />
+                                    {localSuggestions.length > 0 && isLocalFocused && (
+                                        <ul className="suggestions-list">
+                                            {localSuggestions.map((suggestion, index) => (
+                                                <li
+                                                    key={index}
+                                                    onClick={() => handleLocalSuggestionClick(suggestion.suggestion)}
+                                                    className="suggestion-item"
+                                                >
+                                                    {suggestion.suggestion}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
                                 </div>
                             </div>
                             <div className="car-input-form">
@@ -77,7 +179,9 @@ export default function Carro_page() {
                                     <div>
                                         <input type="date" className="car-input" id="pickup-date" name="pickup-date" placeholder="21/06/2024"
                                             style={{ backgroundImage: `url(${IdaVolta_Form})` }} />
-                                        <input type="time" className="car-input" id="pickup-time" name="pickup-hour" />
+                                        <select className="car-input selectHours" id="pickup-time" name="pickup-hour">
+                                            {generateTimeOptions()}
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -95,13 +199,15 @@ export default function Carro_page() {
                                     <div>
                                         <input type="date" className="car-input" id="return-date" name="return-date" placeholder="30/06/2024"
                                             style={{ backgroundImage: `url(${IdaVolta_Form})` }} />
-                                        <input type="time" className="car-input" id="return-time" name="return-hour" />
+                                        <select className="car-input selectHours" id="return-time" name="return-hour">
+                                            {generateTimeOptions()}
+                                        </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="car-btn-pesquisar">
-                            <button className="car-pesquisar">Pesquisar</button>
+                            <button className="car-pesquisar" onClick={PesquisarCarro}>Pesquisar</button>
                         </div>
                     </div>
                 </div>

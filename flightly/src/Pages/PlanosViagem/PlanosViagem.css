@@ -16,13 +16,10 @@
 
 .grid-cards-planos-viagem{
     display: flex;
-    flex-direction: column;
-    gap: 60px;
-    width: 90%;
-    height: 100%;
-    margin-top: 80px;
-    margin-bottom: 40px;
-    padding: 50px 0 0 11%;
+    flex-wrap: wrap;
+    gap: 80px;
+    margin: 80px 0;
+    width: 100%;
 }
 
 .barraBotoes-container{
@@ -39,7 +36,9 @@
 
 .container-cardsPlanoViagem{
     display: flex;
+    width: 100%;
     gap: 80px;
+    justify-content: center;
 }
 
 .divBtnCriarPlano{
