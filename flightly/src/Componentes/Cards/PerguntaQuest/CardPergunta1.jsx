@@ -87,8 +87,8 @@ export default function CardPergunta1(){
             console.log(buttonText);
         }
         else if(contagem === 6){
-            setAnswer1("Sim");
-            setAnswer2("Não")
+            setAnswer1("Experimento");
+            setAnswer2("Não Experimento")
             setButtonText('Avançar');
             console.log(buttonText);
         }
@@ -99,8 +99,8 @@ export default function CardPergunta1(){
             console.log(buttonText);
         }
         else if(contagem === 8){
-            setAnswer1("Curtas");
-            setAnswer2("Longas")
+            setAnswer1("1 a 2 semanas");
+            setAnswer2("Mais de 3 semanas")
             setButtonText('Avançar');
             console.log(buttonText);
         }
@@ -123,13 +123,13 @@ export default function CardPergunta1(){
             setchangeQuestion('Qual seu período de férias ?')
         }
         else if(contagem === 2){
-            setchangeQuestion('Selecione sua preferência')
+            setchangeQuestion('Selecione um local de sua preferência')
         }
         else if(contagem === 3){
-            setchangeQuestion('Selecione sua preferência')
+            setchangeQuestion('Você prefere qual tipo de atividade?')
         }
         else if(contagem === 4){
-            setchangeQuestion('Gosta de ir a lugares mais reservados ou mais animados ?')
+            setchangeQuestion('Prefere ir a lugares mais reservados ou mais animados ?')
         }
         else if(contagem === 5){
             setchangeQuestion('Prefere passeios mais agitados ou tranquilos ?')
@@ -138,13 +138,13 @@ export default function CardPergunta1(){
             setchangeQuestion('Você gosta de experimentar a culinária local ?')
         }
         else if(contagem === 7){
-            setchangeQuestion('Você costuma sair sozinho ou em grupo ?')
+            setchangeQuestion('Você costuma sair sozinho ou em grupo (amigos/namorada) ?')
         }
         else if(contagem === 8){
             setchangeQuestion('Suas viagens são curtas ou longas ?')
         }
         else if(contagem === 9){
-            setchangeQuestion('Você gosta de participar de tours guiados ou prefere ir sozinho ?')
+            setchangeQuestion('Você gosta de participar de tours guiados ou prefere descobrir lugares sozinho ?')
         }
         else if(contagem === 10){
             setchangeQuestion('Você prefere destinos mais quentes ou frios ?')
@@ -249,7 +249,7 @@ export default function CardPergunta1(){
     const [pt2, setPt2] = useState('');
     const [pt3, setPt3] = useState('');
     
-    const handleSubmit = async(event) => {
+    const handleSubmit = async(e) => {
         axios.post('https://flightly-ia.onrender.com/ia', data)
         .then(res=>{
                 const { perfil, msg, local1, local2, local3, pt1, pt2, pt3 } = res.data;
@@ -265,51 +265,51 @@ export default function CardPergunta1(){
             .catch(err => console.log(err));   
         }
         
-        const updateData = (questionNumber, selectedIndex) => {
-            setData((prevData) => {
-                const newData = { ...prevData }; 
-        
-                switch (questionNumber) {
-                    case 1:
-                        newData.periodo = selectedIndex === 1 ? 'começo / final do ano' : 'meio do ano';
-                        break;
-                    case 2:
-                        newData.tipo_destino =
-                            selectedIndex === 1 ? 'litoral/praia' :
-                            selectedIndex === 2 ? 'urbano' : 'rural';
-                        break;
-                    case 3:
-                        newData.atividades = selectedIndex === 1 ? 'atividades internas' : 'atividades externas';
-                        break;
-                    case 4:
-                        newData.ambiente = selectedIndex === 1 ? 'reservados' : 'animados';
-                        break;
-                    case 5:
-                        newData.tipo_passeio = selectedIndex === 1 ? 'agitados' : 'tranquilos';
-                        break;
-                    case 6:
-                        newData.culinaria = selectedIndex === 1 ? 'sim' : 'não';
-                        break;
-                    case 7:
-                        newData.companhia = selectedIndex === 1 ? 'sozinho' : 'em Grupo';
-                        break;
-                    case 8:
-                        newData.duracao = selectedIndex === 1 ? 'curtas' : 'longas';
-                        break;
-                    case 9:
-                        newData.passeios = selectedIndex === 1 ? 'tours guiados' : 'sozinho';
-                        break;
-                    case 10:
-                        newData.clima = selectedIndex === 1 ? 'quentes' : 'frios';
-                        break;
-                    default:
-                        break;
-                }
-        
-                console.log('Data Atualizado:', newData); // Debug: Exibe o objeto atualizado no console
-                return newData;
-            });
-        };
+    const updateData = (questionNumber, selectedIndex) => {
+        setData((prevData) => {
+            const newData = { ...prevData }; 
+    
+            switch (questionNumber) {
+                case 1:
+                    newData.periodo = selectedIndex === 1 ? 'começo / final do ano' : 'meio do ano';
+                    break;
+                case 2:
+                    newData.tipo_destino =
+                        selectedIndex === 1 ? 'litoral/praia' :
+                        selectedIndex === 2 ? 'urbano' : 'rural';
+                    break;
+                case 3:
+                    newData.atividades = selectedIndex === 1 ? 'atividades internas' : 'atividades externas';
+                    break;
+                case 4:
+                    newData.ambiente = selectedIndex === 1 ? 'reservados' : 'animados';
+                    break;
+                case 5:
+                    newData.tipo_passeio = selectedIndex === 1 ? 'agitados' : 'tranquilos';
+                    break;
+                case 6:
+                    newData.culinaria = selectedIndex === 1 ? 'sim' : 'não';
+                    break;
+                case 7:
+                    newData.companhia = selectedIndex === 1 ? 'sozinho' : 'em Grupo';
+                    break;
+                case 8:
+                    newData.duracao = selectedIndex === 1 ? 'curtas' : 'longas';
+                    break;
+                case 9:
+                    newData.passeios = selectedIndex === 1 ? 'tours guiados' : 'sozinho';
+                    break;
+                case 10:
+                    newData.clima = selectedIndex === 1 ? 'quentes' : 'frios';
+                    break;
+                default:
+                    break;
+            }
+    
+            console.log('Data Atualizado:', newData); // Debug: Exibe o objeto atualizado no console
+            return newData;
+        });
+    };
         
     return(
 
@@ -329,13 +329,13 @@ export default function CardPergunta1(){
                     <span className='title'>Destinos</span>
                     <div className='card-flex'>
                         <div className='card-rec'>
-                            {local1}
+                            1.{local1}
                         </div>
                         <div className='card-rec'>
-                            {local2}
+                            2.{local2}
                         </div>
                         <div className='card-rec'>
-                            {local3}
+                            3.{local3}
                         </div>
                     </div>
                 </section>
@@ -343,13 +343,13 @@ export default function CardPergunta1(){
                     <span className='title'>Pontos Turísticos</span>
                     <div className='card-flex'>
                         <div className='card-rec'>
-                            {pt1}
+                            1.{pt1}
                         </div>                    
                         <div className='card-rec'>
-                            {pt2}
+                            2.{pt2}
                         </div> 
                         <div className='card-rec'>
-                            {pt3}
+                            3.{pt3}
                         </div>                   
                     </div>
                 </section>
