@@ -1,0 +1,54 @@
+.main-grid-planos-viagem{
+    display: grid;
+    height: 110vh;
+    width: 100%;
+    grid-template-rows: 10% 8% auto;
+
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.titulo-planos-viagem{
+    font-size: 40px;
+    font-weight: medium;
+}
+
+.grid-cards-planos-viagem{
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 85% auto;
+    gap: 60px;
+    width: 90%;
+    height: 100%;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    padding: 50px 0 0 11%;
+}
+
+.container-cardsPlanoViagem{
+    display: flex;
+    gap: 80px;
+}
+
+.divBtnCriarPlano{
+    position: absolute;
+    margin: 15% 0 0 60%;
+    justify-content: center;
+}
+
+.popupadd{
+    
+    top: 60%;
+    left: 50%;
+    position: fixed;
+    justify-content: center;
+    
+}
+
+.LinkPlanos{
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+}

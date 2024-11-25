@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*---------------Corpo--------------*/
+.container-filtrocar{
+    box-sizing: border-box;
+  
+    width: 370px;
+    height: 600px;
+  
+    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+    
+    background-image: linear-gradient(to right,#ffff, #004369) 1;
+    background-clip:border-box ;
+    box-shadow: 0px 4px 14.3px rgba(165, 178, 185, 0.25);
+    border: 1px solid;
+    border-radius: 20px;
+  
+    position: relative;
+  }
+
+/*---------------Corpo--------------*/
+
+/*---------------Divisões--------------*/
+.capacidade{
+    position: relative;
+    left: 8%;
+    right: 32.16%;
+    top: 6.7%;
+    bottom: 87.55%;
+    width: 250px;
+}
+
+.especificacao{
+    position: relative;
+    left: 8%;
+    right: 32.16%;
+    top: 10%;
+    bottom: 68.2%;
+}
+
+.preco{
+    position: relative;
+    left: 8%;
+    right: 71.89%;
+    top: 13%;
+    bottom: 32.17%;
+}
+
+.companhias{
+    position: relative;
+    left: 8%;
+    right: 71.89%;
+    top: 20%;
+    bottom: 32.17%;
+}
+/*---------------Divisões--------------*/
+
+/*---------------labels--------------*/
+
+  .lbl-filtrocar1, .lbl-filtrocar2, .lbl-filtrocar3, .lbl-filtrocar4{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+  
+    color: #004369;
+  }
+  
+  
+  .label-people{
+    color: rgb(0, 67, 105, 75%);
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+
+    padding-left: 25px;
+    position: absolute;
+  }
+
+  .label-bag{
+    color: rgb(0, 67, 105, 75%);
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+
+    padding-left: 33px;
+    position:absolute
+  }
+/*---------------labels--------------*/
+
+/*---------------Buttons--------------*/
+  .btn-capacidade-esq{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: rgb(0, 67, 105);
+    border: 0;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+
+
+    margin-right: 20px;
+    position: relative;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color: #BFC1C3;
+  }
+
+  .btn-capacidade-dir{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: rgb(0, 67, 105);
+    border: 0;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+
+    margin-left: 10px;
+    position: relative;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color: #BFC1C3;
+  }
+
+  .button-companies-movida {
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    color: #BFC1C3;
+    background-size: 20px;
+    background-position: 12px center;
+    background-repeat: no-repeat;
+    padding-left: 24px;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.button-companies-localiza {
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    color: #BFC1C3;
+    background-size: 20px;
+    background-position: 12px center;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    align-items: center;
+    margin-left: 8px;
+    width: 106px;
+    height: 40px;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.button-companies-foco {
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    color: #BFC1C3;
+    background-size: 20px;
+    background-position: 12px center;
+    background-repeat: no-repeat;
+    padding-left: 23px;
+    align-items: center;
+    margin-left: 8px;
+    width: 85px;
+    height: 40px;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.button-companies-movida:hover,
+.button-companies-movida.active {
+    background-color: #b2c9db25;
+    cursor: pointer;
+    color: #004369;
+    border: 2px solid #004369;
+    font-weight: 500;
+    background-position: 10.2px center;
+}
+
+.button-companies-localiza:hover,
+.button-companies-localiza.active {
+    background-color: #b2c9db25;
+    cursor: pointer;
+    color: #004369;
+    border: 2px solid #004369;
+    font-weight: 500;
+    background-position: 11px center;
+}
+
+.button-companies-foco:hover,
+.button-companies-foco.active {
+    background-color: #b2c9db25;
+    cursor: pointer;
+    color: #004369;
+    border: 2px solid #004369;
+    font-weight: 500;
+}
+
+
+.btn-pesq-filtrocar{
+    width: 177px;
+    height: 46px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #FF6600;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
+  
+    position: absolute;
+    left: 25.00%;
+    right: 25.00%;
+    top: 84.29%;
+    bottom: 6.9%;
+  }
+/*---------------Buttons--------------*/
+
+/*---------------Inputs--------------*/
+  .input-capacidade{
+    display: inline-block;
+    width: 35px;
+    fill: none;
+    background: transparent;
+    border: none;
+    text-align: center;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    color: #000000;
+  }
+
+  .input-capacidade::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+  }
+
+  .input-capacidade:focus{
+    outline: none;
+  }
+/*---------------Inputs--------------*/
+
+/*---------------Select--------------*/
+
+  .select-filtrocar-especificacao{
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none; 
+  
+    background-repeat: no-repeat;
+    background-position: left 10px center, right 10px center;
+    background-size: 20px, 12px;
+    
+    box-sizing: border-box;
+  
+    width: 162px;
+    height: 40px;
+  
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+  
+    padding-left: 42px;
+    padding-right: 30px;
+    line-height: 40px; 
+    position: relative;
+  
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15.8424px;
+    line-height: 24px;
+    color: #BFC1C3;
+
+    transition: background-position 0.3s ease-in-out;
+  }
+
+
+
+.select-filtrocar-especificacao:focus{
+    outline: none;
+    
+}
+
+.select-filtrocar-especificacao::-ms-expand{
+    display: none;
+}
+
+.select-filtrocar-especificacao > option {
+  color: black;
+}
+/*---------------Select--------------*/
+
+/*---------------Slider--------------*/
+.search-price{
+  position: absolute;
+  left: 8%;
+  right: 25.68%;
+  top: 130%;
+  bottom: 25.82%;
+}
+
+.search-price > div{
+display: flex;
+flex-direction: column;
+}
+
+.search-price > span{
+font-family: "Poppins", sans-serif;
+color: #004369;
+font-weight: 450;
+font-size: 15px;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.range .field{
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100%;
+}
+
+.range .sliderValue{
+position: absolute;
+width: 100%;
+margin-left: 5px;
+}
+
+.range .sliderValue span{
+display: flex;
+justify-content: center;
+position: absolute;
+height: 22px;
+width: 22px;
+
+font-size: 9px;
+color: 004369;
+font-weight: 400;
+
+top: -20px;
+transform: translateX(-50%) scale(0);
+transform-origin: bottom;
+transition: transform 0.3s ease-in-out;
+
+line-height: 15px;
+z-index: 2;
+}
+
+.range .sliderValue span.show{
+transform: translateX(-50%) scale(1);
+}
+
+.range .sliderValue span:after{
+display: flex;
+justify-content: center;
+content: "";
+position: absolute;
+height: 14px;
+width: 47px;
+background: white;
+
+left: 50%;
+transform: translateX(-50%);
+z-index: -1;
+
+border-radius: 2px;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+.range .field .value{
+position: absolute;
+font-size: 13px;
+font-weight: 500;
+color: #004369;
+}
+
+.range .field .value.left{
+left: -28px;
+}
+.range .field .value.right{
+right: -59px;
+}
+
+.range .field input{
+-webkit-appearance: none;
+
+height: 3px;
+width: 100%;
+
+background: white;
+
+border-radius: 5px;
+border: none;
+outline: none;
+}
+.range .field input::-webkit-slider-thumb{
+-webkit-appearance: none;
+height: 11px;
+width: 11px;
+background: #004369;
+border-radius: 50%;
+cursor: pointer;
+}
+
+.range .field input::-moz-range-progress{
+background: #004369;
+}
+/*---------------Slider--------------*/

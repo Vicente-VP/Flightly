@@ -1,0 +1,40 @@
+.btn-criar-planoViagens, .btn-editar-planoViagens{
+    width: 64px;
+    height: 64px;
+    background-color: #FF6600;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+
+.btn-criar-planoViagens{
+    background-image: url('../../Images/Icones_PlanoViagens/icon_criar_planoViagens.png');
+    background-size: 51px, 51px;
+}
+
+.btn-editar-planoViagens{
+    background-image: url('../../Images/Icones_PlanoViagens/icon_editar_planoViagens.png');
+    background-size: 31px, 31px;
+}
+
+.lbls-btns-planoViagens{
+    margin-top: 5px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 10.1886px;
+    line-height: 15px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}

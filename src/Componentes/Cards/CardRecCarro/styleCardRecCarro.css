@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.card-locadora-popular {
+    height: 263px;
+    width: 227px;
+    display: grid;
+    grid-template-rows: auto auto;
+    border: 1.5px solid #ACC6E9;
+    border-radius: 20px;
+    box-shadow: 0px 4px 14px 0px #B2C9DB25;
+    cursor: pointer;
+}
+
+.card-locadora-popular > img {
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    height: 188px;
+}
+
+.card-locadora-popular>span{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 29.53px;
+    display: flex;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+}
+
+
