@@ -23,7 +23,6 @@
     height: 100%;
     margin-top: 80px;
     margin-bottom: 40px;
-    margin-left: auto;
     padding: 50px 0 0 11%;
 }
 
@@ -33,8 +32,8 @@
 }
 
 .divBtnCriarPlano{
-    position: absolute;
-    margin: 15% 0 0 60%;
+    position: fixed;
+    margin: 15% 0 0 75%;
     justify-content: center;
 }
 
@@ -51,4 +50,65 @@
     font-style: normal;
     text-decoration: none;
     color: black;
+}
+
+@media (max-width: 1400px){
+    .container-cardsPlanoViagem{
+        display: grid; /* Alterado para grid */
+        grid-template-columns: repeat(3, 1fr); /* Inicialmente 4 colunas */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1150px){
+    .container-cardsPlanoViagem{
+        display: grid; /* Alterado para grid */
+        grid-template-columns: repeat(2, 1fr); /* Inicialmente 4 colunas */
+        gap: 40px;
+    }
+}
+
+@media (max-width: 1000px){
+    .titulo-planos-viagem{
+        font-size: 30px;
+    }
+
+    .barra-pesquisa-planos-viagem{
+        width: 75%;
+    }
+}
+
+@media (max-width: 900px){
+    .divBtnCriarPlano{
+        position: fixed;
+        margin: 15% 0 0 70%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 790px){
+    .titulo-planos-viagem{
+        font-size: 25px;
+        margin: 10px 0 10px 0;
+    }
+
+    .barra-pesquisa-planos-viagem{
+        width: 80%;
+    }
+
+    .main-grid-planos-viagem{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-cardsPlanoViagem{
+        grid-template-columns: repeat(1, 1fr); 
+        align-items: center;
+        justify-items: center;
+        margin: none;
+    }
+
+    .grid-cards-planos-viagem{
+        padding: 0 0 0 0;
+    }
 }
