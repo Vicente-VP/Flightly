@@ -199,6 +199,7 @@ export default function CardPergunta1() {
 
         // Adicionar evento de click para exibir o popup
         if (popUP && buttonText === 'Finalizar') {
+
             popUP.addEventListener('click', () => {
                 if (buttonText === 'Finalizar') {
                     handleSubmit(); // Garante que handleSubmit é chamado apenas no clique
@@ -258,6 +259,22 @@ export default function CardPergunta1() {
             setPt1(pt1);
             setPt2(pt2);
             setPt3(pt3);
+            
+            console.log("2");
+            
+            // Second request
+            await axios.post('https://flightlydbapi.onrender.com/assignPerfil', {
+                "perfil": perfil,
+                "id_usuario": localStorage.getItem('userid')
+            },{
+                headers:{
+                'Content-Type': 'application/json'
+            }
+        });
+            
+            // Handle success
+            console.log("deu certo");
+            localStorage.setItem('perfil', perfil); // Save 'perfil' correctly
         } catch (err) {
             console.error('Erro ao realizar a busca:', err);
         } finally {
@@ -348,13 +365,13 @@ export default function CardPergunta1() {
                     <span className='title'>Pontos Turísticos</span>
                     <div className='card-flex'>
                         <div className='card-rec'>
-                            {pt1}
+                            1.{pt1}
                         </div>
                         <div className='card-rec'>
-                            {pt2}
+                            2.{pt2}
                         </div>
                         <div className='card-rec'>
-                            {pt3}
+                            3.{pt3}
                         </div>
                     </div>
                 </section>

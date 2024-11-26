@@ -219,32 +219,37 @@ button{
 /* Perfil do Viajante */
 
 .userperfil-perfil{
-    display: grid;
-    grid-template-columns: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .hr-perfil-cima{
     background-color: #00000080;
+    width: 364px;
+    margin-top: 10%;
     margin-bottom: 20px;
 }
 
 .titulo-userperfil{
     justify-self: center;
     
-    font-weight: 400;
+    font-weight: 300;
     font-size: 16px;
 }
 
 .userperfil{
     justify-self: center;
+    text-align: center;
 
     font-weight: 500;
-    font-size: 35px;
+    font-size: 32px;
 }
 
 .hr-perfil-baixo{
     background-color: #00000080;
+    width: 364px;
     margin-top: 25px;
 }
 
@@ -742,4 +747,35 @@ button{
 @keyframes fade {
     from {opacity: .5}
     to {opacity: 1}
+}
+
+
+.container-cardsPlanoViagem-perfil{
+    display: flex;
+    gap: 80px;
+    width: 1380px; /* Define a largura fixa do container */
+    overflow-x: auto; /* Habilita a rolagem horizontal */
+    overflow-y: hidden;
+    height: 365px;
+    white-space: nowrap;
+   
+
+}
+
+.container-cardsPlanoViagem-perfil::-webkit-scrollbar {
+    height: 10px; 
+}
+  
+.container-cardsPlanoViagem-perfil::-webkit-scrollbar-track {
+    background: none;  
+    width: 12px; 
+    max-height: 12px;       /* color of the tracking area */
+}
+  
+.container-cardsPlanoViagem-perfil::-webkit-scrollbar-thumb {
+    background-color: #004369;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid rgba(255, 166, 0, 0); 
+    height: 1px;   /* creates padding around scroll thumb */
+    width: 12px; 
 }
