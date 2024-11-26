@@ -16,20 +16,29 @@
 
 .grid-cards-planos-viagem{
     display: flex;
-    flex-direction: column;
-    grid-template-columns: 85% auto;
-    gap: 60px;
-    width: 90%;
+    flex-wrap: wrap;
+    gap: 80px;
+    margin: 80px 0;
+    width: 100%;
+}
+
+.barraBotoes-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    margin-top: 80px;
-    margin-bottom: 40px;
-    margin-left: auto;
-    padding: 50px 0 0 11%;
+}
+
+.barra-pesquisa-planos-viagem{
+    display: flex;
 }
 
 .container-cardsPlanoViagem{
     display: flex;
+    width: 100%;
     gap: 80px;
+    justify-content: center;
 }
 
 .divBtnCriarPlano{

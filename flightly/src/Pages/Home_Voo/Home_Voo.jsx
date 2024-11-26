@@ -2,7 +2,6 @@ import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 import Drop from "../../Componentes/DropInput/drop";
 
-
 import Aviao_Card from '../../Images/Aviao_Card.png';
 import Destino_Rio from '../../Images/img_Destino_Cards.png';
 import Destino_Bra from '../../Images/img_Brasilia.png';
@@ -36,11 +35,9 @@ export default function Home() {
     const [fundoRec, setFundoRec] = useState([Destino_Tokyo, Destino_Texas, Destino_Bombaim, Destino_Vanc])
 
     const [toggleStates, setToggleStates] = useState({
-        idaVolta: false,
+        idaVolta: true,
         ida: false,
     });
-    
-
 
     const handleToggle = (key) => {
         setToggleStates((prevState) => {
@@ -122,7 +119,7 @@ const handleDestinoChange = (e) => {
 useEffect(() => {
     const delayDebounce = setTimeout(() => {
         if (origemInput) {
-            axios.get(`http://144.22.183.38:8080/suggestion/flights/place?typed=${origemInput}`)
+            axios.get(`http://localhost:8080/suggestion/flights/place?typed=${origemInput}`)
                 .then(response => setOrigemSuggestions(response.data))
                 .catch(error => console.error("Error fetching origem suggestions:", error));
         } else {
@@ -139,7 +136,7 @@ useEffect(() => {
 useEffect(() => {
     const delayDebounce = setTimeout(() => {
         if (destinoInput) {
-            axios.get(`http://144.22.183.38:8080/suggestion/flights/place?typed=${destinoInput}`)
+            axios.get(`http://localhost:8080/suggestion/flights/place?typed=${destinoInput}`)
                 .then(response => setDestinoSuggestions(response.data))
                 .catch(error => console.error("Error fetching destino suggestions:", error));
         } else {
@@ -204,7 +201,7 @@ const handleDestinoBlur = () => {
                                     <input
                                         type="text"
                                         className="input-voo"
-                                        placeholder="São Paulo"
+                                        placeholder="Ex: São Paulo"
                                         name="origem"
                                         style={{ backgroundImage: `url(${origemIcon})` }}
                                         value={origemInput}
@@ -235,7 +232,7 @@ const handleDestinoBlur = () => {
                                     <input
                                         type="text"
                                         className="input-voo"
-                                        placeholder="Rio de Janeiro"
+                                        placeholder="Ex: Rio de Janeiro"
                                         name="destino"
                                         style={{ backgroundImage: `url(${destinoIcon})` }}
                                         value={destinoInput}
@@ -288,14 +285,13 @@ const handleDestinoBlur = () => {
                                     <label className="etiqueta-voo">Classe</label>
                                 </div>
                                 <div className="input-class-voo">
-                                    <select name="classe" id="classe" className="input-voo"  style={{ backgroundImage: `url(${classeIcon})` }}>
+                                    <select name="classe" id="classe" className="input-voo" style={{ backgroundImage: `url(${classeIcon})` }}>
                                         <option value="selcione" disabled selected className="selecione">Selecione</option>
                                         <option value="econômica">Econômica</option>
                                         <option value="econômica Premium">Econômica Premium</option>
                                         <option value="executiva">Executiva</option>
                                         <option value="erimeira">Primeira</option>
                                     </select>
-
                                 </div>
                             </div>
                         </div>

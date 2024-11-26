@@ -1,3 +1,11 @@
+.container-botoesPlanosViagem{
+    display: flex;
+    gap: 15px;
+
+    position: absolute;
+    left: 82%;
+}
+
 .btn-criar-planoViagens, .btn-editar-planoViagens{
     width: 64px;
     height: 64px;
@@ -20,8 +28,6 @@
 }
 
 .lbls-btns-planoViagens{
-    margin-top: 5px;
-
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 300;
@@ -36,5 +42,4 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10px;
 }

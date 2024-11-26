@@ -281,7 +281,7 @@ export default function Perfil() {
                     <div className="userperfil-perfil">
                         <hr className="hr-perfil-cima" />
                         <label className="titulo-userperfil">Perfil do Viajante</label>
-                        <label className="userperfil">{localStorage.getItem('perfil').toUpperCase()}</label>
+                        <label className="userperfil">{(localStorage.getItem('perfil') ? localStorage.getItem('perfil').toUpperCase() : '')}</label>
                         <hr className="hr-perfil-baixo" />
                     </div>
                     <div className="calendario-perfil">

@@ -151,6 +151,7 @@ export default function PlanoEspecifico() {
                     alert(`Erro ao deletar hospedagem ${id}`);
                 })
             );
+            
     
             // Wait for all delete requests to complete
             await Promise.all([...vooPromises, ...hospedagemPromises]);
@@ -184,7 +185,7 @@ export default function PlanoEspecifico() {
 
             <div className="bodyPlanoEspecifico">
                 <div className="auxilioNavegacao">
-                    <Link to="/PlanosViagem" className="link-planoViagem">Plano de Viagem</Link>
+                    <Link to="/PlanosViagem" className="link-planoViagem">Planos de Viagem</Link>
                     <span className="planoViagem-Atual"> / {params.get('nome')}</span>
                 </div>
 
@@ -278,6 +279,19 @@ export default function PlanoEspecifico() {
                                             <CardCarro
                                                 key={index}
                                                 id={carros[index]}
+                                                carImage={carros[9]}
+                                                locImage={carros[10]}
+                                                retirada={carros[7]}
+                                                assento={carros[3]}
+                                                cambio={carros[4]}
+                                                locadora={carros[6]}
+                                                marca={carros[2]}
+                                                modelo={carros[1]}
+                                                //porta={carros[0]}
+                                                //malaPeq={carros[0]}}
+                                                //malaGr={carros[0]}
+                                                preco={carros[5]}
+                                                tipo={carros[8]}
                                             />
                                         </div>
                                     );
@@ -285,7 +299,7 @@ export default function PlanoEspecifico() {
                             </div>
 
                             <div className="containerCard-planoEspecifico-Pt">
-                                {activeFilters.pontosTuristicos && carros.map((pontosTuristicos, index) => {
+                                {activeFilters.pontosTuristicos && pontosTuristicos.map((pontosTuristicos, index) => {
                                     return (
                                         <>
                                             <input
@@ -295,7 +309,13 @@ export default function PlanoEspecifico() {
                                                 className={`checkboxDelete-planoEspecifico ${checkboxVisible.pontosTuristicos ? 'visible' : ''}`}
                                             />
                                             <CardPTuristico
-
+                                                key={index}
+                                                id={pontosTuristicos[0]}
+                                                titulo={pontosTuristicos[2]}
+                                                preco={pontosTuristicos[4]}
+                                                estrelas={pontosTuristicos[3]}
+                                                reviews={pontosTuristicos[1]}
+                                                image={pontosTuristicos[5]}
                                             />
                                         </>
                                     );

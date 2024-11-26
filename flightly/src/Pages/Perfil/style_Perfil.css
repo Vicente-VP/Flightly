@@ -219,32 +219,37 @@ button{
 /* Perfil do Viajante */
 
 .userperfil-perfil{
-    display: grid;
-    grid-template-columns: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .hr-perfil-cima{
     background-color: #00000080;
+    width: 364px;
+    margin-top: 10%;
     margin-bottom: 20px;
 }
 
 .titulo-userperfil{
     justify-self: center;
     
-    font-weight: 400;
+    font-weight: 300;
     font-size: 16px;
 }
 
 .userperfil{
     justify-self: center;
+    text-align: center;
 
     font-weight: 500;
-    font-size: 35px;
+    font-size: 32px;
 }
 
 .hr-perfil-baixo{
     background-color: #00000080;
+    width: 364px;
     margin-top: 25px;
 }
 

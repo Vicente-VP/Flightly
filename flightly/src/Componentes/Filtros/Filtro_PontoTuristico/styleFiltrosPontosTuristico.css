@@ -45,20 +45,69 @@
     width: 250px;
 }
 
-.preco{
+.preco-pt{
     position: relative;
     left: 8%;
     right: 32.16%;
     top: 15%;
-    bottom: 87.55%;
     width: 350px;
+}
+
+.values-pricePt{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0%;
+  padding: 0%;
+}
+
+.slider-pt input{
+  width: 80%;
+  height: 7px;
+  -webkit-appearance: none;
+  background: linear-gradient(to right, #004369 0%, #004369 var(--progress), #fff var(--progress), #fff 100%);
+  border-radius: 25px;
+
+  margin: 0%;
+  
+  cursor: pointer;
+}
+
+.slider-pt input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 20px; 
+  height: 20px;
+  background: #B2C9DB; 
+  border: 2px solid #fff; 
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.slider-pt input[type="range"]::-moz-range-thumb{
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 20px; 
+  height: 20px;
+  background: #B2C9DB; 
+  border: 2px solid #fff; 
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.values-pricePt .valor-pt{
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  color: #004369;
 }
 
 .acessibilidade{
     position: relative;
     left: 8%;
     right: 32.16%;
-    top: 21%;
+    top: 17%;
     bottom: 87.55%;
     width: 250px;
 }
@@ -194,123 +243,3 @@
 
 
 /*--------Buttons--------*/
-
-/*---------------Slider--------------*/
-.search-price{
-    position: absolute;
-    left: 8%;
-    right: 25.68%;
-    top: 130%;
-    bottom: 25.82%;
-  }
-  
-  .search-price > div{
-  display: flex;
-  flex-direction: column;
-  }
-  
-  .search-price > span{
-  font-family: "Poppins", sans-serif;
-  color: #004369;
-  font-weight: 450;
-  font-size: 15px;
-  }
-  
-  .slidecontainer {
-    width: 100%;
-  }
-  
-  .range .field{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  }
-  
-  .range .sliderValue{
-  position: absolute;
-  width: 100%;
-  margin-left: 5px;
-  }
-  
-  .range .sliderValue span{
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  height: 22px;
-  width: 22px;
-  
-  font-size: 9px;
-  color: 004369;
-  font-weight: 400;
-  
-  top: -20px;
-  transform: translateX(-50%) scale(0);
-  transform-origin: bottom;
-  transition: transform 0.3s ease-in-out;
-  
-  line-height: 15px;
-  z-index: 2;
-  }
-  
-  .range .sliderValue span.show{
-  transform: translateX(-50%) scale(1);
-  }
-  
-  .range .sliderValue span:after{
-  display: flex;
-  justify-content: center;
-  content: "";
-  position: absolute;
-  height: 14px;
-  width: 47px;
-  background: white;
-  
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -1;
-  
-  border-radius: 2px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-  }
-  
-  .range .field .value{
-  position: absolute;
-  font-size: 13px;
-  font-weight: 500;
-  color: #004369;
-  }
-  
-  .range .field .value.left{
-  left: -28px;
-  }
-  .range .field .value.right{
-  right: -59px;
-  }
-  
-  .range .field input{
-  -webkit-appearance: none;
-  
-  height: 3px;
-  width: 100%;
-  
-  background: white;
-  
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  }
-  .range .field input::-webkit-slider-thumb{
-  -webkit-appearance: none;
-  height: 11px;
-  width: 11px;
-  background: #004369;
-  border-radius: 50%;
-  cursor: pointer;
-  }
-  
-  .range .field input::-moz-range-progress{
-  background: #004369;
-  }
-  /*---------------Slider--------------*/
