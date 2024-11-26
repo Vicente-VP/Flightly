@@ -185,7 +185,6 @@ export default function InformacoesPage() {
             }
         };
 
-        fetchData();
     }, [location.search, requestType]);
 
     useEffect(() => {

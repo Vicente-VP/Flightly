@@ -268,6 +268,8 @@ export default function PlanoEspecifico() {
 
                             <div className="containerCard-planoEspecifico">
                                 {activeFilters.carros && carros.map((carros, index) => {
+                                    total += carros[5];
+                                    items++;
                                     return (
                                         <div className="cardInterno-planoEspecifico">
                                             <input
@@ -300,6 +302,8 @@ export default function PlanoEspecifico() {
 
                             <div className="containerCard-planoEspecifico-Pt">
                                 {activeFilters.pontosTuristicos && pontosTuristicos.map((pontosTuristicos, index) => {
+                                    total += pontosTuristicos[4];
+                                    items++;
                                     return (
                                         <>
                                             <input
@@ -312,7 +316,7 @@ export default function PlanoEspecifico() {
                                                 key={index}
                                                 id={pontosTuristicos[0]}
                                                 titulo={pontosTuristicos[2]}
-                                                preco={pontosTuristicos[4]}
+                                                preco={'R$ ' + pontosTuristicos[4]}
                                                 estrelas={pontosTuristicos[3]}
                                                 reviews={pontosTuristicos[1]}
                                                 image={pontosTuristicos[5]}

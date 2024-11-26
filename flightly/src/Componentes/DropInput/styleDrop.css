@@ -1,15 +1,15 @@
 .dropdown{
     height: 40px;
-    width: 100%;
-    min-width: 180px;
-    max-width: 180px;
+    width: var(--dropdown-width, 100%);
+    min-width: var(--dropdown-min-width, auto);
+    max-width: var(--dropdown-max-width, auto);
 }
 
 .dropdown .dropdown-btn{
     height: 40px;
-    width: 100%;
-    min-width: 180px;
-    max-width: 180px;
+    width: var(--dropdown-width, 100%);
+    min-width: var(--dropdown-min-width, auto);
+    max-width: var(--dropdown-max-width, auto);
 
     display: flex;
     align-items: center;

@@ -89,6 +89,7 @@ export default function PesquisaVoo(props) {
                         value={props.destino}
                         onChange={(e) => props.onDestinoChange(e.target.value)}
                         className="destino-voo"
+                        id="destino-voo"
                         style={{ backgroundImage: `url(${destino_icon})` }}
                     />
                 </div>
@@ -125,7 +126,7 @@ export default function PesquisaVoo(props) {
                 <Drop
                     imagem={passageirosIcon}
                     widthDrop="126px"
-                    topContent="21.5%"
+                    topContent="18.5%"
                     titles={["Adultos", "Crianças de", "Crianças", "Crianças no"]}
                     subTitles={["", "2 a 11 anos", "no assento", "de colo"]}
                     onPassengerChange={handlePassengerChange}

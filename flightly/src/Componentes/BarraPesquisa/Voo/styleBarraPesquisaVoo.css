@@ -23,7 +23,6 @@
     display: flex;
     justify-content: center;
     align-items: center; 
-    padding-left: 17.5%;
     gap: 5px;
 
     height: 98px;
@@ -92,7 +91,7 @@
   padding-left: 35px;
 }
 
-.destino-voo{
+#destino-voo{
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -222,34 +221,6 @@ input[type=date]::-webkit-datetime-edit {
 
   color: #004369;
   font-weight: 450;
-  font-size: 15px;
-}
-
-
-.passageiro{
-  font-family: "Poppins", sans-serif;
-  color: #BFC1C3;
-
-  border-radius: 10px;
-  border: none;
-  height: 35px;
-  width: 126px;
-
-  background-size: 20px;
-  background-position: 10px; 
-  background-repeat: no-repeat;
-  padding-left: 35px;
-
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-.passageiro option{
-  background-color: #d0e4f0;
-
-  color: black;
-  font-family: "Poppins", sans-serif;
   font-size: 15px;
 }
 

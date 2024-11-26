@@ -78,7 +78,7 @@ export default function Drop({ imagem, widthDrop, topContent, titles, subTitles,
 
     return (
         <>
-            <div className="dropdown" style={{ width: widthDrop }}>
+            <div className="dropdown" style={{ '--dropdown-width': widthDrop,'--dropdown-min-width': widthDrop,'--dropdown-max-width': widthDrop,}}>
                 <div className="dropdown-btn" style={{ width: widthDrop }} onClick={e => setIsActive(!isActive)} ref={dropdownRef}>
                     <img src={imagem} alt="Passageiros" />{totalPas}
                 </div>
