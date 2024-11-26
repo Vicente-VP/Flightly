@@ -60,7 +60,7 @@ export default function HomePTuristico() {
                         <label className="etiqueta">Local</label>
                     </div>
                     <div className="input-class-pturistico">
-                        <input type="text" name="input-attraction" className="input-pturistico" placeholder="Rio de Janeiro"
+                        <input type="text" name="input-attraction" className="input-pturistico" placeholder="Ex: Rio de Janeiro"
                             style={{ backgroundImage: `url(${destinoIcon})` }}/>
                     </div>
 

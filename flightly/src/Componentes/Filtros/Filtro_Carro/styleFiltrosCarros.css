@@ -42,7 +42,7 @@
     position: relative;
     left: 8%;
     right: 71.89%;
-    top: 13%;
+    top: 10%;
     bottom: 32.17%;
 }
 
@@ -51,7 +51,7 @@
     position: relative;
     left: 8%;
     right: 71.89%;
-    top: 15%;
+    top: 9%;
     bottom: 32.17%;
 }
 /*---------------Divisões--------------*/
@@ -232,7 +232,7 @@
     position: absolute;
     left: 25.00%;
     right: 25.00%;
-    top: 84.29%;
+    top: 88.29%;
     bottom: 6.9%;
   }
 /*---------------Buttons--------------*/
@@ -317,8 +317,14 @@
   flex-direction: row;
   justify-content: space-between;
   width: 80%;
-  margin: 0%;
+  margin: 0 0 2% 0;
   padding: 0%;
+}
+
+.slider-car {
+  height: 40px;
+
+  display: flex;
 }
 
 .slider-car input{

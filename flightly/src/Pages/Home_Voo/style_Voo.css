@@ -122,6 +122,8 @@ main{
     color: #BFC1C3;
     outline: none;
 
+    color: black;
+
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;

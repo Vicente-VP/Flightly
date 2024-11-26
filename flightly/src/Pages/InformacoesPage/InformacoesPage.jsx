@@ -16,6 +16,7 @@ import PesquisaHospedagem from "../../Componentes/BarraPesquisa/Hospedagem/Barra
 import BarraPesquisaCarro from "../../Componentes/BarraPesquisa/Carro/BarraPesquisaCarro"
 import BarraPesquisaPontoTuristico from "../../Componentes/BarraPesquisa/PontoTuristico/BarraPesquisaPontoTuristico"
 //import InfoCarros from "../../Componentes/Card_Informacoes/Carros/CardInfoCarros";
+import PopUpCarregamento from "../../Componentes/PopUpCarregamento/PopUpCarregamento";
 
 import './styleInformacoesPage.css';
 import React from 'react';
@@ -61,7 +62,7 @@ export default function InformacoesPage() {
                 switch (requestType) {
                     case 'flight':
                         try{
-                        response = await axios.get('http://localhost:8080/flights', {
+                        response = await axios.get('http://144.22.183.38:8080/flights', {
                             // http://localhost:8080
                             params: {
                                 type: params.get('travel_type'), // Round trip or one way
@@ -99,7 +100,7 @@ export default function InformacoesPage() {
 
                     case 'hotel':
                         try{
-                        response = await axios.get('http://localhost:8080/hotels', {
+                        response = await axios.get('http://144.22.183.38:8080/hotels', {
                             params: {
                                 place: params.get('local'),
                                 check_in: params.get('check_in'), // Assuming check-in date
@@ -126,7 +127,7 @@ export default function InformacoesPage() {
         
                     case 'car':
                         try{
-                        response = await axios.get('http://localhost:8080/cars', {
+                        response = await axios.get('http://144.22.183.38:8080/cars', {
                             params: {
                                 place: params.get('place'),
                                 data_retirada: params.get('data_retirada'),
@@ -153,7 +154,7 @@ export default function InformacoesPage() {
 
                     case 'pturistico':
                         try{
-                        response = await axios.get('http://localhost:8080/attractions', {
+                        response = await axios.get('http://144.22.183.38:8080/attractions', {
                             params: {
                                 place: params.get('place')
                             },
@@ -186,10 +187,149 @@ export default function InformacoesPage() {
 
         fetchData();
     }, [location.search, requestType]);
+
+    useEffect(() => {
+        // Send asynchronous request based on requestType
+        const fetchData = async () => {
+            try {
+                let response;
+
+                switch (requestType) {
+                    case 'flight':
+                        try{
+                        response = await axios.get('http://144.22.183.38:8080/flights', {
+                            // http://localhost:8080
+                            // http://144.22.183.38:8080
+                            params: {
+                                type: params.get('travel_type'), // Round trip or one way
+                                from: params.get('origem'),
+                                to: params.get('destino'),
+                                departure: params.get('ida'),
+                                return: params.get('volta'),
+                                class: params.get('classe'),
+                                adults: params.get('adultos'),
+                                children: params.get('criancaIdade'), // Assuming you have a way to collect this
+                                infants_seat: params.get('criancaAssento'),
+                                infants_lap: params.get('criancaColo')
+                            },
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        });
+
+                        // Separate the URL from the rest of the data
+                        const urlData = response.data[0]; // The first element containing the URL
+                        const flightData = response.data.slice(1); // Remaining data
+
+                        // Store the URL and flight data in state
+                        setExternalUrl(urlData?.url); // Assuming the first entry contains a URL
+                        setResults(flightData); // Remaining data for flights
+                    } catch (error) {
+                        console.error("Error fetching data:", error);
+                        setResults([]);
+
+                    }
+                    finally {
+                        setLoading(false);
+                    }
+                        break;
+
+                    case 'hotel':
+                        try{
+                        response = await axios.get('http://144.22.183.38:8080/hotels', {
+                            params: {
+                                place: params.get('local'),
+                                check_in: params.get('check_in'), // Assuming check-in date
+                                check_out: params.get('check_out'), // Assuming check-out date
+                                adults: params.get('adultos'),
+                                children: params.get('crianca') // Assuming you have a way to collect this
+                            },
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        });
+                        console.log(response.data);
+                        setExternalUrl(response.data[0]?.url); // Assuming the first entry contains a URL
+                        setResults(response.data.slice(1)); // Assuming all response data is directly usable
+                    }
+                    catch (error) {
+                        console.error("Error fetching data:", error);
+                        setResults([]);
+                    }
+                    finally {
+                        setLoading(false);
+                    }
+                        break;
+
+                    case 'car':
+                        try{
+                        response = await axios.get('http://144.22.183.38:8080/cars', {
+                            params: {
+                                place: params.get('place'),
+                                data_retirada: params.get('data_retirada'),
+                                hora_retirada: params.get('hora_retirada'),
+                                data_devolucao: params.get('data_devolucao'),
+                                hora_devolucao: params.get('hora_devolucao'),
+                            },
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        });
+                        console.log(response.data);
+                        setExternalUrl(response.data[0]?.url);
+                        setResults(response.data.slice(1)); // Assuming all response data is directly usable
+                    }
+                    catch(error){
+                        console.error("Error fetching data:", error);
+                        setResults([]);
+                    }
+                    finally {
+                        setLoading(false);
+                    }
+                        break;
+                    case 'pturistico':
+                        try{
+                        response = await axios.get('http://144.22.183.38:8080/attractions', {
+                            params: {
+                                place: params.get('place')
+                            },
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        });
+                        console.log(response.data);
+                        setExternalUrl(response.data[0]?.url);
+                        setResults(response.data.slice(1)); // Assuming all response data is directly usable
+                    }
+                    catch(error){
+                        console.error("Error fetching data:", error);
+                        setResults([]);
+                    }
+                    finally {
+                        setLoading(false);
+                    }
+                        break;
+                    default:
+                        console.error("Invalid request type");
+                        return;
+                }
+
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchData();
+    }, [location.search, requestType]);
     return (
         <>
             <div style={{ height: 75 + 'px' }}><NavBar /></div>
 
+            {loading && (
+                <>
+                        <PopUpCarregamento texto="Aguarde enquanto realizamos a busca!" />
+                </>
+            )}
 
             <div className="container-informacoes">
                 <div className="barra-pesquisa-infoPage">
@@ -261,38 +401,39 @@ export default function InformacoesPage() {
                     </div>
                     <div className={'container-cards-infoPage ' + (requestType==='pturistico' ? 'pt' : '')}>
                         {loading && (
-                        <>
-                        <div class="loadingCard">
-                            <div class="loading-overlay"></div>
-                            <div class="skeleton-title skeleton"></div>
-                            <div class="skeleton-line skeleton"></div>
-                            <div class="skeleton-line skeleton" style={{width: "80%"}}></div>
-                        </div>
-                        <div class="loadingCard">
-                            <div class="loading-overlay"></div>
-                            <div class="skeleton-title skeleton"></div>
-                            <div class="skeleton-line skeleton"></div>
-                            <div class="skeleton-line skeleton" style={{width: "80%"}}></div>
-                        </div>
-                        <div class="loadingCard">
-                            <div class="loading-overlay"></div>
-                            <div class="skeleton-title skeleton"></div>
-                            <div class="skeleton-line skeleton"></div>
-                            <div class="skeleton-line skeleton" style={{width: "80%"}}></div>
-                        </div>
-                        <div class="loadingCard">
-                            <div class="loading-overlay"></div>
-                            <div class="skeleton-title skeleton"></div>
-                            <div class="skeleton-line skeleton"></div>
-                            <div class="skeleton-line skeleton" style={{width: "80%"}}></div>
-                        </div>
-                        <div class="loadingCard">
-                            <div class="loading-overlay"></div>
-                            <div class="skeleton-title skeleton"></div>
-                            <div class="skeleton-line skeleton"></div>
-                            <div class="skeleton-line skeleton" style={{width: "80%"}}></div>
-                        </div>
-                        </>
+                            <>
+
+                                <div class="loadingCard">
+                                    <div class="loading-overlay"></div>
+                                    <div class="skeleton-title skeleton"></div>
+                                    <div class="skeleton-line skeleton"></div>
+                                    <div class="skeleton-line skeleton" style={{ width: "80%" }}></div>
+                                </div>
+                                <div class="loadingCard">
+                                    <div class="loading-overlay"></div>
+                                    <div class="skeleton-title skeleton"></div>
+                                    <div class="skeleton-line skeleton"></div>
+                                    <div class="skeleton-line skeleton" style={{ width: "80%" }}></div>
+                                </div>
+                                <div class="loadingCard">
+                                    <div class="loading-overlay"></div>
+                                    <div class="skeleton-title skeleton"></div>
+                                    <div class="skeleton-line skeleton"></div>
+                                    <div class="skeleton-line skeleton" style={{ width: "80%" }}></div>
+                                </div>
+                                <div class="loadingCard">
+                                    <div class="loading-overlay"></div>
+                                    <div class="skeleton-title skeleton"></div>
+                                    <div class="skeleton-line skeleton"></div>
+                                    <div class="skeleton-line skeleton" style={{ width: "80%" }}></div>
+                                </div>
+                                <div class="loadingCard">
+                                    <div class="loading-overlay"></div>
+                                    <div class="skeleton-title skeleton"></div>
+                                    <div class="skeleton-line skeleton"></div>
+                                    <div class="skeleton-line skeleton" style={{ width: "80%" }}></div>
+                                </div>
+                            </>
                         )}
                         {(results.length <= 0)  && !loading ? (<div className="notFound">No results found ...</div>):
                         results.map((result, index) => {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import NavBar from '../../Componentes/NavBar/NavBar';
+import Footer from '../../Componentes/Footer/Footer';
 import BarraPesquisa from '../../Componentes/BarraPesquisaPlano/BarraPesquisaPlano';
 import CardPlanoViagem from '../../Componentes/Cards/Card_Plano_Viagem/CardPlanoViagem';
 import Btns_PlanoViagens from '../../Componentes/Btns_PlanoViagens/Btns_PlanoViagens';
@@ -41,7 +42,7 @@ export default function PlanosViagem() {
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
-      }
+    }
 
     return (
         <>
@@ -54,19 +55,23 @@ export default function PlanosViagem() {
                     Planos de Viagem
                 </label>
 
-                <div className="barra-pesquisa-planos-viagem">
-                    <BarraPesquisa />
+                <div className="barraBotoes-container">
+                    <div className="barra-pesquisa-planos-viagem">
+                        <BarraPesquisa />
+                    </div>
+                    <Btns_PlanoViagens handleClick={handleClick} />
                 </div>
 
+
                 <div className="grid-cards-planos-viagem">
-                {clicked ? <div className="popupadd"><PopUpCriarPlano handleClick={handleClick} /></div> : null}
+                    {clicked ? <div className="popupadd"><PopUpCriarPlano handleClick={handleClick} /></div> : null}
 
                     {planos.map((plano, i) => {
                         // Only create a new container when the index is divisible by 4
                         if (i % 4 === 0) {
                             return (
                                 <div className="container-cardsPlanoViagem" key={`container-${i}`}>
-                                    {planos.slice(i, i + 4).map((subPlano, j) => (
+                                    {planos.slice(i, i + 5).map((subPlano, j) => (
                                         <Link to={`/PlanoEspecifico?id=${subPlano[0]}&nome=${subPlano[1]}`} className='LinkPlanos' key={subPlano[0]}>
                                             <CardPlanoViagem
                                                 index={i + j}
@@ -85,11 +90,8 @@ export default function PlanosViagem() {
                         return null; // Skip rendering here, as the items are handled within the grouped div above.
                     })}
 
-
-                    <div className='divBtnCriarPlano'>
-                        <Btns_PlanoViagens handleClick={handleClick} />
-                    </div>
                 </div>
+                <Footer />
             </div>
         </>
     );

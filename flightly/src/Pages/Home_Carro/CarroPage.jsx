@@ -17,7 +17,6 @@ import Rec_Lux from '../../Images/Card_Recomendacao_Carro/Rec_Lux.png';
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 import axios from "axios";
 
 import './Style_carro.css';
@@ -77,7 +76,7 @@ export default function Carro_page() {
     useEffect(() => {
         const delayDebounce = setTimeout(() => {
             if (localInput) {
-                axios.get(`http://localhost:8080/suggestion/cars?typed=${localInput}`)
+                axios.get(`http://144.22.183.38:8080/suggestion/cars?typed=${localInput}`)
                     .then(response => setLocalSuggestions(response.data))
                     .catch(error => console.error("Error fetching local suggestions:", error));
             } else {
@@ -118,20 +117,24 @@ export default function Carro_page() {
         return options;
     };
 
+
     return (
         <>
             <div><NavBar /></div>
 
             <main>
                 {/* ------------------ CARRO FORM INICIO  --------------------- */}
+
+                <div className="car-image">
+                    <img src={Carro_Form} alt="Carro esportivo" />
+                </div>
+
                 <div className="card-carro">
                     <div className="car-title">
                         <label>Aluguel de Carros</label>
                     </div>
+
                     <div className="car-space">
-                        <div className="car-image">
-                            <img src={Carro_Form} alt="Carro esportivo" />
-                        </div>
                     </div>
 
                     <div className="form-cardcarro">
@@ -141,7 +144,7 @@ export default function Carro_page() {
                                     <label className="car-etiqueta">Local de retirada</label>
                                 </div>
                                 <div className="car-input-className">
-                                    <input
+                                <input
                                         type="text"
                                         className="car-input"
                                         name="pick-location"
@@ -182,8 +185,11 @@ export default function Carro_page() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="car-btn-pesquisar">
-                                <button className="car-pesquisar" onClick={PesquisarCarro}>Pesquisar</button>
+                            <div className="car-input-form">
+                                <div className="car-etiqueta-className">
+                                </div>
+                                <div className="car-input-className">
+                                </div>
                             </div>
                             <div className="car-input-form">
                                 <div className="car-etiqueta-className">
@@ -199,7 +205,9 @@ export default function Carro_page() {
                                     </div>
                                 </div>
                             </div>
-
+                        </div>
+                        <div className="car-btn-pesquisar">
+                            <button className="car-pesquisar" onClick={PesquisarCarro}>Pesquisar</button>
                         </div>
                     </div>
                 </div>
@@ -264,10 +272,9 @@ export default function Carro_page() {
                 </div>
 
                 {/* ------------------ RECOMENDAÇÃO DE CARRO FIM --------------------- */}
-            </main >
+            </main>
 
             <div style={{ height: 250 + 'px' }}><Footer /></div>
         </>
     )
-
 }

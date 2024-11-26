@@ -35,7 +35,7 @@ export default function Home() {
     const [fundoRec, setFundoRec] = useState([Destino_Tokyo, Destino_Texas, Destino_Bombaim, Destino_Vanc])
 
     const [toggleStates, setToggleStates] = useState({
-        idaVolta: false,
+        idaVolta: true,
         ida: false,
     });
 
@@ -201,7 +201,7 @@ const handleDestinoBlur = () => {
                                     <input
                                         type="text"
                                         className="input-voo"
-                                        placeholder="São Paulo"
+                                        placeholder="Ex: São Paulo"
                                         name="origem"
                                         style={{ backgroundImage: `url(${origemIcon})` }}
                                         value={origemInput}
@@ -232,7 +232,7 @@ const handleDestinoBlur = () => {
                                     <input
                                         type="text"
                                         className="input-voo"
-                                        placeholder="Rio de Janeiro"
+                                        placeholder="Ex: Rio de Janeiro"
                                         name="destino"
                                         style={{ backgroundImage: `url(${destinoIcon})` }}
                                         value={destinoInput}

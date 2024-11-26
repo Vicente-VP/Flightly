@@ -1,0 +1,52 @@
+.containerExterno-blockClick{
+    position: fixed;
+    width: 100%;
+    height: 100%;;
+    background-color: #00000075;
+    z-index: 1;
+}
+
+.container-popUpCarregamento{
+    background: #ffffff;
+    border-radius: 10px;
+
+
+    padding: 20px;
+    height: 350px;
+    width: 850px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+    overflow: hidden;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.title-popUpCarregamento{
+    font-weight: 400;
+    font-size: 36px;
+    text-align: center;
+    color: #000000;
+    align-self: end;
+    margin-bottom: 25px;
+}
+
+.container-loadingCircle{
+    display: flex;
+    height: 100%;
+    align-items: top;
+}
+
+.loading-circle.popUp{
+    width: 50px;
+    height: 50px;
+    border: 8px solid #ACC6E9;
+    border-top: 8px solid #092636;
+}

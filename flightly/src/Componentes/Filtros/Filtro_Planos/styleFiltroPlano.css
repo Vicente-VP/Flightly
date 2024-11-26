@@ -185,8 +185,8 @@
 
 .edit-space {
   display: flex;
-  align-content: center;
-  gap: 25px;
+  align-items: center;
+  gap: 18px;
 }
 
 .edit-innerSpace {
@@ -214,14 +214,14 @@
   transition: 0.3s;
 }
 
-.btn-edit.edit {
+.btn-edit.openDelete {
   background-color: #FF6600;
 
-  background-image: url('../../../Images/Icones_PlanoViagens/icon_editar_planoViagens.png');
+  background-image: url('../../../Images/FiltroPlano/deletar.png');
   background-size: 31px, 31px;
 }
 
-.btn-edit.delete {
+.btn-edit.confirmDelete {
   visibility: hidden;
   background-color: #BC0B0B;
 
@@ -231,11 +231,14 @@
   z-index: -10;
 }
 
-.btn-edit.edit.active {
-  background-color: #2378BC;
+.btn-edit.openDelete.active {
+  background-image: url('../../../Images/FiltroPlano/cancelar.png');
+  background-size: 44px, 44px;
+
+  background-color: #D9D9D9;
 }
 
-.btn-edit.delete.active {
+.btn-edit.confirmDelete.active {
   visibility: visible;
   transform: translateX(0);
   z-index: 10;
@@ -258,6 +261,16 @@
   visibility: visible;
   transform: translateX(0);
   z-index: 10;
+}
+
+.setaDireita-btnDelete{
+  display: none;
+  height: 36px;
+  padding-bottom: 15px;
+}
+
+.setaDireita-btnDelete.active{
+  display: block;
 }
 
 .container-checkbox {

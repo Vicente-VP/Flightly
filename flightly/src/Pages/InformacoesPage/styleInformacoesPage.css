@@ -1,110 +1,104 @@
-.container-cards-infoPage{
-    margin: 50px;
+.container-cards-infoPage {
+  margin-left: 0%;
+  z-index: -10;
 }
 
-.container-cards-infoPage.pt{
+.container-informacoes {
   display: flex;
-  flex-wrap: wrap;
-  gap: 120px;
+  flex-direction: column;
 }
 
-.container-informacoes{
-    display: flex;
-    flex-direction: column;
+.barra-pesquisa-infoPage {
+  text-align: center;
+  margin: 0 0 46px 0;
 }
 
-.barra-pesquisa-infoPage{
-    text-align: center;
-    margin: 0 0 46px 0;
+.barra-pesquisa-infoPage>div {
+  text-align: start;
 }
 
-.barra-pesquisa-infoPage>div{
-    text-align: start;
+.filtro-infoPage {
+  position: sticky;
+  top: 110px;
+  height: auto;
+  align-self: start;
+  margin: 20px 0 0 50px;
 }
 
-.filtro-infoPage{
-    position: sticky;
-    top: 110px;
-    height: auto;
-    align-self: start;
-    margin: 20px 0 0 50px;
-}
-
-.main{
-    display: flex;
-    flex-direction: row;
-    gap: 80px;
-    margin: 0 0 10px 0;
+.main {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  margin: 0 0 10px 0;
 }
 
 /* Loading Card Container */
 .loadingCard {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-    transform: translateX(45px);
-    width: 1120px;
-    height: 149px;
-    margin-bottom: 20px;
-    background-color: #e0e0e0; /* Light gray background for skeleton card */
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Shimmer Animation */
-  @keyframes loadingShimmer {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }
-  
-  .loadingCard .loading-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.3) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    animation: loadingShimmer 1.5s infinite;
-    border-radius: 8px;
-  }
-  
-  /* Skeleton Element Styles */
-  .loadingCard .skeleton {
-    background-color: #d0d0d0;
-    border-radius: 4px;
-  }
-  
-  /* Specific skeleton elements within the loading card */
-  .skeleton-title {
-    width: 150px;
-    height: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .skeleton-line {
-    width: 100%;
-    height: 15px;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  transform: translateX(45px);
+  width: 1120px;
+  height: 149px;
+  margin-bottom: 20px;
+  background-color: #e0e0e0;
+  /* Light gray background for skeleton card */
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Shimmer Animation */
+@keyframes loadingShimmer {
+  0% {
+    transform: translateX(-100%);
   }
 
-.notFound{
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.loadingCard .loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0) 100%);
+  animation: loadingShimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* Skeleton Element Styles */
+.loadingCard .skeleton {
+  background-color: #d0d0d0;
+  border-radius: 4px;
+}
+
+/* Specific skeleton elements within the loading card */
+.skeleton-title {
+  width: 150px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.skeleton-line {
+  width: 100%;
+  height: 15px;
+  margin-bottom: 10px;
+}
+
+.notFound {
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
   width: 100%;
   text-align: center;
 }
-  
