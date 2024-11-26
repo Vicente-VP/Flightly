@@ -20,14 +20,17 @@ export default function PlanosViagem() {
 
     const [fundos, setFundos] = useState([FundoPlano, FundoPlano2, FundoPlano3, FundoPlano4, FundoPlano5]);
 
-    const [planos, setPlanos] = useState([
-        // Dados fictícios para teste de layout
-        { id: 1, nome: 'Viagem para Recife', preco: 'R$ 1.200,00', descricao: 'Conheça as praias incríveis de Recife!', imagem: FundoPlano },
-        { id: 2, nome: 'Passeio em Maceió', preco: 'R$ 1.500,00', descricao: 'Explore as maravilhas naturais de Maceió.', imagem: FundoPlano2 },
-        { id: 3, nome: 'Tour em Los Angeles', preco: 'R$ 3.200,00', descricao: 'Aproveite o glamour de Hollywood.', imagem: FundoPlano3 },
-        { id: 4, nome: 'Rio de Janeiro', preco: 'R$ 1.800,00', descricao: 'Descubra a Cidade Maravilhosa!', imagem: FundoPlano4 },
-        { id: 5, nome: 'Visita a São Paulo', preco: 'R$ 1.000,00', descricao: 'Cultura e modernidade em São Paulo.', imagem: FundoPlano5 },
-    ]);
+    const [planos, setPlanos] = useState([]);
+    useEffect(() => {
+        axios.get(`https://flightlydbapi.onrender.com/getPlanos?id_usuario=${localStorage.getItem('userid')}`)
+            .then(response => {
+                console.log(response.data);
+                setPlanos(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }, []);
 
     const [clicked, setClicked] = useState(false);
 
