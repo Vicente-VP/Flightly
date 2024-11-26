@@ -52,274 +52,142 @@ export default function InformacoesPage() {
 
     const [attraction, setAttraction] = useState(params.get('attraction') || "");
 
+    const fetchData = async () => {
+        try {
+            let response;
+
+            switch (requestType) {
+                case 'flight':
+                    try{
+                    response = await axios.get('http://144.22.183.38:8080/flights', {
+                        // http://localhost:8080
+                        params: {
+                            type: params.get('travel_type'), // Round trip or one way
+                            from: params.get('origem'),
+                            to: params.get('destino'),
+                            departure: params.get('ida'),
+                            return: params.get('volta'),
+                            class: params.get('classe'),
+                            adults: params.get('adultos'),
+                            children: params.get('criancaIdade'), // Assuming you have a way to collect this
+                            infants_seat: params.get('criancaAssento'),
+                            infants_lap: params.get('criancaColo')
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+
+                    // Separate the URL from the rest of the data
+                    const urlData = response.data[0]; // The first element containing the URL
+                    const flightData = response.data.slice(1); // Remaining data
+
+                    // Store the URL and flight data in state
+                    setExternalUrl(urlData?.url); // Assuming the first entry contains a URL
+                    setResults(flightData); // Remaining data for flights
+                } catch (error) {
+                    console.error("Error fetching data:", error);
+                    setResults([]);
+
+                }
+                finally {
+                    setLoading(false);
+                }
+                    break;
+
+                case 'hotel':
+                    try{
+                    response = await axios.get('http://144.22.183.38:8080/hotels', {
+                        params: {
+                            place: params.get('local'),
+                            check_in: params.get('check_in'), // Assuming check-in date
+                            check_out: params.get('check_out'), // Assuming check-out date
+                            adults: params.get('adultos'),
+                            children: params.get('crianca') // Assuming you have a way to collect this
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    console.log(response.data);
+                    setExternalUrl(response.data[0]?.url); // Assuming the first entry contains a URL
+                    setResults(response.data.slice(1)); // Assuming all response data is directly usable
+                }
+                catch (error) {
+                    console.error("Error fetching data:", error);
+                    setResults([]);
+                }
+                finally {
+                    setLoading(false);
+                }
+                    break;
+    
+                case 'car':
+                    try{
+                    response = await axios.get('http://144.22.183.38:8080/cars', {
+                        params: {
+                            place: params.get('place'),
+                            data_retirada: params.get('data_retirada'),
+                            hora_retirada: params.get('hora_retirada'),
+                            data_devolucao: params.get('data_devolucao'),
+                            hora_devolucao: params.get('hora_devolucao'),
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    console.log(response.data);
+                    setExternalUrl(response.data[0]?.url);
+                    setResults(response.data.slice(1)); // Assuming all response data is directly usable
+                }
+                catch(error){
+                    console.error("Error fetching data:", error);
+                    setResults([]);
+                }
+                finally {
+                    setLoading(false);
+                }
+                    break;
+
+                case 'pturistico':
+                    try{
+                    response = await axios.get('http://144.22.183.38:8080/attractions', {
+                        params: {
+                            place: params.get('place')
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    console.log(response.data);
+                    setExternalUrl(response.data[0]?.url);
+                    setResults(response.data.slice(1)); // Assuming all response data is directly usable
+                }
+                catch(error){
+                    console.error("Error fetching data:", error);
+                    setResults([]);
+                }
+                finally {
+                    setLoading(false);
+                }
+                    break;
+
+                default:
+                    console.error("Invalid request type");
+                    return;
+            }
+
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    };
 
     useEffect(() => {
         // Send asynchronous request based on requestType
-        const fetchData = async () => {
-            try {
-                let response;
-
-                switch (requestType) {
-                    case 'flight':
-                        try{
-                        response = await axios.get('http://144.22.183.38:8080/flights', {
-                            // http://localhost:8080
-                            params: {
-                                type: params.get('travel_type'), // Round trip or one way
-                                from: params.get('origem'),
-                                to: params.get('destino'),
-                                departure: params.get('ida'),
-                                return: params.get('volta'),
-                                class: params.get('classe'),
-                                adults: params.get('adultos'),
-                                children: params.get('criancaIdade'), // Assuming you have a way to collect this
-                                infants_seat: params.get('criancaAssento'),
-                                infants_lap: params.get('criancaColo')
-                            },
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        });
-
-                        // Separate the URL from the rest of the data
-                        const urlData = response.data[0]; // The first element containing the URL
-                        const flightData = response.data.slice(1); // Remaining data
-
-                        // Store the URL and flight data in state
-                        setExternalUrl(urlData?.url); // Assuming the first entry contains a URL
-                        setResults(flightData); // Remaining data for flights
-                    } catch (error) {
-                        console.error("Error fetching data:", error);
-                        setResults([]);
-
-                    }
-                    finally {
-                        setLoading(false);
-                    }
-                        break;
-
-                    case 'hotel':
-                        try{
-                        response = await axios.get('http://144.22.183.38:8080/hotels', {
-                            params: {
-                                place: params.get('local'),
-                                check_in: params.get('check_in'), // Assuming check-in date
-                                check_out: params.get('check_out'), // Assuming check-out date
-                                adults: params.get('adultos'),
-                                children: params.get('crianca') // Assuming you have a way to collect this
-                            },
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        });
-                        console.log(response.data);
-                        setExternalUrl(response.data[0]?.url); // Assuming the first entry contains a URL
-                        setResults(response.data.slice(1)); // Assuming all response data is directly usable
-                    }
-                    catch (error) {
-                        console.error("Error fetching data:", error);
-                        setResults([]);
-                    }
-                    finally {
-                        setLoading(false);
-                    }
-                        break;
-        
-                    case 'car':
-                        try{
-                        response = await axios.get('http://144.22.183.38:8080/cars', {
-                            params: {
-                                place: params.get('place'),
-                                data_retirada: params.get('data_retirada'),
-                                hora_retirada: params.get('hora_retirada'),
-                                data_devolucao: params.get('data_devolucao'),
-                                hora_devolucao: params.get('hora_devolucao'),
-                            },
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        });
-                        console.log(response.data);
-                        setExternalUrl(response.data[0]?.url);
-                        setResults(response.data.slice(1)); // Assuming all response data is directly usable
-                    }
-                    catch(error){
-                        console.error("Error fetching data:", error);
-                        setResults([]);
-                    }
-                    finally {
-                        setLoading(false);
-                    }
-                        break;
-
-                    case 'pturistico':
-                        try{
-                        response = await axios.get('http://144.22.183.38:8080/attractions', {
-                            params: {
-                                place: params.get('place')
-                            },
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        });
-                        console.log(response.data);
-                        setExternalUrl(response.data[0]?.url);
-                        setResults(response.data.slice(1)); // Assuming all response data is directly usable
-                    }
-                    catch(error){
-                        console.error("Error fetching data:", error);
-                        setResults([]);
-                    }
-                    finally {
-                        setLoading(false);
-                    }
-                        break;
-
-                    default:
-                        console.error("Invalid request type");
-                        return;
-                }
-
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
-
-    }, [location.search, requestType]);
-
-    useEffect(() => {
-        // Send asynchronous request based on requestType
-        const fetchData = async () => {
-            try {
-                let response;
-
-                switch (requestType) {
-                    case 'flight':
-                        try{
-                        response = await axios.get('http://144.22.183.38:8080/flights', {
-                            // http://localhost:8080
-                            // http://144.22.183.38:8080
-                            params: {
-                                type: params.get('travel_type'), // Round trip or one way
-                                from: params.get('origem'),
-                                to: params.get('destino'),
-                                departure: params.get('ida'),
-                                return: params.get('volta'),
-                                class: params.get('classe'),
-                                adults: params.get('adultos'),
-                                children: params.get('criancaIdade'), // Assuming you have a way to collect this
-                                infants_seat: params.get('criancaAssento'),
-                                infants_lap: params.get('criancaColo')
-                            },
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        });
-
-                        // Separate the URL from the rest of the data
-                        const urlData = response.data[0]; // The first element containing the URL
-                        const flightData = response.data.slice(1); // Remaining data
-
-                        // Store the URL and flight data in state
-                        setExternalUrl(urlData?.url); // Assuming the first entry contains a URL
-                        setResults(flightData); // Remaining data for flights
-                    } catch (error) {
-                        console.error("Error fetching data:", error);
-                        setResults([]);
-
-                    }
-                    finally {
-                        setLoading(false);
-                    }
-                        break;
-
-                    case 'hotel':
-                        try{
-                        response = await axios.get('http://144.22.183.38:8080/hotels', {
-                            params: {
-                                place: params.get('local'),
-                                check_in: params.get('check_in'), // Assuming check-in date
-                                check_out: params.get('check_out'), // Assuming check-out date
-                                adults: params.get('adultos'),
-                                children: params.get('crianca') // Assuming you have a way to collect this
-                            },
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        });
-                        console.log(response.data);
-                        setExternalUrl(response.data[0]?.url); // Assuming the first entry contains a URL
-                        setResults(response.data.slice(1)); // Assuming all response data is directly usable
-                    }
-                    catch (error) {
-                        console.error("Error fetching data:", error);
-                        setResults([]);
-                    }
-                    finally {
-                        setLoading(false);
-                    }
-                        break;
-
-                    case 'car':
-                        try{
-                        response = await axios.get('http://144.22.183.38:8080/cars', {
-                            params: {
-                                place: params.get('place'),
-                                data_retirada: params.get('data_retirada'),
-                                hora_retirada: params.get('hora_retirada'),
-                                data_devolucao: params.get('data_devolucao'),
-                                hora_devolucao: params.get('hora_devolucao'),
-                            },
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        });
-                        console.log(response.data);
-                        setExternalUrl(response.data[0]?.url);
-                        setResults(response.data.slice(1)); // Assuming all response data is directly usable
-                    }
-                    catch(error){
-                        console.error("Error fetching data:", error);
-                        setResults([]);
-                    }
-                    finally {
-                        setLoading(false);
-                    }
-                        break;
-                    case 'pturistico':
-                        try{
-                        response = await axios.get('http://144.22.183.38:8080/attractions', {
-                            params: {
-                                place: params.get('place')
-                            },
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        });
-                        console.log(response.data);
-                        setExternalUrl(response.data[0]?.url);
-                        setResults(response.data.slice(1)); // Assuming all response data is directly usable
-                    }
-                    catch(error){
-                        console.error("Error fetching data:", error);
-                        setResults([]);
-                    }
-                    finally {
-                        setLoading(false);
-                    }
-                        break;
-                    default:
-                        console.error("Invalid request type");
-                        return;
-                }
-
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
-
+        if(!requestType) return;
         fetchData();
-    }, [location.search, requestType]);
+    }, [requestType]);
+
     return (
         <>
             <div style={{ height: 75 + 'px' }}><NavBar /></div>
