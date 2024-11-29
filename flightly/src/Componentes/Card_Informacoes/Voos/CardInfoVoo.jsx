@@ -86,7 +86,7 @@ export default function CardInfoVoo(props) {
                         <div className="info-preco-voo">
                             <div className="preco-voo">
                                 <label>A partir de:</label>
-                                <span className="preco-voo-voo">R$ {props.price}</span>
+                                <span className="preco-voo-voo" id='preco-voo-voo'>R$ {props.price}</span>
                             </div>
                             <div className="categoria-voo">
                                 <label className='tipo-voo'></label>

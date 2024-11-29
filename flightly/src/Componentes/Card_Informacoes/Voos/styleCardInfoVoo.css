@@ -240,6 +240,13 @@
   font-weight: 350;
 }
 
+#preco-voo-voo {
+  font-size: 41.74px;
+  color: black;
+  font-style: normal;
+  font-weight: 350;
+}
+
 .preco-voo label {
   font-size: 12.88px;
   color: #555555;

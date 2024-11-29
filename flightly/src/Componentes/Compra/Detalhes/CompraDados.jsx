@@ -16,30 +16,38 @@ export default function CompraDados(){
 
 
                 <div className="Dados">
-                <img src={idaVoltaIcon} alt="Data" className="iconData" />  Data
-                <p> ida: 27 de setembro de 2024</p>
-                <p> volta: 10 de outubro de 2024</p>
+                    <div className="CentralizarTitle">
+                        <img src={idaVoltaIcon} alt="Data" className="iconData" />  Data
+                    </div>
+                    <p> Ida: 27 de setembro de 2024</p>
+                    <p> Volta: 10 de outubro de 2024</p>
                 </div>
 
                 <div className="Dados">
-                <img src={quartosIcon} alt="Hotel" className="iconHospedagem" />  Hotel - Estadia de Yamata
-                <p> check-in: 28 de setembro de 2024</p>
-                <p> check-out: 10 de outubro de 2024</p>
+                    <div className="CentralizarTitle">
+                        <img src={quartosIcon} alt="Hotel" className="iconHospedagem" />  Hotel - Estadia de Yamata
+                    </div>
+                    <p> Check-in: 28 de setembro de 2024</p>
+                    <p> Check-out: 10 de outubro de 2024</p>
                 </div>
                 
                 <div className="Dados">
-                <img src={Carro_icon} alt="Carros" className="iconCarro" />  Aluguel de Carros
-                <p>Chevrolet Onix</p>
+                    <div className="CentralizarTitle">
+                        <img src={Carro_icon} alt="Carros" className="iconCarro" />  Aluguel de Carros
+                    </div>
+                    <p>Chevrolet Onix</p>
                 </div>
 
                 <div className="Dados">
-                <img src={passageirosIcon} alt="Passageiros" className="iconPassageiro" />  Passageiros
-                <p> Nome</p>
-                <p> Cpf</p>
+                    <div className="CentralizarTitle">
+                        <img src={passageirosIcon} alt="Passageiros" className="iconPassageiro" />  Viajantes
+                    </div>
+                    <p> Nome:</p>
+                    <p> CPF:</p>
                 </div>
 
                 <div className="price">
-                    <label>Total</label>
+                    <label>Total:</label>
                 </div>
                 <div className="price">
                     <label>R$ ....</label>

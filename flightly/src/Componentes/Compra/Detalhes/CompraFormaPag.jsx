@@ -11,26 +11,26 @@ export default function CompraFormaPag(){
             <div className="formas_pag">
                 
                 <div className="Row_Type">
-                <input type="radio" name="FP" value="CC"/>
-                <label for="FP" >Cartão de Credito</label>
+                    <input type="radio" name="FP" value="CC"/>
+                    <label for="FP" >Cartão de Credito</label>
                 </div>
 
-                <hr/>
+                <hr className="divisionFormPag"/>
                 <div className="Row_Type">
-                <input type="radio" name="FP" value="CD"/>
-                <label for="FP" >Cartão de Debito</label>
+                    <input type="radio" name="FP" value="CD"/>
+                    <label for="FP" >Cartão de Debito</label>
                 </div>
 
-                <hr/>
+                <hr className="divisionFormPag"/>
                 <div className="Row_Type">
-                <input type="radio" name="FP" value="BL"/>
-                <label for="FP" >Boleto</label>
+                    <input type="radio" name="FP" value="BL"/>
+                    <label for="FP" >Boleto</label>
                 </div>
 
-                <hr/>
+                <hr className="divisionFormPag"/>
                 <div className="Row_Type">
-                <input type="radio" name="FP" value="PIX"/>
-                <label for="FP" >Pix</label>
+                    <input type="radio" name="FP" value="PIX"/>
+                    <label for="FP" >Pix</label>
                 </div>
             </div> 
         </div>

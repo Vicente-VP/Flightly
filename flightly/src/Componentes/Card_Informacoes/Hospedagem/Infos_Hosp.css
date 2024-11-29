@@ -218,7 +218,15 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 35.4608px;
+    font-size: 32.4608px;
+    line-height: 53px;
+}
+
+#precoinfohosp {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32.4608px;
     line-height: 53px;
 }
 

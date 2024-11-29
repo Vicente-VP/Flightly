@@ -108,7 +108,7 @@ export default function Home() {
                                 <div className="etiqueta-hospedagem">
                                     <label className="etiqueta-hospedagem">Hóspedes</label>
                                 </div>
-                                <Drop imagem={passageirosIcon} widthDrop="201px" topContent="52.5%" titles={["Adultos", "Crianças"]} subTitles={[]} onPassengerChange={handleGuestChange} />
+                                <Drop imagem={passageirosIcon} widthDrop="201px" topContent="46.5%" titles={["Adultos", "Crianças"]} subTitles={[]} onPassengerChange={handleGuestChange} />
                             </div>
                             <div className="btn-pesquisar-hospedagem">
                                 <button className="btn-submit-hospedagem" onClick={PesquisarHotel}>

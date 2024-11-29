@@ -56,7 +56,7 @@ export default function InfoHosp(props) {
                         <div className="info-preco">
                             <div className="preco">
                                 <label className='titleprecoinfohosp'>A partir de:</label>
-                                <span className="precoinfohosp">
+                                <span className="precoinfohosp" id="precoinfohosp">
                                     R$ {(props.price ? props.price.toString().match(/\b\d+\b/)[0] : '0')}
                                 </span>
 
