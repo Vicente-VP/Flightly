@@ -6,7 +6,7 @@ import Star_icon from '../../../Images/Card-Informacoes-PTuristicos/estrela.png'
 
 
 export default function CompraCarro(){
-    const nomeHospedagem = "Estadia de Yamata";
+    const nomeHospedagem = "Estadia de Yamata hdawgrgyeayrggyeayrgegayrygeagy";
 
     const isNomeGrande = nomeHospedagem.length > 20;
     return(

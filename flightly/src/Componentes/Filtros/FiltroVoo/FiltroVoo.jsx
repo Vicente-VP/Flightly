@@ -162,6 +162,9 @@ export default function FiltroVoo(){
                     </div>
                 </div>
             </div>
+            <div className="btn-filtro-voo">
+                <button className="btn-filt-voo">Pesquisar</button>
+            </div>
         </div>
     );
 }
