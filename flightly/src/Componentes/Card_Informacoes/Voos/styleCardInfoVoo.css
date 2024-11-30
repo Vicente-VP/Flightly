@@ -160,6 +160,18 @@
   margin-bottom: 15px;
 }
 
+.destino-vooGrande{
+  font-family: "Poppins", sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+
+  text-align: left;
+  margin-left: 10px;
+
+  margin-top: -2px;
+  margin-bottom: 15px;
+}
+
 .horario-voo{
   font-family: "Poppins", sans-serif;
   font-size: 28px;

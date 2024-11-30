@@ -31,7 +31,7 @@
     position: relative;
     left: 8%;
     right: 25.16%;
-    top:9%;
+    top: 11%;
     bottom: 87.55%;
     width: 600px;
 }
@@ -40,7 +40,7 @@
     position: relative;
     left: 8%;
     right: 32.16%;
-    top: 12%;
+    top: 15.5%;
     bottom: 87.55%;
     width: 250px;
 }
@@ -49,7 +49,7 @@
     position: relative;
     left: 8%;
     right: 32.16%;
-    top: 15%;
+    top: 20%;
     width: 350px;
 }
 
@@ -107,7 +107,7 @@
     position: relative;
     left: 8%;
     right: 32.16%;
-    top: 17%;
+    top: 26%;
     bottom: 87.55%;
     width: 250px;
 }

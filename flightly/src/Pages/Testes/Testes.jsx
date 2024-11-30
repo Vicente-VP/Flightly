@@ -3,7 +3,7 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 
-import Compra from "../../Componentes/Compra/Detalhes/CompraFormaPag";
+import Compra from "../../Componentes/Compra/Detalhes/CompraHosp";
 
 import './style_Testes.css';
 import React from 'react';

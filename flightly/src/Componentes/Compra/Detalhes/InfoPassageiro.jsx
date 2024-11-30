@@ -1,5 +1,5 @@
-import aviao from "../../../Images/TelaCompra/aviao.png";
-import adicionar from "../../../Images/TelaCompra/adicionar.png";
+import aviao from "../../../Images/Compra/aviao.png";
+import adicionar from "../../../Images/Compra/adicionar.png";
 
 import './style_InfoPassageiro.css';
 import React from 'react';
