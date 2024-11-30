@@ -76,11 +76,6 @@ export default function FiltrosHospedagem() {
               }}/>
           </div>
         </div>
-        <div>
-          <button type="submit" className="btn-pesq-filtrohosp">
-            Pesquisar
-          </button>
-        </div>
       </div>
     </>
   );

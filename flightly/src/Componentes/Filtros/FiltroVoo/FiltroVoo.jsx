@@ -43,6 +43,9 @@ export default function FiltroVoo(){
     const formatHora = (valor) => valor.toString().padStart(2, '0');
 
     const handleToggle = (key) => {
+        if (['promocao', 'verao', 'inverno', 'outono', 'primavera'].includes(key)) {
+            alert(`desativada!`);
+        }
         setToggleStates(prevState => ({
             ...prevState,
             [key]: !prevState[key]

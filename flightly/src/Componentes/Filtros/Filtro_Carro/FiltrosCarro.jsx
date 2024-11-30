@@ -134,12 +134,6 @@ export default function FiltrosCarros() {
                         </button>
                     </div>
                 </div>
-
-                <div>
-                    <button type="submit" className="btn-pesq-filtrocar">
-                        Pesquisar
-                    </button>
-                </div>
             </div>
         </>
     );

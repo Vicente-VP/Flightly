@@ -3,7 +3,7 @@
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 
-import Compra from "../../Componentes/Compra/Detalhes/CompraFormaPag";
+
 
 import './style_Testes.css';
 import React from 'react';
@@ -14,7 +14,7 @@ export default function Testes() {
             <div className="navbar-testes"><NavBar/></div>
 
                 <div className="conteudo-testes">               
-                    <Compra/>
+
                 </div>
 
 

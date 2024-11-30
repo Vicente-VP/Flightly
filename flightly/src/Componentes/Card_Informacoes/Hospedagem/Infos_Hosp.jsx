@@ -13,6 +13,8 @@ export default function InfoHosp(props) {
         }
     }
 
+    const isNomeGrandeHosp = props.hotelName.length > 20;
+
     return (
         <>
             <div className="containerGeral-Hosp">
@@ -24,7 +26,7 @@ export default function InfoHosp(props) {
                     <div className="left">
                         <img src={props.image} alt={props.hotelName} className='imghosp' />
                         <div className="info">
-                            <label className='titleinfohosp'>{props.hotelName}</label>
+                            <label className={isNomeGrandeHosp ? 'titleinfohospGrande' : 'titleinfohosp'}>{props.hotelName}</label>
                             <span className='localinfohosp'>{props.location}</span>
                             <div className='star-rating'>
                                 <div className='starinfohosp' />
