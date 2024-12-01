@@ -146,3 +146,217 @@ input[name=FP]{
     gap: 5px;
     margin: 0 0 2% 0;
 }
+
+
+/*Compra Carro*/
+
+.ContainerPag-carro{
+    width: 1252px;
+    height: 230px;
+
+    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+    border-radius: 13.01px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 7%;
+
+    padding: 30px 40px 0 50px;
+}
+
+.ContainerPag-carro .titlePag-carro{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ContainerPag-carro .titlePag-carro .iconeCar{
+    width: 28px;
+    height: 30px;
+    
+    margin: 0 5% 0 0;
+}
+
+.ContainerPag-carro .titlePag-carro .iconeMenos{
+    width: 21.68px;
+    height: 5.42px;
+
+    margin: 0 0 0 68%;
+}
+
+.ContainerPag-carro .titlePag-carro .iconeMenos:hover{
+    cursor: pointer;
+}
+
+.ContainerPag-carro .titlePag-carro > label{
+    font-size: 32.53px;
+    font-weight: 300;
+}
+
+.ContainerPag-carro .conteudoPag-carro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 0 0 7.4%;
+}
+
+.ContainerPag-carro .conteudoPag-carro .detalhesPag-carro{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ContainerPag-carro .conteudoPag-carro .detalhesEntrega-carro{
+    width: 480px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 5%;
+}
+
+.ContainerPag-carro .conteudoPag-carro .detalhesEntrega-carro > label{
+    font-size: 23.85px;
+    font-weight: 300;
+}
+
+.ContainerPag-carro .conteudoPag-carro .detalhesEntrega-carro > span{
+    font-size: 21.68px;
+    font-weight: 400;
+}
+
+.ContainerPag-carro .conteudoPag-carro .detalhesCliente-carro{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8%;
+}
+
+.ContainerPag-carro .conteudoPag-carro .detalhesCliente-carro .titleDetakhesCliente-carro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ContainerPag-carro .conteudoPag-carro .detalhesCliente-carro .titleDetakhesCliente-carro > label{
+    font-size: 18.18px;
+    font-weight: 300;
+}
+
+.ContainerPag-carro .conteudoPag-carro .detalhesCliente-carro .titleDetakhesCliente-carro .divisionDetalhesCliente-carro{
+    width: 101.26px;
+    height: 3px;
+    background-color: black;
+
+    margin: 0%;
+}
+
+.ContainerPag-carro .conteudoPag-carro .imagemCarroPag-carro > img{
+    width: 198.98px;
+    height: 108.42px;
+    
+    margin: 0 100px 0 0;
+}
+
+/*Compra Hospedagem*/
+
+.ContainerPag-hosp{
+    width: 1252px;
+    height: 176px;
+
+    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+    border-radius: 13.01px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 23%;
+
+    padding: 30px 40px 0 50px;
+}
+
+.ContainerPag-hosp .titlePag-hosp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ContainerPag-hosp .titlePag-hosp .iconeHosp{
+    width: 30.71px;
+    height: 20.94px;
+
+    margin: 0 5% 0 0;
+}
+
+.ContainerPag-hosp .titlePag-hosp .subTitlePag-hosp{
+    display: flex;
+    flex-direction: row;
+    gap: 31px;
+    align-items: center;
+}
+
+.ContainerPag-hosp .titlePag-hosp .subTitlePag-hosp .nomeNormal{
+    font-size: 27.92px;
+    font-weight: 300;
+}
+
+.ContainerPag-hosp .titlePag-hosp .subTitlePag-hosp .nomeGrande{
+    font-size: 17.92px;
+    font-weight: 300;
+    width: 600px;
+}
+
+.ContainerPag-hosp .titlePag-hosp .subTitlePag-hosp > div{
+    font-size: 27.92px;
+    font-weight: 400;
+
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.ContainerPag-hosp .titlePag-hosp .subTitlePag-hosp .iconeStar{
+    width: 35.61px;
+    height: 35.61px;
+}
+
+.ContainerPag-hosp .titlePag-hosp .iconeMenosGrande{
+
+    width: 21.68px;
+    height: 5.42px;
+    
+    margin: 0 0 0 26%;
+}
+
+.ContainerPag-hosp .titlePag-hosp .iconeMenos{
+
+    width: 21.68px;
+    height: 5.42px;
+    
+    margin: 0 0 0 55%;
+}
+
+.ContainerPag-hosp .titlePag-hosp .iconeMenos:hover{
+    cursor: pointer;
+}
+
+.ContainerPag-hosp .conteudoPag-hosp {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 7%;
+
+    margin: 0 0 0 7.6%;
+}
+
+.ContainerPag-hosp .conteudoPag-hosp > label{
+    font-size: 20.47px;
+    font-weight: 300;
+}
+
+.ContainerPag-hosp .conteudoPag-hosp > span{
+    font-style: normal;
+    font-size: 18.61px;
+    font-weight: 300;
+}

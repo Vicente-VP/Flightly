@@ -47,6 +47,8 @@ export default function CardInfoVoo(props) {
              
     };
 
+    const isNomeGrandeVoo = props.destino.length > 20;
+
     // Construct the company image path
 
 
@@ -64,7 +66,7 @@ export default function CardInfoVoo(props) {
                         <div className="info-voo">
                             <img src={companyImage[props.company]} alt={props.company} className='img-voo'/>
                             <div className='CompDest-voo'>
-                                <label className='destino-voo'>{props.destino}</label>
+                                <label className={isNomeGrandeVoo ? 'destino-vooGrande' : 'destino-voo'}>{props.destino}</label>
                                 <label className='companhia-voo'>{props.company}</label>
                             </div>
 

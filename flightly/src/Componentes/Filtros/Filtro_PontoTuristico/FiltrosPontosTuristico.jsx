@@ -120,11 +120,6 @@ export default function FiltrosPontosTuristicos() {
                         <option value="libras">Legendas em Libras</option>
                     </select>
                 </div>
-                <div>
-                    <button type="submit" className="btn-pesq-filtroturis">
-                        Pesquisar
-                    </button>
-                </div>
             </div>
         </>
     );
