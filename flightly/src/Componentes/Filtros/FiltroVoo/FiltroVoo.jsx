@@ -7,7 +7,7 @@ import Escala_icon from '../../../Images/Filtros/escala_icon.png';
 
 import './styleFiltroVoo.css';
 
-export default function FiltroVoo(){
+export default function FiltroVoo(props){
     const [toggleStates, setToggleStates] = useState({
         promocao: false,
         verao: false,
@@ -19,8 +19,8 @@ export default function FiltroVoo(){
         azul: false
     });
 
-    const [precoVoo, setPrecoVoo] = useState(1500)
-    const [partidaVoo, setPartidaVoo] = useState(0)
+    const [precoVoo, setPrecoVoo] = useState(10000)
+    const [partidaVoo, setPartidaVoo] = useState(23)
 
     const handleChangePriceVoo = (event) => {
         const newValue = event.target.value;
@@ -51,6 +51,12 @@ export default function FiltroVoo(){
             [key]: !prevState[key]
         }));
     };
+
+    const Filtrar = () => {
+        const companies = Object.keys(toggleStates).filter(key => toggleStates[key]);
+        
+        window.location.href = `/InformacoesPage?requestType=filteredflight&companies=${companies.join(',')}&price=${precoVoo}&partida=${partidaVoo}:00&travel_type=${props.travelType}&origem=${props.origem}&destino=${props.destino}&ida=${props.ida}&volta=${props.volta}&adultos=${props.adultos}&criancaIdade=${props.criancaIdade}&criancaColo=${props.criancaColo}&criancaAssento=${props.criancaAssento}&classe=${props.classe}&url=${props.externalUrl}`;
+    }
 
 
     return (
@@ -139,22 +145,22 @@ export default function FiltroVoo(){
                     <span>Companhias</span>
                     <div>
                         <button
-                            onClick={() => handleToggle('gol')}
-                            className={`button-companies-gol ${toggleStates.gol ? 'active' : ''}`}
+                            onClick={() => handleToggle('Gol')}
+                            className={`button-companies-gol ${toggleStates.Gol ? 'active' : ''}`}
                             style={{ backgroundImage: `url(${Gol_logo})` }}
                         >
                             Gol
                         </button>
                         <button
-                            onClick={() => handleToggle('latam')}
-                            className={`button-companies-latam ${toggleStates.latam ? 'active' : ''}`}
+                            onClick={() => handleToggle('LATAM')}
+                            className={`button-companies-latam ${toggleStates.LATAM ? 'active' : ''}`}
                             style={{ backgroundImage: `url(${Latam_logo})` }}
                         >
                             Latam
                         </button>
                         <button
-                            onClick={() => handleToggle('azul')}
-                            className={`button-companies-azul ${toggleStates.azul ? 'active' : ''}`}
+                            onClick={() => handleToggle('Azul')}
+                            className={`button-companies-azul ${toggleStates.Azul ? 'active' : ''}`}
                             style={{ backgroundImage: `url(${Azul_logo})` }}
                         >
                             Azul
@@ -163,7 +169,7 @@ export default function FiltroVoo(){
                 </div>
             </div>
             <div className="btn-filtro-voo">
-                <button className="btn-filt-voo">Pesquisar</button>
+                <button className="btn-filt-voo" onClick={Filtrar}>Pesquisar</button>
             </div>
         </div>
     );

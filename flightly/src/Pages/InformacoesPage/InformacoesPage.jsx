@@ -21,7 +21,7 @@ import PopUpCarregamento from "../../Componentes/PopUpCarregamento/PopUpCarregam
 import './styleInformacoesPage.css';
 import React from 'react';
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 
 export default function InformacoesPage() {
@@ -51,6 +51,8 @@ export default function InformacoesPage() {
     const [horaDevolucao, setHoraDevolucao] = useState(params.get('hora_devolucao') || "");
 
     const [attraction, setAttraction] = useState(params.get('attraction') || "");
+
+
 
     const fetchData = async () => {
         try {
@@ -171,6 +173,33 @@ export default function InformacoesPage() {
                     setLoading(false);
                 }
                     break;
+                case 'filteredflight':
+                    try{
+                        const data = {
+                            "url":params.get('url'),
+                            "filters": {
+                                "max_price": params.get('price'),
+                                "take_off": params.get('partida'),
+                                "company": params.get('companies').split(',')
+                            }
+                        }
+                    response = await axios.post('http://localhost:8080/flights/filter', data,{
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    console.log(response.data);
+                    setResults(response.data.slice(1)); // Assuming all response data is directly usable
+                    setExternalUrl(response.data[0]?.url);
+                    }
+                    catch(error){
+                        console.error("Error fetching data:", error);
+                        setResults([]);
+                    }
+                    finally {
+                        setLoading(false);
+                    }
+                    break;
 
                 default:
                     console.error("Invalid request type");
@@ -182,11 +211,13 @@ export default function InformacoesPage() {
         }
     };
 
+    const hasFetched = useRef(false); //Para evitar duas requisições
+
     useEffect(() => {
-        // Send asynchronous request based on requestType
-        if(!requestType) return;
+        if(hasFetched.current) return;
         fetchData();
-    }, [requestType]);
+        hasFetched.current = true;
+    }, []);
 
     return (
         <>
@@ -202,7 +233,7 @@ export default function InformacoesPage() {
                 <div className="barra-pesquisa-infoPage">
                     <span className="titulo-infoPage">Encontre voos e adicione aos seus planos de viagem</span>
                     <div>
-                        {params.get('requestType') === 'flight' && (
+                        {(params.get('requestType') === 'flight' || params.get('requestType') === 'filteredflight') && (
                             <BarraPesquisaInfoVoo
                                 origem={origem}
                                 destino={destino}
@@ -253,7 +284,20 @@ export default function InformacoesPage() {
                             (() => {
                                 switch (requestType) {
                                     case 'flight':
-                                        return <FiltroInfoVoo />;
+                                    case 'filteredflight':
+                                        return <FiltroInfoVoo
+                                            origem={origem}
+                                            destino={destino}
+                                            ida={ida}
+                                            volta={volta}
+                                            adultos={params.get('adultos')}
+                                            criancaIdade={params.get('criancaIdade')}
+                                            criancaAssento={params.get('criancaAssento')}
+                                            criancaColo={params.get('criancaColo')}
+                                            classe={params.get('classe')} 
+                                            externalUrl={externalUrl}
+                                            travelType={params.get('travel_type')}
+                                        />;
                                     case 'hotel':
                                         return <FiltroHosp />;
                                     case 'car':
@@ -306,6 +350,8 @@ export default function InformacoesPage() {
                         results.map((result, index) => {
                             switch (requestType) {
                                 case 'flight':
+                                case 'filteredflight':
+                                    console.log('a')
                                     if (params.get('travel_type') === 'ow') {
                                         return <CardInfoVoo
                                             key={index}
@@ -337,7 +383,7 @@ export default function InformacoesPage() {
                                             stops={result.stops}
                                             take_off={result.take_off}
                                             onClick={() => {
-                                                setResults({});
+                                                setResults([]);
                                             }}
                                         />;
                                     }

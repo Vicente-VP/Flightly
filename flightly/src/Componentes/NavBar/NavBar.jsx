@@ -13,9 +13,10 @@ import Sair_popUp from '../../Images/Icones_PopUp/Sair_popUp.png';
 import Fechar_popUpNot from '../../Images/Icones_PopUp/botao-fechar.png';
 
 import './styleNavBar.css';
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
 
@@ -41,6 +42,30 @@ export default function NavBar() {
       setActiveLink('pt');
     } 
   }, [location]);
+
+  const [notificacoes, setNotificacoes] = useState([]);
+
+  const hasFetched = useRef(false);
+
+  useEffect(() => {
+    if (!hasFetched.current && localStorage.getItem('userid')) {
+      const fetchNotifications = async () => {
+        try {
+          const response = await axios.get('https://flightlydbapi.onrender.com/getNotificacoes', {
+            params: { id_usuario: localStorage.getItem('userid') },
+          });
+          console.log(response.data);
+          setNotificacoes(response.data);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+      fetchNotifications();
+      hasFetched.current = true; // Mark as fetched
+    }
+  }, []); // Empty dependency array
+
 
   const navigate = useNavigate();
   
@@ -192,8 +217,20 @@ export default function NavBar() {
 
           {/* dropdow Notificações */}
           <ul className={`not-dropdown-list ${isDropdownActiveNot ? 'active' : ''}`}>
-            <span className="title-popUp-not"><img src="" />Notificações <img src={Fechar_popUpNot} id='img-fechar' alt="fechar" onClick={toggleDropdownNot}/></span>
+            <span className="title-popUp-not"><img src="" />Notificações<img src={Fechar_popUpNot} id='img-fechar' alt="fechar" onClick={toggleDropdownNot}/></span>
             <hr />
+            {notificacoes.map((notificacao, index) => {
+              console.log(notificacao[2]);
+              return (
+                <li key={index} className="perfil-dropdown-list-item-not">
+                  <div className="Not-layout">
+                    <span><p>{notificacao[3]}</p></span>
+                    <p>{notificacao[2]}</p>
+                  </div>
+                  <hr />
+                </li>
+              );
+            })}
             <li className="perfil-dropdown-list-item-not">
               <div className="Not-layout"> 
                 {/* Colocar conteúdo da notificação */}
