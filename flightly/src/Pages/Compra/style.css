@@ -1,19 +1,31 @@
+.title-paginaCompra {
+    margin: 120px 0 50px 80px;
 
-.save_navbar{
-    position:fixed;
-    padding-bottom: 10px;
+    font-size: 36px;
+    font-weight: 400;
 }
 
-.ConteudoCompra{
+.finalizar-compra {
     display: grid;
-    padding-top: 80px;
+    width: 82%;
+    gap: 30px;
 
-    justify-items: center;
-    row-gap: 30px;
-    align-content: top;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.double-item{
-    display: flex;
-    column-gap: 30px;
+.container-infoEvoos{
+    display: grid;
+    grid-template-columns: auto 30px 40%;
+}
+
+.container-cardsVoos{
+    display: grid;
+    gap: 30px;
+}
+
+.card-confirmarEformaPag{
+    display: grid;
+    grid-template-columns: auto 30px 50%;
 }

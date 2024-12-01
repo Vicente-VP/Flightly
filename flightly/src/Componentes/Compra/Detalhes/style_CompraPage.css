@@ -6,13 +6,13 @@ h1{
 
 
 .Details{
-    width: 1255px;
+    width: 100%;
     height: fit-content;
     padding: 30px;
     /*border: 1px solid;*/
     border-color: #004639;
     border-radius: 10px;
-    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+    background: linear-gradient(to right, #C7E2F240, #73838C10);
 
     font-size: 20px;
 }
@@ -20,7 +20,7 @@ h1{
 .Details .division{
     transform: rotate(180deg);
     height: auto;
-    width: 1185px;
+    width: 100%;
 }
 
 .Name_Price_details{
@@ -39,9 +39,9 @@ h1{
     /*border: 1px solid;*/
     border-color: #004639;
     border-radius: 10px;
-    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
-    width:612px;
-    height: 286px;
+    background: linear-gradient(to right, #C7E2F240, #73838C10);
+    width: 100%;
+    height: 300px;
     padding: 10px;
 }
 
@@ -123,10 +123,10 @@ input[name=FP]{
     /*border: 1px solid;*/
     border-color: #004863;
     border-radius: 20px;
-    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+    background: linear-gradient(to right, #C7E2F240, #73838C10);
     border-radius: 10.5088px;
-    width:610px;
-    height:286px;
+    width: 100%;
+    height:300px;
     display:grid;
     justify-content: align-start;
 }
@@ -151,10 +151,10 @@ input[name=FP]{
 /*Compra Carro*/
 
 .ContainerPag-carro{
-    width: 1252px;
+    width: 100%;
     height: 230px;
 
-    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+    background: linear-gradient(to right, #C7E2F240, #73838C10);
     border-radius: 13.01px;
 
     display: flex;
@@ -263,10 +263,10 @@ input[name=FP]{
 /*Compra Hospedagem*/
 
 .ContainerPag-hosp{
-    width: 1252px;
+    width: 100%;
     height: 176px;
 
-    background: linear-gradient(90deg, rgba(199, 226, 242, 0.4) 0%, rgba(115, 131, 140, 0.1) 100%);
+    background: linear-gradient(to right, #C7E2F240, #73838C10);
     border-radius: 13.01px;
 
     display: flex;
