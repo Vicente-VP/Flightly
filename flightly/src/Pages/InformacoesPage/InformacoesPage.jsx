@@ -390,7 +390,7 @@ export default function InformacoesPage() {
                                 case 'hotel':
                                     return <InfoHosp
                                         key={index}
-                                        image={result.image[0] || ""}
+                                        image={result.image || ""}
                                         hotelName={result.name}
                                         location={params.get('local')}
                                         rating={result.stars}
