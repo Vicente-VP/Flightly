@@ -1,9 +1,8 @@
 import React from "react";
 import './styleVooIdaVolta.css';
 
-import iconeAviao from "../../../Images/TelaCompra/aviao.png";
-import iconeRemover from "../../../Images/TelaCompra/remover.png";
-import logoCompanhia from "../../../Images/TelaCompra/companhia.png";
+import iconeAviao from "../../../Images/Compra/aviao.png";
+import iconeRemover from "../../../Images/Compra/Menos.png";
 
 export default function VooIdaVolta(props) {
     //  const [voos, hotel, carros, ptTuristico] = useState([]) este é só uma ideia da implementação futura de como utlizaremos para o mapeamento dos itens
@@ -35,7 +34,7 @@ export default function VooIdaVolta(props) {
                     </div>
                     <div>
                         <label>Duração</label>
-                        <p>{props.ducacaoVoo}</p>
+                        <p>{props.duracaoVoo}</p>
                     </div>
                 </div>
                 <div className="div-logo">
