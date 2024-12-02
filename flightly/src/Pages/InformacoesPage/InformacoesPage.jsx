@@ -183,7 +183,7 @@ export default function InformacoesPage() {
                                 "company": params.get('companies').split(',')
                             }
                         }
-                    response = await axios.post('http://localhost:8080/flights/filter', data,{
+                    response = await axios.post('http://144.22.183.38:8080/flights/filter', data,{
                         headers: {
                             'Content-Type': 'application/json'
                         }
