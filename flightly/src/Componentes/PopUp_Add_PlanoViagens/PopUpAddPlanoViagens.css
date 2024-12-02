@@ -164,11 +164,6 @@
     cursor: pointer;
 }
 
-.btn-addplano.comprar{
-    background-color: #BFC1C3;
-    cursor: auto;
-}
-
 .styleCriarPlano.active{
     display: block;
 }

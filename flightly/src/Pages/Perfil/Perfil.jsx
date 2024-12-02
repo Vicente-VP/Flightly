@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import NavBar from '../../Componentes/NavBar/NavBar';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -26,6 +26,7 @@ import './style_Perfil.css';
 export default function Perfil() {
 
     const navigate = useNavigate();
+    const hasFetched = useRef(false);
 
     function Alterar(){
         
@@ -75,6 +76,8 @@ export default function Perfil() {
     const [fundos, setFundos] = useState([FundoPlano, FundoPlano2, FundoPlano3, FundoPlano4, FundoPlano5]);
     const [planos, setPlanos] = useState([]);
     useEffect(() => {
+        if (!hasFetched.current){
+            hasFetched.current = true;
         axios.get(`https://flightlydbapi.onrender.com/getPlanos?id_usuario=${localStorage.getItem('userid')}`)
             .then(response => {
                 console.log(response.data);
@@ -83,6 +86,7 @@ export default function Perfil() {
             .catch(error => {
                 console.log(error);
             })
+        }
     }, []);
 
     function getRandomInt(max) {

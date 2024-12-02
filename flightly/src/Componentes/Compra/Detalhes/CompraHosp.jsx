@@ -5,8 +5,8 @@ import Menos_icon from '../../../Images/Compra/Menos.png';
 import Star_icon from '../../../Images/Card-Informacoes-PTuristicos/estrela.png';
 
 
-export default function CompraCarro(){
-    const nomeHospedagem = "Estadia de Yamata hdawgrgyeayrggyeayrgegayrygeagy";
+export default function CompraCarro(props){
+    const nomeHospedagem = props.nomeHotel;
 
     const isNomeGrande = nomeHospedagem.length > 20;
     return(
@@ -17,7 +17,7 @@ export default function CompraCarro(){
                 <div className="subTitlePag-hosp">
                     <label className={isNomeGrande ? "nomeGrande" : "nomeNormal"}>{nomeHospedagem}</label>
                     <div>
-                        <span>3,5</span>
+                        <span>{props.estrelas}</span>
                         <img src={Star_icon} alt="Icone Retirar" className="iconeStar"/>
                     </div>
                 </div>
@@ -25,9 +25,9 @@ export default function CompraCarro(){
             </div>
             <div className="conteudoPag-hosp">
                 <label>Check-in:</label>
-                <span>28 de Julho de 2024</span>
+                <span>{props.dataCheckIn}</span>
                 <label>Check-out:</label>
-                <span>13 de Novembro de 2024</span>
+                <span>{props.dataCheckOut}</span>
             </div>
         </div>
         </>   

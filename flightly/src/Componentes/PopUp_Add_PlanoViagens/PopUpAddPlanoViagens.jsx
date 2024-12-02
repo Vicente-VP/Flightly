@@ -1,7 +1,7 @@
 import './PopUpAddPlanoViagens.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
+import { Navigate } from 'react-router-dom';
 
 
  
@@ -202,6 +202,8 @@ export default function PopUpAddPlanoViagens(props){
             setDropdownOpen(!dropdownOpen);
         }
 
+        
+
     return(
         <>
             <div className='container-addplano'>
@@ -244,7 +246,21 @@ export default function PopUpAddPlanoViagens(props){
                 <div className='baixo-addplano'>
                     <button type="submit" className="btn-addplano" onClick={CriarPlano}>Adicionar a novo plano</button>
                     <button type="submit" className="btn-addplano" onClick={AdicionarItemPlano}>Adicionar</button>
-                    <button type="submit" className="btn-addplano comprar">Comprar</button>
+                    <button type="submit" className="btn-addplano" onClick={()=>{
+                        let id = CriarItem();
+                        const parametros = new URLSearchParams();
+
+                        if(props.tipo === 'Voo'){
+                            parametros.append("idsVoos[]", id)
+                        }else if (props.tipo === 'Hospedagem'){
+                            parametros.append("idsHotel[]", id)
+                        }else if (props.tipo === 'Carro'){
+                            parametros.append("idsCarro[]", id)
+                        }else if (props.tipo === 'PontoTuristico'){
+                            parametros.append("idsPt[]", id)
+                        }
+                        Navigate = `/Compra?${parametros}`;
+                    }}>Comprar</button>
                 </div>
 
                 
