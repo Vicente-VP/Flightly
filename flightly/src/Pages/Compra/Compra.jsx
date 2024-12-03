@@ -124,7 +124,7 @@ export default function Compra() {
       }
     }, [idsVoos, idsHoteis, idsCarros]); // Run whenever these dependencies change
 
-    const comprarItens=()=>{
+    const comprarItens=async()=>{
         setLoading(true);
         try{
             idsVoos.forEach(async (idVoo) => {

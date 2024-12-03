@@ -1,7 +1,7 @@
 import './PopUpAddPlanoViagens.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
  
@@ -20,6 +20,8 @@ const CardAddPlano = ({ imagem, nome, data, preco, onClick}) => {
 
 export default function PopUpAddPlanoViagens(props){
 
+    const navigate = useNavigate();
+
     const [selectedOption, setSelectedOption] = useState(null);
     const [planos, setPlanos] = useState([]);
     const params = new URLSearchParams(window.location.search);
@@ -37,10 +39,21 @@ export default function PopUpAddPlanoViagens(props){
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
-    
+    const Comprar = async()=>{
+        let id = await CriarItem();
+        const parametros = new URLSearchParams();
 
-   
-    
+        if(props.tipo === 'Voo'){
+            parametros.append("idsVoos[]", id)
+        }else if (props.tipo === 'Hospedagem'){
+            parametros.append("idsHoteis[]", id)
+        }else if (props.tipo === 'Carro'){
+            parametros.append("idsCarros[]", id)
+        }else if (props.tipo === 'PontoTuristico'){
+            parametros.append("idsPontos[]", id)
+        }
+        navigate(`/Compra?${parametros.toString()}`);
+    }
 
     useEffect(() => {
         axios.get(`https://flightlydbapi.onrender.com/getPlanos?id_usuario=${localStorage.getItem('userid')}`)
@@ -246,21 +259,7 @@ export default function PopUpAddPlanoViagens(props){
                 <div className='baixo-addplano'>
                     <button type="submit" className="btn-addplano" onClick={CriarPlano}>Adicionar a novo plano</button>
                     <button type="submit" className="btn-addplano" onClick={AdicionarItemPlano}>Adicionar</button>
-                    <button type="submit" className="btn-addplano" onClick={()=>{
-                        let id = CriarItem();
-                        const parametros = new URLSearchParams();
-
-                        if(props.tipo === 'Voo'){
-                            parametros.append("idsVoos[]", id)
-                        }else if (props.tipo === 'Hospedagem'){
-                            parametros.append("idsHotel[]", id)
-                        }else if (props.tipo === 'Carro'){
-                            parametros.append("idsCarro[]", id)
-                        }else if (props.tipo === 'PontoTuristico'){
-                            parametros.append("idsPt[]", id)
-                        }
-                        Navigate = `/Compra?${parametros}`;
-                    }}>Comprar</button>
+                    <button type="submit" className="btn-addplano" onClick={Comprar}>Comprar</button>
                 </div>
 
                 

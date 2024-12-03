@@ -23,6 +23,22 @@ import FundoPlano4 from '../../Images/Card_Plano_Viagem/Rio_de_Janeiro.png';
 import FundoPlano5 from '../../Images/Card_Plano_Viagem/Sampa.png';
 import './style_Perfil.css';
 
+import Gol from "../../Images/Card_Informacoes_Voo/Gol.png";
+import Azul from "../../Images/Card_Informacoes_Voo/AZUL.png";
+import LATAM from "../../Images/Card_Informacoes_Voo/LATAM.png";
+import Avianca from "../../Images/Card_Informacoes_Voo/Avianca.png";
+import Voepass from "../../Images/Card_Informacoes_Voo/VOEPASS.png";
+import SkyAirline from "../../Images/Card_Informacoes_Voo/Sky_Airline.png";
+
+const companyImage = {
+    Gol: Gol,
+    Azul: Azul,
+    LATAM: LATAM,
+    Avianca: Avianca,
+    VOEPASS: Voepass,
+    SkyAirline: SkyAirline
+}
+
 export default function Perfil() {
 
     const navigate = useNavigate();
@@ -75,6 +91,22 @@ export default function Perfil() {
     }
     const [fundos, setFundos] = useState([FundoPlano, FundoPlano2, FundoPlano3, FundoPlano4, FundoPlano5]);
     const [planos, setPlanos] = useState([]);
+    const [voos, setVoos] = useState([]);
+    const [hoteis, setHoteis] = useState([]);
+    const [carros, setCarros] = useState([]);
+
+    const getHistoricoVoo = async () =>{
+        try{
+            const response = await axios.get(`https://flightlydbapi.onrender.com/getVooHistorico?id_usuario=${localStorage.getItem('userid')}`);
+            let idsVoos = response.data.map((voo) => voo[0]);
+            const vooResponse = await axios.get(`https://flightlydbapi.onrender.com/getDetalhesVooHistorico`, {params: {"ids_voos[]": idsVoos}});
+            setVoos(vooResponse.data);
+        }
+        catch(error){
+            console.log(error);
+        }
+    }
+
     useEffect(() => {
         if (!hasFetched.current){
             hasFetched.current = true;
@@ -86,6 +118,7 @@ export default function Perfil() {
             .catch(error => {
                 console.log(error);
             })
+            getHistoricoVoo();
         }
     }, []);
 
@@ -361,64 +394,29 @@ export default function Perfil() {
                 </div>
                 <div className="planos-reservados-perfil">
                     <div className="titulo-planos-reservados-perfil">
-                        <label className="titulo-reservados-perfil">Histórico de Planos Reservados</label>
+                        <label className="titulo-reservados-perfil">Histórico de Voos Reservados</label>
                     </div>
                     <div className="cards-planos-reservados-perfil">
                         <div className="heads-reservados-perfil">
                             <div></div>
-                            <label className="headNome-tabela-reservado">Nome</label>
+                            <label className="headNome-tabela-reservado">Destino</label>
                             <label className="headPreco-tabela-reservado">Preço</label>
-                            <label className="headLocalizacao-tabela-reservado">Localizações</label>
+                            <label className="headLocalizacao-tabela-reservado">Data</label>
                             <div></div>
                         </div>
                         <div className="container-carrossel-reserados">
                             <div className="slide-plano-reservado-perfil">
+                                {voos.map((voo, index) => (index <= 1) ? (
+                                    
                                 <div className="planoEspecifico-reservados-perfil">
-                                    <img src={planoReservado} className="imagemViagem-reservado-perfil"
-                                        alt="Imagem do Plano Reservado" />
-                                    <label className="nomeViagem-reservado-perfil">Viagem do Balacubaco</label>
-                                    <label className="precoViagem-reservado-perfil">R$ 3500,00</label>
-                                    <label className="localizacaoViagem-reservado-perfil">Cancun, Londres, Havaí</label>
-                                </div>
-                                <div className="planoEspecifico-reservados-perfil">
-                                    <img src={planoReservado} className="imagemViagem-reservado-perfil"
-                                        alt="Imagem do Plano Reservado" />
-                                    <label className="nomeViagem-reservado-perfil">Viagem do Balacubaco</label>
-                                    <label className="precoViagem-reservado-perfil">R$ 3500,00</label>
-                                    <label className="localizacaoViagem-reservado-perfil">Cancun, Londres, Havaí</label>
-                                </div>
-                            </div>
-                            <div className="slide-plano-reservado-perfil">
-                                <div className="planoEspecifico-reservados-perfil">
-                                    <img src={planoReservado} className="imagemViagem-reservado-perfil"
-                                        alt="Imagem do Plano Reservado" />
-                                    <label className="nomeViagem-reservado-perfil">Enzo</label>
-                                    <label className="precoViagem-reservado-perfil">R$ 3500,00</label>
-                                    <label className="localizacaoViagem-reservado-perfil">Cancun, Londres, Havaí</label>
-                                </div>
-                                <div className="planoEspecifico-reservados-perfil">
-                                    <img src={planoReservado} className="imagemViagem-reservado-perfil"
-                                        alt="Imagem do Plano Reservado" />
-                                    <label className="nomeViagem-reservado-perfil">Viagem do Balacubaco</label>
-                                    <label className="precoViagem-reservado-perfil">R$ 3500,00</label>
-                                    <label className="localizacaoViagem-reservado-perfil">Cancun, Londres, Havaí</label>
-                                </div>
-                            </div>
-                            <div className="slide-plano-reservado-perfil">
-                                <div className="planoEspecifico-reservados-perfil">
-                                    <img src={planoReservado} className="imagemViagem-reservado-perfil"
-                                        alt="Imagem do Plano Reservado" />
-                                    <label className="nomeViagem-reservado-perfil">Vinicius</label>
-                                    <label className="precoViagem-reservado-perfil">R$ 3500,00</label>
-                                    <label className="localizacaoViagem-reservado-perfil">Cancun, Londres, Havaí</label>
-                                </div>
-                                <div className="planoEspecifico-reservados-perfil">
-                                    <img src={planoReservado} className="imagemViagem-reservado-perfil"
-                                        alt="Imagem do Plano Reservado" />
-                                    <label className="nomeViagem-reservado-perfil">Viagem do Balacubaco</label>
-                                    <label className="precoViagem-reservado-perfil">R$ 3500,00</label>
-                                    <label className="localizacaoViagem-reservado-perfil">Cancun, Londres, Havaí</label>
-                                </div>
+                                    <img src={companyImage[voo[0]]} className="imagemViagem-reservado-perfil"
+                                        alt={voo[0]} />
+                                    <label className="nomeViagem-reservado-perfil">{voo[10]}</label>
+                                    <label className="precoViagem-reservado-perfil">R$ {voo[5]}</label>
+                                    <label className="localizacaoViagem-reservado-perfil">{voo[1]}</label>
+                                </div> 
+                            ) : <></>)}
+                            
                             </div>
                             <div className="paginas-plano-reservado-perfil">
                                 <div className="numeros-paginas-reservado">
