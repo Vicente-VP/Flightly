@@ -44,7 +44,7 @@ export default function introducaoHomeGenerica() {
                             <span><b>Altere</b> suas reservas com um clique</span>
                         </div>
                     </div>
-                    <div></div>
+                    <div className="vazio"></div>
                     <div className="subcontainerVantagens-homeG">
                         <div className="divTextoVantagem-homeG">
                             <span className="circuloVantagem-homeG"></span>
