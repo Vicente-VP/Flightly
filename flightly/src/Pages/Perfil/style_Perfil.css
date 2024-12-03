@@ -262,6 +262,8 @@ button{
 
 .hr-calendario-baixo{
     background-color: #00000080;
+    height: 1.5px;
+    width: 100%;
 }
 
 /* Botão de Logout */
@@ -576,10 +578,16 @@ button{
 
 .planoEspecifico-reservados-perfil{
     display: grid;
-    grid-template-columns: 15% 30% 20% 20% 15%;
+    grid-template-columns: 15% 30% 20% 12% 23%;
     align-items: center;
     padding-bottom: 15px;
     border-bottom: 1px solid #00000060;
+    border-radius: 12px 12px 0 0;
+}
+
+.planoEspecifico-reservados-perfil:hover{
+    cursor: pointer;
+    background: linear-gradient(to right, #C7E2F240, #73838C10);
 }
 
 .imagemViagem-reservado-perfil{
@@ -778,4 +786,150 @@ button{
     border: 3px solid rgba(255, 166, 0, 0); 
     height: 1px;   /* creates padding around scroll thumb */
     width: 12px; 
+}
+
+.popEditar{
+    display: grid;
+    gap: 8px;
+    margin: 8px 12px;
+}
+
+.divBtns-popEditar{
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.data-popEditar{
+    background-size: 18px;
+    background-position: 5px; 
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    padding-top: 1px;
+    border-radius: 8px;
+    border: none;
+    height: 35px;
+    width: 100%;
+    box-shadow: 0px 4px 14px 0px #B2C9DB;
+    color: black;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.btn-popEditar{
+    width: 100%;
+
+    border-radius: 8px;
+    border: none;
+    height: 30px;
+    background-color: #ff6600;
+    color: #fff;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* PopUp Cancelar Reserva */
+
+.container-criarplan{
+    background: #ffffff;
+    border-radius: 10px;
+
+
+    padding: 20px;
+    height: 320px;
+    max-width: 749px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+
+    z-index: 10;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
+    overflow: hidden;
+}
+
+.center-criarplan {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 70px;
+    align-items: center;
+    margin:0 0 51px 0;
+
+}
+
+.title-create{
+
+    margin-top: 18px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+   
+
+    text-align: center;
+    flex: 1;
+
+    color: #000000;
+}
+
+.nameplan{
+    outline: white;
+    width: 531px;
+    border: none;
+    background: none;
+    background-color: #ffffff;
+    font-size: 30px;
+    border-bottom: 1px solid black;
+}
+
+.nameplan:focus{
+    outline: non !important;
+}
+
+.nameplan::placeholder{
+    text-align: center;
+}
+
+.bottom-criarplan {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 70px;
+    padding: 0 130px;
+}
+
+
+.btn-criaplan{
+    width: 177px;
+    height: 46px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #FF6600;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
+}
+
+.btn-cancelaplan{
+    width: 177px;
+    height: 46px;
+    color: #595959;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #ffffff;
+    border-radius: 23px;
+    border: none;
+    box-shadow: 0px 4px 16px 0px #00000025;
+    cursor: pointer;
 }

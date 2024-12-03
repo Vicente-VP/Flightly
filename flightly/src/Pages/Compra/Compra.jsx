@@ -225,7 +225,7 @@ export default function Compra() {
                     <CompraFormaPag />
                 </div>
 
-                <div className="botao-comprar">
+                <div className="divBotao-comprar">
                     <button className="botao-comprar" onClick={comprarItens}>Comprar</button>
                 </div>
             </div>
