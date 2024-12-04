@@ -498,12 +498,12 @@ export default function Perfil() {
                                                         />
                                                     </div>
                                                     {popConfirmar && (
-                                                    <div className='container-criarplan'>
-                                                        <div className='center-criarplan'>
+                                                    <div className='container-cancelarReserva'>
+                                                        <div className='center-cancelarReserva'>
                                                             <label className="title-create">Tem certeza que deseja cancelar esta reserva?</label>
                                                         </div>
-                                                        <div className='bottom-criarplan'>
-                                                            <button type="submit" className="btn-criaplan" onClick={() => cancelarReserva(voo[11], localStorage.getItem('userid'))}>Sim</button>
+                                                        <div className='bottom-cancelarReserva'>
+                                                            <button type="submit" className="btn-cancelarReserva" onClick={() => cancelarReserva(voo[11], localStorage.getItem('userid'))}>Sim</button>
                                                             <button type="submit" className="btn-cancelaplan" onClick={handleClick}>Não</button>
                                                         </div>
                                                     </div>

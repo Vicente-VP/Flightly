@@ -835,7 +835,7 @@ button{
 
 /* PopUp Cancelar Reserva */
 
-.container-criarplan{
+.container-cancelarReserva{
     background: #ffffff;
     border-radius: 10px;
 
@@ -855,7 +855,7 @@ button{
     overflow: hidden;
 }
 
-.center-criarplan {
+.center-cancelarReserva {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -898,7 +898,7 @@ button{
     text-align: center;
 }
 
-.bottom-criarplan {
+.bottom-cancelarReserva {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -908,7 +908,7 @@ button{
 }
 
 
-.btn-criaplan{
+.btn-cancelarReserva{
     width: 177px;
     height: 46px;
     color: #ffffff;
