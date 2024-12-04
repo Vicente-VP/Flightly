@@ -31,6 +31,8 @@ export default function CardInfoVoo(props) {
         SkyAirline: SkyAirline
     }
 
+    const disableHover = props.disableHover || false;
+
     // const toggleInfo = () => {
     //     setIsClicked(prev => !prev);
     // };
@@ -39,27 +41,27 @@ export default function CardInfoVoo(props) {
         setSelectedOption(option);
     };
 
-    const ShowPlano = () =>{
+    const params = new URLSearchParams(window.location.search);
 
-        if(localStorage.getItem('userid')){
+    const ShowPlano = () =>{
+        if(localStorage.getItem('userid') && !params.get('id')){
             setIsPlano(true);
-        }
-             
+        }  
     };
 
     const isNomeGrandeVoo = props.destino.length > 20;
 
     // Construct the company image path
 
-
+    console.log(disableHover);
     return (
         <>
 
             {IsPlano && <PopUpAddPlano tipo={'Voo'} item={props} setIsPlano={setIsPlano}/>}
             <div className="containerGeral-infoVoo">
-                <div className={`container-Card-voo ${hover ? 'hover-active' : ''} ${isClicked ? 'selected' : ''}`}
-                    onMouseEnter={() => setHover(true)}
-                    onMouseLeave={() => setHover(false)}
+                <div className={`container-Card-voo ${hover  ? 'hover-active' : ''} ${isClicked ? 'selected' : ''}`}
+                    onMouseEnter={!disableHover ? () => setHover(true) : undefined}
+                    onMouseLeave={!disableHover ? () => setHover(false) : undefined}
                     // onClick={toggleInfo}
                     >
                     <div className="left-voo">
@@ -98,8 +100,8 @@ export default function CardInfoVoo(props) {
                 </div>
                 <button
                     className="btnPopup-AddPlano-Compra-VOOS"
-                    onMouseEnter={() => setHover(true)}
-                    onMouseLeave={() => setHover(false)}
+                    onMouseEnter={!disableHover ? () => setHover(true) : undefined}
+                    onMouseLeave={!disableHover ? () => setHover(false) : undefined}
                     onClick={ShowPlano}
                 >
                     <img src={sinalMais} alt="Botão de abrir Pop-up de Add Plano Viagem ou Compra" />

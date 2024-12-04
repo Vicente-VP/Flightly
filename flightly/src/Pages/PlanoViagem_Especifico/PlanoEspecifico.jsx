@@ -8,6 +8,7 @@ import CardHospedagem from "../../Componentes/Card_Informacoes/Hospedagem/Infos_
 import CardPTuristico from "../../Componentes/Card_Informacoes/PontosTuristicos/CardInfoPTuristicos";
 import CardCarro from "../../Componentes/Card_Informacoes/Carros/CardInfoCarros";
 import CompraTotal from "../../Componentes/Compra/CompraTotalPlano/CompraTotal";
+import PopUpCarregamento from '../../Componentes/PopUpCarregamento/PopUpCarregamento';
 
 import './stylePlanoEspecifico.css';
 import { Link } from 'react-router-dom';
@@ -224,7 +225,7 @@ export default function PlanoEspecifico() {
                 </div>
 
                 {loading ? (
-                    <p>Carregando...</p>
+                    <PopUpCarregamento texto="Carregando itens do plano..." />
                 ) : (
                     <>
                         <Filtro
@@ -247,7 +248,7 @@ export default function PlanoEspecifico() {
                                                 idVoo={voo[11]}
                                                 className={`checkboxDelete-planoEspecifico ${checkboxVisible.voos ? 'visible' : ''}`}
                                             />
-                                            <CardVoo
+                                            <CardVoo 
                                                 key={index}
                                                 id={voo[11]}
                                                 company={voo[0]}
@@ -261,7 +262,7 @@ export default function PlanoEspecifico() {
                                                 crianca={voo[6]}
                                                 adulto={voo[7]}
                                                 airport_from={voo[8]}
-
+                                                disableHover={true}
                                             />
                                         </div>
                                     );

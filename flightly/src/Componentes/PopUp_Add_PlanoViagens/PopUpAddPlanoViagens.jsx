@@ -6,14 +6,15 @@ import { useNavigate } from 'react-router-dom';
 
  
 
-const CardAddPlano = ({ imagem, nome, data, preco, onClick}) => {
+const CardAddPlano = ({ imagem, nome, data, preco, onClick, selected}) => {
     return (
-        <div className="card-addplano" onClick={onClick}>
-        <img src={imagem} className="img-cardaddplano" alt="Destino" />
-        <span className="nome-cardaddplano">{nome}</span>
-        <span className="data-cardaddplano">{data}</span>
-        <span className="preco-cardaddplano">{preco}</span>
-      </div>
+        <div className={`card-addplano ${selected ? 'card-selected' : ''}`} 
+        onClick={onClick}>
+            <img src={imagem} className="img-cardaddplano" alt="Destino" />
+            <span className="nome-cardaddplano">{nome}</span>
+            <span className="data-cardaddplano">{data}</span>
+            <span className="preco-cardaddplano">{preco}</span>
+        </div>
     );
 };
 
@@ -248,6 +249,7 @@ export default function PopUpAddPlanoViagens(props){
                                 data={'02/02/2024'}
                                 preco={'R$ 1500,00'}
                                 onClick={() => {setSelectedOption(plano[0]); console.log(plano[0])}}
+                                selected={selectedOption === plano[0]}
                             />
                         ))
                     ) : (
