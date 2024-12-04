@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './style_CompraTotal.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function CompraTotal( props ) {
+    const navigate = useNavigate();
 
     const [priceTot, setPriceTot] = useState();
     const [voos, setVoos] = useState([]);
@@ -34,6 +36,33 @@ export default function CompraTotal( props ) {
     return () => window.removeEventListener('scroll', handleScroll);
 }, []);
 
+const handleNavigate = () => {
+  const queryParams = new URLSearchParams();
+
+  // Append idsVoos
+  if (props.idsVoos && props.idsVoos.length > 0) {
+    props.idsVoos.forEach((id) => queryParams.append("idsVoos[]", id));
+  }
+
+  // Append idsHoteis
+  if (props.idsHoteis && props.idsHoteis.length > 0) {
+    props.idsHoteis.forEach((id) => queryParams.append("idsHoteis[]", id));
+  }
+
+  // Append idsCarros
+  if (props.idsCarros && props.idsCarros.length > 0) {
+    props.idsCarros.forEach((id) => queryParams.append("idsCarros[]", id));
+  }
+
+  // Append idsPontos
+  if (props.idsPontos && props.idsPontos.length > 0) {
+    props.idsPontos.forEach((id) => queryParams.append("idsPontos[]", id));
+  }
+
+  // Navigate with constructed query parameters
+  navigate(`/Compra?${queryParams.toString()}`);
+};
+
 return (
     <>
         <div className={`Block_Preco ${isSticky ? 'sticky' : 'fixed'}`} id='preco-total'>
@@ -47,7 +76,7 @@ return (
                 <span>{props.items}</span>
             </div>
 
-            <button onClick={() => window.location.href = "../../../Pages/Compra/Compra.jsx"} className="btn-submit">Comprar</button>
+            <button onClick={handleNavigate} className="btn-submit">Comprar</button>
         </div>
     </>
 );

@@ -1,24 +1,27 @@
 import './PopUpAddPlanoViagens.css';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 
  
 
-const CardAddPlano = ({ imagem, nome, data, preco, onClick}) => {
+const CardAddPlano = ({ imagem, nome, data, preco, onClick, selected}) => {
     return (
-        <div className="card-addplano" onClick={onClick}>
-        <img src={imagem} className="img-cardaddplano" alt="Destino" />
-        <span className="nome-cardaddplano">{nome}</span>
-        <span className="data-cardaddplano">{data}</span>
-        <span className="preco-cardaddplano">{preco}</span>
-      </div>
+        <div className={`card-addplano ${selected ? 'card-selected' : ''}`} 
+        onClick={onClick}>
+            <img src={imagem} className="img-cardaddplano" alt="Destino" />
+            <span className="nome-cardaddplano">{nome}</span>
+            <span className="data-cardaddplano">{data}</span>
+            <span className="preco-cardaddplano">{preco}</span>
+        </div>
     );
 };
 
 
 export default function PopUpAddPlanoViagens(props){
+
+    const navigate = useNavigate();
 
     const [selectedOption, setSelectedOption] = useState(null);
     const [planos, setPlanos] = useState([]);
@@ -37,10 +40,21 @@ export default function PopUpAddPlanoViagens(props){
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
-    
+    const Comprar = async()=>{
+        let id = await CriarItem();
+        const parametros = new URLSearchParams();
 
-   
-    
+        if(props.tipo === 'Voo'){
+            parametros.append("idsVoos[]", id)
+        }else if (props.tipo === 'Hospedagem'){
+            parametros.append("idsHoteis[]", id)
+        }else if (props.tipo === 'Carro'){
+            parametros.append("idsCarros[]", id)
+        }else if (props.tipo === 'PontoTuristico'){
+            parametros.append("idsPontos[]", id)
+        }
+        navigate(`/Compra?${parametros.toString()}`);
+    }
 
     useEffect(() => {
         axios.get(`https://flightlydbapi.onrender.com/getPlanos?id_usuario=${localStorage.getItem('userid')}`)
@@ -202,6 +216,8 @@ export default function PopUpAddPlanoViagens(props){
             setDropdownOpen(!dropdownOpen);
         }
 
+        
+
     return(
         <>
             <div className='container-addplano'>
@@ -233,6 +249,7 @@ export default function PopUpAddPlanoViagens(props){
                                 data={'02/02/2024'}
                                 preco={'R$ 1500,00'}
                                 onClick={() => {setSelectedOption(plano[0]); console.log(plano[0])}}
+                                selected={selectedOption === plano[0]}
                             />
                         ))
                     ) : (
@@ -244,7 +261,7 @@ export default function PopUpAddPlanoViagens(props){
                 <div className='baixo-addplano'>
                     <button type="submit" className="btn-addplano" onClick={CriarPlano}>Adicionar a novo plano</button>
                     <button type="submit" className="btn-addplano" onClick={AdicionarItemPlano}>Adicionar</button>
-                    <button type="submit" className="btn-addplano comprar">Comprar</button>
+                    <button type="submit" className="btn-addplano" onClick={Comprar}>Comprar</button>
                 </div>
 
                 

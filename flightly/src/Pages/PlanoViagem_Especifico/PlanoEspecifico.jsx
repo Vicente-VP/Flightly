@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import NavBar from "../../Componentes/NavBar/NavBar";
 import Footer from "../../Componentes/Footer/Footer";
 import Filtro from "../../Componentes/Filtros/Filtro_Planos/FiltroPlano";
@@ -8,6 +8,7 @@ import CardHospedagem from "../../Componentes/Card_Informacoes/Hospedagem/Infos_
 import CardPTuristico from "../../Componentes/Card_Informacoes/PontosTuristicos/CardInfoPTuristicos";
 import CardCarro from "../../Componentes/Card_Informacoes/Carros/CardInfoCarros";
 import CompraTotal from "../../Componentes/Compra/CompraTotalPlano/CompraTotal";
+import PopUpCarregamento from '../../Componentes/PopUpCarregamento/PopUpCarregamento';
 
 import './stylePlanoEspecifico.css';
 import { Link } from 'react-router-dom';
@@ -50,42 +51,74 @@ export default function PlanoEspecifico() {
     const [carros, setCarros] = useState([]);
     const [pontosTuristicos, setPontosTuristicos] = useState([]);
 
+    const [idsVoos, setIdsVoos] = useState([]);
+    const [idsHospedagens, setIdsHospedagens] = useState([]);
+    const [idsCarros, setIdsCarros] = useState([]);
+    const [idsPontos, setIdsPontos] = useState([]);
+
     const params = new URLSearchParams(window.location.search);
+    const hasFetched = useRef(false);
 
     useEffect(() => {
-        axios.get(`https://flightlydbapi.onrender.com/getPlanoVoo?id_plano=${params.get('id')}`)
-            .then(response => {
-                console.log(response.data);
-                setVoos(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        axios.get(`https://flightlydbapi.onrender.com/getPlanoHospedagem?id_plano=${params.get('id')}`)
-            .then(response => {
-                console.log(response.data);
-                setHospedagens(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        axios.get(`https://flightlydbapi.onrender.com/getPlanoCarro?id_plano=${params.get('id')}`)
-            .then(response => {
-                console.log(response.data);
-                setCarros(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        axios.get(`https://flightlydbapi.onrender.com/getPlanoPontoTuristico?id_plano=${params.get('id')}`)
-            .then(response => {
-                console.log(response.data);
-                setPontosTuristicos(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            }).finally(() => { setLoading(false); });
-    }, []);
+        if (hasFetched.current) return; // Prevent repeated requests
+        hasFetched.current = true;
+    
+        const fetchData = async () => {
+          try {
+            // Fetch voos
+            const voosResponse = await axios.get(
+              `https://flightlydbapi.onrender.com/getPlanoVoo?id_plano=${params.get("id")}`
+            );
+            console.log("Voos data:", voosResponse.data);
+            setVoos(voosResponse.data);
+
+            const idsVoos = voosResponse.data.map((voo) => voo[11]);
+            console.log("Voo IDs:", idsVoos);
+            setIdsVoos(idsVoos)
+    
+            // Fetch hospedagens
+            const hospedagensResponse = await axios.get(
+              `https://flightlydbapi.onrender.com/getPlanoHospedagem?id_plano=${params.get("id")}`
+            );
+            console.log("Hospedagens data:", hospedagensResponse.data);
+            setHospedagens(hospedagensResponse.data);
+
+            const idsHospedagenss = hospedagensResponse.data.map((hospedagens) => hospedagens[10]);
+            console.log("Hospedagens IDs:", idsHospedagenss);
+            setIdsHospedagens(idsHospedagenss)
+    
+            // Fetch carros
+            const carrosResponse = await axios.get(
+              `https://flightlydbapi.onrender.com/getPlanoCarro?id_plano=${params.get("id")}`
+            );
+            console.log("Carros data:", carrosResponse.data);
+            setCarros(carrosResponse.data);
+    
+            // Extract carro IDs (index 11)
+            const idsCarros = carrosResponse.data.map((carro) => carro[0]);
+            console.log("Carro IDs:", idsCarros);
+            setIdsCarros(idsCarros);
+    
+            // Fetch pontos turísticos
+            const pontosResponse = await axios.get(
+              `https://flightlydbapi.onrender.com/getPlanoPontoTuristico?id_plano=${params.get("id")}`
+            );
+            console.log("Pontos turísticos data:", pontosResponse.data);
+            setPontosTuristicos(pontosResponse.data);
+
+            const idsPontos = pontosResponse.data.map((ponto) => ponto[11]);
+            console.log("Ponto IDs:", idsPontos);
+            setIdsPontos(idsPontos)
+
+          } catch (error) {
+            console.error("Error fetching data:", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+    
+        fetchData();
+      }, []);
 
     function getCheckedCheckboxIdsVoo() {
         const checkedIds = [];
@@ -179,6 +212,8 @@ export default function PlanoEspecifico() {
     var total = 0;
     var items = 0;
 
+    
+
     return (
         <>
             <div style={{ height: 76 + 'px' }}><NavBar /></div>
@@ -190,7 +225,7 @@ export default function PlanoEspecifico() {
                 </div>
 
                 {loading ? (
-                    <p>Carregando...</p>
+                    <PopUpCarregamento texto="Carregando itens do plano..." />
                 ) : (
                     <>
                         <Filtro
@@ -213,7 +248,7 @@ export default function PlanoEspecifico() {
                                                 idVoo={voo[11]}
                                                 className={`checkboxDelete-planoEspecifico ${checkboxVisible.voos ? 'visible' : ''}`}
                                             />
-                                            <CardVoo
+                                            <CardVoo 
                                                 key={index}
                                                 id={voo[11]}
                                                 company={voo[0]}
@@ -227,7 +262,7 @@ export default function PlanoEspecifico() {
                                                 crianca={voo[6]}
                                                 adulto={voo[7]}
                                                 airport_from={voo[8]}
-
+                                                disableHover={true}
                                             />
                                         </div>
                                     );
@@ -280,7 +315,7 @@ export default function PlanoEspecifico() {
                                             />
                                             <CardCarro
                                                 key={index}
-                                                id={carros[index]}
+                                                id={carros[0]}
                                                 carImage={carros[9]}
                                                 locImage={carros[10]}
                                                 retirada={carros[7]}
@@ -328,7 +363,7 @@ export default function PlanoEspecifico() {
                         </div>
                         {compraTotalVisible && (
                             <div className='container-compraTotal'>
-                                <CompraTotal preco={total} items={items}/>
+                                <CompraTotal preco={total} items={items} idsVoos={idsVoos} idsHospedagens={idsHospedagens} idsCarros={idsCarros} idsPontos={idsPontos}/>
                             </div>
                         )}
                     </>
