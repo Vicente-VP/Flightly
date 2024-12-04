@@ -1,8 +1,12 @@
 .backgroundHomeGenerica {
-    width: 100%;
+    width: 2000px;
+    height: 1760px;
     position: absolute;
-    top: -850px;
     z-index: -5;
+
+    top: 3%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
 }
 
 .fundoInicio-homeGenerica {
@@ -25,7 +29,7 @@
     font-size: 110px;
     font-weight: 900;
     font-style: normal;
-    color: white; /* Cor do texto alterada para branco */
+    color: white; 
 }
 
 .containerSubTitulo-homeG {
@@ -39,7 +43,7 @@
     font-size: 33px;
     font-weight: 300;
     font-style: normal;
-    color: white; /* Cor do texto alterada para branco */
+    color: white; 
 }
 
 .containerVantagens-homeG {
@@ -55,8 +59,8 @@
 }
 
 .circuloVantagem-homeG {
-    width: 64px;
-    height: 64px;
+    min-width: 64px;
+    min-height: 64px;
     background-color: #004369;
     border: 8px solid #C6D5EA;
     border-radius: 50%;
@@ -72,5 +76,41 @@
     font-size: 16px;
     font-weight: 400;
     font-style: normal;
-    color: white; /* Cor do texto alterada para branco */
+    color: white; 
+}
+
+@media (max-width: 1320px) {
+    .titulo-homeG {
+        font-size: 90px;
+    }
+
+    .divTextoVantagem-homeG > span {
+        font-size: 13px;
+    }
+
+    .circuloVantagem-homeG {
+        min-width: 50px;
+        min-height: 50px;
+        border: 6px solid #C6D5EA;
+    }    
+}
+
+@media (max-width: 1100px) {
+    .titulo-homeG {
+        font-size: 70px;
+    }
+}
+
+@media (max-width: 900px) {
+    .titulo-homeG {
+        font-size: 45px;
+    }
+
+    .vazio{
+        display: none;
+    }
+
+    .containerVantagens-homeG {
+        grid-template-columns: 33% 33% 33%;
+    }
 }
