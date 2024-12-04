@@ -12,6 +12,7 @@ import editarAzul from '../../Images/icones-perfil/editar-azul.png';
 import anterior from '../../Images/icones-perfil/anterior.png';
 import seguinte from '../../Images/icones-perfil/seguinte.png';
 import logout from '../../Images/icones-perfil/logout.png';
+import Perfil_icon from '../../Images/NavBar-icons/Perfil_icon.png';
 import fotoLocal from '../../Images/icones-perfil/recife.png';
 import planoReservado from '../../Images/icones-perfil/plano-reservado.png';
 
@@ -317,7 +318,7 @@ export default function Perfil() {
                 <div className="topo-popup-perfil">
                     <div className="popup-userfoto-perfil">
                         <img src={editarBranco} className="icone-editar-popup-perfil" />
-                        <img src={fotoPerfil} className="img-popup-userfoto-perfil" alt="Foto de Perfil do Usuário" />
+                        <img src={Perfil_icon} className="img-popup-userfoto-perfil" alt="Foto de Perfil do Usuário" />
                     </div>
                     <button className="btn-fechar-popup-perfil" id="btn-fechar-popup-perfil">
                         <img src={fechar} className="img-fechar-popup-perfil"
@@ -355,7 +356,7 @@ export default function Perfil() {
                         </button>
                     </div>
                     <div className="info-dados-perfil">
-                        <img src={fotoPerfil} className="userfoto-perfil" alt="Foto de Perfil do Usuário" />
+                        <img src={Perfil_icon} className="userfoto-perfil" alt="Foto de Perfil do Usuário" />
                         <label className="usernome-perfil">{localStorage.getItem('username')}</label>
                         <label className="useremail-perfil">{localStorage.getItem('email')}</label>
                         <label className="usersenha-perfil">✱✱✱✱✱✱✱</label>
