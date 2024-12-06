@@ -192,11 +192,13 @@ export default function PlanoEspecifico() {
                     <p>Carregando...</p>
                 ) : (
                     <>
+
                         <Filtro
                             onFilterChange={handleFilterChange}
                             onEditButtonClick={handleEditButtonClick} // Passa a função para JSX1
                             DeleteItems={DeleteItems}
                         />
+
                         <div className="conteudo-plano">
                             <div className="containerCard-planoEspecifico">
                                 {activeFilters.voos && voos.map((voo, index) => {
@@ -309,16 +311,6 @@ export default function PlanoEspecifico() {
                         )}
                     </>
                 )
-                    // :( 
-                    //     <div className='pagina-Vazia'>
-                    //         <span className="vazioTitulo-PlanoEspecifico">
-                    //             Parece que esse plano está vazio
-                    //         </span>
-                    //         <span className="subtiulo-PlanoEspecifico">
-                    //             Navegue pelo nosso site para incrementar o plano Viagem Formatura
-                    //         </span>
-                    //     </div>
-                    // )
                 }
             </div>
 

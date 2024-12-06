@@ -500,3 +500,84 @@
     font-weight: 350;
     text-align: center;
   }
+
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+  .containerGeral-infoVoo {
+    gap: 10px;
+    padding: 5px;
+    max-width: 300px;
+  }
+
+  .container-Card-voo {
+    padding: 10px;
+    max-width: 300px;
+    border-radius: 15px; /* Reduz o raio em telas pequenas */
+  }
+
+  .info-preco-voo{
+    padding-right: 80px;
+  }
+  .left-voo{
+    min-width: 65px;
+  }
+
+  .destino-voo{
+    font-size: 25px;
+  }
+
+  .companhia-voo{
+    font-size: small;
+  }
+
+  .HoraLocal-voo, .DuracaoEsc-voo{
+    overflow: hidden;
+    display: none;
+    visibility: hidden;
+  }
+  
+  .CompDest-voo{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+    padding-right: 60px;
+  
+    width: 30px;
+    height: 100px;
+    
+  }
+
+  .img-voo {
+    visibility: hidden;
+    width: 48px;
+    height: 79px;
+  }
+
+  .info-preco-voo {
+    font-size: 14px; /* Reduz tamanho do texto */
+  }
+}
+
+@media (max-width: 480px) {
+  .containerGeral-infoVoo {
+    padding: 5px;
+    transform: translateX(0);
+  }
+
+  .container-Card-voo {
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .img-voo {
+    width: 20px;
+    height: 35px;
+  }
+
+  .info-preco-voo {
+    font-size: 12px;
+  }
+}

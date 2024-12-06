@@ -124,3 +124,66 @@
     background-color: #BC0B0B;
     border: 6px solid white;
 }
+
+/*Responsividade*/
+
+@media (max-width: 768px) {
+    .bodyPlanoEspecifico {
+        padding: 10px; 
+    }
+
+    .auxilioNavegacao {
+        font-size: 15px; 
+        margin: 10px 0 20px 10px; 
+        margin-bottom: 50px;
+    }
+
+    .link-planoViagem {
+        font-size: 16px; 
+    }
+
+    .conteudo-plano {
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+    }
+
+    .containerCard-planoEspecifico, 
+    .containerCard-planoEspecifico-Pt {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .cardInterno-planoEspecifico {
+        flex-direction: column; 
+        gap: 15px; 
+        padding: 10px; 
+    }
+
+    .checkboxDelete-planoEspecifico {
+        height: 30px;
+        width: 30px; 
+    }
+
+    .pagina-Vazia {
+        gap: 20px; 
+    }
+
+    .vazioTitulo-PlanoEspecifico {
+        font-size: 30px; 
+    }
+
+    .subtiulo-PlanoEspecifico {
+        font-size: 18px; 
+    }
+
+    .container-compraTotal {
+        flex-direction: column; 
+        height: auto; 
+        gap: 15px; 
+        padding: 15px;
+    }
+
+    .container-compraTotal span {
+        font-size: 16px; 
+    }
+}

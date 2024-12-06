@@ -51,3 +51,46 @@
 .conteudo_preco {
     align-content: center;
 }
+
+@media (max-width: 768px) {
+    .Block_Preco {
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .txt-telaCompra, .conteudo_preco > span {
+        font-size: 20px;
+    }
+
+    .btn-submit {
+        width: 150px;
+        height: 40px;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+}
+
+/* Responsividade para telas de 480px */
+@media (max-width: 480px) {
+    .Block_Preco {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .txt-telaCompra, .conteudo_preco > span {
+        font-size: 18px;
+    }
+
+    .btn-submit {
+        width: 130px;
+        height: 36px;
+        font-size: 14px;
+        margin-top: 15px;
+    }
+}
