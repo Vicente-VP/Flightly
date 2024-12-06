@@ -35,7 +35,6 @@ export default function App() {
           <Route path="/InformacoesPage" element={<InformacoesPage/>}/>
           <Route path="/Questionario" element={<Questionario/>}/>
           <Route path="/PlanoEspecifico" element={<PlanoEspecifico/>}/>
-          <Route path="/PlanoEspecifico" element={<PlanoEspecifico/>}/>
         </Routes>
       </Router>
     </>

@@ -408,7 +408,7 @@ export default function Perfil() {
                 <div className="planos-andamento-perfil">
                     <div className="titulo-planos-andamento-perfil">
                         <label className="titulo-andamento-perfil">Planejamentos em Andamento</label>
-                        <a href="" className="ver-todos-andamento-perfil">Ver Todos</a>
+                        <Link to="/PlanosViagem" className="ver-todos-andamento-perfil">Ver Todos</Link>
                     </div>
                     <div className="cards-plano-andamento-perfil">
                         <div className="container-cardsPlanoViagem-perfil" key={`container`}>

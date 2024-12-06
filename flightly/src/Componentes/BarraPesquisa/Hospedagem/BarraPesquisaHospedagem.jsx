@@ -75,7 +75,7 @@ export default function PesquisaHospedagem(props){
                 <div className="search-hospedes">
                     <span>Hóspedes</span>
 
-                    <Drop imagem={passageirosIcon} widthDrop="126px" topContent="69.5%" titles={["Adultos", "Crianças"]} subTitles={[]} nAdult={props.adultos}
+                    <Drop imagem={passageirosIcon} widthDrop="126px" topContent="18%" titles={["Adultos", "Crianças"]} subTitles={[]} nAdult={props.adultos}
                     criancaIdade={props.criancaIdade}
                     criancaAssento={props.criancaAssento}
                     criancaColo={props.criancaColo}
