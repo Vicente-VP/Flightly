@@ -156,7 +156,6 @@ button{
 
 #btn-editar-dados-perfil{
     border: none;
-    
 }
 
 .editar-perfil{
@@ -276,7 +275,7 @@ button{
     height: 75%;
     margin-top: 15px;
 
-    background-color: #fff;
+    background-color: #ffffff;
     border: none;
     /*border: 1.5px solid #a6a6a6;*/
     box-shadow: 0 1.8px 1.5px 1.5px #a6a6a6;
@@ -743,3 +742,251 @@ button{
     from {opacity: .5}
     to {opacity: 1}
 }
+
+@media (max-width: 1200px) {    
+    .main-grid-perfil{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .dados-perfil{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        justify-content: center;
+        justify-items: center;
+    }
+    
+    .titulo-dados-perfil{
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    #btn-editar-dados-perfil{
+        background: none;
+        align-self: flex-start;
+    }
+
+    .editar-perfil, .img-logout-perfil{
+        width: 36px;
+        height: 36px;
+        padding: 5px;
+    }
+
+    .info-dados-perfil{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .hr-perfil-baixo, .hr-perfil-cima{
+        display: none;
+    }
+
+    .userperfil-perfil{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .titulo-perfil{
+        font-size: 28px;
+    }
+
+    .usernome-perfil{
+        font-size: 24px;
+    }
+
+    .usersenha-perfil, .useremail-perfil, .usernasc-perfil{
+        font-size: 14px;
+    }
+
+    .userperfil{
+        font-size: 31px;
+    }
+
+    .mes-calendario-perfil{
+        font-size: 16px;
+    }
+
+    .ano-calendario-perfil{
+        font-size: 10px;
+    }
+
+    .diaSemana-calendario, .data, .data-inativa, .titulo-userperfil{
+        font-size: 12px;
+    }
+
+    .ant-calendario-perfil, .seg-calendario-perfil{
+        width: 9px;
+        height: 14px;
+    }
+
+    .titulo-reservados-perfil, .titulo-andamento-perfil{
+        font-size: 30px;
+    }
+
+    .calendario-box{
+        width: 110%;
+    }
+
+    .navegar-plano-reservado-perfil{
+        margin-top: 50px;
+    }
+
+}   
+
+@media (max-width: 1000px) {    
+    .editar-perfil, .img-logout-perfil{
+        width: 32px;
+        height: 32px;
+    }
+
+    .titulo-reservados-perfil, .titulo-andamento-perfil{
+        font-size: 26px;
+    }
+
+    .ver-todos-andamento-perfil{
+        font-size: 15px;
+    }
+
+    .titulo-perfil{
+        font-size: 24px;
+    }
+
+    .usernome-perfil{
+        font-size: 20px;
+    }
+
+    .usersenha-perfil, .useremail-perfil, .usernasc-perfil{
+        font-size: 10px;
+    }
+
+    .userperfil{
+        font-size: 27px;
+    }
+
+    .mes-calendario-perfil{
+        font-size: 12px;
+    }
+
+    .ano-calendario-perfil{
+        font-size: 6px;
+    }
+
+    .diaSemana-calendario, .data, .data-inativa, .titulo-userperfil{
+        font-size: 8px;
+    }
+
+    .ant-calendario-perfil, .seg-calendario-perfil{
+        width: 5px;
+        height: 10px;
+    }
+
+    .calendario-box{
+        width: 110%;
+    }
+
+    .nome-local-perfil, .preco-local-perfil{
+        font-size: 15px;
+    }
+
+    .btn-editar-local-perfil{
+        width: 28px;
+        height: 28px;
+    }
+
+    .preco-editar-local-perfil{
+        margin-bottom: 15px;
+    }
+}   
+
+@media (max-width: 850px) {    
+    
+    .dados-perfil{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .editar-perfil, .img-logout-perfil{
+        width: 36px;
+        height: 36px;
+        padding: 5px;
+    }
+
+    .titulo-perfil{
+        font-size: 28px;
+    }
+
+    .usernome-perfil{
+        font-size: 24px;
+    }
+
+    .usersenha-perfil, .useremail-perfil, .usernasc-perfil{
+        font-size: 14px;
+    }
+
+    .userperfil{
+        font-size: 31px;
+    }
+
+    .mes-calendario-perfil{
+        font-size: 16px;
+    }
+
+    .ano-calendario-perfil{
+        font-size: 10px;
+    }
+
+    .diaSemana-calendario, .data, .data-inativa, .titulo-userperfil{
+        font-size: 12px;
+    }
+
+    .ant-calendario-perfil, .seg-calendario-perfil{
+        width: 9px;
+        height: 14px;
+    }
+
+    .titulo-reservados-perfil, .titulo-andamento-perfil{
+        font-size: 26px;
+    }
+
+    .calendario-box{
+        width: 80%;
+    }
+
+    .ver-todos-andamento-perfil{
+        font-size: 11px;
+    }
+
+    .calendario-perfil{
+        justify-items: center;
+    }
+
+    .card-andamento-perfil{
+        min-width: 120px;
+    }
+
+    .preco-local-perfil{
+        font-size: 11px;
+    }
+
+    .headNome-tabela-reservado, .headLocalizacao-tabela-reservado, .headPreco-tabela-reservado{
+        font-size: 18px;
+    }
+
+    .nomeViagem-reservado-perfil, .precoViagem-reservado-perfil, .localizacaoViagem-reservado-perfil{
+        font-size: 15px;
+    }
+
+    .imagemViagem-reservado-perfil{
+        margin-right: 400px;
+    }
+
+    .heads-reservados-perfil{
+        margin-left: 40px;
+    }
+}   

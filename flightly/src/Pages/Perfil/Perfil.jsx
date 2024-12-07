@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import NavBar from '../../Componentes/NavBar/NavBar';
 import { Link } from 'react-router-dom';
-
+ 
 import editarBranco from '../../Images/icones-perfil/editar-branco.png';
 import fotoPerfil from '../../Images/icones-perfil/foto-perfil.png';
 import fechar from '../../Images/icones-perfil/fechar.png';
