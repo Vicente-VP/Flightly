@@ -385,13 +385,22 @@
     background-size: 15px;
   }
 
+  .btn-fly.active,
+  .btn-car.active,
+  .btn-hotel.active,
+  .btn-turistic.active {
+    font-size: 18px;
+    height: 28px;
+    background-size: 20px;
+  }
+
   .edit-space {
     gap: 8px;
   }
 
-  .btn-edit {
+  .btn-edit.edit {
     width: 40px;
     height: 40px;
-    background-size: 18px;
+    background-size: 15px;
   }
 }
