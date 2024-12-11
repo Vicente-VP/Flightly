@@ -1,7 +1,8 @@
-    import filter_search_bar from '../../../Images/Barra_Pesquisa/filter-search-bar.png';
+import filter_search_bar from '../../../Images/Barra_Pesquisa/filter-search-bar.png';
 import Origem_icon from '../../../Images/Barra_Pesquisa/Origem_icon.png';
 import destino_icon from '../../../Images/Barra_Pesquisa/destino_icon.png';
 import ida_volta_icon from '../../../Images/Barra_Pesquisa/ida_volta_icon.png';
+import change_seta from '../../../Images/Barra_Pesquisa/change_seta.png'
 
 import passageirosIcon from '../../../Images/Barra_Pesquisa/passageiro_icon.png';
 import Drop from "../../DropInput/drop";
@@ -9,7 +10,7 @@ import Drop from "../../DropInput/drop";
 import classe_icon from '../../../Images/Barra_Pesquisa/classe_icon.png';
 
 
-import './styleBarraPesquisaVooTestes.css';
+import './styleBarraPesquisaVoo.css';
 import { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -36,6 +37,37 @@ export default function PesquisaVoo(props) {
     }, [props]);
 
     const navigate = useNavigate();
+
+    function changeDestines(){
+        let origem = document.querySelector('input[name="destino"]').value;
+        let destino = document.querySelector('input[name="origem"]').value;
+        let ida = document.querySelector('input[name="ida"]').value;
+        let travel_type = document.querySelector('input[name="volta"]') ? 'rt' : 'ow';
+        let volta = travel_type === 'rt' ? document.querySelector('input[name="volta"]').value : null;
+        let classe = document.querySelector('select[name="classe"]').value;
+        let adultos = passengerData.nAdult;
+        let criancaAssento = passengerData.criancaAssento;
+        let criancaColo = passengerData.criancaColo;
+        let criancaIdade = passengerData.criancaIdade;
+    
+        const params = new URLSearchParams({
+            requestType: 'flight',
+            origem,
+            destino,
+            ida,
+            volta,
+            travel_type,
+            classe,
+            adultos,
+            criancaAssento,
+            criancaColo,
+            criancaIdade,
+        }).toString();
+    
+        // Navigate to the new page, passing the requestData as state
+        navigate(`/InformacoesPage?${params}`);
+        window.location.reload();    
+    }
 
     function PesquisarVoo() {
     
@@ -160,6 +192,36 @@ export default function PesquisaVoo(props) {
             </div>
             <div className="btn-pesquisar-voo">
                 <button className="btn-submit-voo" onClick={PesquisarVoo} >Pesquisar</button>
+            </div>
+        </div>
+
+        <div className='search_bar_responsive'>
+            <div className='origin_destine'>
+            <input
+                        type="text"
+                        name='origem'
+                        value={props.origem}
+                        onChange={(e) => props.onOrigemChange(e.target.value)}
+                        className="origem_responsive"
+                        style={{ backgroundImage: `url(${Origem_icon})` }}
+                    />    
+
+            <div className='change_destines' onclick={changeDestines}>
+                <img src={change_seta} alt="mudar destino"></img>
+            </div>
+
+            <input
+                        type="text"
+                        name='destino'
+                        value={props.destino}
+                        onChange={(e) => props.onDestinoChange(e.target.value)}
+                        className="destino_responsive"
+                        style={{ backgroundImage: `url(${destino_icon})` }}
+                    />
+
+            
+              
+
             </div>
         </div>
         </div>

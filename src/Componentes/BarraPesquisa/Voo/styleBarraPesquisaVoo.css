@@ -3,17 +3,18 @@
 
 .geral_itens{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .filtros_menu{
-  display: none; 
+  display: block; 
   height: fit-content;
   width: fit-content;
 }
 
 .container-search {
-    margin: auto;
+    margin: 0;
     border-radius: 20px;
     border: 1px solid #d3d3d3; 
 
@@ -22,24 +23,24 @@
     align-items: center; 
 
     height: 98px;
-    width: auto;
+    width: fit-content;
     
     background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
 }
 
 .container-search.active {
-    margin: auto;
+    margin: 0;
     border-radius: 20px;
     border: 1px solid #d3d3d3; 
 
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center; 
-    padding-left: 17.5%;
+    /* padding-left: 17.5%; */
     gap: 5px;
 
     height: 98px;
-    width: auto;
+    width: fit-content;
     
     background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
 }
@@ -55,7 +56,7 @@
 }
 
 .btn-submit-voo {
-    width: 177px;
+    width: fit-content;
     height: 40px;
     color: #ffffff;
     font-size: 18px;
@@ -65,6 +66,11 @@
     border: none;
     box-shadow: 0px 4px 16px 0px #00000025;
     cursor: pointer;
+    margin-right: 30px;
+}
+
+.btn-pesquisar-voo > .btn-submit-voo{
+  margin-right: 30px;
 }
 
 .search-local{
@@ -331,5 +337,7 @@ input[type=date]::-webkit-datetime-edit {
 }
 
 @media (max-width:1000px){
-
+  .filtros_menu{
+    display: block;
+  }
 }

@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .geral_itens {
   display: flex;
@@ -218,9 +218,9 @@ input[type=date]::-webkit-datetime-edit {
   .search-passageiros > div {
     margin-bottom: 10px;
   }
-} */
-/* 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+} 
+ 
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .geral_itens {
   display: flex;
@@ -361,7 +361,7 @@ input[type=date]::-webkit-datetime-edit {
 
 ::placeholder {
   color: #BFC1C3;
-}
+} */
 
 /* Responsividade - Breakpoints 
 @media (max-width: 1200px) {
@@ -479,9 +479,9 @@ input[type=date]::-webkit-datetime-edit {
     height: 45px;
     font-size: 14px;
   }
-} */
+} 
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .geral_itens {
   display: flex;
@@ -505,7 +505,7 @@ input[type=date]::-webkit-datetime-edit {
   height: 150%;
   width: 100%;
   background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
-  background-attachment: scroll; /* Remove fixação do background */
+  background-attachment: scroll; /* Remove fixação do background 
 }
 
 .container-search.active {
@@ -520,7 +520,7 @@ input[type=date]::-webkit-datetime-edit {
   height: 98px;
   width: 100%;
   background: linear-gradient(#C7E2F2, #BCD7E7, #BBCFDA);
-  background-attachment: scroll; /* Remove fixação do background */
+  background-attachment: scroll; /* Remove fixação do background 
 }
 
 .container-search > img {
@@ -626,7 +626,7 @@ input[type=date]::-webkit-datetime-edit {
   color: #BFC1C3;
 }
 
-/* Responsividade - Breakpoints */
+/* Responsividade - Breakpoints 
 @media (max-width: 1200px) {
   .container-search {
     padding-left: 10%;
@@ -748,4 +748,4 @@ input[type=date]::-webkit-datetime-edit {
     height: 45px;
     font-size: 14px;
   }
-}
+} */
