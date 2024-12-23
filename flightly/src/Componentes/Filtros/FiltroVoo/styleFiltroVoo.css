@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+.container-FiltroVoo{
+  display: flex;
+  flex-direction: column;
+}
+
+#filtro{
+  display: none;
+}
+
 .container-all-filter{
     display: flex;
     flex-direction: column;
@@ -610,5 +619,121 @@
     color: white;
 
     cursor: pointer;
+
+}
+
+
+@media(max-width:1080px) {
+  .container-all-filter{
+    width: 240px;
+    height: 920px;
+  }
+
+  .button-seasons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .preco-voo .slider-voo input{
+    width: 120%;
+  }
+
+  .partida-voo .slider-partida input{
+    width: 120%;
+
+  }
+
+  .values-priceVoo{
+    width: 120%;
+  }
+
+  .values-partidaVoo{
+    width: 120%;
+  }
+
+  .companies > div{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-companies-gol{
+    width: 100%;
+  }
+  .button-companies-latam{
+    width: 100%;
+  }
+  .button-companies-azul{
+    width: 100%;
+  }
+}
+
+@media(max-width: 580px) {
+
+  .container-all-filter{
+    opacity: 0;
+    visibility: hidden; /* Oculta o elemento */
+    transition: opacity 0s ease, visibility 0s 0s;
+    width: 20px;
+    height: 920px;
+  }
+
+  #filtro{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+  
+    cursor: pointer;
+  }
+  .container-all-filter.active{
+    opacity: 1; /* Torna o elemento visível */
+    visibility: visible; /* Torna o elemento visível */
+    transition: opacity 0.5s ease, visibility 0s 0s;
+    display: flex;
+    width: 260px;
+    height: 920px;
+  }
+
+
+  .button-seasons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .preco-voo .slider-voo input{
+    width: 120%;
+  }
+
+  .partida-voo .slider-partida input{
+    width: 120%;
+
+  }
+
+  .values-priceVoo{
+    width: 120%;
+  }
+
+  .values-partidaVoo{
+    width: 120%;
+  }
+
+  .companies > div{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-companies-gol{
+    width: 100%;
+  }
+  .button-companies-latam{
+    width: 100%;
+  }
+  .button-companies-azul{
+    width: 100%;
+  }
 
 }
