@@ -2,7 +2,6 @@
 
 /*---------------Corpo--------------*/
 .container-filtrocar{
-    box-sizing: border-box;
   
     width: 370px;
     height: 600px;
@@ -16,6 +15,10 @@
     border-radius: 20px;
   
     position: relative;
+  }
+
+  #filtroCar{
+    visibility: hidden;
   }
 
 /*---------------Corpo--------------*/
@@ -216,7 +219,7 @@
 }
 
 
-.btn-pesq-filtrocar{
+.btn-pesq-filtrocarro{
     width: 177px;
     height: 46px;
     color: #ffffff;
@@ -428,3 +431,78 @@ cursor: pointer;
 background: #004369;
 }
 /*---------------Slider--------------*/
+
+
+
+/* Responsividade */
+@media(max-width:1080px) {
+  .container-filtrocar{
+    width: 240px;
+    height: 720px;
+  }
+
+  #filtroCar{
+    visibility: hidden;
+  }
+
+  .companhias{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-companias{
+    width: max-content;
+    margin: 0 0 0 17%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .btn-companias > button{
+    width: 130px;
+    margin: 0;
+  }
+
+  .btn-pesq-filtrocarro{
+    left: 15%;
+  }
+}
+
+@media(max-width: 580px) {
+
+  .container-filtrocar{
+    opacity: 0;
+    visibility: hidden; /* Oculta o elemento */
+    transition: opacity 0s ease, visibility 0s 0s;
+    width: 240px;
+    height: 720px;
+  }
+
+  #filtroCar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    visibility: visible;
+  
+    cursor: pointer;
+  }
+  .container-filtrocar.active{
+    opacity: 1; /* Torna o elemento visível */
+    visibility: visible; /* Torna o elemento visível */
+    transition: opacity 0.5s ease, visibility 0s 0s;
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    height: 720px;
+  }
+
+
+
+  
+
+}

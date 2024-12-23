@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+.container-FiltroVoo{
+  display: flex;
+  flex-direction: column;
+}
+
+#filtro{
+  display: none;
+}
+
 .container-all-filter{
     display: flex;
     flex-direction: column;
@@ -327,113 +336,142 @@
     outline: none;
 }
 
-.price{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-
-    margin-bottom: 20px;
-}
-
-.price > span{
-    font-size: 20px;
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    list-style-type: none;
-    font-weight: 500;
-    color: #004369;
-}
-
-.price-change{
-    display: flex;
-    flex-direction: row;
-    justify-content: center; 
-}
-
-.price-change > span{
-    font-size: 13px;
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    list-style-type: none;
-    color: #004369;
-}
-
-.price-input{
-    background: none;
-
-    border: none;
-    border-radius: 5px;
-
-    margin: 0 0px 0 2px;
-
-    width: 50px;
-
-    color: #004369;
-}
 
 ::placeholder{
     color: #004369;
 }
 
-.price-input:focus{
-    outline: none;
+
+.preco-voo{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  margin-bottom: 20px;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+.preco-voo > span{
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  color: #004369;
+  width: 100%;
+}
+
+.values-priceVoo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 150%;
+  margin: 0%;
+  padding: 0%;
+}
+
+.preco-voo .slider-voo input{
+  width: 150%;
+  height: 7px;
   -webkit-appearance: none;
-  margin: 0;
+  background: linear-gradient(to right, #004369 0%, #004369 var(--progress), #fff var(--progress), #fff 100%);
+  border-radius: 25px;
+
+  margin: 0%;
+  
+  cursor: pointer;
 }
 
-/* Firefox */
-input[type=number] {
-    -moz-appearance: textfield;
+.preco-voo .slider-voo input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 20px; 
+  height: 20px;
+  background: #B2C9DB; 
+  border: 2px solid #fff; 
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
-.duration{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-
-    margin-bottom: 20px;
+.preco-voo .slider-voo input[type="range"]::-moz-range-thumb{
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 20px; 
+  height: 20px;
+  background: #B2C9DB; 
+  border: 2px solid #fff; 
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
-.duration > span{
-    font-size: 20px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    color: #004369;
-    font-style: normal;
+.values-priceVoo .valor{
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  color: #004369;
 }
 
-.duration-change{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; 
+.partida-voo{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  margin-bottom: 20px;
 }
 
-.duration-change > div > span{
-    font-size: 13px;
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    color: #004369;
+.partida-voo > span{
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  color: #004369;
+  width: 100%;
 }
 
-.duration-input{
-    background: none;
-
-    border: none;
-    border-radius: 5px;
-
-    margin: 0px;
-
-    width: 17px;
-
-    color: #004369;
+.values-partidaVoo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 150%;
+  margin: 0%;
+  padding: 0%;
 }
 
-.duration-input:focus{
-    outline: none;
+.partida-voo .slider-partida input{
+  width: 150%;
+  height: 7px;
+  -webkit-appearance: none;
+  background: linear-gradient(to right, #004369 0%, #004369 var(--progress), #fff var(--progress), #fff 100%);
+  border-radius: 25px;
+
+  margin: 0%;
+  
+  cursor: pointer;
+}
+
+.slider-partida input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 20px; 
+  height: 20px;
+  background: #B2C9DB; 
+  border: 2px solid #fff; 
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.slider-partida input[type="range"]::-moz-range-thumb{
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 20px; 
+  height: 20px;
+  background: #B2C9DB; 
+  border: 2px solid #fff; 
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.values-partidaVoo .hora{
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  color: #004369;
 }
 
 .companies{
@@ -584,208 +622,118 @@ input[type=number] {
 
 }
 
-#input{
-    width: 100px;
-  }
-  
-  .range .field{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  
-    margin-top: 10px;
-    margin-left: 36px;
-    margin-bottom: 5px;
-  }
-  
-  .range .sliderVal{
-    position: relative;
-    width: 100%;
-    margin-left: 42px;
-  }
-  
-  .range .sliderVal span{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    height: 22px;
-    width: 22px;
-  
-    font-size: 10px;
-    color: 004369;
-    font-weight: 400;
-  
-    top: -5px;
-    transform: translateX(-50%) scale(0);
-    transform-origin: bottom;
-    transition: transform 0.3s ease-in-out;
-    
-    line-height: 15px;
-    z-index: 2;
-  }
-  
-  .range .sliderVal span.show{
-    transform: translateX(-50%) scale(1);
-  }
-  
-  .range .sliderVal span:after{
-    display: flex;
-    justify-content: center;
-    content: "";
-    position: absolute;
-    height: 14px;
-    width: 47px;
-    background: white;
-  
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
-  
-    border-radius: 2px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-  }
-  
-  .range .field .val{
-    position: absolute;
-    font-size: 13px;
-    font-weight: 500;
-    color: #004369;
-  }
-  
-  .range .field .val.left{
-    left: -35px;
-  }
-  .range .field .val.right{
-    right: -69px;
-  }
-  
-  .range .field input{
-    -webkit-appearance: none;
-  
-    height: 3px;
-    width: 100%;
-  
-    background: white;
-  
-    border-radius: 5px;
-    border: none;
-    outline: none;
-  }
-  .range .field input::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    height: 11px;
-    width: 11px;
-    background: #004369;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  .range .field input::-moz-range-progress{
-    background: #004369;
+
+@media(max-width:1080px) {
+  .container-all-filter{
+    width: 240px;
+    height: 920px;
   }
 
-/*Fim*/
-
-#horas{
-    width: 100px;
-  }
-  
-  .variety .campo{
-    position: relative;
+  .button-seasons {
     display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .preco-voo .slider-voo input{
+    width: 120%;
+  }
+
+  .partida-voo .slider-partida input{
+    width: 120%;
+
+  }
+
+  .values-priceVoo{
+    width: 120%;
+  }
+
+  .values-partidaVoo{
+    width: 120%;
+  }
+
+  .companies > div{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-companies-gol{
+    width: 100%;
+  }
+  .button-companies-latam{
+    width: 100%;
+  }
+  .button-companies-azul{
+    width: 100%;
+  }
+}
+
+@media(max-width: 580px) {
+
+  .container-all-filter{
+    opacity: 0;
+    visibility: hidden; /* Oculta o elemento */
+    transition: opacity 0s ease, visibility 0s 0s;
+    width: 20px;
+    height: 920px;
+  }
+
+  #filtro{
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    gap: 10px;
+    font-size: 20px;
   
-    margin-top: 10px;
-    margin-left: 30px;
-    margin-bottom: 5px;
-  }
-  
-  .variety .valueSlider{
-    position: relative;
-    width: 100%;
-    margin-left: 37px;
-  }
-  
-  .variety .valueSlider span{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    height: 22px;
-    width: 22px;
-  
-    font-size: 10px;
-    color: 004369;
-    font-weight: 400;
-  
-    top: -5px;
-    transform: translateX(-50%) scale(0);
-    transform-origin: bottom;
-    transition: transform 0.3s ease-in-out;
-    
-    line-height: 15px;
-    z-index: 2;
-  }
-  
-  .variety .valueSlider span.show{
-    transform: translateX(-50%) scale(1);
-  }
-  
-  .variety .valueSlider span:after{
-    display: flex;
-    justify-content: center;
-    content: "";
-    position: absolute;
-    height: 14px;
-    width: 47px;
-    background: white;
-  
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
-  
-    border-radius: 2px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-  }
-  
-  .variety .campo .valor{
-    position: absolute;
-    font-size: 13px;
-    font-weight: 500;
-    color: #004369;
-  }
-  
-  .variety .campo .valor.esquerda{
-    left: -30px;
-  }
-  .variety .campo .valor.direita{
-    right: -38px;
-  }
-  
-  .variety .campo input{
-    -webkit-appearance: none;
-  
-    height: 3px;
-    width: 100%;
-  
-    background: white;
-  
-    border-radius: 5px;
-    border: none;
-    outline: none;
-  }
-  .variety .campo input::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    height: 11px;
-    width: 11px;
-    background: #004369;
-    border-radius: 50%;
     cursor: pointer;
   }
-  
-  .variety .campo input::-moz-range-progress{
-    background: #004369;
+  .container-all-filter.active{
+    opacity: 1; /* Torna o elemento visível */
+    visibility: visible; /* Torna o elemento visível */
+    transition: opacity 0.5s ease, visibility 0s 0s;
+    display: flex;
+    width: 260px;
+    height: 920px;
   }
+
+
+  .button-seasons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .preco-voo .slider-voo input{
+    width: 120%;
+  }
+
+  .partida-voo .slider-partida input{
+    width: 120%;
+
+  }
+
+  .values-priceVoo{
+    width: 120%;
+  }
+
+  .values-partidaVoo{
+    width: 120%;
+  }
+
+  .companies > div{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-companies-gol{
+    width: 100%;
+  }
+  .button-companies-latam{
+    width: 100%;
+  }
+  .button-companies-azul{
+    width: 100%;
+  }
+
+}

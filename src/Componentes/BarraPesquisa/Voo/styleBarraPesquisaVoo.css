@@ -71,10 +71,17 @@
 
 .btn-pesquisar-voo > .btn-submit-voo{
   margin-right: 30px;
+  
+}
+
+.btn-submit-voo > img{
+width: 20px;
+height: 20px;
 }
 
 .search-local{
   display: flex;
+  align-items: center;
   margin: 0 30px 17px 30px;
 }
 
@@ -135,6 +142,7 @@
 
 .search-data{
   display: flex;
+  align-items: center;
   margin: 0 30px 17px 0;
 }
 
@@ -244,8 +252,10 @@ input[type=date]::-webkit-datetime-edit {
 
 .search-passageiros{
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin: 0 30px 17px 0;
+  align-items: center;
 }
 
 .search-passageiros> span{
@@ -292,6 +302,7 @@ input[type=date]::-webkit-datetime-edit {
 
 .search-classe{
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin: 0 30px 17px 0;
 }
@@ -336,8 +347,47 @@ input[type=date]::-webkit-datetime-edit {
   border: 2px solid #004369;
 }
 
-@media (max-width:1000px){
+@media (max-width:1316px){
   .filtros_menu{
     display: block;
+  }
+  .btn-pesquisar-voo > span{
+    display: none;
+  }
+
+  .geral_itens input{
+    max-width: min-content;
+  }
+  
+}
+
+@media(max-width:1226px){
+  .btn-submit-voo > span{
+    display: none;
+  }
+
+  .geral_itens span{
+    display: none;
+    align-items: center;
+  }
+
+  .passageiro{
+    box-shadow: none;
+  }
+
+  .container-search{
+    height: 80px;
+    flex-direction: column;
+    max-width: 80vh;
+    flex-wrap: wrap; 
+    flex-flow: row wrap;
+    max-width: 100%
+  }
+
+  .origem , .destino {
+    width: 100px;
+  }
+  .ida , .volta{
+    width: 40px;
   }
 }

@@ -4,28 +4,33 @@
     display: flex;
     gap: 20px;
     align-items: center;
-    width: 750px;
+    width: 1000px;
     height: 220px;
+
+    margin-top: 50px;
+    
 }
 
 /* Estilos do card horizontal */
 .card-horizontal {
     display: flex;
     background-color: #fff;
-    border-radius: 27px;
-    border: 2px solid #5555552a;
-    width: 750px;
-    height: 220px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    width: 850px;
+    height: 250px;
     overflow: hidden;
     margin: 20px;
+
+    
 
 }
 
 /* Aumenta o tamanho e muda a cor quando hover no card ou no botão */
 .card-horizontal:hover,
 .btnPopup-AddPlano-Compra-CARROS:hover + .card-horizontal {
-  width: 1120px;
-  height: 149px;
+  width: 900px;
+  height: 250px;
   background-color: #c7e2f225;
   transition: 0.3s;
   position: relative;
@@ -104,6 +109,8 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    margin-top: 40px;
+    gap: 10px;
 }
 
 .card-image-car {
@@ -123,11 +130,33 @@
     flex: 1;
 }
 
-.info-left {
+.title-car{
+    width: 300px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.sub-car{
+    width: 300px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.info-left{
+    position: relative;
+    left: 0%;
+    right: 32.16%;
+    top: 6%;
+    bottom: 87.55%;
     width: 250px;
 }
 
-.info-right {
+.info-right{
+    position: relative;
+    left: 50%;
+    right: 32.16%;
+    top: -35%;
+    bottom: 87.55%;
     width: 250px;
 }
 
@@ -163,43 +192,201 @@
     height: 20px;
 }
 
-hr {
-    height: 180px;
-    width: 0.5px;
-    margin: 20px 0;
+hr{
+    box-shadow: none;
+  height: 180px;
+  width: 0.5px;
+
+  margin: 20px 0 20px 0
 }
 
 .card-price {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: center ;
 }
 
-.info-preco {
+
+.info-preco{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 201px;
-}
 
-.info-preco .preco {
+    width: 280px;
+
+    margin-right: 30px;
+  }
+
+  .info-preco .preco{
     text-align: left;
-}
+  }
 
-.preco {
+  .preco{
     display: flex;
     flex-direction: column;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-}
+  }
 
-.preco-carro {
+  .preco-car{
     font-size: 41.74px;
     color: black;
-}
-
-.preco label {
+  }
+  .lbl-preco{
     font-size: 12.88px;
     color: #555555;
+  }
+
+
+/*----Responsividade----*/
+
+@media (max-width: 999px) {
+    .containerGeral-infoCarro {
+        width: 400px;
+        height: 182px;
+        
+    }
+    
+    .card-horizontal {
+        min-width: 370px;
+        height: 182px;
+    }
+
+    .card-image-car {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+    }
+    
+    .card-image-locadora {
+        width: 50px;
+        height: 25px;
+        object-fit: cover;
+    }
+
+    .title-car{
+        width: auto;
+        display: flex;
+        margin-bottom: 10px;
+    }
+    
+    .sub-car{
+        width: 148px;
+        display: flex;
+        margin-bottom: 10px;
+    }
+    
+    .info-left{
+        position: relative;
+        display: inline-flex;
+        min-width: 210px;
+        gap: 15px;
+    }
+    
+    .info-right{
+        display: none;
+    }
+    
+    .lbl-carro {
+        font-size: 20px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 450;
+    }
+    
+    .lbl-local {
+        font-size: 13px;
+        font-family: "Poppins", sans-serif;
+        text-decoration: underline;
+        color: #555555;
+    }
+    
+    /* Ícones e textos */
+    .lbl-assento,
+    .lbl-mala,
+    .lbl-cambio,
+    .lbl-porta {
+        font-size: 10px;
+        font-family: "Poppins", sans-serif;
+        gap: 5px;
+        font-weight: 300;
+        color: black;
+        
+
+    }
+    
+    .icon-assento,
+    .icon-bag,
+    .icon-cambio,
+    .icon-porta {
+        width: 10px;
+        height: 10px;
+    }
+    .div-mala{
+        visibility: hidden;
+    }
+
+    .div-assentos{
+        background-color: #ACC6E9;
+        border-radius: 5px;
+        min-width: 70px;
+        justify-content: center;
+    }
+    .div-cambio{
+        background-color: #ACC6E9;
+        border-radius: 5px;
+        min-width: 60px;
+        justify-content: center;
+        text-align: center;
+    }
+    .div-porta{
+        background-color: #ACC6E9;
+        border-radius: 5px;
+        min-width: 60px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    hr{
+    box-shadow: none;
+      height: 0.5px;
+      width: 220px;
+    }
+    
+    .card-price {
+        display: flex;
+        flex-direction: row;
+        align-items: center ;
+    }
+    
+    
+    .info-preco{
+        display: none;
+      }
+    
+      .info-preco .preco{
+        display: none;
+      }
+    
+      .preco-mobile{
+        position: relative;
+        bottom: 15px;
+      }
+    
+
+
+      .preco-car{
+        font-size: 24px;
+        color: black;
+      }
+      .lbl-preco{
+        margin-right: 5px;
+        font-size: 12.88px;
+        color: #555555;
+      }
+}
+
+
+@media (max-width:400px){
+        
 }

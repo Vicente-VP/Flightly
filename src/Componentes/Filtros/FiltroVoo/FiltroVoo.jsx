@@ -4,12 +4,11 @@ import Azul_logo from '../../../Images/Filtros/azul_logo.png';
 import Gol_logo from '../../../Images/Filtros/gol_logo.png';
 import Latam_logo from '../../../Images/Filtros/latam_logo.png';
 import Escala_icon from '../../../Images/Filtros/escala_icon.png';
+import FiltroRes from '../../../Images/Filtros/filtroRes.png';
 
 import './styleFiltroVoo.css';
 
-export default function FiltroVoo(){
-    const [price, setPrice] = useState(0);
-    const [hours, setHours] = useState(0);
+export default function FiltroVoo(props){
     const [toggleStates, setToggleStates] = useState({
         promocao: false,
         verao: false,
@@ -21,180 +20,170 @@ export default function FiltroVoo(){
         azul: false
     });
 
-    const priceRef = useRef(null);
-    const hoursRef = useRef(null);
+    const [precoVoo, setPrecoVoo] = useState(10000)
+    const [partidaVoo, setPartidaVoo] = useState(23)
 
-    const handlePriceChange = (e) => {
-        setPrice(e.target.value);
+    const handleChangePriceVoo = (event) => {
+        const newValue = event.target.value;
+        setPrecoVoo(newValue);
+
+        // Calcula o percentual de preenchimento do slider
+        const percentage = ((newValue - 1500) / (29350 - 1500)) * 100;
+        event.target.style.setProperty('--progress', `${percentage}%`);
     };
 
-    const handleHourChange = (e) => {
-        setHours(e.target.value);
+    const handleChangePartidaVoo = (event) => {
+        const newValor = event.target.value;
+        setPartidaVoo(newValor);
+
+        // Calcula o percentual de preenchimento do slider
+        const percentagem = ((newValor - 0) / (23 - 0)) * 100;
+        event.target.style.setProperty('--progress', `${percentagem}%`);
     };
+  
+    const formatHora = (valor) => valor.toString().padStart(2, '0');
 
     const handleToggle = (key) => {
+        if (['promocao', 'verao', 'inverno', 'outono', 'primavera',].includes(key)) {
+            alert(`desativada!`);
+        }
         setToggleStates(prevState => ({
             ...prevState,
             [key]: !prevState[key]
         }));
     };
 
-    useEffect(() => {
-        const slideValue = priceRef.current;
-        const updatePriceSlider = () => {
-            let value = price;
-            slideValue.textContent = value;
-            slideValue.style.left = (value / 155.6) + "%";
-            slideValue.classList.add("show");
-        };
+    const Filtrar = () => {
+        const companies = Object.keys(toggleStates).filter(key => toggleStates[key]);
+        
+        window.location.href = `/InformacoesPage?requestType=filteredflight&companies=${companies.join(',')}&price=${precoVoo}&partida=${partidaVoo}:00&travel_type=${props.travelType}&origem=${props.origem}&destino=${props.destino}&ida=${props.ida}&volta=${props.volta}&adultos=${props.adultos}&criancaIdade=${props.criancaIdade}&criancaColo=${props.criancaColo}&criancaAssento=${props.criancaAssento}&classe=${props.classe}&url=${props.externalUrl}`;
+    }
 
-        const removePriceSlider = () => {
-            slideValue.classList.remove("show");
-        };
+    const [isResponsive, setIsResponsive] = useState(false);
+    const [sF, setSF] = useState(false);
 
-        updatePriceSlider();
-
-        const inputSlider = document.getElementById("input");
-        inputSlider.addEventListener('blur', removePriceSlider);
-
-        return () => {
-            inputSlider.removeEventListener('blur', removePriceSlider);
-        };
-    }, [price]);
-
-    useEffect(() => {
-        const valueSlide = hoursRef.current;
-        const updateDepartureSlider = () => {
-            let value = hours;
-            valueSlide.textContent = value;
-            valueSlide.style.left = (value / 0.35) + "%";
-            valueSlide.classList.add("show");
-        };
-
-        const removeDepartureSlider = () => {
-            valueSlide.classList.remove("show");
-        };
-
-        updateDepartureSlider();
-
-        const sliderInput = document.getElementById("horas");
-        sliderInput.addEventListener('blur', removeDepartureSlider);
-
-        return () => {
-            sliderInput.removeEventListener('blur', removeDepartureSlider);
-        };
-    }, [hours]);
-
+    const showFiltro = () => {
+        setIsResponsive(!isResponsive);
+        setSF(true);
+    }
     return (
-        <div className="container-all-filter">
-            <div className="section-filters">
-                <div className="promotion">
-                    <span>Promoção</span>
-                    <button
-                        onClick={() => handleToggle('promocao')}
-                        className={`btnTogglePromocao ${toggleStates.promocao ? 'active' : ''}`}
-                    >
-                        Promoção
-                    </button>
-                </div>
-                <div className="seasons">
-                    <span>Estações</span>
-                    <div className="button-seasons">
+        <div className='container-FiltroVoo'>
+            <div  id="filtro" onClick={() => showFiltro()}>
+                <img src={FiltroRes} alt="Filtro" /> 
+                <span>Filtros</span>
+            </div>
+            <div className={`container-all-filter ${isResponsive ? "active" : ""}`} >
+                <div className="section-filters">
+                    <div className="promotion"> 
+                        <span>Promoção</span>
                         <button
-                            onClick={() => handleToggle('verao')}
-                            className={`set-buttons verao ${toggleStates.verao ? 'active' : ''}`}
+                            onClick={() => handleToggle('promocao')}
+                            className={`btnTogglePromocao ${toggleStates.promocao ? 'active' : ''}`}
                         >
-                            Verão
-                        </button>
-                        <button
-                            onClick={() => handleToggle('inverno')}
-                            className={`set-buttons inverno ${toggleStates.inverno ? 'active' : ''}`}
-                        >
-                            Inverno
-                        </button>
-                        <button
-                            onClick={() => handleToggle('outono')}
-                            className={`set-buttons outono ${toggleStates.outono ? 'active' : ''}`}
-                        >
-                            Outono
-                        </button>
-                        <button
-                            onClick={() => handleToggle('primavera')}
-                            className={`primavera ${toggleStates.primavera ? 'active' : ''}`}
-                        >
-                            Primavera
+                            Promoção
                         </button>
                     </div>
-                </div>
-                <div className="scales">
-                    <span>Escalas</span>
-                    <div className="custom-select">
-                        <select name="scales" className="scales-select" style={{ backgroundImage: `url(${Escala_icon})` }}>
-                            <option>Nenhuma</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3 ou mais</option>
-                        </select>
+                    <div className="seasons" >
+                        <span>Estações</span>
+                        <div className="button-seasons" >
+                            <button
+                                onClick={() => handleToggle('verao')}
+                                className={`set-buttons verao ${toggleStates.verao ? 'active' : ''}`}
+                            >
+                                Verão
+                            </button>
+                            <button
+                                onClick={() => handleToggle('inverno')}
+                                className={`set-buttons inverno ${toggleStates.inverno ? 'active' : ''}`}
+                                >
+                                Inverno
+                            </button>
+                            <button
+                                onClick={() => handleToggle('outono')}
+                                className={`set-buttons outono ${toggleStates.outono ? 'active' : ''}`}
+                                >
+                                Outono
+                            </button>
+                            <button
+                                onClick={() => handleToggle('primavera')}
+                                className={`primavera ${toggleStates.primavera ? 'active' : ''}`}
+                                >
+                                Primavera
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div className="price">
-                    <div className="price">
-                        <span>Preço</span>
-                        <div className="range">
-                            <div className="sliderVal">
-                                <span id="span" ref={priceRef}>{price}</span>
+                    <div className="scales">
+                        <span>Escalas</span>
+                        <div className="custom-select">
+                            <select name="scales" className="scales-select" style={{ backgroundImage: `url(${Escala_icon})` }}>
+                                <option>Nenhuma</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3 ou mais</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="price-voo">
+                        <div className="preco-voo">
+                            <span>Preço</span>
+                            <div className='values-priceVoo'>
+                                <label className='valor'>R$ 0</label>
+                                <label className='valor'>R$ {Number(precoVoo).toLocaleString('pt-BR')}</label>
                             </div>
-                            <div className="field">
-                                <div className="val left">R$50</div>
-                                    <input type="range" min="0" max="10000" value={price} steps="1" id="input" onChange={handlePriceChange}/>
-                                <div className="val right">R$10 000+</div>
+                            <div className='slider-voo'>
+                                <input type="range" min="1500" max="29350" value={precoVoo}
+                                onChange={handleChangePriceVoo}
+                                style={{
+                                    '--progress': `${((precoVoo - 1500) / (29350 - 1500)) * 100}%`
+                                }}/>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="duration">
-                    <span>Partida</span>
-                    <div className="variety">
-                        <div className="valueSlider">
-                            <span id="valor" ref={hoursRef}>{hours}</span>
-                        </div>
-                        <div className="campo">
-                            <div className="valor esquerda">0:00</div>
-                            <input type="range" min="0" max="23" value={hours} steps="1" id="horas" onChange={handleHourChange}/>
-                            <div className="valor direita">23:00</div>
+                    <div className="partida-voo">
+                        <span>Partida</span>
+                        <div className='values-partidaVoo'>
+                                <label className='hora'>00:00</label>
+                                <label className='hora'>{formatHora(partidaVoo)}:00</label>
+                            </div>
+                            <div className='slider-partida'>
+                                <input type="range" min="0" max="23" value={partidaVoo}
+                                onChange={handleChangePartidaVoo}
+                                style={{
+                                    '--progress': `${((partidaVoo - 0) / (23 - 0)) * 100}%`
+                                }}/>
+                            </div>
+                    </div>
+                    <div className="companies">
+                        <span>Companhias</span>
+                        <div>
+                            <button
+                                onClick={() => handleToggle('Gol')}
+                                className={`button-companies-gol ${toggleStates.Gol ? 'active' : ''}`}
+                                style={{ backgroundImage: `url(${Gol_logo})` }}
+                            >
+                                Gol
+                            </button>
+                            <button
+                                onClick={() => handleToggle('LATAM')}
+                                className={`button-companies-latam ${toggleStates.LATAM ? 'active' : ''}`}
+                                style={{ backgroundImage: `url(${Latam_logo})` }}
+                                >
+                                Latam
+                            </button>
+                            <button
+                                onClick={() => handleToggle('Azul')}
+                                className={`button-companies-azul ${toggleStates.Azul ? 'active' : ''}`}
+                                style={{ backgroundImage: `url(${Azul_logo})` }}
+                                >
+                                Azul
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div className="companies">
-                    <span>Companhias</span>
-                    <div>
-                        <button
-                            onClick={() => handleToggle('gol')}
-                            className={`button-companies-gol ${toggleStates.gol ? 'active' : ''}`}
-                            style={{ backgroundImage: `url(${Gol_logo})` }}
-                        >
-                            Gol
-                        </button>
-                        <button
-                            onClick={() => handleToggle('latam')}
-                            className={`button-companies-latam ${toggleStates.latam ? 'active' : ''}`}
-                            style={{ backgroundImage: `url(${Latam_logo})` }}
-                        >
-                            Latam
-                        </button>
-                        <button
-                            onClick={() => handleToggle('azul')}
-                            className={`button-companies-azul ${toggleStates.azul ? 'active' : ''}`}
-                            style={{ backgroundImage: `url(${Azul_logo})` }}
-                        >
-                            Azul
-                        </button>
-                    </div>
+                <div className="btn-filtro-voo">
+                    <button className="btn-filt-voo" onClick={Filtrar}>Pesquisar</button>
                 </div>
             </div>
-            <div className="btn-filtro-voo">
-                <button className="btn-filt-voo">Pesquisar</button>
-            </div>
-        </div>
+    </div>
     );
 }

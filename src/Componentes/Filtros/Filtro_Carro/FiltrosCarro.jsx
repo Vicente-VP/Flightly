@@ -6,6 +6,7 @@ import movida from '../../../Images/FiltroCarro/movida-logo.png';
 import localiza from '../../../Images/FiltroCarro/localiza-logo.png';
 import spec from '../../../Images/FiltroCarro/spec-image.png';
 import seta from '../../../Images/FiltroCarro/icon-seta.png';
+import FiltroResCar from '../../../Images/Filtros/filtroRes.png';
 
 export default function FiltrosCarros() {
     const [price, setPrice] = useState(100);
@@ -47,9 +48,19 @@ export default function FiltrosCarros() {
         }));
     }
 
+    const [isResponsive, setIsResponsive] = useState(false);
+
+    const showFiltroCar = () => {
+        setIsResponsive(!isResponsive);
+    }
+
     return (
-        <>
-            <div className="container-filtrocar">
+        <div>
+            <div  id="filtroCar" onClick={() => showFiltroCar()}>
+                <img src={FiltroResCar} alt="Filtro" /> 
+                <span>Filtros</span>
+            </div>
+            <div className={`container-filtrocar ${isResponsive ? "active" : ""}`}>
                 <div className='capacidade'>
                     <label htmlFor="CapacidadeCarro" className="lbl-filtrocar1">
                         Capacidade
@@ -144,12 +155,11 @@ export default function FiltrosCarros() {
                     </div>
                 </div>
 
-                <div>
-                    <button type="submit" className="btn-pesq-filtrocar">
-                        Pesquisar
-                    </button>
-                </div>
+                <button type="submit" className="btn-pesq-filtrocarro">
+                    Pesquisar
+                </button>
+
             </div>
-        </>
+        </div>
     );
 }

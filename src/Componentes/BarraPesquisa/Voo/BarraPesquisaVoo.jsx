@@ -2,7 +2,8 @@ import filter_search_bar from '../../../Images/Barra_Pesquisa/filter-search-bar.
 import Origem_icon from '../../../Images/Barra_Pesquisa/Origem_icon.png';
 import destino_icon from '../../../Images/Barra_Pesquisa/destino_icon.png';
 import ida_volta_icon from '../../../Images/Barra_Pesquisa/ida_volta_icon.png';
-import change_seta from '../../../Images/Barra_Pesquisa/change_seta.png'
+import search from '../../../Images/Barra_Pesquisa/search.png'
+//import change_seta from '../../../Images/Barra_Pesquisa/change_seta.png'
 
 import passageirosIcon from '../../../Images/Barra_Pesquisa/passageiro_icon.png';
 import Drop from "../../DropInput/drop";
@@ -16,11 +17,11 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function PesquisaVoo(props) {
-    const [isDropdownActive, setDropdownActive] = useState(false);
+    // const [isDropdownActive, setDropdownActive] = useState(false);
 
-    const filtroActive = () => {
-        setDropdownActive(!isDropdownActive);
-      };
+    // const filtroActive = () => {
+    //     setDropdownActive(!isDropdownActive);
+    //   };
 
     const [passengerData, setPassengerData] = useState({
         nAdult: props.adultos,
@@ -38,36 +39,36 @@ export default function PesquisaVoo(props) {
 
     const navigate = useNavigate();
 
-    function changeDestines(){
-        let origem = document.querySelector('input[name="destino"]').value;
-        let destino = document.querySelector('input[name="origem"]').value;
-        let ida = document.querySelector('input[name="ida"]').value;
-        let travel_type = document.querySelector('input[name="volta"]') ? 'rt' : 'ow';
-        let volta = travel_type === 'rt' ? document.querySelector('input[name="volta"]').value : null;
-        let classe = document.querySelector('select[name="classe"]').value;
-        let adultos = passengerData.nAdult;
-        let criancaAssento = passengerData.criancaAssento;
-        let criancaColo = passengerData.criancaColo;
-        let criancaIdade = passengerData.criancaIdade;
+    // function changeDestines(){
+    //     let origem = document.querySelector('input[name="destino"]').value;
+    //     let destino = document.querySelector('input[name="origem"]').value;
+    //     let ida = document.querySelector('input[name="ida"]').value;
+    //     let travel_type = document.querySelector('input[name="volta"]') ? 'rt' : 'ow';
+    //     let volta = travel_type === 'rt' ? document.querySelector('input[name="volta"]').value : null;
+    //     let classe = document.querySelector('select[name="classe"]').value;
+    //     let adultos = passengerData.nAdult;
+    //     let criancaAssento = passengerData.criancaAssento;
+    //     let criancaColo = passengerData.criancaColo;
+    //     let criancaIdade = passengerData.criancaIdade;
     
-        const params = new URLSearchParams({
-            requestType: 'flight',
-            origem,
-            destino,
-            ida,
-            volta,
-            travel_type,
-            classe,
-            adultos,
-            criancaAssento,
-            criancaColo,
-            criancaIdade,
-        }).toString();
+    //     const params = new URLSearchParams({
+    //         requestType: 'flight',
+    //         origem,
+    //         destino,
+    //         ida,
+    //         volta,
+    //         travel_type,
+    //         classe,
+    //         adultos,
+    //         criancaAssento,
+    //         criancaColo,
+    //         criancaIdade,
+    //     }).toString();
     
-        // Navigate to the new page, passing the requestData as state
-        navigate(`/InformacoesPage?${params}`);
-        window.location.reload();    
-    }
+    //     // Navigate to the new page, passing the requestData as state
+    //     navigate(`/InformacoesPage?${params}`);
+    //     window.location.reload();    
+    //}
 
     function PesquisarVoo() {
     
@@ -104,8 +105,8 @@ export default function PesquisaVoo(props) {
 
     return (
         <div className="geral_itens">
-        <div className="filtros_menu" onClick={filtroActive}>
-            <img src={filter_search_bar} alt="filtros" id="filtros_menu"/></div>
+        {/* <div className="filtros_menu" onClick={filtroActive}>
+            <img src={filter_search_bar} alt="filtros" id="filtros_menu"/></div> */}
         <div className={`container-search ${props.volta === "null" ? "active" : ""}`}>
             <div className="search-local">
                 <div>
@@ -164,7 +165,7 @@ export default function PesquisaVoo(props) {
                 <span>Passageiros</span>
                 <Drop
                     imagem={passageirosIcon}
-                    widthDrop="126px"
+                    widthDrop="fit-content"
                     topContent="21.5%"
                     titles={["Adultos", "Crianças de", "Crianças", "Crianças no"]}
                     subTitles={["", "2 a 11 anos", "no assento", "de colo"]}
@@ -191,11 +192,14 @@ export default function PesquisaVoo(props) {
                 </select>
             </div>
             <div className="btn-pesquisar-voo">
-                <button className="btn-submit-voo" onClick={PesquisarVoo} >Pesquisar</button>
+                <button className="btn-submit-voo" onClick={PesquisarVoo} >
+                 <img src={search} alt="filtros" id="filtros_menu"/>
+                 <span>Pesquisar</span>
+                </button>
             </div>
         </div>
 
-        <div className='search_bar_responsive'>
+        {/* <div className='search_bar_responsive'>
             <div className='origin_destine'>
             <input
                         type="text"
@@ -223,7 +227,7 @@ export default function PesquisaVoo(props) {
               
 
             </div>
-        </div>
+        </div> */}
         </div>
     );
 }

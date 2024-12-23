@@ -3,12 +3,24 @@ import destino_icon from '../../../Images/Barra_Pesquisa/destino_icon.png';
 import ida_volta_icon from '../../../Images/Barra_Pesquisa/ida_volta_icon.png';
 import passageiro_icon from '../../../Images/Barra_Pesquisa/passageiro_icon.png';
 import tipoCarro_icon from '../../../Images/Barra_Pesquisa/tipoCarro_icon.png';
+import search from '../../../Images/Barra_Pesquisa/search.png'
 
 import './styleBarraPesquisaCarro.css';
+import { useState } from 'react';
 
 export default function PesquisaCarro(){
+
+    // const [isDropdownActive, setDropdownActive] = useState(false);
+
+    // const filtroActive = () => {
+    //     setDropdownActive(!isDropdownActive);
+    //   };
     return(
-        <>
+         <>
+            <div className="geral_itens">
+                {/* <div className="filtros_menu" onClick={filtroActive}>
+                    <img src={filter_search_bar} alt="filtros" id="filtros_menu"/>
+                </div> */}
             <div className="container-search">
                 <img src={filter_search_bar} alt="filtros"/>
                 <div className="search-local">
@@ -45,8 +57,13 @@ export default function PesquisaCarro(){
                     </select>
                 </div>
                 <div className="btn-pesquisar-voo">
-                    <button className="btn-submit-voo">Pesquisar</button>
+                    <button className="btn-submit-voo">
+                    <img src={search} alt="filtros" id="search_img"/>
+                    <span>Pesquisar</span>
+                    </button>
+                    
                 </div>
+            </div>
             </div>
         </>
     );

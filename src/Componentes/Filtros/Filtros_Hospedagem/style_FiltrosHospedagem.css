@@ -17,6 +17,10 @@
 
 }
 
+#filtroHosp{
+  visibility: hidden;
+}
+
 .lbl-filtrohosp1, .lbl-filtrohosp2, .lbl-filtrohosp3, .lbl-filtrohosp4{
   font-family: 'Poppins';
   font-style: normal;
@@ -270,4 +274,62 @@ background: #004369;
   right: 25.00%;
   top: 84.29%;
   bottom: 6.9%;
+}
+
+/* Responsividade */
+@media(max-width:1080px) {
+  .container-filtrohosp{
+    width: 240px;
+    height: 570px;
+  }
+
+  .lbl-filtrohosp1, .lbl-filtrohosp2, .lbl-filtrohosp3, .lbl-filtrohosp4{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+  
+    color: #004369;
+  }
+
+  #filtroHosp{
+    visibility: hidden;
+  }
+
+  .btn-pesq-filtrohosp{
+    left: 15%;
+  }
+}
+
+@media(max-width: 580px) {
+
+  .container-filtrohosp{
+    opacity: 0;
+    visibility: hidden; /* Oculta o elemento */
+    transition: opacity 0s ease, visibility 0s 0s;
+    width: 240px;
+    height: 570px;
+  }
+
+  #filtroHosp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    visibility: visible;
+  
+    cursor: pointer;
+  }
+  .container-filtrohosp.active{
+    opacity: 1; /* Torna o elemento visível */
+    visibility: visible; /* Torna o elemento visível */
+    transition: opacity 0.5s ease, visibility 0s 0s;
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    height: 570px;
+  }
 }

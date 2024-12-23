@@ -42,6 +42,11 @@
     cursor: pointer;
 }
 
+.btn-submit-voo > img{  
+  width: 20px;
+  height: 20px;
+  }
+
 .search-local{
   display: flex;
   margin: 0 30px 17px 30px;
@@ -63,7 +68,7 @@
   font-family: "Poppins", sans-serif;
 
   border: none;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
 
   width: 164px;
   height: 35px;
@@ -253,4 +258,49 @@ span{
 
 span{
   list-style-type:none;
+}
+
+@media (max-width:1316px){
+  .filtros_menu{
+    display: block;
+  }
+  .btn-pesquisar-voo > span{
+    display: none;
+  }
+
+  .geral_itens input{
+    max-width: min-content;
+  }
+  
+}
+
+@media(max-width:1226px){
+  .btn-submit-voo > span{
+    display: none;
+  }
+
+  .geral_itens span{
+    display: none;
+    align-items: center;
+  }
+
+  .passageiro{
+    box-shadow: none;
+  }
+
+  .container-search{
+    height: 80px;
+    flex-direction: column;
+    max-width: 80vh;
+    flex-wrap: wrap; 
+    flex-flow: row wrap;
+    max-width: 100%
+  }
+
+  .origem , .destino {
+    width: 130px;
+  }
+  .ida , .volta{
+    width: 80px;
+  }
 }

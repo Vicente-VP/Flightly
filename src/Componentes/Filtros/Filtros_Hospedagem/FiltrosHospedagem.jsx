@@ -1,5 +1,6 @@
 import React, { useState, useRef  } from "react";
 import "./style_FiltrosHospedagem.css";
+import FiltroResHosp from '../../../Images/Filtros/filtroRes.png';
 
 export default function FiltrosHospedagem() {
   const [price, setPrice] = useState(100);
@@ -9,9 +10,20 @@ export default function FiltrosHospedagem() {
     const value = e.target.value;
     setPrice(value);
   }
+
+  const [isResponsive, setIsResponsive] = useState(false);
+
+  const showFiltroHosp = () => {
+      setIsResponsive(!isResponsive);
+  }
+  
   return (
-    <>
-      <div className="container-filtrohosp">
+    <div>
+      <div  id="filtroHosp" onClick={() => showFiltroHosp()}>
+                <img src={FiltroResHosp} alt="Filtro" /> 
+                <span>Filtros</span>
+            </div>
+      <div className={`container-filtrohosp ${isResponsive ? "active" : ""}`}>
         <div>
           <label htmlFor="TipoHospedagem" className="lbl-filtrohosp1">
             Tipo de Hospedagem
@@ -88,6 +100,6 @@ export default function FiltrosHospedagem() {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }

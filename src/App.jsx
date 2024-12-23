@@ -8,6 +8,7 @@ import PontoTuristicoPage from './Pages/PontosTuristicosPage/PontoTuristicoPage'
 import Cadastro from './Pages/Cadastro/Cadastro';
 import Login from './Pages/Login/Login';
 import Testes from './Pages/Testes/Testes';
+import Teste from './Pages/Testes/Teste';
 import Perfil from './Pages/Perfil/Perfil';
 import PlanosViagem from './Pages/PlanosViagem/PlanosViagem';
 import Compra from './Pages/Compra/Compra';
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/Cadastro" element={<Cadastro/>}/>
           <Route path="/Login" element={<Login/>}/>
           <Route path="/Testes" element={<Testes/>}/>
+          <Route path="/Teste" element={<Teste/>}/>
           <Route path="/Perfil" element={<Perfil/>}/>
           <Route path="/PlanosViagem" element={<PlanosViagem/>}/>
           <Route path="/Compra" element={<Compra/>}/>

@@ -500,3 +500,138 @@
     font-weight: 350;
     text-align: center;
   }
+
+  /* Geral: Ajustes para telas pequenas */
+@media (max-width: 768px) {
+  /* Ajuste no container geral */
+  .containerGeral-infoVoo {
+    width: 100%;
+    flex-direction: column; /* Empilhar os elementos verticalmente */
+    align-items: flex-start;
+    transform: none; /* Remove o deslocamento horizontal */
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Ajuste nos cards de voo */
+  .container-Card-voo {
+    width: 100%;
+    height: auto; /* Permite que o card ajuste sua altura de acordo com o conteúdo */
+    margin-top: 10px;
+  }
+
+  .companhia-voo, .aeroporto-voo {
+    font-size: 16px;
+  }
+
+  .destino-voo {
+    font-size: 28px; /* Reduz o tamanho da fonte para telas pequenas */
+  }
+
+  .horario-voo, .duracao-voo {
+    font-size: 18px; /* Ajusta o tamanho da fonte */
+  }
+
+  .escala-voo {
+    font-size: 14px; 
+    width: auto; 
+  }
+
+
+  .btnPopup-AddPlano-Compra-VOOS {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .info-preco-voo {
+    width: 100%;
+    padding: 10px;
+  }
+
+
+  .left-voo, .right-voo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .left-voo {
+    margin-left: 0;
+  }
+
+  .right-voo {
+    align-items: flex-start;
+  }
+
+  .img-voo, .img-volta {
+    width: 60px;
+    height: 60px;
+  }
+
+
+  .escala-voo {
+    font-size: 14px;
+  }
+
+
+  .preco-voo-voo {
+    font-size: 24px;
+  }
+
+  .categoria-voo, .categoria-volta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .left-volta, .right-volta {
+    margin: 0;
+  }
+
+
+  .CardVolta-Geral, .container-Info {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .containerGeral-infoVoo {
+    padding: 0 10px; 
+  }
+
+  .container-Card-voo, .container-Info {
+    width: 100%;
+    flex-direction: column; 
+  }
+
+  .preco-voo-voo {
+    font-size: 20px;
+  }
+  .btnPopup-AddPlano-Compra-VOOS {
+    width: 35px;
+    height: 35px;
+    padding: 8px;
+  }
+
+  .destino-voo {
+    font-size: 24px;
+  }
+  .companhia-voo, .aeroporto-voo {
+    font-size: 14px;
+  }
+
+  .horario-voo, .duracao-voo {
+    font-size: 16px;
+  }
+  .left-voo {
+    margin-left: 0;
+    gap: 10px;
+  }
+  .preco-voo-voo {
+    font-size: 22px;
+  }
+}
+
